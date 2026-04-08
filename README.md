@@ -2,9 +2,13 @@
 
 Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.
 
-Last updated: 2026-04-08 08:44 UTC
+Last updated: 2026-04-08 11:18 UTC
 
-This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs, currently arXiv and OpenAlex.
+This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs.
+
+## Included Sources
+
+arxiv, openalex, crossref
 
 ## Recent Papers
 
@@ -12,10 +16,12 @@ This repository is updated automatically by GitHub Actions. It tracks GeoFM-rela
 
 | Date | Paper | Authors | Source | Links |
 | --- | --- | --- | --- | --- |
+| 2026-04-07 | Prior-guided Fusion of Multimodal Features for Change Detection from Optical-SAR Images | Xuanguang Liu, Lei Ding, Yujie Li, Chenguang Dai et al. | arXiv | [Page](http://arxiv.org/abs/2604.05527v1) / [PDF](https://arxiv.org/pdf/2604.05527v1) |
 | 2026-04-07 | A Unified Foundation Model for All-in-One Multi-Modal Remote Sensing Image Restoration and Fusion with Language Prompting | Yongchuan Cui, Peng Liu | arXiv | [Page](http://arxiv.org/abs/2604.05629v1) / [PDF](https://arxiv.org/pdf/2604.05629v1) |
-| 2026-04-06 | Foundation Models Applied to Infectious Disease Imaging: A Scoping Review of Architectures, Applications, and Gaps | Hayden Farquhar | Zenodo (CERN European Organization for Nuclear Research) | [Page](https://doi.org/10.5281/zenodo.19436192) / [DOI](https://doi.org/10.5281/zenodo.19436192) |
 | 2026-04-06 | A Comparative Deep Learning Approach to Battle Damage Detection with Foundation Model Architectures and Open Access Sentinel-1 SAR Data | Benjamin Woodier, Stephen Law | Zenodo (CERN European Organization for Nuclear Research) | [Page](https://doi.org/10.5281/zenodo.19437951) / [DOI](https://doi.org/10.5281/zenodo.19437951) |
+| 2026-04-05 | Measuring the psychological restorative quality of urban spaces: a vision language model-based method | Haoran Ma, Mei-Po Kwan | Scientific Reports | [Page](https://doi.org/10.1038/s41598-026-43360-8) / [PDF](https://www.nature.com/articles/s41598-026-43360-8_reference.pdf) / [DOI](https://doi.org/10.1038/s41598-026-43360-8) |
 | 2026-04-05 | HighFM: Towards a Foundation Model for Learning Representations from High-Frequency Earth Observation Data | Stella Girtsou, Konstantinos Alexis, Giorgos Giannopoulos, Harris Kontoes | arXiv | [Page](http://arxiv.org/abs/2604.04306v1) / [PDF](https://arxiv.org/pdf/2604.04306v1) |
+| 2026-04-04 | Deep Learning-Based Methods for Lithology Classification and Identificationin Remote Sensing Images | Mr.G. VISWANATH, V. LAKSHMI MANI KARTHIK, S. SUCHITHRA, K. FARHANA et al. | Research Digest on Engineering Management and Social Innovations | [Page](https://doi.org/10.46647/icetetas107) / [PDF](https://rdems.in/index.php/RDEMS/article/download/63/63) / [DOI](https://doi.org/10.46647/icetetas107) |
 | 2026-04-04 | Spatiotemporal Interpolation of GEDI Biomass with Calibrated Uncertainty | Robin Young, Srinivasan Keshav | arXiv | [Page](http://arxiv.org/abs/2604.03874v1) / [PDF](https://arxiv.org/pdf/2604.03874v1) |
 | 2026-04-03 | Smart Transfer: Leveraging Vision Foundation Model for Rapid Building Damage Mapping with Post-Earthquake VHR Imagery | Hao Li, Liwei Zou, Wenping Yin, Gulsen Taskin et al. | arXiv | [Page](http://arxiv.org/abs/2604.02627v1) / [PDF](https://arxiv.org/pdf/2604.02627v1) |
 | 2026-04-03 | MOMO: Mars Orbital Model Foundation Model for Mars Orbital Applications | Mirali Purohit, Bimal Gajera, Irish Mehta, Bhanu Tokas et al. | arXiv | [Page](http://arxiv.org/abs/2604.02719v1) / [PDF](https://arxiv.org/pdf/2604.02719v1) |
@@ -43,7 +49,7 @@ This repository is updated automatically by GitHub Actions. It tracks GeoFM-rela
 
 ## Search Scope
 
-Keywords live in `config.json`. Edit the query list and topic rules to make the tracker broader or stricter.
+Keywords and source-specific queries live in `config.json`.
 
 ## Local Update
 

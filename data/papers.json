@@ -1,5 +1,36 @@
 [
   {
+    "id": "2604.05527v1",
+    "source": "arXiv",
+    "title": "Prior-guided Fusion of Multimodal Features for Change Detection from Optical-SAR Images",
+    "authors": [
+      "Xuanguang Liu",
+      "Lei Ding",
+      "Yujie Li",
+      "Chenguang Dai",
+      "Zhenchao Zhang",
+      "Mengmeng Li",
+      "Ziyi Yang",
+      "Yifan Sun",
+      "Yongqi Sun",
+      "Hanyun Wang"
+    ],
+    "published": "2026-04-07",
+    "updated": "2026-04-07",
+    "venue": "arXiv",
+    "url": "http://arxiv.org/abs/2604.05527v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.05527v1",
+    "doi": "",
+    "abstract": "Multimodal change detection (MMCD) identifies changed areas in multimodal remote sensing (RS) data, demonstrating significant application value in land use monitoring, disaster assessment, and urban sustainable development. However, literature MMCD approaches exhibit limitations in cross-modal interaction and exploiting modality-specific characteristics. This leads to insufficient modeling of fine-grained change information, thus hindering the precise detection of semantic changes in multimodal data. To address the above problems, we propose STSF-Net, a framework designed for MMCD between optical and SAR images. STSF-Net jointly models modality-specific and spatio-temporal common features to enhance change representations. Specifically, modality-specific features are exploited to capture genuine semantic change signals, while spatio-temporal common features are embedded to suppress pseudo-changes caused by differences in imaging mechanisms. Furthermore, we introduce an optical and SAR feature fusion strategy that adaptively adjusts feature importance based on semantic priors obtained from pre-trained foundational models, enabling semantic-guided adaptive fusion of multi-modal information. In addition, we introduce the Delta-SN6 dataset, the first openly-accessible multiclass MMCD benchmark consisting of very-high-resolution (VHR) fully polarimetric SAR and optical images. Experimental results on Delta-SN6, BRIGHT, and Wuhan-Het datasets demonstrate that our method outperforms the state-of-the-art (SOTA) by 3.21%, 1.08%, and 1.32% in mIoU, respectively. The associated code and Delta-SN6 dataset will be released at: https://github.com/liuxuanguang/STSF-Net.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Vision-Language",
+      "Segmentation"
+    ],
+    "query": "\"remote sensing foundation model\""
+  },
+  {
     "id": "2604.05629v1",
     "source": "arXiv",
     "title": "A Unified Foundation Model for All-in-One Multi-Modal Remote Sensing Image Restoration and Fusion with Language Prompting",
@@ -22,28 +53,6 @@
     "query": "\"remote sensing foundation model\""
   },
   {
-    "id": "https://openalex.org/W7150848404",
-    "source": "OpenAlex",
-    "title": "Foundation Models Applied to Infectious Disease Imaging: A Scoping Review of Architectures, Applications, and Gaps",
-    "authors": [
-      "Hayden Farquhar"
-    ],
-    "published": "2026-04-06",
-    "updated": "2026-04-07",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "url": "https://doi.org/10.5281/zenodo.19436192",
-    "pdf_url": "",
-    "doi": "10.5281/zenodo.19436192",
-    "abstract": "Foundation models — large-scale pretrained architectures including vision transformers, vision-language models, and segment anything models — have reshaped medical imaging artificial intelligence since 2020. No review has examined their application specifically to infectious disease imaging, a domain with distinct challenges including emerging pathogens, resource-limited deployment settings, and diverse imaging modalities. This scoping review followed JBI methodology and PRISMA-ScR reporting guidelines. Six databases (PubMed, Embase, Scopus, IEEE Xplore, arXiv, medRxiv/bioRxiv) were searched up to March 2026. Title/abstract screening used AI-assisted methods with 20% manual validation (Cohen's kappa = 0.858). Data were charted on disease, imaging modality, model architecture, clinical task, and geographic origin. From 5,480 identified records, 634 studies were included after deduplication and two-stage screening. COVID-19 dominated (61.2% of studies), followed by pneumonia (47.3%) and tuberculosis (16.1%). Chest radiography (62.6%) and computed tomography (30.1%) accounted for 93% of imaging modalities, while microscopy — the primary diagnostic tool for malaria and parasitic infections — represented only 5.5%. Vision transformers were the most common architecture (53.6%), with self-supervised learning (16.2%) and Swin transformers (14.7%) following. Segment anything models (0.6%) and CLIP-based approaches (1.3%) remained rare. China (22.9%) and India (17.2%) contributed the most studies, while Sub-Saharan Africa — bearing the highest infectious disease burden globally — contributed fewer than 2.5%. No prospective validation or deployed clinical studies were identified. Foundation model research in infectious disease imaging is growing rapidly but remains concentrated on COVID-19, chest imaging, and vision transformer architectures. Critical gaps exist for neglected tropical diseases, non-radiographic modalities (microscopy, dermoscopy), and newer foundation model paradigms (SAM, CLIP, diffusion models). The geographic mismatch between research activity and disease burden raises equity concerns.",
-    "topics": [
-      "Foundation Models",
-      "Vision-Language",
-      "Segmentation",
-      "Geospatial AI"
-    ],
-    "query": "\"geographic foundation model\""
-  },
-  {
     "id": "https://openalex.org/W7150984711",
     "source": "OpenAlex",
     "title": "A Comparative Deep Learning Approach to Battle Damage Detection with Foundation Model Architectures and Open Access Sentinel-1 SAR Data",
@@ -63,6 +72,28 @@
       "Remote Sensing"
     ],
     "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7149986888",
+    "source": "OpenAlex",
+    "title": "Measuring the psychological restorative quality of urban spaces: a vision language model-based method",
+    "authors": [
+      "Haoran Ma",
+      "Mei-Po Kwan"
+    ],
+    "published": "2026-04-05",
+    "updated": "2026-04-07",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-43360-8",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-43360-8_reference.pdf",
+    "doi": "10.1038/s41598-026-43360-8",
+    "abstract": "Well-designed urban environments crucially mitigate stress and enhance mental well-being through their restorative qualities. However, subjective surveys lack spatial scalability, while objective machine learning often fails to capture the complexity of human perceptual experiences. To address this gap, this study proposes a hybrid framework based on Vision Language Models (VLMs) and human experiences to assess the restorative quality of urban spaces. Using Shenzhen, China as a case study, we gathered subjective and objective knowledge from PRS-11 surveys and ChatGPT-4 descriptions of 566 street view images, incorporating this into VLM prompts via the Contrastive Language-Image Pretraining (CLIP) model. Through prompt engineering, the VLM evaluated 2,224 additional images, with semantic networks analyzing the decision-making process. Results demonstrate that: (1) our method significantly outperformed Random Forest, with an R² increase of 0.535 attributed to prior knowledge fusion; (2) restorative quality exhibits spatial heterogeneity, clustering in developed districts near park and coastal zones; and (3) semantic network analysis further revealed the decision rationales of VLMs across different restorative dimensions, providing design guidelines for low restorative quality spaces. This research offers a novel methodology for assessing restorative quality of urban spaces, providing practical tools for sustainable development and human mental well-being.",
+    "topics": [
+      "Foundation Models",
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "query": "\"geospatial foundation model\""
   },
   {
     "id": "2604.04306v1",
@@ -87,6 +118,31 @@
       "Geospatial AI"
     ],
     "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7149327504",
+    "source": "OpenAlex",
+    "title": "Deep Learning-Based Methods for Lithology Classification and Identificationin Remote Sensing Images",
+    "authors": [
+      "Mr.G. VISWANATH",
+      "V. LAKSHMI MANI KARTHIK",
+      "S. SUCHITHRA",
+      "K. FARHANA",
+      "V.SOMESH KUMAR"
+    ],
+    "published": "2026-04-04",
+    "updated": "2026-04-06",
+    "venue": "Research Digest on Engineering Management and Social Innovations",
+    "url": "https://doi.org/10.46647/icetetas107",
+    "pdf_url": "https://rdems.in/index.php/RDEMS/article/download/63/63",
+    "doi": "10.46647/icetetas107",
+    "abstract": "This study presents a deep learning model that integrates Vision Transformers (ViT) with Fourier spectral filtering for remote sensing lithology classification. The model automates the process of identifying and classifying various rock types in remote sensing images, addressing a multi-class classification challenge. It utilizes ViT for feature extraction, enhanced by pretrained weights for improved efficiency and accuracy in recognizing geographical features. Fourier spectral filtering further augments the model by leveraging frequency domain information for accurate classification. The model preprocesses images, extracts spatial features, applies spectral filtering, and employs a classification head to predict rock types. Optimization of parameters through backpropagation and gradient descent methods, coupled with regularization strategies, aims to prevent overfitting and ensure generalizability. This approach combines deep learning’s capability for feature extraction with the analytical power of signal processing, offering a significant advancement for automatic rock type classification in remote sensing.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "query": "\"large multimodal model\" \"remote sensing\""
   },
   {
     "id": "2604.03874v1",

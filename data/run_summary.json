@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-04-08T08:44:47+00:00",
-  "fetched_this_run": 47,
-  "records_total": 23,
+  "generated_at": "2026-04-08T11:18:39+00:00",
+  "fetched_this_run": 38,
+  "records_total": 25,
   "sources": [
     "arxiv",
-    "openalex"
+    "openalex",
+    "crossref"
   ]
 }
