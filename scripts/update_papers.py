@@ -1,4 +1,4 @@
-﻿import argparse
+import argparse
 import csv
 import html
 import json
@@ -10,11 +10,11 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = "AwesomeGeoFMPapers/0.1 (https://github.com/your-name/awesome-geofm-papers)"
+USER_AGENT = "AwesomeGeoFMPapers/0.2 (https://github.com/your-name/awesome-geofm-papers)"
 ROOT = Path(__file__).resolve().parents[1]
 ARXIV_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
@@ -124,95 +124,15 @@ def arxiv_search_query(query: str) -> str:
     return " AND ".join(f'all:"{term}"' for term in terms)
 
 
-def fetch_arxiv(config: Dict, today: date) -> List[Paper]:
-    papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
-    days_back = int(config["search"]["days_back"])
-    for query in config["queries"]:
-        payload = get_text(
-            "https://export.arxiv.org/api/query",
-            {
-                "search_query": arxiv_search_query(query),
-                "start": 0,
-                "max_results": max_results,
-                "sortBy": "submittedDate",
-                "sortOrder": "descending",
-            },
-        )
-        root = ET.fromstring(payload)
-        for entry in root.findall("atom:entry", ARXIV_NS):
-            published = parse_date(entry.findtext("atom:published", default="", namespaces=ARXIV_NS))
-            if not is_recent(published, days_back, today):
-                continue
-            raw_id = entry.findtext("atom:id", default="", namespaces=ARXIV_NS)
-            pdf_url = ""
-            for link in entry.findall("atom:link", ARXIV_NS):
-                if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
-                    pdf_url = link.attrib.get("href", "")
-                    break
-            papers.append(
-                Paper(
-                    id=raw_id.rsplit("/", 1)[-1],
-                    source="arXiv",
-                    title=normalize_space(entry.findtext("atom:title", default="", namespaces=ARXIV_NS)),
-                    authors=[
-                        normalize_space(author.findtext("atom:name", default="", namespaces=ARXIV_NS))
-                        for author in entry.findall("atom:author", ARXIV_NS)
-                    ],
-                    published=published,
-                    updated=parse_date(entry.findtext("atom:updated", default="", namespaces=ARXIV_NS)),
-                    venue="arXiv",
-                    url=raw_id,
-                    pdf_url=pdf_url,
-                    doi=normalize_space(entry.findtext("arxiv:doi", default="", namespaces=ARXIV_NS)),
-                    abstract=normalize_space(entry.findtext("atom:summary", default="", namespaces=ARXIV_NS)),
-                    topics=[],
-                    query=query,
-                )
-            )
-    return papers
-
-
-def fetch_openalex(config: Dict, today: date) -> List[Paper]:
-    papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
-    since = today - timedelta(days=int(config["search"]["days_back"]))
-    for query in config["queries"]:
-        payload = get_json(
-            "https://api.openalex.org/works",
-            {
-                "search": query.replace('"', ""),
-                "filter": f"from_publication_date:{since.isoformat()},to_publication_date:{today.isoformat()}",
-                "sort": "publication_date:desc",
-                "per-page": max_results,
-            },
-        )
-        for item in payload.get("results", []):
-            doi = normalize_space(item.get("doi") or "").replace("https://doi.org/", "")
-            authors = [
-                auth.get("author", {}).get("display_name", "")
-                for auth in item.get("authorships", [])
-                if auth.get("author", {}).get("display_name")
-            ]
-            source = item.get("primary_location", {}).get("source") or {}
-            papers.append(
-                Paper(
-                    id=item.get("id", ""),
-                    source="OpenAlex",
-                    title=normalize_space(item.get("display_name", "")),
-                    authors=authors,
-                    published=parse_date(item.get("publication_date", "")),
-                    updated=parse_date(item.get("updated_date", "")),
-                    venue=normalize_space(source.get("display_name", "")),
-                    url=item.get("doi") or item.get("id", ""),
-                    pdf_url=((item.get("primary_location") or {}).get("pdf_url") or ""),
-                    doi=doi,
-                    abstract=rebuild_openalex_abstract(item.get("abstract_inverted_index") or {}),
-                    topics=[],
-                    query=query,
-                )
-            )
-    return papers
+def build_query_groups(config: Dict) -> Dict[str, List[str]]:
+    query_cfg = config.get("queries", {})
+    general = query_cfg.get("general", [])
+    return {
+        "arxiv": query_cfg.get("arxiv", general),
+        "openalex": query_cfg.get("openalex", general),
+        "crossref": query_cfg.get("crossref", general),
+        "semanticscholar": query_cfg.get("semanticscholar", general),
+    }
 
 
 def rebuild_openalex_abstract(inverted: Dict[str, List[int]]) -> str:
@@ -224,13 +144,39 @@ def rebuild_openalex_abstract(inverted: Dict[str, List[int]]) -> str:
     return normalize_space(" ".join(token for _, token in tokens))
 
 
+def extract_crossref_abstract(raw: str) -> str:
+    if not raw:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", raw)
+    return normalize_space(html.unescape(text))
+
+
+def should_exclude(text: str, config: Dict) -> bool:
+    exclude_terms = config.get("keyword_system", {}).get("exclude_terms", [])
+    haystack = text.lower()
+    return any(term.lower() in haystack for term in exclude_terms)
+
+
 def matches_scope(paper: Paper, config: Dict) -> bool:
+    text = f"{paper.title} {paper.abstract} {paper.venue}".lower()
+
+    if should_exclude(text, config):
+        return False
+
     if config["search"].get("include_without_abstract_match"):
         return True
-    haystack = f"{paper.title} {paper.abstract}".lower()
-    has_model_signal = any(term.lower() in haystack for term in config.get("must_have_terms", []))
-    has_geo_context = any(term.lower() in haystack for term in config.get("context_terms", []))
-    return has_model_signal and has_geo_context
+
+    ks = config.get("keyword_system", {})
+    must_have_any = ks.get("must_have_any", [])
+    geo_context_terms = ks.get("geo_context_terms", [])
+    core_model_terms = ks.get("core_model_terms", [])
+
+    has_must = any(term.lower() in text for term in must_have_any)
+    has_geo = any(term.lower() in text for term in geo_context_terms)
+    has_core = any(term.lower() in text for term in core_model_terms)
+
+    # 更稳一点：至少同时满足“模型信号 + 地理场景”
+    return (has_must or has_core) and has_geo
 
 
 def assign_topics(paper: Paper, topic_rules: Dict[str, List[str]]) -> List[str]:
@@ -251,6 +197,11 @@ def paper_keys(paper: Paper) -> List[str]:
     return list(dict.fromkeys(keys))
 
 
+def completeness_score(paper: Paper) -> int:
+    fields = [paper.title, paper.authors, paper.published, paper.venue, paper.url, paper.pdf_url, paper.doi, paper.abstract]
+    return sum(1 for field in fields if field)
+
+
 def dedupe(papers: Iterable[Paper]) -> List[Paper]:
     best: Dict[str, Paper] = {}
     aliases: Dict[str, str] = {}
@@ -265,11 +216,6 @@ def dedupe(papers: Iterable[Paper]) -> List[Paper]:
         for key in keys:
             aliases[key] = canonical
     return list(best.values())
-
-
-def completeness_score(paper: Paper) -> int:
-    fields = [paper.title, paper.authors, paper.published, paper.venue, paper.url, paper.pdf_url, paper.doi, paper.abstract]
-    return sum(1 for field in fields if field)
 
 
 def prune_old(papers: Iterable[Paper], keep_recent_days: int, today: date) -> List[Paper]:
@@ -309,9 +255,220 @@ def load_existing(path: Path) -> List[Paper]:
     ]
 
 
+def fetch_arxiv(config: Dict, today: date) -> List[Paper]:
+    papers: List[Paper] = []
+    max_results = int(config["search"]["max_results_per_query"])
+    days_back = int(config["search"]["days_back"])
+    queries = build_query_groups(config)["arxiv"]
+
+    for query in queries:
+        payload = get_text(
+            "https://export.arxiv.org/api/query",
+            {
+                "search_query": arxiv_search_query(query),
+                "start": 0,
+                "max_results": max_results,
+                "sortBy": "submittedDate",
+                "sortOrder": "descending",
+            },
+        )
+        root = ET.fromstring(payload)
+        for entry in root.findall("atom:entry", ARXIV_NS):
+            published = parse_date(entry.findtext("atom:published", default="", namespaces=ARXIV_NS))
+            if not is_recent(published, days_back, today):
+                continue
+
+            raw_id = entry.findtext("atom:id", default="", namespaces=ARXIV_NS)
+            pdf_url = ""
+            for link in entry.findall("atom:link", ARXIV_NS):
+                if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
+                    pdf_url = link.attrib.get("href", "")
+                    break
+
+            papers.append(
+                Paper(
+                    id=raw_id.rsplit("/", 1)[-1],
+                    source="arXiv",
+                    title=normalize_space(entry.findtext("atom:title", default="", namespaces=ARXIV_NS)),
+                    authors=[
+                        normalize_space(author.findtext("atom:name", default="", namespaces=ARXIV_NS))
+                        for author in entry.findall("atom:author", ARXIV_NS)
+                    ],
+                    published=published,
+                    updated=parse_date(entry.findtext("atom:updated", default="", namespaces=ARXIV_NS)),
+                    venue="arXiv",
+                    url=raw_id,
+                    pdf_url=pdf_url,
+                    doi=normalize_space(entry.findtext("arxiv:doi", default="", namespaces=ARXIV_NS)),
+                    abstract=normalize_space(entry.findtext("atom:summary", default="", namespaces=ARXIV_NS)),
+                    topics=[],
+                    query=query,
+                )
+            )
+    return papers
+
+
+def fetch_openalex(config: Dict, today: date) -> List[Paper]:
+    papers: List[Paper] = []
+    max_results = int(config["search"]["max_results_per_query"])
+    since = today - timedelta(days=int(config["search"]["days_back"]))
+    queries = build_query_groups(config)["openalex"]
+
+    for query in queries:
+        payload = get_json(
+            "https://api.openalex.org/works",
+            {
+                "search": query.replace('"', ""),
+                "filter": f"from_publication_date:{since.isoformat()},to_publication_date:{today.isoformat()}",
+                "sort": "publication_date:desc",
+                "per-page": max_results,
+            },
+        )
+        for item in payload.get("results", []):
+            doi = normalize_space(item.get("doi") or "").replace("https://doi.org/", "")
+            authors = [
+                auth.get("author", {}).get("display_name", "")
+                for auth in item.get("authorships", [])
+                if auth.get("author", {}).get("display_name")
+            ]
+            source = item.get("primary_location", {}).get("source") or {}
+            papers.append(
+                Paper(
+                    id=item.get("id", ""),
+                    source="OpenAlex",
+                    title=normalize_space(item.get("display_name", "")),
+                    authors=authors,
+                    published=parse_date(item.get("publication_date", "")),
+                    updated=parse_date(item.get("updated_date", "")),
+                    venue=normalize_space(source.get("display_name", "")),
+                    url=item.get("doi") or item.get("id", ""),
+                    pdf_url=((item.get("primary_location") or {}).get("pdf_url") or ""),
+                    doi=doi,
+                    abstract=rebuild_openalex_abstract(item.get("abstract_inverted_index") or {}),
+                    topics=[],
+                    query=query,
+                )
+            )
+    return papers
+
+
+def fetch_crossref(config: Dict, today: date) -> List[Paper]:
+    papers: List[Paper] = []
+    max_results = int(config["search"]["max_results_per_query"])
+    since = today - timedelta(days=int(config["search"]["days_back"]))
+    queries = build_query_groups(config)["crossref"]
+
+    for query in queries:
+        payload = get_json(
+            "https://api.crossref.org/works",
+            {
+                "query.title": query,
+                "rows": max_results,
+                "sort": "published",
+                "order": "desc",
+                "filter": f"from-pub-date:{since.isoformat()},until-pub-date:{today.isoformat()}",
+                "mailto": "your_email@example.com"
+            },
+            pause=1.0,
+        )
+        for item in payload.get("message", {}).get("items", []):
+            title = normalize_space(" ".join(item.get("title", [])))
+            authors = []
+            for a in item.get("author", []):
+                name = normalize_space(f"{a.get('given', '')} {a.get('family', '')}")
+                if name:
+                    authors.append(name)
+
+            published_parts = (
+                item.get("published-print", {}).get("date-parts")
+                or item.get("published-online", {}).get("date-parts")
+                or item.get("created", {}).get("date-parts")
+                or []
+            )
+            pub_date = ""
+            if published_parts and published_parts[0]:
+                parts = published_parts[0]
+                year = str(parts[0])
+                month = f"{parts[1]:02d}" if len(parts) > 1 else "01"
+                day = f"{parts[2]:02d}" if len(parts) > 2 else "01"
+                pub_date = f"{year}-{month}-{day}"
+
+            doi = normalize_space(item.get("DOI", ""))
+            url = f"https://doi.org/{doi}" if doi else item.get("URL", "")
+            venue = normalize_space(" ".join(item.get("container-title", [])))
+
+            papers.append(
+                Paper(
+                    id=doi or item.get("URL", ""),
+                    source="Crossref",
+                    title=title,
+                    authors=authors,
+                    published=pub_date,
+                    updated=parse_date(item.get("created", {}).get("date-time", "")),
+                    venue=venue,
+                    url=url,
+                    pdf_url="",
+                    doi=doi,
+                    abstract=extract_crossref_abstract(item.get("abstract", "")),
+                    topics=[],
+                    query=query,
+                )
+            )
+    return papers
+
+
+def fetch_semanticscholar(config: Dict, today: date) -> List[Paper]:
+    papers: List[Paper] = []
+    max_results = int(config["search"]["max_results_per_query"])
+    days_back = int(config["search"]["days_back"])
+    queries = build_query_groups(config)["semanticscholar"]
+
+    fields = "paperId,title,abstract,authors,year,venue,url,openAccessPdf,externalIds"
+
+    for query in queries:
+        payload = get_json(
+            "https://api.semanticscholar.org/graph/v1/paper/search",
+            {
+                "query": query,
+                "limit": max_results,
+                "fields": fields,
+            },
+            pause=1.0,
+        )
+        for item in payload.get("data", []):
+            year = item.get("year")
+            published = f"{year}-01-01" if year else ""
+            if not is_recent(published, days_back, today):
+                continue
+
+            external_ids = item.get("externalIds", {}) or {}
+            doi = normalize_space(external_ids.get("DOI", ""))
+            pdf_url = ((item.get("openAccessPdf") or {}).get("url") or "")
+
+            papers.append(
+                Paper(
+                    id=item.get("paperId", ""),
+                    source="Semantic Scholar",
+                    title=normalize_space(item.get("title", "")),
+                    authors=[normalize_space(a.get("name", "")) for a in item.get("authors", []) if a.get("name")],
+                    published=published,
+                    updated="",
+                    venue=normalize_space(item.get("venue", "")),
+                    url=item.get("url", "") or (f"https://doi.org/{doi}" if doi else ""),
+                    pdf_url=pdf_url,
+                    doi=doi,
+                    abstract=normalize_space(item.get("abstract", "")),
+                    topics=[],
+                    query=query,
+                )
+            )
+    return papers
+
+
 def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> str:
     title = config["project"]["name"]
     description = config["project"]["description"]
+
     lines = [
         f"# {title}",
         "",
@@ -319,23 +476,38 @@ def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> 
         "",
         f"Last updated: {generated_at.strftime('%Y-%m-%d %H:%M UTC')}",
         "",
-        "This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs, currently arXiv and OpenAlex.",
+        "This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs.",
+        "",
+        "## Included Sources",
+        "",
+        ", ".join([name for name, enabled in config["sources"].items() if enabled]),
         "",
         "## Recent Papers",
         "",
     ]
+
     if not papers:
         lines.extend(["No papers found yet.", ""])
         return "\n".join(lines)
 
-    sorted_papers = sorted(papers, key=lambda item: (item.published or "", item.updated or "", item.title), reverse=True)
+    sorted_papers = sorted(
+        papers,
+        key=lambda item: (item.published or "", item.updated or "", item.title),
+        reverse=True,
+    )
+
     by_topic: Dict[str, List[Paper]] = {}
     for paper in sorted_papers:
         primary = paper.topics[0] if paper.topics else "Uncategorized"
         by_topic.setdefault(primary, []).append(paper)
 
     for topic in sorted(by_topic):
-        lines.extend([f"### {topic}", "", "| Date | Paper | Authors | Source | Links |", "| --- | --- | --- | --- | --- |"])
+        lines.extend([
+            f"### {topic}",
+            "",
+            "| Date | Paper | Authors | Source | Links |",
+            "| --- | --- | --- | --- | --- |"
+        ])
         for paper in by_topic[topic]:
             links = []
             if paper.url:
@@ -344,40 +516,43 @@ def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> 
                 links.append(f"[PDF]({paper.pdf_url})")
             if paper.doi:
                 links.append(f"[DOI](https://doi.org/{paper.doi})")
+
             title_cell = html.escape(paper.title)
             venue = html.escape(paper.venue or paper.source)
+
             lines.append(
                 f"| {paper.published or ''} | {title_cell} | {html.escape(short_authors(paper.authors))} | {venue} | {' / '.join(links)} |"
             )
         lines.append("")
 
-    lines.extend(
-        [
-            "## Search Scope",
-            "",
-            "Keywords live in `config.json`. Edit the query list and topic rules to make the tracker broader or stricter.",
-            "",
-            "## Local Update",
-            "",
-            "```bash",
-            "python scripts/update_papers.py",
-            "```",
-            "",
-            "Generated files:",
-            "",
-            "- `README.md`",
-            "- `data/papers.json`",
-            "- `data/papers.csv`",
-            "- `data/run_summary.json`",
-            "",
-        ]
-    )
+    lines.extend([
+        "## Search Scope",
+        "",
+        "Keywords and source-specific queries live in `config.json`.",
+        "",
+        "## Local Update",
+        "",
+        "```bash",
+        "python scripts/update_papers.py",
+        "```",
+        "",
+        "Generated files:",
+        "",
+        "- `README.md`",
+        "- `data/papers.json`",
+        "- `data/papers.csv`",
+        "- `data/run_summary.json`",
+        "",
+    ])
     return "\n".join(lines)
 
 
 def write_csv(papers: List[Paper], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = ["published", "title", "authors", "source", "venue", "url", "pdf_url", "doi", "topics", "query", "abstract"]
+    fieldnames = [
+        "published", "title", "authors", "source", "venue",
+        "url", "pdf_url", "doi", "topics", "query", "abstract"
+    ]
     with path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -419,20 +594,30 @@ def main() -> int:
         fetched.extend(fetch_arxiv(config, today))
     if config["sources"].get("openalex", True):
         fetched.extend(fetch_openalex(config, today))
+    if config["sources"].get("crossref", False):
+        fetched.extend(fetch_crossref(config, today))
+    if config["sources"].get("semanticscholar", False):
+        fetched.extend(fetch_semanticscholar(config, today))
 
     fetched = [paper for paper in fetched if matches_scope(paper, config)]
     existing = load_existing(Path(args.data))
     candidates = [paper for paper in [*existing, *fetched] if matches_scope(paper, config)]
+
     for paper in candidates:
         paper.topics = assign_topics(paper, config.get("topic_rules", {}))
 
     merged = dedupe(candidates)
     merged = prune_old(merged, int(config["search"]["keep_recent_days"]), today)
-    merged = sorted(merged, key=lambda item: (item.published or "", item.updated or "", item.title), reverse=True)
+    merged = sorted(
+        merged,
+        key=lambda item: (item.published or "", item.updated or "", item.title),
+        reverse=True,
+    )
 
     write_json(Path(args.data), [paper.to_dict() for paper in merged])
     write_csv(merged, Path(args.csv))
     generated_at = datetime.now(timezone.utc)
+
     Path(args.readme).write_text(render_readme(config, merged, generated_at), encoding="utf-8")
     write_json(
         Path(args.summary),
@@ -449,7 +634,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
-
-
-
