@@ -140,7 +140,7 @@
     .stats {
       margin-top: 24px;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 14px;
     }
 
@@ -216,7 +216,7 @@
       padding: 13px 14px;
       font-size: 14px;
       background: #fff;
-      min-width: 190px;
+      min-width: 220px;
       cursor: pointer;
     }
 
@@ -300,6 +300,8 @@
       font-size: 21px;
       line-height: 1.45;
       font-weight: 700;
+      flex: 1;
+      min-width: 280px;
     }
 
     .paper-badges {
@@ -337,11 +339,21 @@
       border-color: #e5e7eb;
     }
 
+    .badge-source {
+      background: #f8fafc;
+      color: #475569;
+      border-color: #e2e8f0;
+    }
+
     .paper-meta {
       margin-top: 12px;
       color: var(--subtext);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
+    }
+
+    .paper-meta strong {
+      color: #374151;
     }
 
     .paper-desc {
@@ -350,6 +362,25 @@
       font-size: 14px;
       line-height: 1.75;
       white-space: pre-wrap;
+    }
+
+    .paper-topics {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .topic-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 600;
     }
 
     .paper-actions {
@@ -394,11 +425,19 @@
       text-align: center;
     }
 
-    @media (max-width: 960px) {
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    code {
+      background: #eef2ff;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
 
+    @media (max-width: 1080px) {
+      .stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 960px) {
       .brand-text h1 {
         font-size: 30px;
       }
@@ -432,7 +471,7 @@
       }
 
       .stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .brand-text h1 {
@@ -479,6 +518,14 @@
           <div class="stat-value" id="stat-task">0</div>
         </div>
         <div class="stat-card">
+          <div class="stat-label">Data</div>
+          <div class="stat-value" id="stat-data">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Benchmark</div>
+          <div class="stat-value" id="stat-benchmark">0</div>
+        </div>
+        <div class="stat-card">
           <div class="stat-label">Application</div>
           <div class="stat-value" id="stat-app">0</div>
         </div>
@@ -491,7 +538,7 @@
       <div class="search-row">
         <div class="search-box">
           <span class="search-icon">🔎</span>
-          <input type="text" id="search" placeholder="Search by title, authors, keyword..." />
+          <input type="text" id="search" placeholder="Search by title, authors, abstract, venue, topics..." />
         </div>
 
         <select id="sortSelect" class="sort-select">
@@ -538,8 +585,17 @@
       return safeText(str).toLowerCase();
     }
 
+    function escapeHtml(str) {
+      return safeText(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
     function getYear(paper) {
-      const possibleKeys = ["year", "published_year", "publication_year", "date", "published"];
+      const possibleKeys = ["published", "updated", "year", "published_year", "publication_year", "date"];
       for (const key of possibleKeys) {
         if (paper[key]) {
           const match = String(paper[key]).match(/\b(19|20)\d{2}\b/);
@@ -549,36 +605,27 @@
       return null;
     }
 
-    function getUrl(paper) {
-      return (
-        paper.url ||
-        paper.link ||
-        paper.paper_url ||
-        paper.arxiv_url ||
-        paper.pdf_url ||
-        "#"
-      );
-    }
-
     function getAuthors(paper) {
       if (Array.isArray(paper.authors)) {
         return paper.authors.join(", ");
       }
-      return (
-        paper.authors ||
-        paper.author ||
-        paper.creator ||
-        "Unknown authors"
-      );
+      return paper.authors || "Unknown authors";
     }
 
     function getSummary(paper) {
-      return (
-        paper.summary ||
-        paper.abstract ||
-        paper.description ||
-        ""
-      );
+      return paper.abstract || paper.summary || paper.description || "";
+    }
+
+    function getVenue(paper) {
+      return paper.venue || paper.source || "";
+    }
+
+    function getTopics(paper) {
+      if (Array.isArray(paper.topics)) return paper.topics;
+      if (typeof paper.topics === "string" && paper.topics.trim()) {
+        return paper.topics.split(";").map(s => s.trim()).filter(Boolean);
+      }
+      return [];
     }
 
     function getCategoryByPaper(paper) {
@@ -586,15 +633,15 @@
     }
 
     function updateStats(data) {
-      const total = data.length;
-      const fm = data.filter(p => getCategoryByPaper(p) === "Foundation Model").length;
-      const task = data.filter(p => getCategoryByPaper(p) === "Downstream Task").length;
-      const app = data.filter(p => getCategoryByPaper(p) === "Application").length;
+      const countByCategory = (name) =>
+        data.filter(p => getCategoryByPaper(p) === name).length;
 
-      document.getElementById("stat-total").textContent = total;
-      document.getElementById("stat-fm").textContent = fm;
-      document.getElementById("stat-task").textContent = task;
-      document.getElementById("stat-app").textContent = app;
+      document.getElementById("stat-total").textContent = data.length;
+      document.getElementById("stat-fm").textContent = countByCategory("Foundation Model");
+      document.getElementById("stat-task").textContent = countByCategory("Downstream Task");
+      document.getElementById("stat-data").textContent = countByCategory("Data");
+      document.getElementById("stat-benchmark").textContent = countByCategory("Benchmark");
+      document.getElementById("stat-app").textContent = countByCategory("Application");
     }
 
     function sortPapers(list, sortValue) {
@@ -613,6 +660,25 @@
       return arr;
     }
 
+    function buildActionLinks(paper) {
+      const links = [];
+
+      if (paper.url) {
+        links.push(`<a class="paper-link" href="${escapeHtml(paper.url)}" target="_blank" rel="noopener noreferrer">🔗 Open Page</a>`);
+      }
+
+      if (paper.pdf_url) {
+        links.push(`<a class="paper-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener noreferrer">📄 Open PDF</a>`);
+      }
+
+      if (paper.doi) {
+        const doiUrl = `https://doi.org/${paper.doi}`;
+        links.push(`<a class="paper-link" href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener noreferrer">🧷 DOI</a>`);
+      }
+
+      return links.join("");
+    }
+
     function renderPapers() {
       const container = document.getElementById("papers");
       const hint = document.getElementById("resultHint");
@@ -626,11 +692,17 @@
         const authors = normalize(getAuthors(paper));
         const summary = normalize(getSummary(paper));
         const category = getCategoryByPaper(paper);
+        const venue = normalize(getVenue(paper));
+        const topics = normalize(getTopics(paper).join(" "));
+        const source = normalize(paper.source);
 
         const matchKeyword =
           title.includes(keyword) ||
           authors.includes(keyword) ||
-          summary.includes(keyword);
+          summary.includes(keyword) ||
+          venue.includes(keyword) ||
+          topics.includes(keyword) ||
+          source.includes(keyword);
 
         const matchCategory =
           currentCategory === "all" || category === currentCategory;
@@ -639,7 +711,6 @@
       });
 
       filtered = sortPapers(filtered, sortValue);
-
       hint.textContent = `${filtered.length} paper(s) found`;
 
       if (!filtered.length) {
@@ -656,10 +727,30 @@
       filtered.forEach(paper => {
         const category = getCategoryByPaper(paper);
         const year = getYear(paper);
-        const title = safeText(paper.title || "Untitled Paper");
-        const authors = safeText(getAuthors(paper));
-        const summary = safeText(getSummary(paper));
-        const url = getUrl(paper);
+        const title = escapeHtml(paper.title || "Untitled Paper");
+        const authors = escapeHtml(getAuthors(paper));
+        const summary = escapeHtml(getSummary(paper));
+        const venue = escapeHtml(paper.venue || "");
+        const source = escapeHtml(paper.source || "");
+        const published = escapeHtml(paper.published || "");
+        const updated = escapeHtml(paper.updated || "");
+        const topics = getTopics(paper);
+
+        const topicHtml = topics.length
+          ? `
+            <div class="paper-topics">
+              ${topics.map(t => `<span class="topic-tag">${escapeHtml(t)}</span>`).join("")}
+            </div>
+          `
+          : "";
+
+        const metaLines = [
+          `<strong>Authors:</strong> ${authors}`,
+          venue ? `<strong>Venue:</strong> ${venue}` : "",
+          source ? `<strong>Source:</strong> ${source}` : "",
+          published ? `<strong>Published:</strong> ${published}` : "",
+          updated ? `<strong>Updated:</strong> ${updated}` : ""
+        ].filter(Boolean).join("<br>");
 
         const card = document.createElement("div");
         card.className = "paper-card";
@@ -668,19 +759,22 @@
           <div class="paper-top">
             <h3 class="paper-title">${title}</h3>
             <div class="paper-badges">
-              <span class="badge badge-category">${category}</span>
+              <span class="badge badge-category">${escapeHtml(category)}</span>
               ${year ? `<span class="badge badge-year">${year}</span>` : `<span class="badge badge-other">Year N/A</span>`}
+              ${source ? `<span class="badge badge-source">${source}</span>` : ""}
             </div>
           </div>
 
           <div class="paper-meta">
-            <strong>Authors:</strong> ${authors}
+            ${metaLines}
           </div>
 
           ${summary ? `<div class="paper-desc">${summary}</div>` : ""}
 
+          ${topicHtml}
+
           <div class="paper-actions">
-            <a class="paper-link" href="${url}" target="_blank">🔗 Open Paper</a>
+            ${buildActionLinks(paper)}
           </div>
         `;
 
@@ -705,7 +799,7 @@
 
     fetch("data/papers.json")
       .then(res => {
-        if (!res.ok) throw new Error("Failed to load papers.json");
+        if (!res.ok) throw new Error("Failed to load data/papers.json");
         return res.json();
       })
       .then(data => {
@@ -719,7 +813,7 @@
           <div class="empty-state">
             <div style="font-size: 34px; margin-bottom: 10px;">⚠️</div>
             <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Data loading failed</div>
-            <div>${error.message}</div>
+            <div>${escapeHtml(error.message)}</div>
           </div>
         `;
       });
