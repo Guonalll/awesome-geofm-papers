@@ -1,8 +1,8 @@
-﻿# Awesome GeoFM Papers
+# Awesome GeoFM Papers
 
 Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.
 
-Last updated: 2026-04-07 12:15 UTC
+Last updated: 2026-04-08 08:44 UTC
 
 This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs, currently arXiv and OpenAlex.
 
@@ -12,6 +12,9 @@ This repository is updated automatically by GitHub Actions. It tracks GeoFM-rela
 
 | Date | Paper | Authors | Source | Links |
 | --- | --- | --- | --- | --- |
+| 2026-04-07 | A Unified Foundation Model for All-in-One Multi-Modal Remote Sensing Image Restoration and Fusion with Language Prompting | Yongchuan Cui, Peng Liu | arXiv | [Page](http://arxiv.org/abs/2604.05629v1) / [PDF](https://arxiv.org/pdf/2604.05629v1) |
+| 2026-04-06 | Foundation Models Applied to Infectious Disease Imaging: A Scoping Review of Architectures, Applications, and Gaps | Hayden Farquhar | Zenodo (CERN European Organization for Nuclear Research) | [Page](https://doi.org/10.5281/zenodo.19436192) / [DOI](https://doi.org/10.5281/zenodo.19436192) |
+| 2026-04-06 | A Comparative Deep Learning Approach to Battle Damage Detection with Foundation Model Architectures and Open Access Sentinel-1 SAR Data | Benjamin Woodier, Stephen Law | Zenodo (CERN European Organization for Nuclear Research) | [Page](https://doi.org/10.5281/zenodo.19437951) / [DOI](https://doi.org/10.5281/zenodo.19437951) |
 | 2026-04-05 | HighFM: Towards a Foundation Model for Learning Representations from High-Frequency Earth Observation Data | Stella Girtsou, Konstantinos Alexis, Giorgos Giannopoulos, Harris Kontoes | arXiv | [Page](http://arxiv.org/abs/2604.04306v1) / [PDF](https://arxiv.org/pdf/2604.04306v1) |
 | 2026-04-04 | Spatiotemporal Interpolation of GEDI Biomass with Calibrated Uncertainty | Robin Young, Srinivasan Keshav | arXiv | [Page](http://arxiv.org/abs/2604.03874v1) / [PDF](https://arxiv.org/pdf/2604.03874v1) |
 | 2026-04-03 | Smart Transfer: Leveraging Vision Foundation Model for Rapid Building Damage Mapping with Post-Earthquake VHR Imagery | Hao Li, Liwei Zou, Wenping Yin, Gulsen Taskin et al. | arXiv | [Page](http://arxiv.org/abs/2604.02627v1) / [PDF](https://arxiv.org/pdf/2604.02627v1) |
@@ -29,6 +32,7 @@ This repository is updated automatically by GitHub Actions. It tracks GeoFM-rela
 
 | Date | Paper | Authors | Source | Links |
 | --- | --- | --- | --- | --- |
+| 2026-04-03 | VLM-Nav: Mapless UAV navigation using monocular vision driven by vision-language models | Gobinda Chandra Sarker, AKM Azad, Sejuti Rahman, Md Mehedi Hasan | PLoS ONE | [Page](https://doi.org/10.1371/journal.pone.0345778) / [DOI](https://doi.org/10.1371/journal.pone.0345778) |
 | 2026-04-02 | ProVG: Progressive Visual Grounding via Language Decoupling for Remote Sensing Imagery | Ke Li, Ting Wang, Di Wang, Yongshan Zhu et al. | arXiv (Cornell University) | [Page](https://doi.org/10.48550/arxiv.2604.01893) / [DOI](https://doi.org/10.48550/arxiv.2604.01893) |
 | 2026-04-01 | Causal-SAM: Enhancing Segment Anything for Remote Sensing Instance Segmentation via Causal Representation Learning | Yunhui Zhu, Buliao Huang, Feng Zhou, Yangyang Liu | Knowledge-Based Systems | [Page](https://doi.org/10.1016/j.knosys.2026.115915) / [DOI](https://doi.org/10.1016/j.knosys.2026.115915) |
 | 2026-04-01 | Continual Vision-Language Learning for Remote Sensing: Benchmarking and Analysis | Xingxing Weng, Ruifeng Ni, Chao Pang, XiangYu Hao et al. | arXiv | [Page](http://arxiv.org/abs/2604.00820v1) / [PDF](https://arxiv.org/pdf/2604.00820v1) |
@@ -53,5 +57,3 @@ Generated files:
 - `data/papers.json`
 - `data/papers.csv`
 - `data/run_summary.json`
-
-

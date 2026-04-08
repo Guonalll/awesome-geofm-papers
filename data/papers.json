@@ -1,5 +1,70 @@
 [
   {
+    "id": "2604.05629v1",
+    "source": "arXiv",
+    "title": "A Unified Foundation Model for All-in-One Multi-Modal Remote Sensing Image Restoration and Fusion with Language Prompting",
+    "authors": [
+      "Yongchuan Cui",
+      "Peng Liu"
+    ],
+    "published": "2026-04-07",
+    "updated": "2026-04-07",
+    "venue": "arXiv",
+    "url": "http://arxiv.org/abs/2604.05629v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.05629v1",
+    "doi": "",
+    "abstract": "Remote sensing imagery suffers from clouds, haze, noise, resolution limits, and sensor heterogeneity. Existing restoration and fusion approaches train separate models per degradation type. In this work, we present Language-conditioned Large-scale Remote Sensing restoration model (LLaRS), the first unified foundation model for multi-modal and multi-task remote sensing low-level vision. LLaRS employs Sinkhorn-Knopp optimal transport to align heterogeneous bands into semantically matched slots, routes features through three complementary mixture-of-experts layers (convolutional experts for spatial patterns, channel-mixing experts for spectral fidelity, and attention experts with low-rank adapters for global context), and stabilizes joint training via step-level dynamic weight adjustment. To train LLaRS, we construct LLaRS1M, a million-scale multi-task dataset spanning eleven restoration and enhancement tasks, integrating real paired observations and controlled synthetic degradations with diverse natural language prompts. Experiments show LLaRS consistently outperforms seven competitive models, and parameter-efficient finetuning experiments demonstrate strong transfer capability and adaptation efficiency on unseen data. Repo: https://github.com/yc-cui/LLaRS",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7150848404",
+    "source": "OpenAlex",
+    "title": "Foundation Models Applied to Infectious Disease Imaging: A Scoping Review of Architectures, Applications, and Gaps",
+    "authors": [
+      "Hayden Farquhar"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-07",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.19436192",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.19436192",
+    "abstract": "Foundation models — large-scale pretrained architectures including vision transformers, vision-language models, and segment anything models — have reshaped medical imaging artificial intelligence since 2020. No review has examined their application specifically to infectious disease imaging, a domain with distinct challenges including emerging pathogens, resource-limited deployment settings, and diverse imaging modalities. This scoping review followed JBI methodology and PRISMA-ScR reporting guidelines. Six databases (PubMed, Embase, Scopus, IEEE Xplore, arXiv, medRxiv/bioRxiv) were searched up to March 2026. Title/abstract screening used AI-assisted methods with 20% manual validation (Cohen's kappa = 0.858). Data were charted on disease, imaging modality, model architecture, clinical task, and geographic origin. From 5,480 identified records, 634 studies were included after deduplication and two-stage screening. COVID-19 dominated (61.2% of studies), followed by pneumonia (47.3%) and tuberculosis (16.1%). Chest radiography (62.6%) and computed tomography (30.1%) accounted for 93% of imaging modalities, while microscopy — the primary diagnostic tool for malaria and parasitic infections — represented only 5.5%. Vision transformers were the most common architecture (53.6%), with self-supervised learning (16.2%) and Swin transformers (14.7%) following. Segment anything models (0.6%) and CLIP-based approaches (1.3%) remained rare. China (22.9%) and India (17.2%) contributed the most studies, while Sub-Saharan Africa — bearing the highest infectious disease burden globally — contributed fewer than 2.5%. No prospective validation or deployed clinical studies were identified. Foundation model research in infectious disease imaging is growing rapidly but remains concentrated on COVID-19, chest imaging, and vision transformer architectures. Critical gaps exist for neglected tropical diseases, non-radiographic modalities (microscopy, dermoscopy), and newer foundation model paradigms (SAM, CLIP, diffusion models). The geographic mismatch between research activity and disease burden raises equity concerns.",
+    "topics": [
+      "Foundation Models",
+      "Vision-Language",
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7150984711",
+    "source": "OpenAlex",
+    "title": "A Comparative Deep Learning Approach to Battle Damage Detection with Foundation Model Architectures and Open Access Sentinel-1 SAR Data",
+    "authors": [
+      "Benjamin Woodier",
+      "Stephen Law"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-07",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.19437951",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.19437951",
+    "abstract": "Building damage assessment is vital for humanitarian responses, yet timely SAR data presents challenges like speckle and class imbalance. Despite advances in Earth Observation Foundation Models(EO-FM), they remain largely poorly validated for distribution-sparse and challenging use cases like battle damage detection. This study addresses this gap by evaluating EO-FM for Sentinel-1 SAR battle damage assessment against statistical and deep learning baselines. Using a multi-city dataset, we compared U-Nets against Copernicus-FM, testing composite losses and Siamese architectures. Results show that while foundation models offer generalisability, they underperform on rare-class detection compared to Siamese U-Nets. Siamese U-Net Classifiers achieved an F1 of 0.81 versus Copernicus-FM’s 0.14. This shows that foundation models require task-aligned pretraining and tokenisation for automated precision monitoring.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing"
+    ],
+    "query": "\"Earth observation foundation model\""
+  },
+  {
     "id": "2604.04306v1",
     "source": "arXiv",
     "title": "HighFM: Towards a Foundation Model for Learning Representations from High-Frequency Earth Observation Data",
@@ -45,6 +110,30 @@
       "Geospatial AI"
     ],
     "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7148733859",
+    "source": "OpenAlex",
+    "title": "VLM-Nav: Mapless UAV navigation using monocular vision driven by vision-language models",
+    "authors": [
+      "Gobinda Chandra Sarker",
+      "AKM Azad",
+      "Sejuti Rahman",
+      "Md Mehedi Hasan"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-07",
+    "venue": "PLoS ONE",
+    "url": "https://doi.org/10.1371/journal.pone.0345778",
+    "pdf_url": "",
+    "doi": "10.1371/journal.pone.0345778",
+    "abstract": "Autonomous vehicles, such as Unmanned Aerial Vehicles (UAVs), have the potential to completely reshape various industries such as parcel delivery, agriculture, surveillance, monitoring, and search-and-rescue missions. Consequently, the demand for safe, cost-effective, and intelligent navigation systems is crucial to ensure reliable performance in complex and dynamic environments. In this study, we propose a novel vision-based UAV navigation method that integrates depthmap estimation with a Vision-Language Model (VLM) for efficient obstacle avoidance and path planning. The system processes RGB images captured by the UAV, transforming them into depth maps using DepthAnything-V2, a powerful zero-shot depth estimator. These depth maps are then analyzed by the VLM, which detects nearby obstacles and plans avoidance maneuvers. We have explored the Gemini-flash and GPT-4o models as VLM in our study. A fully connected network integrates the VLM output with the UAV's relative heading angle to predict the optimal course of action, enabling the UAV to dynamically navigate complex environments toward its target. The system's effectiveness is validated through simulations in AirSim using Blocks and the Downtown West environment. The UAV consistently reaches its destination, avoiding obstacles and achieving a near-perfect task completion rate of 0.98. By eliminating the need for costly sensors such as LiDAR and operating without pre-existing maps, our solution provides a cost-efficient, generalizable approach to real-time UAV navigation, especially in unfamiliar or dynamic settings, and highlights emerging trends in autonomous systems research that utilize VLMs.",
+    "topics": [
+      "Remote Sensing",
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "query": "\"vision-language\" \"remote sensing\""
   },
   {
     "id": "2604.02627v1",
