@@ -28,6 +28,7 @@
       "Vision-Language",
       "Segmentation"
     ],
+    "category": "Data",
     "query": "\"remote sensing foundation model\""
   },
   {
@@ -50,6 +51,7 @@
       "Remote Sensing",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"remote sensing foundation model\""
   },
   {
@@ -71,6 +73,7 @@
       "Foundation Models",
       "Remote Sensing"
     ],
+    "category": "Data",
     "query": "\"Earth observation foundation model\""
   },
   {
@@ -93,6 +96,7 @@
       "Vision-Language",
       "Geospatial AI"
     ],
+    "category": "Foundation Model",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -117,6 +121,7 @@
       "Remote Sensing",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -142,6 +147,7 @@
       "Remote Sensing",
       "Geospatial AI"
     ],
+    "category": "Foundation Model",
     "query": "\"large multimodal model\" \"remote sensing\""
   },
   {
@@ -165,6 +171,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Foundation Model",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -189,6 +196,7 @@
       "Vision-Language",
       "Geospatial AI"
     ],
+    "category": "Application",
     "query": "\"vision-language\" \"remote sensing\""
   },
   {
@@ -215,6 +223,7 @@
       "Foundation Models",
       "Geospatial AI"
     ],
+    "category": "Foundation Model",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -246,6 +255,7 @@
       "Remote Sensing",
       "Segmentation"
     ],
+    "category": "Data",
     "query": "\"remote sensing foundation model\""
   },
   {
@@ -275,6 +285,7 @@
       "Remote Sensing",
       "Geospatial AI"
     ],
+    "category": "Benchmark",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -303,6 +314,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Benchmark",
     "query": "\"vision-language\" \"remote sensing\""
   },
   {
@@ -326,6 +338,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -350,6 +363,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"Earth observation foundation model\""
   },
   {
@@ -373,6 +387,7 @@
       "Remote Sensing",
       "Segmentation"
     ],
+    "category": "Downstream Task",
     "query": "\"segment anything\" \"remote sensing\""
   },
   {
@@ -400,6 +415,7 @@
       "Remote Sensing",
       "Vision-Language"
     ],
+    "category": "Benchmark",
     "query": "\"vision-language\" \"remote sensing\""
   },
   {
@@ -426,6 +442,7 @@
       "Foundation Models",
       "Remote Sensing"
     ],
+    "category": "Data",
     "query": "\"Earth observation foundation model\""
   },
   {
@@ -452,6 +469,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"vision-language\" \"remote sensing\""
   },
   {
@@ -481,6 +499,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"remote sensing foundation model\""
   },
   {
@@ -507,6 +526,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"remote sensing foundation model\""
   },
   {
@@ -541,6 +561,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -567,6 +588,7 @@
       "Vision-Language",
       "Geospatial AI"
     ],
+    "category": "Benchmark",
     "query": "\"large vision model\" \"remote sensing\""
   },
   {
@@ -593,6 +615,7 @@
       "Vision-Language",
       "Geospatial AI"
     ],
+    "category": "Application",
     "query": "\"vision-language\" \"remote sensing\""
   },
   {
@@ -618,6 +641,7 @@
       "Segmentation",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"geospatial foundation model\""
   },
   {
@@ -641,6 +665,7 @@
       "Vision-Language",
       "Geospatial AI"
     ],
+    "category": "Data",
     "query": "\"vision-language\" \"remote sensing\""
   }
 ]
