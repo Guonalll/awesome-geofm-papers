@@ -8,7 +8,7 @@
     "arxiv": true,
     "openalex": true,
     "crossref": true,
-    "semanticscholar": true
+    "semanticscholar": false
   },
   "search": {
     "days_back": 14,
