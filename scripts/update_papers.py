@@ -10,7 +10,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode, quote
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
@@ -33,6 +33,7 @@ class Paper:
     doi: str
     abstract: str
     topics: List[str]
+    category: str
     query: str
 
     def to_dict(self) -> Dict:
@@ -49,6 +50,7 @@ class Paper:
             "doi": self.doi,
             "abstract": self.abstract,
             "topics": self.topics,
+            "category": self.category,
             "query": self.query,
         }
 
@@ -157,7 +159,7 @@ def should_exclude(text: str, config: Dict) -> bool:
     return any(term.lower() in haystack for term in exclude_terms)
 
 
-def matches_scope(paper: Paper, config: Dict) -> bool:
+def matches_scope(paper: "Paper", config: Dict) -> bool:
     text = f"{paper.title} {paper.abstract} {paper.venue}".lower()
 
     if should_exclude(text, config):
@@ -175,17 +177,68 @@ def matches_scope(paper: Paper, config: Dict) -> bool:
     has_geo = any(term.lower() in text for term in geo_context_terms)
     has_core = any(term.lower() in text for term in core_model_terms)
 
-    # 更稳一点：至少同时满足“模型信号 + 地理场景”
     return (has_must or has_core) and has_geo
 
 
-def assign_topics(paper: Paper, topic_rules: Dict[str, List[str]]) -> List[str]:
+def assign_topics(paper: "Paper", topic_rules: Dict[str, List[str]]) -> List[str]:
     haystack = f"{paper.title} {paper.abstract}".lower()
     topics = [topic for topic, terms in topic_rules.items() if any(term.lower() in haystack for term in terms)]
     return topics or ["Uncategorized"]
 
 
-def paper_keys(paper: Paper) -> List[str]:
+def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] = None) -> str:
+    text = f"{title} {abstract}".lower()
+    topics_text = " ".join(topics or []).lower()
+    full_text = f"{text} {topics_text}"
+
+    # 1) Data
+    if any(k in full_text for k in [
+        "dataset", "data set", "benchmark dataset", "training dataset",
+        "corpus", "data collection", "geobench", "bigearthnet", "sen12ms"
+    ]):
+        return "Data"
+
+    # 2) Benchmark
+    if any(k in full_text for k in [
+        "benchmark", "leaderboard", "evaluation suite", "empirical benchmark",
+        "comprehensive evaluation", "benchmarking"
+    ]):
+        return "Benchmark"
+
+    # 3) Foundation Model
+    if any(k in full_text for k in [
+        "foundation model", "foundation models",
+        "geospatial foundation model", "remote sensing foundation model",
+        "earth observation foundation model",
+        "geofm", "pretrain", "pre-trained", "pretrained",
+        "self-supervised", "self supervised",
+        "masked autoencoder", "mae",
+        "contrastive learning",
+        "general-purpose model", "general purpose model"
+    ]):
+        return "Foundation Model"
+
+    # 4) Application
+    if any(k in full_text for k in [
+        "flood", "urban", "agriculture", "crop", "farmland",
+        "disaster", "landslide", "wildfire", "city", "regional planning",
+        "hydrology", "climate adaptation"
+    ]):
+        return "Application"
+
+    # 5) Downstream Task
+    if any(k in full_text for k in [
+        "segmentation", "classification", "detection",
+        "change detection", "retrieval", "prediction",
+        "mapping", "object detection", "scene classification",
+        "super-resolution", "fusion", "tracking"
+    ]):
+        return "Downstream Task"
+
+    return "Downstream Task"
+
+
+def paper_keys(paper: "Paper") -> List[str]:
     keys = []
     for value in [paper.doi, paper.id, paper.url, paper.title]:
         key = normalize_key(value)
@@ -197,12 +250,12 @@ def paper_keys(paper: Paper) -> List[str]:
     return list(dict.fromkeys(keys))
 
 
-def completeness_score(paper: Paper) -> int:
+def completeness_score(paper: "Paper") -> int:
     fields = [paper.title, paper.authors, paper.published, paper.venue, paper.url, paper.pdf_url, paper.doi, paper.abstract]
     return sum(1 for field in fields if field)
 
 
-def dedupe(papers: Iterable[Paper]) -> List[Paper]:
+def dedupe(papers: Iterable["Paper"]) -> List["Paper"]:
     best: Dict[str, Paper] = {}
     aliases: Dict[str, str] = {}
     for paper in papers:
@@ -218,7 +271,7 @@ def dedupe(papers: Iterable[Paper]) -> List[Paper]:
     return list(best.values())
 
 
-def prune_old(papers: Iterable[Paper], keep_recent_days: int, today: date) -> List[Paper]:
+def prune_old(papers: Iterable["Paper"], keep_recent_days: int, today: date) -> List["Paper"]:
     cutoff = today - timedelta(days=keep_recent_days)
     kept = []
     for paper in papers:
@@ -233,7 +286,7 @@ def prune_old(papers: Iterable[Paper], keep_recent_days: int, today: date) -> Li
     return kept
 
 
-def load_existing(path: Path) -> List[Paper]:
+def load_existing(path: Path) -> List["Paper"]:
     rows = load_json(path, [])
     return [
         Paper(
@@ -249,13 +302,14 @@ def load_existing(path: Path) -> List[Paper]:
             doi=row.get("doi", ""),
             abstract=row.get("abstract", ""),
             topics=row.get("topics", []),
+            category=row.get("category", ""),
             query=row.get("query", ""),
         )
         for row in rows
     ]
 
 
-def fetch_arxiv(config: Dict, today: date) -> List[Paper]:
+def fetch_arxiv(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
     max_results = int(config["search"]["max_results_per_query"])
     days_back = int(config["search"]["days_back"])
@@ -302,13 +356,14 @@ def fetch_arxiv(config: Dict, today: date) -> List[Paper]:
                     doi=normalize_space(entry.findtext("arxiv:doi", default="", namespaces=ARXIV_NS)),
                     abstract=normalize_space(entry.findtext("atom:summary", default="", namespaces=ARXIV_NS)),
                     topics=[],
+                    category="",
                     query=query,
                 )
             )
     return papers
 
 
-def fetch_openalex(config: Dict, today: date) -> List[Paper]:
+def fetch_openalex(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
     max_results = int(config["search"]["max_results_per_query"])
     since = today - timedelta(days=int(config["search"]["days_back"]))
@@ -346,13 +401,14 @@ def fetch_openalex(config: Dict, today: date) -> List[Paper]:
                     doi=doi,
                     abstract=rebuild_openalex_abstract(item.get("abstract_inverted_index") or {}),
                     topics=[],
+                    category="",
                     query=query,
                 )
             )
     return papers
 
 
-def fetch_crossref(config: Dict, today: date) -> List[Paper]:
+def fetch_crossref(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
     max_results = int(config["search"]["max_results_per_query"])
     since = today - timedelta(days=int(config["search"]["days_back"]))
@@ -411,13 +467,14 @@ def fetch_crossref(config: Dict, today: date) -> List[Paper]:
                     doi=doi,
                     abstract=extract_crossref_abstract(item.get("abstract", "")),
                     topics=[],
+                    category="",
                     query=query,
                 )
             )
     return papers
 
 
-def fetch_semanticscholar(config: Dict, today: date) -> List[Paper]:
+def fetch_semanticscholar(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
     max_results = int(config["search"]["max_results_per_query"])
     days_back = int(config["search"]["days_back"])
@@ -459,13 +516,14 @@ def fetch_semanticscholar(config: Dict, today: date) -> List[Paper]:
                     doi=doi,
                     abstract=normalize_space(item.get("abstract", "")),
                     topics=[],
+                    category="",
                     query=query,
                 )
             )
     return papers
 
 
-def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> str:
+def render_readme(config: Dict, papers: List["Paper"], generated_at: datetime) -> str:
     title = config["project"]["name"]
     description = config["project"]["description"]
 
@@ -496,19 +554,19 @@ def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> 
         reverse=True,
     )
 
-    by_topic: Dict[str, List[Paper]] = {}
+    by_category: Dict[str, List[Paper]] = {}
     for paper in sorted_papers:
-        primary = paper.topics[0] if paper.topics else "Uncategorized"
-        by_topic.setdefault(primary, []).append(paper)
+        primary = paper.category or "Uncategorized"
+        by_category.setdefault(primary, []).append(paper)
 
-    for topic in sorted(by_topic):
+    for category in sorted(by_category):
         lines.extend([
-            f"### {topic}",
+            f"### {category}",
             "",
             "| Date | Paper | Authors | Source | Links |",
             "| --- | --- | --- | --- | --- |"
         ])
-        for paper in by_topic[topic]:
+        for paper in by_category[category]:
             links = []
             if paper.url:
                 links.append(f"[Page]({paper.url})")
@@ -547,11 +605,11 @@ def render_readme(config: Dict, papers: List[Paper], generated_at: datetime) -> 
     return "\n".join(lines)
 
 
-def write_csv(papers: List[Paper], path: Path) -> None:
+def write_csv(papers: List["Paper"], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
         "published", "title", "authors", "source", "venue",
-        "url", "pdf_url", "doi", "topics", "query", "abstract"
+        "url", "pdf_url", "doi", "topics", "category", "query", "abstract"
     ]
     with path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -568,6 +626,7 @@ def write_csv(papers: List[Paper], path: Path) -> None:
                     "pdf_url": paper.pdf_url,
                     "doi": paper.doi,
                     "topics": "; ".join(paper.topics),
+                    "category": paper.category,
                     "query": paper.query,
                     "abstract": paper.abstract,
                 }
@@ -605,6 +664,7 @@ def main() -> int:
 
     for paper in candidates:
         paper.topics = assign_topics(paper, config.get("topic_rules", {}))
+        paper.category = classify_paper(paper.title, paper.abstract, paper.topics)
 
     merged = dedupe(candidates)
     merged = prune_old(merged, int(config["search"]["keep_recent_days"]), today)
