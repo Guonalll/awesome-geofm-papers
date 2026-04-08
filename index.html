@@ -349,6 +349,7 @@
       color: #374151;
       font-size: 14px;
       line-height: 1.75;
+      white-space: pre-wrap;
     }
 
     .paper-actions {
@@ -453,7 +454,7 @@
           <h1>Geospatial Foundation Models Hub</h1>
           <p>
             A curated and continuously updated collection of research on geospatial foundation models,
-            remote sensing foundation models, Earth observation intelligence, and related large-model applications.
+            downstream tasks, datasets, benchmarks, and real-world applications.
           </p>
         </div>
       </div>
@@ -470,16 +471,16 @@
           <div class="stat-value" id="stat-total">0</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">GeoFM Papers</div>
-          <div class="stat-value" id="stat-geofm">0</div>
+          <div class="stat-label">Foundation Model</div>
+          <div class="stat-value" id="stat-fm">0</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Remote Sensing</div>
-          <div class="stat-value" id="stat-rs">0</div>
+          <div class="stat-label">Downstream Task</div>
+          <div class="stat-value" id="stat-task">0</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">LLM-related</div>
-          <div class="stat-value" id="stat-llm">0</div>
+          <div class="stat-label">Application</div>
+          <div class="stat-value" id="stat-app">0</div>
         </div>
       </div>
     </div>
@@ -503,10 +504,11 @@
 
       <div class="filters">
         <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="GeoFM">GeoFM</button>
-        <button class="filter-btn" data-category="RS">Remote Sensing</button>
-        <button class="filter-btn" data-category="LLM">LLM</button>
-        <button class="filter-btn" data-category="Other">Other</button>
+        <button class="filter-btn" data-category="Foundation Model">Foundation Model</button>
+        <button class="filter-btn" data-category="Downstream Task">Downstream Task</button>
+        <button class="filter-btn" data-category="Data">Data</button>
+        <button class="filter-btn" data-category="Benchmark">Benchmark</button>
+        <button class="filter-btn" data-category="Application">Application</button>
       </div>
     </div>
   </div>
@@ -559,6 +561,9 @@
     }
 
     function getAuthors(paper) {
+      if (Array.isArray(paper.authors)) {
+        return paper.authors.join(", ");
+      }
       return (
         paper.authors ||
         paper.author ||
@@ -577,56 +582,19 @@
     }
 
     function getCategoryByPaper(paper) {
-      const title = normalize(paper.title);
-      const authors = normalize(getAuthors(paper));
-      const summary = normalize(getSummary(paper));
-      const text = `${title} ${authors} ${summary}`;
-
-      if (
-        text.includes("geofm") ||
-        text.includes("foundation model") ||
-        text.includes("foundation models") ||
-        text.includes("geospatial foundation")
-      ) {
-        return "GeoFM";
-      }
-
-      if (
-        text.includes("remote sensing") ||
-        text.includes("earth observation") ||
-        text.includes("sar") ||
-        text.includes("satellite") ||
-        text.includes("hyperspectral") ||
-        text.includes("multispectral") ||
-        text.includes("sentinel") ||
-        text.includes("landsat")
-      ) {
-        return "RS";
-      }
-
-      if (
-        text.includes("llm") ||
-        text.includes("language model") ||
-        text.includes("vision-language") ||
-        text.includes("large language model") ||
-        text.includes("vlm")
-      ) {
-        return "LLM";
-      }
-
-      return "Other";
+      return safeText(paper.category || "Uncategorized");
     }
 
     function updateStats(data) {
       const total = data.length;
-      const geofm = data.filter(p => getCategoryByPaper(p) === "GeoFM").length;
-      const rs = data.filter(p => getCategoryByPaper(p) === "RS").length;
-      const llm = data.filter(p => getCategoryByPaper(p) === "LLM").length;
+      const fm = data.filter(p => getCategoryByPaper(p) === "Foundation Model").length;
+      const task = data.filter(p => getCategoryByPaper(p) === "Downstream Task").length;
+      const app = data.filter(p => getCategoryByPaper(p) === "Application").length;
 
       document.getElementById("stat-total").textContent = total;
-      document.getElementById("stat-geofm").textContent = geofm;
-      document.getElementById("stat-rs").textContent = rs;
-      document.getElementById("stat-llm").textContent = llm;
+      document.getElementById("stat-fm").textContent = fm;
+      document.getElementById("stat-task").textContent = task;
+      document.getElementById("stat-app").textContent = app;
     }
 
     function sortPapers(list, sortValue) {
