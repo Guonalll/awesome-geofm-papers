@@ -2,7 +2,7 @@
 
 Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.
 
-Last updated: 2026-04-08 12:13 UTC
+Last updated: 2026-04-08 22:27 UTC
 
 This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs.
 
