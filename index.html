@@ -1,39 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>GeoFM Papers</title>
-  <style>
-    body { font-family: Arial; margin: 40px; }
-    h1 { color: #2c3e50; }
-    .paper { margin-bottom: 15px; }
-  </style>
+<meta charset="UTF-8">
+<title>GeoFM Papers</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 40px;
+  background: #f5f7fa;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* 搜索框 */
+#search {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* 分类按钮 */
+.filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+}
+
+.filter button:hover {
+  background: #2980b9;
+}
+
+/* 卡片 */
+.card {
+  background: white;
+  padding: 15px;
+  margin: 15px auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.meta {
+  color: #555;
+  margin-top: 5px;
+}
+
+.link {
+  margin-top: 8px;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>GeoFM Papers</h1>
+<h1>🌍 GeoFM Papers</h1>
+
+<input type="text" id="search" placeholder="🔍 Search papers...">
+
+<div class="filter">
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('GeoFM')">GeoFM</button>
+  <button onclick="filterCategory('RS')">Remote Sensing</button>
+  <button onclick="filterCategory('LLM')">LLM</button>
+</div>
+
 <div id="papers"></div>
 
 <script>
-fetch('data/papers.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('papers');
+let papersData = [];
+let currentCategory = "all";
 
-    data.slice(0, 50).forEach(paper => {
-      const div = document.createElement('div');
-      div.className = 'paper';
+/* 简单分类规则 */
+function getCategory(title) {
+  title = title.toLowerCase();
+  if (title.includes("foundation") || title.includes("geofm")) return "GeoFM";
+  if (title.includes("remote") || title.includes("sar") || title.includes("satellite")) return "RS";
+  if (title.includes("language") || title.includes("llm")) return "LLM";
+  return "Other";
+}
 
-      div.innerHTML = `
-        <b>${paper.title}</b><br>
-        ${paper.authors}<br>
-        <a href="${paper.url}" target="_blank">[Link]</a>
-        <hr>
-      `;
+/* 渲染函数 */
+function renderPapers() {
+  const container = document.getElementById("papers");
+  container.innerHTML = "";
 
-      container.appendChild(div);
-    });
+  let keyword = document.getElementById("search").value.toLowerCase();
+
+  let filtered = papersData.filter(p => {
+    let matchKeyword = p.title.toLowerCase().includes(keyword);
+    let category = getCategory(p.title);
+
+    let matchCategory = (currentCategory === "all" || category === currentCategory);
+
+    return matchKeyword && matchCategory;
   });
+
+  /* 最新在前（假设有year） */
+  filtered.sort((a, b) => (b.year || 0) - (a.year || 0));
+
+  filtered.forEach(p => {
+    let div = document.createElement("div");
+    div.className = "card";
+
+    div.innerHTML = `
+      <div class="title">${p.title}</div>
+      <div class="meta">${p.authors || ""} | ${getCategory(p.title)}</div>
+      <div class="link"><a href="${p.url}" target="_blank">🔗 Paper Link</a></div>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+/* 搜索监听 */
+document.getElementById("search").addEventListener("input", renderPapers);
+
+/* 分类按钮 */
+function filterCategory(cat) {
+  currentCategory = cat;
+  renderPapers();
+}
+
+/* 加载数据 */
+fetch('data/papers.json')
+  .then(res => res.json())
+  .then(data => {
+    papersData = data;
+    renderPapers();
+  });
+
 </script>
 
 </body>
