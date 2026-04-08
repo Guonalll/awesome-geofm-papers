@@ -1,8 +1,14 @@
-﻿{
+{
   "project": {
     "name": "Awesome GeoFM Papers",
     "description": "Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.",
     "homepage": "https://github.com/your-name/awesome-geofm-papers"
+  },
+  "sources": {
+    "arxiv": true,
+    "openalex": true,
+    "crossref": true,
+    "semanticscholar": true
   },
   "search": {
     "days_back": 14,
@@ -10,58 +16,157 @@
     "keep_recent_days": 3650,
     "include_without_abstract_match": false
   },
-  "queries": [
-    "\"geospatial foundation model\"",
-    "\"geographic foundation model\"",
-    "\"GeoFM\"",
-    "\"remote sensing foundation model\"",
-    "\"Earth observation foundation model\"",
-    "\"foundation model\" \"remote sensing\"",
-    "\"foundation model\" \"earth observation\"",
-    "\"vision-language\" \"remote sensing\"",
-    "\"large vision model\" \"remote sensing\"",
-    "\"large multimodal model\" \"remote sensing\"",
-    "\"segment anything\" \"remote sensing\"",
-    "\"self-supervised\" \"remote sensing\" \"foundation model\""
-  ],
-  "must_have_terms": [
-    "geofm",
-    "geo-fm",
-    "geospatial foundation model",
-    "geographic foundation model",
-    "remote sensing foundation model",
-    "earth observation foundation model",
-    "foundation model",
-    "vision-language",
-    "large vision model",
-    "large multimodal model",
-    "segment anything"
-  ],
-  "context_terms": [
-    "geofm",
-    "geo-fm",
-    "geospatial",
-    "geographic",
-    "geoai",
-    "remote sensing",
-    "earth observation",
-    "satellite",
-    "aerial",
-    "hyperspectral",
-    "sar",
-    "spatial",
-    "map"
-  ],
-  "topic_rules": {
-    "Foundation Models": ["foundation model", "geofm", "geo-fm", "pretrain", "self-supervised"],
-    "Remote Sensing": ["remote sensing", "satellite", "earth observation", "aerial", "hyperspectral", "sar"],
-    "Vision-Language": ["vision-language", "multimodal", "language model", "caption", "visual question answering"],
-    "Segmentation": ["segmentation", "segment anything", "sam", "semantic segmentation", "change detection"],
-    "Geospatial AI": ["geospatial", "geoai", "geographic", "spatial", "map"]
+  "keyword_system": {
+    "core_model_terms": [
+      "geofm",
+      "geo-fm",
+      "geospatial foundation model",
+      "geographic foundation model",
+      "remote sensing foundation model",
+      "earth observation foundation model",
+      "foundation model",
+      "vision-language",
+      "large vision model",
+      "large multimodal model",
+      "segment anything",
+      "pretrain",
+      "pretrained",
+      "pre-trained",
+      "self-supervised"
+    ],
+    "geo_context_terms": [
+      "geofm",
+      "geo-fm",
+      "geospatial",
+      "geographic",
+      "geoai",
+      "remote sensing",
+      "earth observation",
+      "satellite",
+      "aerial",
+      "hyperspectral",
+      "sar",
+      "spatial",
+      "map"
+    ],
+    "must_have_any": [
+      "geofm",
+      "geo-fm",
+      "geospatial foundation model",
+      "geographic foundation model",
+      "remote sensing foundation model",
+      "earth observation foundation model",
+      "foundation model",
+      "vision-language",
+      "large vision model",
+      "large multimodal model",
+      "segment anything",
+      "self-supervised"
+    ],
+    "exclude_terms": [
+      "medical imaging",
+      "radiology",
+      "pathology",
+      "molecule",
+      "molecular",
+      "protein",
+      "genomics",
+      "audio-only",
+      "speech recognition",
+      "robot manipulation"
+    ]
   },
-  "sources": {
-    "arxiv": true,
-    "openalex": true
+  "queries": {
+    "general": [
+      "\"geospatial foundation model\"",
+      "\"geographic foundation model\"",
+      "\"GeoFM\"",
+      "\"remote sensing foundation model\"",
+      "\"Earth observation foundation model\"",
+      "\"foundation model\" \"remote sensing\"",
+      "\"foundation model\" \"earth observation\"",
+      "\"vision-language\" \"remote sensing\"",
+      "\"large vision model\" \"remote sensing\"",
+      "\"large multimodal model\" \"remote sensing\"",
+      "\"segment anything\" \"remote sensing\"",
+      "\"self-supervised\" \"remote sensing\" \"foundation model\""
+    ],
+    "arxiv": [
+      "\"geospatial foundation model\"",
+      "\"GeoFM\"",
+      "\"remote sensing foundation model\"",
+      "\"Earth observation foundation model\"",
+      "\"foundation model\" \"remote sensing\"",
+      "\"vision-language\" \"remote sensing\"",
+      "\"segment anything\" \"remote sensing\""
+    ],
+    "openalex": [
+      "\"geospatial foundation model\"",
+      "\"geographic foundation model\"",
+      "\"GeoFM\"",
+      "\"remote sensing foundation model\"",
+      "\"Earth observation foundation model\"",
+      "\"foundation model\" \"remote sensing\"",
+      "\"foundation model\" \"earth observation\"",
+      "\"large multimodal model\" \"remote sensing\""
+    ],
+    "crossref": [
+      "\"geospatial foundation model\"",
+      "\"GeoFM\"",
+      "\"remote sensing foundation model\"",
+      "\"Earth observation foundation model\"",
+      "\"foundation model\" \"remote sensing\"",
+      "\"vision-language\" \"remote sensing\""
+    ],
+    "semanticscholar": [
+      "\"geospatial foundation model\"",
+      "\"GeoFM\"",
+      "\"remote sensing foundation model\"",
+      "\"Earth observation foundation model\"",
+      "\"foundation model\" \"remote sensing\"",
+      "\"large vision model\" \"remote sensing\"",
+      "\"large multimodal model\" \"remote sensing\"",
+      "\"self-supervised\" \"remote sensing\" \"foundation model\""
+    ]
+  },
+  "topic_rules": {
+    "Foundation Models": [
+      "foundation model",
+      "geofm",
+      "geo-fm",
+      "pretrain",
+      "pretrained",
+      "pre-trained",
+      "self-supervised"
+    ],
+    "Remote Sensing": [
+      "remote sensing",
+      "satellite",
+      "earth observation",
+      "aerial",
+      "hyperspectral",
+      "sar"
+    ],
+    "Vision-Language": [
+      "vision-language",
+      "multimodal",
+      "language model",
+      "caption",
+      "visual question answering"
+    ],
+    "Segmentation": [
+      "segmentation",
+      "segment anything",
+      "sam",
+      "semantic segmentation",
+      "change detection"
+    ],
+    "Geospatial AI": [
+      "geospatial",
+      "geoai",
+      "geographic",
+      "spatial",
+      "map"
+    ]
   }
 }
-
