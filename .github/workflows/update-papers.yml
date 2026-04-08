@@ -1,8 +1,8 @@
-﻿name: Update GeoFM papers
+name: Update GeoFM papers
 
 on:
   schedule:
-    - cron: "15 22 * * *"
+    - cron: "0 * * * *"   # 每小时自动运行
   workflow_dispatch:
 
 permissions:
