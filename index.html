@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GeoFM Papers</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    h1 { color: #2c3e50; }
+    .paper { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+
+<h1>GeoFM Papers</h1>
+<div id="papers"></div>
+
+<script>
+fetch('data/papers.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('papers');
+
+    data.slice(0, 50).forEach(paper => {
+      const div = document.createElement('div');
+      div.className = 'paper';
+
+      div.innerHTML = `
+        <b>${paper.title}</b><br>
+        ${paper.authors}<br>
+        <a href="${paper.url}" target="_blank">[Link]</a>
+        <hr>
+      `;
+
+      container.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>
