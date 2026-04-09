@@ -1117,6 +1117,8 @@ def build_graph(papers: List[Paper], config: Dict) -> Dict:
 
     meta = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "paper_count_total": len(papers),
+        "paper_count_graph": len(selected),
         "paper_count": len(selected),
         "node_count": len(nodes),
         "link_count": len(links),
