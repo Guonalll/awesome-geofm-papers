@@ -3,39 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geospatial Foundation Models Hub</title>
+  <title>Awesome GeoFM Papers</title>
   <style>
     :root {
-      --bg: #f6f8fc;
+      --bg: #f6f8fb;
       --card: #ffffff;
       --text: #1f2937;
-      --subtext: #6b7280;
+      --sub: #6b7280;
       --line: #e5e7eb;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --success: #059669;
-      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-      --radius: 18px;
-      --max-width: 1200px;
+      --brand: #2563eb;
+      --brand-2: #1d4ed8;
+      --tag: #eff6ff;
+      --tag-text: #1d4ed8;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+      --maxw: 1240px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #f8fbff 0%, #f4f6fb 100%);
+      background: var(--bg);
       color: var(--text);
     }
 
     a {
-      color: var(--primary);
+      color: var(--brand);
       text-decoration: none;
     }
 
@@ -44,216 +41,217 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--maxw), calc(100vw - 32px));
       margin: 0 auto;
     }
 
     .hero {
-      padding: 44px 0 28px;
-    }
-
-    .hero-card {
-      background:
-        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 28%),
-        radial-gradient(circle at left bottom, rgba(5, 150, 105, 0.10), transparent 22%),
-        var(--card);
-      border: 1px solid rgba(37, 99, 235, 0.08);
-      border-radius: 28px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+      color: #fff;
+      padding: 56px 0 44px;
+      margin-bottom: 24px;
       box-shadow: var(--shadow);
-      padding: 36px 32px 30px;
     }
 
-    .brand-row {
+    .hero-inner {
       display: flex;
+      gap: 20px;
       align-items: center;
-      gap: 18px;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
-    .logo {
-      width: 68px;
-      height: 68px;
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      font-size: 34px;
-      background: linear-gradient(135deg, #dbeafe, #ecfeff);
-      border: 1px solid #dbeafe;
-      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
-      flex: 0 0 auto;
+    .hero-left {
+      flex: 1 1 700px;
+      min-width: 280px;
     }
 
-    .brand-text h1 {
+    .logo-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .logo-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
       margin: 0;
-      font-size: 38px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
     }
 
-    .brand-text p {
-      margin: 10px 0 0;
-      color: var(--subtext);
+    .hero p {
+      margin: 12px 0 0;
+      color: rgba(255,255,255,0.9);
       font-size: 16px;
-      line-height: 1.6;
-      max-width: 820px;
+      line-height: 1.7;
+      max-width: 850px;
     }
 
     .hero-actions {
-      margin-top: 22px;
+      margin-top: 20px;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
 
-    .btn {
+    .hero-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       padding: 11px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--text);
-      font-size: 14px;
+      border-radius: 12px;
       font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s ease;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: var(--primary);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.12);
       color: #fff;
-      border-color: var(--primary);
+      text-decoration: none;
     }
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
+    .hero-btn.primary {
+      background: #fff;
+      color: #0f172a;
+      border-color: #fff;
     }
 
     .stats {
-      margin-top: 24px;
+      margin-top: 18px;
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: 12px;
     }
 
     .stat-card {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px 18px;
-    }
-
-    .stat-label {
-      color: var(--subtext);
-      font-size: 13px;
-      margin-bottom: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 16px;
+      backdrop-filter: blur(10px);
     }
 
     .stat-value {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .toolbar {
-      padding: 12px 0 8px;
+      padding: 18px;
+      margin-bottom: 18px;
     }
 
-    .toolbar-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-
-    .search-row {
+    .toolbar-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       gap: 12px;
-      align-items: center;
     }
 
-    .search-box {
-      position: relative;
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
 
-    .search-box input {
+    .field label {
+      font-size: 13px;
+      color: var(--sub);
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select {
       width: 100%;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px 16px 14px 44px;
-      font-size: 15px;
-      outline: none;
-      background: #fbfcff;
-    }
-
-    .search-box input:focus {
-      border-color: #93c5fd;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--subtext);
-      font-size: 18px;
-    }
-
-    .sort-select {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 13px 14px;
-      font-size: 14px;
+      border-radius: 12px;
+      padding: 11px 12px;
       background: #fff;
-      min-width: 220px;
-      cursor: pointer;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .filter-btn {
-      border: 1px solid #dbeafe;
-      background: #eff6ff;
-      color: #1d4ed8;
-      border-radius: 999px;
-      padding: 10px 14px;
+      color: var(--text);
       font-size: 14px;
-      cursor: pointer;
-      transition: 0.2s ease;
+      outline: none;
     }
 
-    .filter-btn:hover {
-      background: #dbeafe;
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
-    .filter-btn.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    .section-head {
-      margin: 24px 0 14px;
+    .toolbar-actions {
+      margin-top: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0 14px;
       flex-wrap: wrap;
     }
 
@@ -262,220 +260,209 @@
       font-size: 22px;
     }
 
-    .section-head .hint {
-      color: var(--subtext);
+    .muted {
+      color: var(--sub);
       font-size: 14px;
     }
 
-    #papers {
+    .paper-list {
       display: grid;
-      gap: 16px;
-      padding-bottom: 36px;
+      gap: 14px;
+      margin-bottom: 36px;
     }
 
     .paper-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 20px 22px;
-      transition: 0.2s ease;
-    }
-
-    .paper-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+      padding: 18px;
     }
 
     .paper-top {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 16px;
       align-items: flex-start;
       flex-wrap: wrap;
     }
 
+    .paper-main {
+      flex: 1 1 720px;
+      min-width: 260px;
+    }
+
     .paper-title {
-      margin: 0;
-      font-size: 21px;
+      margin: 0 0 10px;
+      font-size: 20px;
       line-height: 1.45;
-      font-weight: 700;
-      flex: 1;
-      min-width: 280px;
     }
 
-    .paper-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+    .paper-title a {
+      color: var(--text);
+      text-decoration: none;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-
-    .badge-category {
-      background: #eff6ff;
-      color: #1d4ed8;
-      border-color: #dbeafe;
-    }
-
-    .badge-year {
-      background: #ecfdf5;
-      color: #047857;
-      border-color: #d1fae5;
-    }
-
-    .badge-other {
-      background: #f3f4f6;
-      color: #4b5563;
-      border-color: #e5e7eb;
-    }
-
-    .badge-source {
-      background: #f8fafc;
-      color: #475569;
-      border-color: #e2e8f0;
+    .paper-title a:hover {
+      color: var(--brand);
+      text-decoration: underline;
     }
 
     .paper-meta {
-      margin-top: 12px;
-      color: var(--subtext);
       font-size: 14px;
+      color: var(--sub);
       line-height: 1.8;
     }
 
-    .paper-meta strong {
-      color: #374151;
+    .paper-side {
+      min-width: 170px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
     }
 
-    .paper-desc {
-      margin-top: 12px;
-      color: #374151;
-      font-size: 14px;
-      line-height: 1.75;
-      white-space: pre-wrap;
+    .date-pill {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .paper-topics {
-      margin-top: 12px;
+    .paper-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 12px;
     }
 
-    .topic-tag {
+    .tag {
       display: inline-flex;
       align-items: center;
       padding: 6px 10px;
       border-radius: 999px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      color: #475569;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
+      background: var(--tag);
+      color: var(--tag-text);
     }
 
-    .paper-actions {
-      margin-top: 16px;
+    .tag.source {
+      background: #ecfeff;
+      color: #0f766e;
+    }
+
+    .tag.category {
+      background: #f5f3ff;
+      color: #6d28d9;
+    }
+
+    .paper-links {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .paper-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 10px 14px;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 10px;
       border: 1px solid var(--line);
       background: #fff;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       text-decoration: none;
     }
 
     .paper-link:hover {
-      background: #f8fafc;
+      border-color: var(--brand);
+      color: var(--brand);
       text-decoration: none;
     }
 
-    .empty-state {
-      background: var(--card);
-      border: 1px dashed #cbd5e1;
-      border-radius: 22px;
-      padding: 36px 18px;
+    .abstract-wrap {
+      margin-top: 14px;
+      border-top: 1px dashed var(--line);
+      padding-top: 14px;
+    }
+
+    .abstract-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .abstract-content {
+      margin-top: 10px;
+      color: #374151;
+      line-height: 1.75;
+      font-size: 14px;
+      display: none;
+    }
+
+    .abstract-content.open {
+      display: block;
+    }
+
+    .empty {
+      padding: 40px 20px;
       text-align: center;
-      color: var(--subtext);
-      box-shadow: var(--shadow);
+      color: var(--sub);
     }
 
     .footer {
-      padding: 18px 0 36px;
-      color: var(--subtext);
+      padding: 0 0 36px;
+      color: var(--sub);
       font-size: 13px;
       text-align: center;
     }
 
-    code {
-      background: #eef2ff;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-
-    @media (max-width: 1080px) {
-      .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media (max-width: 980px) {
+      .toolbar-grid {
+        grid-template-columns: 1fr 1fr;
       }
-    }
 
-    @media (max-width: 960px) {
-      .brand-text h1 {
-        font-size: 30px;
+      .stats {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+      }
+
+      .paper-side {
+        align-items: flex-start;
       }
     }
 
     @media (max-width: 640px) {
-      body {
-        margin: 0;
-      }
-
       .container {
-        width: min(var(--max-width), calc(100% - 20px));
+        width: min(var(--maxw), calc(100vw - 20px));
       }
 
       .hero {
-        padding-top: 20px;
+        padding: 42px 0 34px;
       }
 
-      .hero-card,
-      .toolbar-card,
-      .paper-card {
-        border-radius: 18px;
+      .hero h1 {
+        font-size: 28px;
       }
 
-      .search-row {
+      .toolbar-grid {
         grid-template-columns: 1fr;
-      }
-
-      .sort-select {
-        width: 100%;
       }
 
       .stats {
         grid-template-columns: 1fr 1fr;
       }
 
-      .brand-text h1 {
-        font-size: 26px;
+      .paper-card {
+        padding: 16px;
       }
 
       .paper-title {
@@ -485,338 +472,440 @@
   </style>
 </head>
 <body>
-  <div class="container hero">
-    <div class="hero-card">
-      <div class="brand-row">
-        <div class="logo">🌍</div>
-        <div class="brand-text">
-          <h1>Geospatial Foundation Models Hub</h1>
-          <p>
-            A curated and continuously updated collection of research on geospatial foundation models,
-            downstream tasks, datasets, benchmarks, and real-world applications.
-          </p>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <div class="logo-line">
+          <div class="logo-box">GF</div>
+          <div>
+            <div style="font-size:13px;opacity:0.88;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Geospatial Foundation Models Hub</div>
+            <h1>Awesome GeoFM Papers</h1>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#paper-section">Explore Papers</a>
-        <a class="btn" href="https://github.com/Guonalll/awesome-geofm-papers" target="_blank">View on GitHub</a>
-        <a class="btn" href="data/papers.json" target="_blank">Open JSON</a>
-      </div>
+        <p>
+          A curated and automatically updated paper hub for geospatial, geographic, remote sensing,
+          and Earth observation foundation models. Explore historical and recent papers across
+          foundation models, downstream tasks, datasets, benchmarks, and real-world applications.
+        </p>
 
-      <div class="stats">
-        <div class="stat-card">
-          <div class="stat-label">Total Papers</div>
-          <div class="stat-value" id="stat-total">0</div>
+        <div class="hero-actions">
+          <a class="hero-btn primary" href="https://github.com/Guonalll/awesome-geofm-papers" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a class="hero-btn" href="README.md" target="_blank" rel="noopener noreferrer">View README</a>
+          <a class="hero-btn" href="data/papers.json" target="_blank" rel="noopener noreferrer">Raw JSON</a>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">Foundation Model</div>
-          <div class="stat-value" id="stat-fm">0</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Downstream Task</div>
-          <div class="stat-value" id="stat-task">0</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Data</div>
-          <div class="stat-value" id="stat-data">0</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Benchmark</div>
-          <div class="stat-value" id="stat-benchmark">0</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Application</div>
-          <div class="stat-value" id="stat-app">0</div>
+
+        <div class="stats" id="stats">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-label">Total Papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-foundation">0</div>
+            <div class="stat-label">Foundation Models</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-sources">0</div>
+            <div class="stat-label">Sources</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-years">0</div>
+            <div class="stat-label">Year Span</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="container toolbar">
-    <div class="toolbar-card">
-      <div class="search-row">
-        <div class="search-box">
-          <span class="search-icon">🔎</span>
-          <input type="text" id="search" placeholder="Search by title, authors, abstract, venue, topics..." />
+  <main class="container">
+    <section class="panel toolbar">
+      <div class="toolbar-grid">
+        <div class="field">
+          <label for="searchInput">Search</label>
+          <input id="searchInput" type="text" placeholder="Search title, abstract, authors, venue, topics..." />
         </div>
 
-        <select id="sortSelect" class="sort-select">
-          <option value="year_desc">Sort: Newest First</option>
-          <option value="year_asc">Sort: Oldest First</option>
-          <option value="title_asc">Sort: Title A–Z</option>
-          <option value="title_desc">Sort: Title Z–A</option>
-        </select>
+        <div class="field">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="All">All Categories</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="sourceFilter">Source</label>
+          <select id="sourceFilter">
+            <option value="All">All Sources</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="yearFromFilter">Year From</label>
+          <select id="yearFromFilter">
+            <option value="All">All</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="sortFilter">Sort By</label>
+          <select id="sortFilter">
+            <option value="date_desc">Newest First</option>
+            <option value="date_asc">Oldest First</option>
+            <option value="title_asc">Title A-Z</option>
+            <option value="source_asc">Source A-Z</option>
+            <option value="category_asc">Category A-Z</option>
+          </select>
+        </div>
       </div>
 
-      <div class="filters">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="Foundation Model">Foundation Model</button>
-        <button class="filter-btn" data-category="Downstream Task">Downstream Task</button>
-        <button class="filter-btn" data-category="Data">Data</button>
-        <button class="filter-btn" data-category="Benchmark">Benchmark</button>
-        <button class="filter-btn" data-category="Application">Application</button>
+      <div class="toolbar-actions">
+        <div class="chips" id="activeChips"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn" id="resetBtn">Reset Filters</button>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="container" id="paper-section">
-    <div class="section-head">
-      <h2>Paper Collection</h2>
-      <div class="hint" id="resultHint">Loading papers...</div>
-    </div>
+    <section>
+      <div class="section-head">
+        <h2>Paper Library</h2>
+        <div class="muted" id="resultCount">Loading papers...</div>
+      </div>
 
-    <div id="papers"></div>
+      <div id="paperList" class="paper-list"></div>
+    </section>
 
     <div class="footer">
-      Built with GitHub Pages · Automatically updated from <code>data/papers.json</code>
+      Built for GitHub Pages · Data source: <code>data/papers.json</code>
     </div>
-  </div>
+  </main>
 
   <script>
-    let papersData = [];
-    let currentCategory = "all";
+    let allPapers = [];
+    let filteredPapers = [];
+
+    const paperList = document.getElementById("paperList");
+    const resultCount = document.getElementById("resultCount");
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sourceFilter = document.getElementById("sourceFilter");
+    const yearFromFilter = document.getElementById("yearFromFilter");
+    const sortFilter = document.getElementById("sortFilter");
+    const resetBtn = document.getElementById("resetBtn");
+    const activeChips = document.getElementById("activeChips");
+
+    const statTotal = document.getElementById("stat-total");
+    const statFoundation = document.getElementById("stat-foundation");
+    const statSources = document.getElementById("stat-sources");
+    const statYears = document.getElementById("stat-years");
 
     function safeText(value) {
-      return value === undefined || value === null ? "" : String(value);
-    }
-
-    function normalize(str) {
-      return safeText(str).toLowerCase();
-    }
-
-    function escapeHtml(str) {
-      return safeText(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+      return value ? String(value) : "";
     }
 
     function getYear(paper) {
-      const possibleKeys = ["published", "updated", "year", "published_year", "publication_year", "date"];
-      for (const key of possibleKeys) {
-        if (paper[key]) {
-          const match = String(paper[key]).match(/\b(19|20)\d{2}\b/);
-          if (match) return Number(match[0]);
-        }
-      }
-      return null;
+      const published = safeText(paper.published);
+      const match = published.match(/^(\d{4})/);
+      return match ? Number(match[1]) : null;
     }
 
-    function getAuthors(paper) {
-      if (Array.isArray(paper.authors)) {
-        return paper.authors.join(", ");
-      }
-      return paper.authors || "Unknown authors";
+    function uniqueSorted(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => {
+        if (typeof a === "number" && typeof b === "number") return a - b;
+        return String(a).localeCompare(String(b));
+      });
     }
 
-    function getSummary(paper) {
-      return paper.abstract || paper.summary || paper.description || "";
-    }
+    function fillSelect(selectEl, values, labelPrefix = "All") {
+      const current = selectEl.value;
+      selectEl.innerHTML = "";
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "All";
+      defaultOption.textContent = labelPrefix;
+      selectEl.appendChild(defaultOption);
 
-    function getVenue(paper) {
-      return paper.venue || paper.source || "";
-    }
-
-    function getTopics(paper) {
-      if (Array.isArray(paper.topics)) return paper.topics;
-      if (typeof paper.topics === "string" && paper.topics.trim()) {
-        return paper.topics.split(";").map(s => s.trim()).filter(Boolean);
-      }
-      return [];
-    }
-
-    function getCategoryByPaper(paper) {
-      return safeText(paper.category || "Uncategorized");
-    }
-
-    function updateStats(data) {
-      const countByCategory = (name) =>
-        data.filter(p => getCategoryByPaper(p) === name).length;
-
-      document.getElementById("stat-total").textContent = data.length;
-      document.getElementById("stat-fm").textContent = countByCategory("Foundation Model");
-      document.getElementById("stat-task").textContent = countByCategory("Downstream Task");
-      document.getElementById("stat-data").textContent = countByCategory("Data");
-      document.getElementById("stat-benchmark").textContent = countByCategory("Benchmark");
-      document.getElementById("stat-app").textContent = countByCategory("Application");
-    }
-
-    function sortPapers(list, sortValue) {
-      const arr = [...list];
-
-      if (sortValue === "year_desc") {
-        arr.sort((a, b) => (getYear(b) || 0) - (getYear(a) || 0));
-      } else if (sortValue === "year_asc") {
-        arr.sort((a, b) => (getYear(a) || 9999) - (getYear(b) || 9999));
-      } else if (sortValue === "title_asc") {
-        arr.sort((a, b) => safeText(a.title).localeCompare(safeText(b.title)));
-      } else if (sortValue === "title_desc") {
-        arr.sort((a, b) => safeText(b.title).localeCompare(safeText(a.title)));
-      }
-
-      return arr;
-    }
-
-    function buildActionLinks(paper) {
-      const links = [];
-
-      if (paper.url) {
-        links.push(`<a class="paper-link" href="${escapeHtml(paper.url)}" target="_blank" rel="noopener noreferrer">🔗 Open Page</a>`);
-      }
-
-      if (paper.pdf_url) {
-        links.push(`<a class="paper-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener noreferrer">📄 Open PDF</a>`);
-      }
-
-      if (paper.doi) {
-        const doiUrl = `https://doi.org/${paper.doi}`;
-        links.push(`<a class="paper-link" href="${escapeHtml(doiUrl)}" target="_blank" rel="noopener noreferrer">🧷 DOI</a>`);
-      }
-
-      return links.join("");
-    }
-
-    function renderPapers() {
-      const container = document.getElementById("papers");
-      const hint = document.getElementById("resultHint");
-      const keyword = normalize(document.getElementById("search").value);
-      const sortValue = document.getElementById("sortSelect").value;
-
-      container.innerHTML = "";
-
-      let filtered = papersData.filter(paper => {
-        const title = normalize(paper.title);
-        const authors = normalize(getAuthors(paper));
-        const summary = normalize(getSummary(paper));
-        const category = getCategoryByPaper(paper);
-        const venue = normalize(getVenue(paper));
-        const topics = normalize(getTopics(paper).join(" "));
-        const source = normalize(paper.source);
-
-        const matchKeyword =
-          title.includes(keyword) ||
-          authors.includes(keyword) ||
-          summary.includes(keyword) ||
-          venue.includes(keyword) ||
-          topics.includes(keyword) ||
-          source.includes(keyword);
-
-        const matchCategory =
-          currentCategory === "all" || category === currentCategory;
-
-        return matchKeyword && matchCategory;
+      values.forEach(v => {
+        const option = document.createElement("option");
+        option.value = v;
+        option.textContent = v;
+        selectEl.appendChild(option);
       });
 
-      filtered = sortPapers(filtered, sortValue);
-      hint.textContent = `${filtered.length} paper(s) found`;
+      if ([...selectEl.options].some(opt => opt.value === current)) {
+        selectEl.value = current;
+      }
+    }
 
-      if (!filtered.length) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <div style="font-size: 34px; margin-bottom: 10px;">📭</div>
-            <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">No matching papers found</div>
-            <div>Try another keyword or change the selected category.</div>
+    function buildFilters(papers) {
+      const categories = uniqueSorted(papers.map(p => safeText(p.category) || "Uncategorized"));
+      const sources = uniqueSorted(papers.map(p => safeText(p.source)));
+      const years = uniqueSorted(papers.map(getYear).filter(Boolean)).sort((a, b) => b - a);
+
+      fillSelect(categoryFilter, categories, "All Categories");
+      fillSelect(sourceFilter, sources, "All Sources");
+      fillSelect(yearFromFilter, years, "All");
+    }
+
+    function updateStats(papers) {
+      statTotal.textContent = papers.length;
+
+      const foundationCount = papers.filter(
+        p => safeText(p.category).toLowerCase() === "foundation model"
+      ).length;
+      statFoundation.textContent = foundationCount;
+
+      const sourceCount = new Set(papers.map(p => safeText(p.source)).filter(Boolean)).size;
+      statSources.textContent = sourceCount;
+
+      const years = papers.map(getYear).filter(Boolean);
+      if (years.length) {
+        const minYear = Math.min(...years);
+        const maxYear = Math.max(...years);
+        statYears.textContent = minYear === maxYear ? String(minYear) : `${minYear}-${maxYear}`;
+      } else {
+        statYears.textContent = "-";
+      }
+    }
+
+    function renderActiveChips() {
+      activeChips.innerHTML = "";
+
+      const chips = [];
+      if (searchInput.value.trim()) chips.push(`Search: ${searchInput.value.trim()}`);
+      if (categoryFilter.value !== "All") chips.push(`Category: ${categoryFilter.value}`);
+      if (sourceFilter.value !== "All") chips.push(`Source: ${sourceFilter.value}`);
+      if (yearFromFilter.value !== "All") chips.push(`Year From: ${yearFromFilter.value}`);
+      if (sortFilter.value !== "date_desc") {
+        const sortText = sortFilter.options[sortFilter.selectedIndex].textContent;
+        chips.push(`Sort: ${sortText}`);
+      }
+
+      if (!chips.length) {
+        const el = document.createElement("div");
+        el.className = "chip";
+        el.textContent = "No active filters";
+        activeChips.appendChild(el);
+        return;
+      }
+
+      chips.forEach(text => {
+        const el = document.createElement("div");
+        el.className = "chip";
+        el.textContent = text;
+        activeChips.appendChild(el);
+      });
+    }
+
+    function matchesSearch(paper, keyword) {
+      if (!keyword) return true;
+
+      const haystack = [
+        safeText(paper.title),
+        safeText(paper.abstract),
+        safeText(paper.venue),
+        safeText(paper.source),
+        safeText(paper.category),
+        ...(paper.authors || []),
+        ...(paper.topics || [])
+      ].join(" ").toLowerCase();
+
+      return haystack.includes(keyword);
+    }
+
+    function sortPapers(papers) {
+      const list = [...papers];
+      const mode = sortFilter.value;
+
+      list.sort((a, b) => {
+        const dateA = safeText(a.published);
+        const dateB = safeText(b.published);
+        const titleA = safeText(a.title);
+        const titleB = safeText(b.title);
+        const sourceA = safeText(a.source);
+        const sourceB = safeText(b.source);
+        const categoryA = safeText(a.category);
+        const categoryB = safeText(b.category);
+
+        if (mode === "date_desc") {
+          return dateB.localeCompare(dateA) || titleA.localeCompare(titleB);
+        }
+        if (mode === "date_asc") {
+          return dateA.localeCompare(dateB) || titleA.localeCompare(titleB);
+        }
+        if (mode === "title_asc") {
+          return titleA.localeCompare(titleB);
+        }
+        if (mode === "source_asc") {
+          return sourceA.localeCompare(sourceB) || titleA.localeCompare(titleB);
+        }
+        if (mode === "category_asc") {
+          return categoryA.localeCompare(categoryB) || titleA.localeCompare(titleB);
+        }
+        return 0;
+      });
+
+      return list;
+    }
+
+    function filterPapers() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      const source = sourceFilter.value;
+      const yearFrom = yearFromFilter.value === "All" ? null : Number(yearFromFilter.value);
+
+      filteredPapers = allPapers.filter(paper => {
+        const year = getYear(paper);
+
+        if (!matchesSearch(paper, keyword)) return false;
+        if (category !== "All" && (safeText(paper.category) || "Uncategorized") !== category) return false;
+        if (source !== "All" && safeText(paper.source) !== source) return false;
+        if (yearFrom && (!year || year < yearFrom)) return false;
+
+        return true;
+      });
+
+      filteredPapers = sortPapers(filteredPapers);
+      renderActiveChips();
+      renderPapers(filteredPapers);
+    }
+
+    function createLinkButton(label, url) {
+      if (!url) return "";
+      return `<a class="paper-link" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    }
+
+    function renderPapers(papers) {
+      resultCount.textContent = `${papers.length} paper${papers.length === 1 ? "" : "s"} found`;
+
+      if (!papers.length) {
+        paperList.innerHTML = `
+          <div class="panel empty">
+            No papers match the current filters.
           </div>
         `;
         return;
       }
 
-      filtered.forEach(paper => {
-        const category = getCategoryByPaper(paper);
-        const year = getYear(paper);
-        const title = escapeHtml(paper.title || "Untitled Paper");
-        const authors = escapeHtml(getAuthors(paper));
-        const summary = escapeHtml(getSummary(paper));
-        const venue = escapeHtml(paper.venue || "");
-        const source = escapeHtml(paper.source || "");
-        const published = escapeHtml(paper.published || "");
-        const updated = escapeHtml(paper.updated || "");
-        const topics = getTopics(paper);
+      paperList.innerHTML = papers.map((paper, index) => {
+        const authors = (paper.authors || []).join(", ");
+        const topics = (paper.topics || []).filter(Boolean);
+        const category = safeText(paper.category) || "Uncategorized";
+        const source = safeText(paper.source);
+        const title = safeText(paper.title);
+        const venue = safeText(paper.venue);
+        const published = safeText(paper.published);
+        const abstract = safeText(paper.abstract);
+        const abstractId = `abs-${index}`;
 
-        const topicHtml = topics.length
-          ? `
-            <div class="paper-topics">
-              ${topics.map(t => `<span class="topic-tag">${escapeHtml(t)}</span>`).join("")}
-            </div>
-          `
+        const pageLink = createLinkButton("Page", paper.url);
+        const pdfLink = createLinkButton("PDF", paper.pdf_url);
+        const doiLink = paper.doi
+          ? createLinkButton("DOI", `https://doi.org/${paper.doi}`)
           : "";
 
-        const metaLines = [
-          `<strong>Authors:</strong> ${authors}`,
-          venue ? `<strong>Venue:</strong> ${venue}` : "",
-          source ? `<strong>Source:</strong> ${source}` : "",
-          published ? `<strong>Published:</strong> ${published}` : "",
-          updated ? `<strong>Updated:</strong> ${updated}` : ""
-        ].filter(Boolean).join("<br>");
+        return `
+          <article class="panel paper-card">
+            <div class="paper-top">
+              <div class="paper-main">
+                <h3 class="paper-title">
+                  <a href="${paper.url || "#"}" target="_blank" rel="noopener noreferrer">${title || "Untitled"}</a>
+                </h3>
 
-        const card = document.createElement("div");
-        card.className = "paper-card";
+                <div class="paper-meta">
+                  <div><strong>Authors:</strong> ${authors || "N/A"}</div>
+                  <div><strong>Venue:</strong> ${venue || source || "N/A"}</div>
+                  <div><strong>Source:</strong> ${source || "N/A"}</div>
+                </div>
 
-        card.innerHTML = `
-          <div class="paper-top">
-            <h3 class="paper-title">${title}</h3>
-            <div class="paper-badges">
-              <span class="badge badge-category">${escapeHtml(category)}</span>
-              ${year ? `<span class="badge badge-year">${year}</span>` : `<span class="badge badge-other">Year N/A</span>`}
-              ${source ? `<span class="badge badge-source">${source}</span>` : ""}
+                <div class="paper-tags">
+                  <span class="tag category">${category}</span>
+                  ${source ? `<span class="tag source">${source}</span>` : ""}
+                  ${topics.map(t => `<span class="tag">${t}</span>`).join("")}
+                </div>
+
+                <div class="paper-links">
+                  ${pageLink}
+                  ${pdfLink}
+                  ${doiLink}
+                </div>
+
+                <div class="abstract-wrap">
+                  <div class="abstract-title" onclick="toggleAbstract('${abstractId}')">
+                    <span>Abstract</span>
+                    <span id="${abstractId}-toggle">Show</span>
+                  </div>
+                  <div class="abstract-content" id="${abstractId}">
+                    ${abstract || "No abstract available."}
+                  </div>
+                </div>
+              </div>
+
+              <div class="paper-side">
+                <div class="date-pill">${published || "Unknown date"}</div>
+              </div>
             </div>
-          </div>
-
-          <div class="paper-meta">
-            ${metaLines}
-          </div>
-
-          ${summary ? `<div class="paper-desc">${summary}</div>` : ""}
-
-          ${topicHtml}
-
-          <div class="paper-actions">
-            ${buildActionLinks(paper)}
-          </div>
+          </article>
         `;
-
-        container.appendChild(card);
-      });
+      }).join("");
     }
 
-    function setCategory(category) {
-      currentCategory = category;
-      document.querySelectorAll(".filter-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.category === category);
-      });
-      renderPapers();
+    function toggleAbstract(id) {
+      const el = document.getElementById(id);
+      const toggle = document.getElementById(`${id}-toggle`);
+      const isOpen = el.classList.contains("open");
+
+      if (isOpen) {
+        el.classList.remove("open");
+        toggle.textContent = "Show";
+      } else {
+        el.classList.add("open");
+        toggle.textContent = "Hide";
+      }
     }
 
-    document.getElementById("search").addEventListener("input", renderPapers);
-    document.getElementById("sortSelect").addEventListener("change", renderPapers);
+    window.toggleAbstract = toggleAbstract;
 
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => setCategory(btn.dataset.category));
-    });
+    function resetFilters() {
+      searchInput.value = "";
+      categoryFilter.value = "All";
+      sourceFilter.value = "All";
+      yearFromFilter.value = "All";
+      sortFilter.value = "date_desc";
+      filterPapers();
+    }
 
-    fetch("data/papers.json")
-      .then(res => {
-        if (!res.ok) throw new Error("Failed to load data/papers.json");
-        return res.json();
-      })
-      .then(data => {
-        papersData = Array.isArray(data) ? data : [];
-        updateStats(papersData);
-        renderPapers();
-      })
-      .catch(error => {
-        document.getElementById("resultHint").textContent = "Failed to load data";
-        document.getElementById("papers").innerHTML = `
-          <div class="empty-state">
-            <div style="font-size: 34px; margin-bottom: 10px;">⚠️</div>
-            <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Data loading failed</div>
-            <div>${escapeHtml(error.message)}</div>
+    async function loadPapers() {
+      try {
+        const response = await fetch("data/papers.json");
+        if (!response.ok) {
+          throw new Error(`Failed to load papers.json: ${response.status}`);
+        }
+
+        const data = await response.json();
+        allPapers = Array.isArray(data) ? data : [];
+
+        buildFilters(allPapers);
+        updateStats(allPapers);
+        filterPapers();
+      } catch (error) {
+        console.error(error);
+        resultCount.textContent = "Failed to load papers";
+        paperList.innerHTML = `
+          <div class="panel empty">
+            Failed to load <code>data/papers.json</code>. Please check whether GitHub Pages has deployed the latest files.
           </div>
         `;
-      });
+      }
+    }
+
+    searchInput.addEventListener("input", filterPapers);
+    categoryFilter.addEventListener("change", filterPapers);
+    sourceFilter.addEventListener("change", filterPapers);
+    yearFromFilter.addEventListener("change", filterPapers);
+    sortFilter.addEventListener("change", filterPapers);
+    resetBtn.addEventListener("click", resetFilters);
+
+    loadPapers();
   </script>
 </body>
 </html>
