@@ -658,7 +658,7 @@
     }
 
     function updateStats(nodes, meta) {
-      statPapers.textContent = meta.paper_count ?? countByType(nodes, "paper");
+      statPapers.textContent = meta.paper_count_total ?? meta.paper_count ?? countByType(nodes, "paper");
       statAuthors.textContent = countByType(nodes, "author");
       statTopics.textContent = countByType(nodes, "topic");
       statVenues.textContent = countByType(nodes, "venue");
@@ -693,11 +693,55 @@
 
     function buildMeta(meta) {
       metaBar.innerHTML = `
+        <div class="chip">Library papers: ${meta.paper_count_total ?? "-"}</div>
+        <div class="chip">Graph papers: ${meta.paper_count_graph ?? meta.paper_count ?? "-"}</div>
+        <div class="chip" id="visiblePapersChip">Visible papers: -</div>
         <div class="chip">Nodes: ${meta.node_count ?? 0}</div>
         <div class="chip">Links: ${meta.link_count ?? 0}</div>
-        <div class="chip">Current graph: latest ${meta.max_papers ?? "-"} papers</div>
         <div class="chip">Threshold: ${meta.similarity_threshold ?? "-"}</div>
       `;
+    }
+
+    function getVisibleNodesForStats() {
+      if (!graphData) return [];
+
+      return graphData.nodes.filter(d => {
+        if (!nodeMatchesFilters(d)) return false;
+
+        if (focusMode.value === "neighbors" && selectedNodeId) {
+          if (d.id === selectedNodeId) return true;
+          const selected = getSelectedNode();
+          const neighborSet = new Set(selected?.neighbors || []);
+          return neighborSet.has(d.id);
+        }
+
+        return true;
+      });
+    }
+
+    function updateFilteredStats() {
+      if (!graphData) return;
+
+      const visibleNodes = getVisibleNodesForStats();
+
+      const visiblePapers = visibleNodes.filter(n => n.type === "paper").length;
+      const visibleAuthors = visibleNodes.filter(n => n.type === "author").length;
+      const visibleTopics = visibleNodes.filter(n => n.type === "topic").length;
+      const visibleVenues = visibleNodes.filter(n => n.type === "venue").length;
+      const visibleClusters = new Set(
+        visibleNodes.map(n => String(n.cluster ?? 0))
+      ).size;
+
+      statPapers.textContent = visiblePapers;
+      statAuthors.textContent = visibleAuthors;
+      statTopics.textContent = visibleTopics;
+      statVenues.textContent = visibleVenues;
+      statClusters.textContent = visibleClusters;
+
+      const visibleChip = document.getElementById("visiblePapersChip");
+      if (visibleChip) {
+        visibleChip.textContent = `Visible papers: ${visiblePapers}`;
+      }
     }
 
     function fillClusterFilter(nodes) {
@@ -940,6 +984,7 @@
         });
 
       updateHints();
+      updateFilteredStats();
     }
 
     function ticked() {
@@ -1067,6 +1112,7 @@
         fillYearFilters(nodes);
         renderGraph();
         renderDetails(null);
+        updateFilteredStats();
 
         const focusId = getUrlFocusId();
         if (focusId && graphData.nodeMap.has(focusId)) {
