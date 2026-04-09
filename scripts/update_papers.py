@@ -767,29 +767,29 @@ def main() -> int:
     today = datetime.now(timezone.utc).date()
     fetched: List[Paper] = []
 
-if config["sources"].get("arxiv", True):
-    try:
-        fetched.extend(fetch_arxiv(config, today))
-    except Exception as e:
-        print(f"[WARN] arXiv failed: {e}")
+    if config["sources"].get("arxiv", True):
+        try:
+            fetched.extend(fetch_arxiv(config, today))
+        except Exception as e:
+            print(f"[WARN] arXiv failed: {e}")
 
-if config["sources"].get("openalex", True):
-    try:
-        fetched.extend(fetch_openalex(config, today))
-    except Exception as e:
-        print(f"[WARN] OpenAlex failed: {e}")
+    if config["sources"].get("openalex", True):
+        try:
+            fetched.extend(fetch_openalex(config, today))
+        except Exception as e:
+            print(f"[WARN] OpenAlex failed: {e}")
 
-if config["sources"].get("crossref", False):
-    try:
-        fetched.extend(fetch_crossref(config, today))
-    except Exception as e:
-        print(f"[WARN] Crossref failed: {e}")
+    if config["sources"].get("crossref", False):
+        try:
+            fetched.extend(fetch_crossref(config, today))
+        except Exception as e:
+            print(f"[WARN] Crossref failed: {e}")
 
-if config["sources"].get("semanticscholar", False):
-    try:
-        fetched.extend(fetch_semanticscholar(config, today))
-    except Exception as e:
-        print(f"[WARN] Semantic Scholar failed: {e}")
+    if config["sources"].get("semanticscholar", False):
+        try:
+            fetched.extend(fetch_semanticscholar(config, today))
+        except Exception as e:
+            print(f"[WARN] Semantic Scholar failed: {e}")
         
 
     fetched = [paper for paper in fetched if matches_scope(paper, config)]
