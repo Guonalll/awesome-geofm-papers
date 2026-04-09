@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-09T02:47:22+00:00",
-  "fetched_this_run": 3450,
-  "records_total": 1517,
+  "generated_at": "2026-04-09T03:54:22+00:00",
+  "fetched_this_run": 1792,
+  "records_total": 2069,
   "sources": [
     "arxiv",
     "openalex",
