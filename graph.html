@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoFM Knowledge Graph</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 60px);
+    }
+
+    #graph {
+      flex: 1;
+      background: #ffffff;
+    }
+
+    .panel {
+      width: 320px;
+      border-left: 1px solid #ddd;
+      background: #fafafa;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .abstract {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+      white-space: pre-wrap;
+    }
+
+    .legend {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .legend span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title">GeoFM Knowledge Graph</div>
+    <div class="nav">
+      <a href="./index.html">Paper List</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <svg id="graph"></svg>
+
+    <div class="panel">
+      <h2>Node Details</h2>
+      <div id="details">
+        Click a node to view details.
+      </div>
+
+      <div class="legend">
+        <div><span style="background:#ff6b6b;"></span> Paper</div>
+        <div><span style="background:#4dabf7;"></span> Author</div>
+        <div><span style="background:#51cf66;"></span> Topic</div>
+        <div><span style="background:#f59f00;"></span> Venue</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    const svg = d3.select("#graph");
+    const tooltip = d3.select("#tooltip");
+    const details = document.getElementById("details");
+
+    const width = window.innerWidth - 320;
+    const height = window.innerHeight - 60;
+
+    svg.attr("width", width).attr("height", height);
+
+    const colorMap = {
+      paper: "#ff6b6b",
+      author: "#4dabf7",
+      topic: "#51cf66",
+      venue: "#f59f00"
+    };
+
+    fetch("./data/graph.json")
+      .then(res => res.json())
+      .then(graph => {
+        const simulation = d3.forceSimulation(graph.nodes)
+          .force("link", d3.forceLink(graph.links).id(d => d.id).distance(90))
+          .force("charge", d3.forceManyBody().strength(-120))
+          .force("center", d3.forceCenter(width / 2, height / 2))
+          .force("collision", d3.forceCollide().radius(18));
+
+        const link = svg.append("g")
+          .attr("stroke", "#bbb")
+          .attr("stroke-opacity", 0.6)
+          .selectAll("line")
+          .data(graph.links)
+          .enter()
+          .append("line")
+          .attr("stroke-width", 1);
+
+        const node = svg.append("g")
+          .selectAll("circle")
+          .data(graph.nodes)
+          .enter()
+          .append("circle")
+          .attr("r", d => d.type === "paper" ? 7 : 5)
+          .attr("fill", d => colorMap[d.type] || "#999")
+          .call(
+            d3.drag()
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended)
+          )
+          .on("click", (event, d) => {
+            showDetails(d);
+          })
+          .on("mousemove", (event, d) => {
+            tooltip
+              .style("opacity", 1)
+              .html(`${d.type}: ${d.name}`)
+              .style("left", (event.pageX + 12) + "px")
+              .style("top", (event.pageY + 12) + "px");
+          })
+          .on("mouseleave", () => {
+            tooltip.style("opacity", 0);
+          });
+
+        simulation.on("tick", () => {
+          link
+            .attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+
+          node
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y);
+        });
+
+        function dragstarted(event, d) {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+          d.fx = event.x;
+          d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }
+
+        function showDetails(d) {
+          let html = `<div class="meta"><strong>Type:</strong> ${d.type}</div>`;
+          html += `<div class="meta"><strong>Name:</strong> ${d.name}</div>`;
+
+          if (d.year) {
+            html += `<div class="meta"><strong>Year:</strong> ${d.year}</div>`;
+          }
+          if (d.venue) {
+            html += `<div class="meta"><strong>Venue:</strong> ${d.venue}</div>`;
+          }
+          if (d.url) {
+            html += `<div class="meta"><a href="${d.url}" target="_blank">Open paper</a></div>`;
+          }
+          if (d.abstract) {
+            html += `<div class="abstract"><strong>Abstract</strong><br>${d.abstract}</div>`;
+          }
+
+          details.innerHTML = html;
+        }
+      })
+      .catch(err => {
+        details.innerHTML = "Failed to load graph.json";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
