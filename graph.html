@@ -6,238 +6,909 @@
   <title>GeoFM Knowledge Graph</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --sub: #6b7280;
+      --line: #e5e7eb;
+      --brand: #2563eb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .topbar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 100%);
+      color: #fff;
+      padding: 20px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 14px 20px;
-      background: white;
-      border-bottom: 1px solid #ddd;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .title {
-      font-size: 22px;
-      font-weight: bold;
+    .title-wrap h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
     }
 
-    .nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 16px;
+    .title-wrap p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.86);
       font-size: 14px;
+      line-height: 1.6;
     }
 
-    .container {
+    .nav-links {
       display: flex;
-      height: calc(100vh - 60px);
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    #graph {
-      flex: 1;
-      background: #ffffff;
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-btn.primary {
+      background: #fff;
+      color: #0f172a;
+      border-color: #fff;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      padding: 18px;
+      height: calc(100vh - 108px);
+    }
+
+    .left-col {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     .panel {
-      width: 320px;
-      border-left: 1px solid #ddd;
-      background: #fafafa;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .toolbar {
       padding: 16px;
-      overflow-y: auto;
     }
 
-    .panel h2 {
-      margin-top: 0;
-      font-size: 18px;
+    .toolbar-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
     }
 
-    .meta {
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 13px;
+      color: var(--sub);
+      font-weight: 700;
+    }
+
+    .field select,
+    .field input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #fff;
+      color: var(--text);
       font-size: 14px;
-      color: #666;
-      margin-bottom: 8px;
+      outline: none;
     }
 
-    .abstract {
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
       font-size: 14px;
-      line-height: 1.6;
-      color: #333;
-      white-space: pre-wrap;
+      font-weight: 700;
+      cursor: pointer;
+      height: 42px;
+    }
+
+    .btn:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .meta-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--sub);
+      font-weight: 700;
+    }
+
+    .graph-wrap {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    #graph {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #fbfdff;
+      border-radius: var(--radius);
+    }
+
+    .side {
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .side h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .muted {
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .detail-block {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-row {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.7;
+      word-break: break-word;
+    }
+
+    .detail-row strong {
+      color: var(--text);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #eff6ff;
+      color: #1d4ed8;
     }
 
     .legend {
-      font-size: 13px;
-      line-height: 1.8;
-      margin-top: 20px;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
     }
 
-    .legend span {
-      display: inline-block;
+    .legend h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    .dot {
       width: 12px;
       height: 12px;
-      margin-right: 8px;
       border-radius: 50%;
+      flex: 0 0 12px;
     }
 
     .tooltip {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.75);
-      color: white;
-      padding: 6px 8px;
-      border-radius: 6px;
+      position: fixed;
+      background: rgba(15, 23, 42, 0.92);
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 10px;
       font-size: 12px;
+      line-height: 1.5;
       pointer-events: none;
       opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.12s ease, transform 0.12s ease;
+      z-index: 20;
+      max-width: 260px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    @media (max-width: 1100px) {
+      .page {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .graph-wrap {
+        height: 72vh;
+      }
+
+      .toolbar-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .toolbar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .title-wrap h1 {
+        font-size: 24px;
+      }
+
+      .graph-wrap {
+        height: 68vh;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="title">GeoFM Knowledge Graph</div>
-    <div class="nav">
-      <a href="./index.html">Paper List</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="title-wrap">
+        <h1>GeoFM Knowledge Graph</h1>
+        <p>
+          Explore papers, authors, venues, and topics in an interactive graph.
+          Click a node to highlight its local network and inspect details.
+        </p>
+      </div>
+
+      <div class="nav-links">
+        <a class="nav-btn primary" href="index.html">Paper Library</a>
+        <a class="nav-btn" href="data/graph.json" target="_blank" rel="noopener noreferrer">Raw Graph JSON</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="container">
-    <svg id="graph"></svg>
+  <main class="page">
+    <section class="left-col">
+      <div class="panel toolbar">
+        <div class="toolbar-grid">
+          <div class="field">
+            <label for="searchInput">Search Node</label>
+            <input id="searchInput" type="text" placeholder="Search papers, authors, venues, topics..." />
+          </div>
 
-    <div class="panel">
+          <div class="field">
+            <label for="typeFilter">Node Type</label>
+            <select id="typeFilter">
+              <option value="all">All Types</option>
+              <option value="paper">Paper</option>
+              <option value="author">Author</option>
+              <option value="topic">Topic</option>
+              <option value="venue">Venue</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="clusterFilter">Cluster</label>
+            <select id="clusterFilter">
+              <option value="all">All Clusters</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="focusMode">View Mode</label>
+            <select id="focusMode">
+              <option value="all">Show Full Graph</option>
+              <option value="neighbors">Focus Selected Network</option>
+            </select>
+          </div>
+
+          <button class="btn" id="resetBtn">Reset View</button>
+        </div>
+
+        <div class="meta-bar" id="metaBar">
+          <div class="chip">Loading graph...</div>
+        </div>
+      </div>
+
+      <div class="panel graph-wrap">
+        <svg id="graph"></svg>
+      </div>
+    </section>
+
+    <aside class="panel side">
       <h2>Node Details</h2>
-      <div id="details">
-        Click a node to view details.
+      <div class="muted" id="details">
+        Click a node in the graph to inspect its details, neighbors, cluster, and related metadata.
       </div>
 
       <div class="legend">
-        <div><span style="background:#ff6b6b;"></span> Paper</div>
-        <div><span style="background:#4dabf7;"></span> Author</div>
-        <div><span style="background:#51cf66;"></span> Topic</div>
-        <div><span style="background:#f59f00;"></span> Venue</div>
+        <h3>Legend</h3>
+        <div class="legend-item"><span class="dot" style="background:#ef4444;"></span> Paper</div>
+        <div class="legend-item"><span class="dot" style="background:#3b82f6;"></span> Author</div>
+        <div class="legend-item"><span class="dot" style="background:#10b981;"></span> Topic</div>
+        <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span> Venue</div>
       </div>
-    </div>
-  </div>
+    </aside>
+  </main>
 
   <div class="tooltip" id="tooltip"></div>
 
   <script>
     const svg = d3.select("#graph");
-    const tooltip = d3.select("#tooltip");
+    const tooltip = document.getElementById("tooltip");
     const details = document.getElementById("details");
+    const metaBar = document.getElementById("metaBar");
 
-    const width = window.innerWidth - 320;
-    const height = window.innerHeight - 60;
+    const searchInput = document.getElementById("searchInput");
+    const typeFilter = document.getElementById("typeFilter");
+    const clusterFilter = document.getElementById("clusterFilter");
+    const focusMode = document.getElementById("focusMode");
+    const resetBtn = document.getElementById("resetBtn");
 
-    svg.attr("width", width).attr("height", height);
-
-    const colorMap = {
-      paper: "#ff6b6b",
-      author: "#4dabf7",
-      topic: "#51cf66",
-      venue: "#f59f00"
+    const colorByType = {
+      paper: "#ef4444",
+      author: "#3b82f6",
+      topic: "#10b981",
+      venue: "#f59e0b"
     };
 
-    fetch("./data/graph.json")
-      .then(res => res.json())
-      .then(graph => {
-        const simulation = d3.forceSimulation(graph.nodes)
-          .force("link", d3.forceLink(graph.links).id(d => d.id).distance(90))
-          .force("charge", d3.forceManyBody().strength(-120))
-          .force("center", d3.forceCenter(width / 2, height / 2))
-          .force("collision", d3.forceCollide().radius(18));
+    let graphData = null;
+    let simulation = null;
+    let nodeSelection = null;
+    let linkSelection = null;
+    let labelSelection = null;
+    let selectedNodeId = null;
 
-        const link = svg.append("g")
-          .attr("stroke", "#bbb")
-          .attr("stroke-opacity", 0.6)
-          .selectAll("line")
-          .data(graph.links)
-          .enter()
-          .append("line")
-          .attr("stroke-width", 1);
+    function escapeHtml(value) {
+      return (value || "")
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
 
-        const node = svg.append("g")
-          .selectAll("circle")
-          .data(graph.nodes)
-          .enter()
-          .append("circle")
-          .attr("r", d => d.type === "paper" ? 7 : 5)
-          .attr("fill", d => colorMap[d.type] || "#999")
-          .call(
-            d3.drag()
-              .on("start", dragstarted)
-              .on("drag", dragged)
-              .on("end", dragended)
-          )
-          .on("click", (event, d) => {
-            showDetails(d);
-          })
-          .on("mousemove", (event, d) => {
-            tooltip
-              .style("opacity", 1)
-              .html(`${d.type}: ${d.name}`)
-              .style("left", (event.pageX + 12) + "px")
-              .style("top", (event.pageY + 12) + "px");
-          })
-          .on("mouseleave", () => {
-            tooltip.style("opacity", 0);
-          });
+    function getClusterColor(cluster) {
+      const palette = [
+        "#2563eb", "#7c3aed", "#059669", "#dc2626", "#d97706",
+        "#0891b2", "#be123c", "#65a30d", "#7c2d12", "#4338ca",
+        "#0f766e", "#a21caf"
+      ];
+      const idx = Number(cluster || 0) % palette.length;
+      return palette[idx];
+    }
 
-        simulation.on("tick", () => {
-          link
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
+    function nodeRadius(d) {
+      if (d.type === "paper") return 8;
+      if (d.type === "author") return 5.5;
+      if (d.type === "topic") return 5;
+      if (d.type === "venue") return 5.2;
+      return 5;
+    }
 
-          node
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y);
+    function linkDistance(d) {
+      if (d.type === "authored_by") return 52;
+      if (d.type === "has_topic") return 58;
+      if (d.type === "published_in") return 62;
+      if (d.type === "coauthor") return 76;
+      if (d.type === "related_paper") return 88;
+      return 70;
+    }
+
+    function linkStrokeWidth(d) {
+      if (d.type === "related_paper") return Math.max(1.2, (d.weight || 1) * 1.6);
+      if (d.type === "coauthor") return Math.max(1, (d.weight || 1));
+      return 1.2;
+    }
+
+    function nodeMatchesFilters(d) {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const typeValue = typeFilter.value;
+      const clusterValue = clusterFilter.value;
+
+      const haystack = [
+        d.name || "",
+        d.type || "",
+        d.category || "",
+        d.cluster_label || "",
+        d.venue || "",
+        ...(d.topics || [])
+      ].join(" ").toLowerCase();
+
+      if (keyword && !haystack.includes(keyword)) return false;
+      if (typeValue !== "all" && d.type !== typeValue) return false;
+      if (clusterValue !== "all" && String(d.cluster) !== clusterValue) return false;
+      return true;
+    }
+
+    function buildMeta(meta) {
+      metaBar.innerHTML = `
+        <div class="chip">Papers: ${meta.paper_count ?? 0}</div>
+        <div class="chip">Nodes: ${meta.node_count ?? 0}</div>
+        <div class="chip">Links: ${meta.link_count ?? 0}</div>
+        <div class="chip">Clusters: ${meta.cluster_count ?? 0}</div>
+        <div class="chip">Max Papers: ${meta.max_papers ?? "-"}</div>
+      `;
+    }
+
+    function fillClusterFilter(nodes) {
+      const seen = new Map();
+      nodes.forEach(n => {
+        const key = String(n.cluster ?? 0);
+        if (!seen.has(key)) {
+          seen.set(key, n.cluster_label || `Cluster ${key}`);
+        }
+      });
+
+      const options = [...seen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
+
+      clusterFilter.innerHTML = `<option value="all">All Clusters</option>`;
+      options.forEach(([value, label]) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = `${label} (${value})`;
+        clusterFilter.appendChild(option);
+      });
+    }
+
+    function renderDetails(node) {
+      if (!node) {
+        details.innerHTML = `
+          <div class="muted">
+            Click a node in the graph to inspect its details, neighbors, cluster, and related metadata.
+          </div>
+        `;
+        return;
+      }
+
+      const neighborCount = (node.neighbors || []).length;
+      const topics = Array.isArray(node.topics) ? node.topics : [];
+
+      let html = "";
+      html += `<div class="detail-row"><strong>Name:</strong> ${escapeHtml(node.name || "")}</div>`;
+      html += `<div class="detail-row"><strong>Type:</strong> ${escapeHtml(node.type || "")}</div>`;
+      html += `<div class="detail-row"><strong>Cluster:</strong> ${escapeHtml(node.cluster_label || "")} (${escapeHtml(String(node.cluster ?? ""))})</div>`;
+      html += `<div class="detail-row"><strong>Degree:</strong> ${neighborCount}</div>`;
+
+      if (node.category) {
+        html += `<div class="detail-row"><strong>Category:</strong> ${escapeHtml(node.category)}</div>`;
+      }
+      if (node.year) {
+        html += `<div class="detail-row"><strong>Year:</strong> ${escapeHtml(node.year)}</div>`;
+      }
+      if (node.published) {
+        html += `<div class="detail-row"><strong>Published:</strong> ${escapeHtml(node.published)}</div>`;
+      }
+      if (node.venue) {
+        html += `<div class="detail-row"><strong>Venue:</strong> ${escapeHtml(node.venue)}</div>`;
+      }
+      if (node.source_name) {
+        html += `<div class="detail-row"><strong>Source:</strong> ${escapeHtml(node.source_name)}</div>`;
+      }
+      if (node.doi) {
+        html += `<div class="detail-row"><strong>DOI:</strong> ${escapeHtml(node.doi)}</div>`;
+      }
+      if (node.url) {
+        html += `<div class="detail-row"><a href="${escapeHtml(node.url)}" target="_blank" rel="noopener noreferrer">Open page</a></div>`;
+      }
+      if (node.pdf_url) {
+        html += `<div class="detail-row"><a href="${escapeHtml(node.pdf_url)}" target="_blank" rel="noopener noreferrer">Open PDF</a></div>`;
+      }
+      if (topics.length) {
+        html += `<div class="detail-block"><div class="detail-row"><strong>Topics</strong></div>`;
+        html += `<div class="tags">${topics.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div></div>`;
+      }
+      if (node.abstract) {
+        html += `<div class="detail-block"><div class="detail-row"><strong>Abstract</strong></div>`;
+        html += `<div class="detail-row">${escapeHtml(node.abstract)}</div></div>`;
+      }
+
+      details.innerHTML = html;
+    }
+
+    function showTooltip(event, d) {
+      const parts = [
+        `<strong>${escapeHtml(d.name || "")}</strong>`,
+        `${escapeHtml(d.type || "")}`
+      ];
+
+      if (d.cluster_label) {
+        parts.push(`Cluster: ${escapeHtml(d.cluster_label)}`);
+      }
+      if (d.year) {
+        parts.push(`Year: ${escapeHtml(d.year)}`);
+      }
+
+      tooltip.innerHTML = parts.join("<br>");
+      tooltip.style.opacity = "1";
+      tooltip.style.transform = "translateY(0)";
+      tooltip.style.left = `${event.clientX + 14}px`;
+      tooltip.style.top = `${event.clientY + 14}px`;
+    }
+
+    function hideTooltip() {
+      tooltip.style.opacity = "0";
+      tooltip.style.transform = "translateY(4px)";
+    }
+
+    function isNodeVisible(d) {
+      if (!nodeMatchesFilters(d)) return false;
+
+      if (focusMode.value === "neighbors" && selectedNodeId) {
+        if (d.id === selectedNodeId) return true;
+        const selected = graphData.nodeMap.get(selectedNodeId);
+        const neighborSet = new Set(selected?.neighbors || []);
+        return neighborSet.has(d.id);
+      }
+
+      return true;
+    }
+
+    function isLinkVisible(d) {
+      const sourceId = typeof d.source === "object" ? d.source.id : d.source;
+      const targetId = typeof d.target === "object" ? d.target.id : d.target;
+
+      const sourceNode = graphData.nodeMap.get(sourceId);
+      const targetNode = graphData.nodeMap.get(targetId);
+
+      return isNodeVisible(sourceNode) && isNodeVisible(targetNode);
+    }
+
+    function updateStyles() {
+      const selected = selectedNodeId ? graphData.nodeMap.get(selectedNodeId) : null;
+      const neighborSet = new Set(selected?.neighbors || []);
+
+      nodeSelection
+        .attr("display", d => isNodeVisible(d) ? null : "none")
+        .attr("fill", d => {
+          if (d.type === "paper") {
+            return getClusterColor(d.cluster);
+          }
+          return colorByType[d.type] || "#64748b";
+        })
+        .attr("stroke", d => {
+          if (selectedNodeId && d.id === selectedNodeId) return "#111827";
+          if (selectedNodeId && neighborSet.has(d.id)) return "#111827";
+          return "#ffffff";
+        })
+        .attr("stroke-width", d => {
+          if (selectedNodeId && d.id === selectedNodeId) return 2.8;
+          if (selectedNodeId && neighborSet.has(d.id)) return 2;
+          return 1.2;
+        })
+        .attr("opacity", d => {
+          if (!isNodeVisible(d)) return 0;
+          if (!selectedNodeId) return 0.95;
+          if (d.id === selectedNodeId) return 1;
+          if (neighborSet.has(d.id)) return 0.96;
+          return focusMode.value === "neighbors" ? 0 : 0.14;
         });
 
-        function dragstarted(event, d) {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        }
+      linkSelection
+        .attr("display", d => isLinkVisible(d) ? null : "none")
+        .attr("stroke", d => {
+          if (d.type === "related_paper") return "#94a3b8";
+          if (d.type === "coauthor") return "#60a5fa";
+          if (d.type === "has_topic") return "#86efac";
+          if (d.type === "published_in") return "#fcd34d";
+          return "#cbd5e1";
+        })
+        .attr("stroke-width", d => linkStrokeWidth(d))
+        .attr("opacity", d => {
+          if (!isLinkVisible(d)) return 0;
 
-        function dragged(event, d) {
-          d.fx = event.x;
-          d.fy = event.y;
-        }
-
-        function dragended(event, d) {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        }
-
-        function showDetails(d) {
-          let html = `<div class="meta"><strong>Type:</strong> ${d.type}</div>`;
-          html += `<div class="meta"><strong>Name:</strong> ${d.name}</div>`;
-
-          if (d.year) {
-            html += `<div class="meta"><strong>Year:</strong> ${d.year}</div>`;
-          }
-          if (d.venue) {
-            html += `<div class="meta"><strong>Venue:</strong> ${d.venue}</div>`;
-          }
-          if (d.url) {
-            html += `<div class="meta"><a href="${d.url}" target="_blank">Open paper</a></div>`;
-          }
-          if (d.abstract) {
-            html += `<div class="abstract"><strong>Abstract</strong><br>${d.abstract}</div>`;
+          if (!selectedNodeId) {
+            if (d.type === "related_paper") return 0.35;
+            if (d.type === "coauthor") return 0.28;
+            return 0.32;
           }
 
-          details.innerHTML = html;
-        }
-      })
-      .catch(err => {
-        details.innerHTML = "Failed to load graph.json";
-        console.error(err);
+          const sourceId = typeof d.source === "object" ? d.source.id : d.source;
+          const targetId = typeof d.target === "object" ? d.target.id : d.target;
+          const touchesSelected = sourceId === selectedNodeId || targetId === selectedNodeId;
+
+          if (touchesSelected) return 0.95;
+
+          if (focusMode.value === "neighbors") return 0;
+          return 0.08;
+        });
+
+      labelSelection
+        .attr("display", d => {
+          if (!isNodeVisible(d)) return "none";
+          if (d.type === "paper" && (selectedNodeId === d.id || !selectedNodeId)) return null;
+          if (selectedNodeId && ((graphData.nodeMap.get(selectedNodeId)?.neighbors || []).includes(d.id))) return null;
+          return "none";
+        })
+        .attr("opacity", d => {
+          if (!isNodeVisible(d)) return 0;
+          if (!selectedNodeId) return d.type === "paper" ? 0.9 : 0;
+          if (d.id === selectedNodeId) return 1;
+          const selected = graphData.nodeMap.get(selectedNodeId);
+          const neighborSet = new Set(selected?.neighbors || []);
+          return neighborSet.has(d.id) ? 0.9 : 0;
+        });
+    }
+
+    function ticked() {
+      linkSelection
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      nodeSelection
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      labelSelection
+        .attr("x", d => d.x + 10)
+        .attr("y", d => d.y + 4);
+    }
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.2).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    function centerByCluster(nodes, width, height) {
+      const clusterIds = [...new Set(nodes.map(n => Number(n.cluster || 0)))].sort((a, b) => a - b);
+      const cols = Math.ceil(Math.sqrt(clusterIds.length || 1));
+      const rows = Math.ceil((clusterIds.length || 1) / cols);
+
+      const clusterCenters = new Map();
+      clusterIds.forEach((cid, idx) => {
+        const col = idx % cols;
+        const row = Math.floor(idx / cols);
+        const x = ((col + 0.5) / cols) * width;
+        const y = ((row + 0.5) / rows) * height;
+        clusterCenters.set(cid, { x, y });
       });
+
+      nodes.forEach((n, idx) => {
+        const center = clusterCenters.get(Number(n.cluster || 0)) || { x: width / 2, y: height / 2 };
+        n.x = center.x + ((idx % 7) - 3) * 8;
+        n.y = center.y + ((idx % 5) - 2) * 8;
+      });
+
+      return clusterCenters;
+    }
+
+    async function loadGraph() {
+      try {
+        const response = await fetch("data/graph.json");
+        if (!response.ok) {
+          throw new Error(`Failed to load graph.json: ${response.status}`);
+        }
+
+        const raw = await response.json();
+        const nodes = Array.isArray(raw.nodes) ? raw.nodes : [];
+        const links = Array.isArray(raw.links) ? raw.links : [];
+        const meta = raw.meta || {};
+
+        graphData = {
+          meta,
+          nodes,
+          links,
+          nodeMap: new Map(nodes.map(n => [n.id, n]))
+        };
+
+        buildMeta(meta);
+        fillClusterFilter(nodes);
+
+        renderGraph();
+        renderDetails(null);
+      } catch (err) {
+        console.error(err);
+        metaBar.innerHTML = `<div class="chip">Failed to load graph.json</div>`;
+        details.innerHTML = `<div class="muted">Failed to load <code>data/graph.json</code>. Check whether GitHub Pages deployed the latest files.</div>`;
+      }
+    }
+
+    function renderGraph() {
+      const container = document.querySelector(".graph-wrap");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      svg.selectAll("*").remove();
+      svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+      const zoomLayer = svg.append("g");
+      const linkLayer = zoomLayer.append("g");
+      const nodeLayer = zoomLayer.append("g");
+      const labelLayer = zoomLayer.append("g");
+
+      const zoom = d3.zoom()
+        .scaleExtent([0.45, 2.6])
+        .on("zoom", (event) => {
+          zoomLayer.attr("transform", event.transform);
+        });
+
+      svg.call(zoom);
+
+      centerByCluster(graphData.nodes, width, height);
+
+      simulation = d3.forceSimulation(graphData.nodes)
+        .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(d => linkDistance(d)).strength(0.22))
+        .force("charge", d3.forceManyBody().strength(-52))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("collision", d3.forceCollide().radius(d => nodeRadius(d) + 4))
+        .force("x", d3.forceX(d => {
+          const cid = Number(d.cluster || 0);
+          const cols = Math.ceil(Math.sqrt(graphData.meta.cluster_count || 1));
+          const idx = cid;
+          const col = idx % cols;
+          return ((col + 0.5) / cols) * width;
+        }).strength(0.08))
+        .force("y", d3.forceY(d => {
+          const cid = Number(d.cluster || 0);
+          const cols = Math.ceil(Math.sqrt(graphData.meta.cluster_count || 1));
+          const row = Math.floor(cid / cols);
+          const rows = Math.ceil((graphData.meta.cluster_count || 1) / cols);
+          return ((row + 0.5) / rows) * height;
+        }).strength(0.08))
+        .alpha(0.9)
+        .alphaDecay(0.05)
+        .velocityDecay(0.34);
+
+      linkSelection = linkLayer
+        .selectAll("line")
+        .data(graphData.links)
+        .enter()
+        .append("line")
+        .attr("stroke-linecap", "round");
+
+      nodeSelection = nodeLayer
+        .selectAll("circle")
+        .data(graphData.nodes)
+        .enter()
+        .append("circle")
+        .attr("r", d => nodeRadius(d))
+        .attr("cursor", "pointer")
+        .call(
+          d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended)
+        )
+        .on("click", (event, d) => {
+          selectedNodeId = d.id;
+          renderDetails(d);
+          updateStyles();
+        })
+        .on("mousemove", (event, d) => showTooltip(event, d))
+        .on("mouseleave", hideTooltip);
+
+      labelSelection = labelLayer
+        .selectAll("text")
+        .data(graphData.nodes)
+        .enter()
+        .append("text")
+        .text(d => d.name)
+        .attr("font-size", 11)
+        .attr("font-weight", 700)
+        .attr("fill", "#334155")
+        .style("pointer-events", "none");
+
+      simulation.on("tick", ticked);
+
+      updateStyles();
+    }
+
+    function resetView() {
+      selectedNodeId = null;
+      searchInput.value = "";
+      typeFilter.value = "all";
+      clusterFilter.value = "all";
+      focusMode.value = "all";
+      renderDetails(null);
+      updateStyles();
+    }
+
+    searchInput.addEventListener("input", updateStyles);
+    typeFilter.addEventListener("change", updateStyles);
+    clusterFilter.addEventListener("change", updateStyles);
+    focusMode.addEventListener("change", updateStyles);
+    resetBtn.addEventListener("click", resetView);
+    window.addEventListener("resize", () => {
+      if (graphData) renderGraph();
+    });
+
+    loadGraph();
   </script>
 </body>
 </html>
