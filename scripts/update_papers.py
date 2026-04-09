@@ -104,24 +104,49 @@ def get_text(
     params: Optional[Dict] = None,
     pause: float = 0.5,
     headers: Optional[Dict[str, str]] = None,
+    max_retries: int = 4,
 ) -> str:
     if params:
         url = f"{url}?{urlencode(params)}"
+
     request_headers = {"User-Agent": USER_AGENT}
     if headers:
         request_headers.update(headers)
 
-    request = Request(url, headers=request_headers)
-    try:
-        with urlopen(request, timeout=60) as response:
-            payload = response.read().decode("utf-8")
-    except HTTPError as exc:
-        raise RuntimeError(f"HTTP {exc.code} while fetching {url}") from exc
-    except URLError as exc:
-        raise RuntimeError(f"Network error while fetching {url}: {exc}") from exc
+    last_error = None
 
-    time.sleep(pause)
-    return payload
+    for attempt in range(max_retries):
+        request = Request(url, headers=request_headers)
+        try:
+            with urlopen(request, timeout=60) as response:
+                payload = response.read().decode("utf-8")
+            time.sleep(pause)
+            return payload
+
+        except HTTPError as exc:
+            last_error = exc
+
+            if exc.code == 429:
+                wait_time = max(pause * (2 ** attempt), 5)
+                print(f"[WARN] HTTP 429 for {url}. Retry {attempt + 1}/{max_retries} after {wait_time:.1f}s")
+                time.sleep(wait_time)
+                continue
+
+            raise RuntimeError(f"HTTP {exc.code} while fetching {url}") from exc
+
+        except URLError as exc:
+            last_error = exc
+            wait_time = max(pause * (2 ** attempt), 3)
+            print(f"[WARN] Network error for {url}: {exc}. Retry {attempt + 1}/{max_retries} after {wait_time:.1f}s")
+            time.sleep(wait_time)
+            continue
+
+    if isinstance(last_error, HTTPError):
+        raise RuntimeError(f"HTTP {last_error.code} while fetching {url}") from last_error
+    if isinstance(last_error, URLError):
+        raise RuntimeError(f"Network error while fetching {url}: {last_error}") from last_error
+
+    raise RuntimeError(f"Unknown error while fetching {url}")
 
 
 def get_json(
