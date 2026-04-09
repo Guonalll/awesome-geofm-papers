@@ -2,7 +2,7 @@ name: Update GeoFM papers
 
 on:
   schedule:
-    - cron: "0 22 * * *"   # 自动运行
+    - cron: "0 22 * * *"   # 自动运行（UTC 22:00 = 北京时间早上6点）
   workflow_dispatch:
 
 permissions:
@@ -21,6 +21,8 @@ jobs:
           python-version: "3.11"
 
       - name: Update papers
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
         run: python scripts/update_papers.py
 
       - name: Commit changes
