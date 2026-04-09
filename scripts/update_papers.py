@@ -6,16 +6,17 @@ import os
 import re
 import time
 import xml.etree.ElementTree as ET
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional
+from typing import Dict, Iterable, List, Optional, Set, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = "AwesomeGeoFMPapers/0.3 (https://github.com/Guonalll/awesome-geofm-papers)"
+USER_AGENT = "AwesomeGeoFMPapers/0.4 (https://github.com/Guonalll/awesome-geofm-papers)"
 ROOT = Path(__file__).resolve().parents[1]
 ARXIV_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
@@ -276,7 +277,6 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
         "forestry", "biodiversity", "transportation"
     ]
 
-    # Data：必须更像“数据集论文”，避免把方法论文错判成 Data
     has_data = any(k in full_text for k in data_terms)
     has_foundation = any(k in full_text for k in foundation_terms)
     has_task = any(k in full_text for k in task_terms)
@@ -299,6 +299,7 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
         return "Application"
 
     return "Downstream Task"
+
 
 def paper_keys(paper: "Paper") -> List[str]:
     keys = []
@@ -731,6 +732,7 @@ def render_readme(config: Dict, papers: List["Paper"], generated_at: datetime) -
         "- `data/papers.json`",
         "- `data/papers.csv`",
         "- `data/run_summary.json`",
+        "- `data/graph.json`",
         "",
     ])
     return "\n".join(lines)
@@ -771,7 +773,364 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--readme", default=str(ROOT / "README.md"))
     parser.add_argument("--csv", default=str(ROOT / "data" / "papers.csv"))
     parser.add_argument("--summary", default=str(ROOT / "data" / "run_summary.json"))
+    parser.add_argument("--graph", default=str(ROOT / "data" / "graph.json"))
     return parser.parse_args()
+
+
+# =========================
+# Knowledge graph helpers
+# =========================
+
+STOPWORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "in", "into",
+    "is", "it", "its", "of", "on", "or", "that", "the", "their", "this", "to",
+    "toward", "towards", "with", "via", "using", "based", "study", "learning",
+    "model", "models", "foundation", "remote", "sensing", "earth", "observation",
+    "geospatial", "paper", "approach", "method", "methods"
+}
+
+
+def graph_limit_papers(config: Dict) -> int:
+    return int(config.get("graph", {}).get("max_papers", 180))
+
+
+def graph_max_topics_per_paper(config: Dict) -> int:
+    return int(config.get("graph", {}).get("max_topics_per_paper", 3))
+
+
+def graph_max_related_per_paper(config: Dict) -> int:
+    return int(config.get("graph", {}).get("max_related_per_paper", 3))
+
+
+def graph_similarity_threshold(config: Dict) -> float:
+    return float(config.get("graph", {}).get("similarity_threshold", 0.34))
+
+
+def tokenize_text(text: str) -> Set[str]:
+    raw = re.findall(r"[A-Za-z0-9][A-Za-z0-9\-\+_/\.]{1,}", (text or "").lower())
+    tokens = set()
+    for token in raw:
+        if token in STOPWORDS:
+            continue
+        if len(token) <= 2:
+            continue
+        if token.isdigit():
+            continue
+        tokens.add(token)
+    return tokens
+
+
+def paper_year(paper: Paper) -> str:
+    return (paper.published or "")[:4]
+
+
+def sort_papers_for_graph(papers: List[Paper]) -> List[Paper]:
+    return sorted(
+        papers,
+        key=lambda p: (p.published or "", p.updated or "", p.title),
+        reverse=True,
+    )
+
+
+def select_papers_for_graph(papers: List[Paper], config: Dict) -> List[Paper]:
+    max_papers = graph_limit_papers(config)
+    return sort_papers_for_graph(papers)[:max_papers]
+
+
+def top_topics(topics: List[str], limit: int) -> List[str]:
+    clean = []
+    seen = set()
+    for topic in topics or []:
+        t = normalize_space(str(topic))
+        if not t:
+            continue
+        key = t.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        clean.append(t)
+    return clean[:limit]
+
+
+def jaccard(a: Set[str], b: Set[str]) -> float:
+    if not a or not b:
+        return 0.0
+    inter = len(a & b)
+    union = len(a | b)
+    if union == 0:
+        return 0.0
+    return inter / union
+
+
+def related_score(p1: Paper, p2: Paper, tokens1: Set[str], tokens2: Set[str]) -> float:
+    score = 0.0
+
+    shared_authors = set(a.lower() for a in p1.authors) & set(a.lower() for a in p2.authors)
+    shared_topics = set(t.lower() for t in p1.topics) & set(t.lower() for t in p2.topics)
+
+    if shared_authors:
+        score += 0.55
+    if shared_topics:
+        score += min(0.30, 0.15 * len(shared_topics))
+    if p1.category and p1.category == p2.category:
+        score += 0.08
+    if p1.venue and p2.venue and p1.venue == p2.venue:
+        score += 0.05
+
+    score += 0.60 * jaccard(tokens1, tokens2)
+    return round(score, 4)
+
+
+def compute_related_pairs(papers: List[Paper], config: Dict) -> List[Tuple[int, int, float]]:
+    threshold = graph_similarity_threshold(config)
+    max_related = graph_max_related_per_paper(config)
+
+    token_cache = []
+    for p in papers:
+        combined = " ".join([
+            p.title or "",
+            p.abstract or "",
+            " ".join(p.topics or []),
+            p.category or "",
+            p.venue or "",
+        ])
+        token_cache.append(tokenize_text(combined))
+
+    candidates_by_paper: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+
+    for i in range(len(papers)):
+        for j in range(i + 1, len(papers)):
+            score = related_score(papers[i], papers[j], token_cache[i], token_cache[j])
+            if score >= threshold:
+                candidates_by_paper[i].append((j, score))
+                candidates_by_paper[j].append((i, score))
+
+    selected_pairs = set()
+    for i, items in candidates_by_paper.items():
+        items.sort(key=lambda x: x[1], reverse=True)
+        for j, score in items[:max_related]:
+            a, b = sorted((i, j))
+            selected_pairs.add((a, b, score))
+
+    return sorted(selected_pairs, key=lambda x: (-x[2], x[0], x[1]))
+
+
+def connected_components_from_pairs(n: int, pairs: List[Tuple[int, int, float]]) -> Dict[int, int]:
+    parent = list(range(n))
+
+    def find(x: int) -> int:
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a: int, b: int) -> None:
+        ra = find(a)
+        rb = find(b)
+        if ra != rb:
+            parent[rb] = ra
+
+    for i, j, _ in pairs:
+        union(i, j)
+
+    root_to_cluster = {}
+    cluster_id = 0
+    result = {}
+    for i in range(n):
+        root = find(i)
+        if root not in root_to_cluster:
+            root_to_cluster[root] = cluster_id
+            cluster_id += 1
+        result[i] = root_to_cluster[root]
+    return result
+
+
+def dominant_cluster_label(cluster_papers: List[Paper]) -> str:
+    labels = []
+    for p in cluster_papers:
+        if p.category:
+            labels.append(p.category)
+        for t in p.topics[:1]:
+            labels.append(t)
+    if not labels:
+        return "Cluster"
+    return Counter(labels).most_common(1)[0][0]
+
+
+def build_graph(papers: List[Paper], config: Dict) -> Dict:
+    selected = select_papers_for_graph(papers, config)
+    related_pairs = compute_related_pairs(selected, config)
+    paper_clusters = connected_components_from_pairs(len(selected), related_pairs)
+
+    cluster_to_papers: Dict[int, List[Paper]] = defaultdict(list)
+    for idx, paper in enumerate(selected):
+        cluster_to_papers[paper_clusters[idx]].append(paper)
+
+    cluster_labels = {
+        cluster_id: dominant_cluster_label(cluster_papers)
+        for cluster_id, cluster_papers in cluster_to_papers.items()
+    }
+
+    nodes = []
+    links = []
+    node_map: Dict[str, str] = {}
+    adjacency: Dict[str, Set[str]] = defaultdict(set)
+    next_id = 0
+
+    def add_node(name: str, node_type: str, extra: Optional[Dict] = None) -> str:
+        nonlocal next_id
+        clean_name = normalize_space(name)
+        key = f"{node_type}:{clean_name.lower()}"
+        if key not in node_map:
+            node = {
+                "id": str(next_id),
+                "name": clean_name,
+                "type": node_type,
+            }
+            if extra:
+                node.update(extra)
+            nodes.append(node)
+            node_map[key] = str(next_id)
+            next_id += 1
+        else:
+            if extra:
+                existing_id = node_map[key]
+                for n in nodes:
+                    if n["id"] == existing_id:
+                        for k, v in extra.items():
+                            if v not in ("", None, [], {}):
+                                n[k] = v
+                        break
+        return node_map[key]
+
+    def add_link(source: str, target: str, link_type: str, weight: float = 1.0) -> None:
+        if not source or not target or source == target:
+            return
+        links.append({
+            "source": source,
+            "target": target,
+            "type": link_type,
+            "weight": round(float(weight), 4),
+        })
+        adjacency[source].add(target)
+        adjacency[target].add(source)
+
+    paper_node_ids: List[str] = []
+
+    for idx, paper in enumerate(selected):
+        cluster_id = paper_clusters[idx]
+        cluster_label = cluster_labels.get(cluster_id, "Cluster")
+        year = paper_year(paper)
+
+        paper_id = add_node(
+            paper.title,
+            "paper",
+            {
+                "paper_id": paper.id,
+                "source_name": paper.source,
+                "year": year,
+                "published": paper.published,
+                "updated": paper.updated,
+                "venue": paper.venue,
+                "url": paper.url,
+                "pdf_url": paper.pdf_url,
+                "doi": paper.doi,
+                "abstract": paper.abstract,
+                "topics": paper.topics,
+                "category": paper.category,
+                "cluster": cluster_id,
+                "cluster_label": cluster_label,
+            }
+        )
+        paper_node_ids.append(paper_id)
+
+        for author in paper.authors:
+            author_name = normalize_space(author)
+            if not author_name:
+                continue
+            author_id = add_node(
+                author_name,
+                "author",
+                {
+                    "cluster": cluster_id,
+                    "cluster_label": cluster_label,
+                }
+            )
+            add_link(paper_id, author_id, "authored_by", 1.0)
+
+        if paper.venue:
+            venue_id = add_node(
+                paper.venue,
+                "venue",
+                {
+                    "cluster": cluster_id,
+                    "cluster_label": cluster_label,
+                }
+            )
+            add_link(paper_id, venue_id, "published_in", 0.8)
+
+        for topic in top_topics(paper.topics, graph_max_topics_per_paper(config)):
+            topic_id = add_node(
+                topic,
+                "topic",
+                {
+                    "cluster": cluster_id,
+                    "cluster_label": cluster_label,
+                }
+            )
+            add_link(paper_id, topic_id, "has_topic", 0.9)
+
+    coauthor_weights: Dict[Tuple[str, str], float] = defaultdict(float)
+    for idx, paper in enumerate(selected):
+        cluster_id = paper_clusters[idx]
+        cluster_label = cluster_labels.get(cluster_id, "Cluster")
+        author_ids = []
+        for author in paper.authors:
+            author_name = normalize_space(author)
+            if not author_name:
+                continue
+            aid = add_node(
+                author_name,
+                "author",
+                {
+                    "cluster": cluster_id,
+                    "cluster_label": cluster_label,
+                }
+            )
+            author_ids.append(aid)
+
+        for i in range(len(author_ids)):
+            for j in range(i + 1, len(author_ids)):
+                a, b = sorted((author_ids[i], author_ids[j]))
+                coauthor_weights[(a, b)] += 1.0
+
+    for (a, b), weight in coauthor_weights.items():
+        if weight >= 1.0:
+            add_link(a, b, "coauthor", weight)
+
+    for i, j, score in related_pairs:
+        add_link(paper_node_ids[i], paper_node_ids[j], "related_paper", score)
+
+    for node in nodes:
+        node["neighbors"] = sorted(adjacency.get(node["id"], set()))
+        node["degree"] = len(node["neighbors"])
+
+    meta = {
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "paper_count": len(selected),
+        "node_count": len(nodes),
+        "link_count": len(links),
+        "cluster_count": len(set(paper_clusters.values())),
+        "max_papers": graph_limit_papers(config),
+        "max_related_per_paper": graph_max_related_per_paper(config),
+        "similarity_threshold": graph_similarity_threshold(config),
+    }
+
+    return {
+        "meta": meta,
+        "nodes": nodes,
+        "links": links,
+    }
 
 
 def main() -> int:
@@ -803,7 +1162,6 @@ def main() -> int:
             fetched.extend(fetch_semanticscholar(config, today))
         except Exception as e:
             print(f"[WARN] Semantic Scholar failed: {e}")
-        
 
     fetched = [paper for paper in fetched if matches_scope(paper, config)]
     existing = load_existing(Path(args.data))
@@ -823,6 +1181,10 @@ def main() -> int:
 
     write_json(Path(args.data), [paper.to_dict() for paper in merged])
     write_csv(merged, Path(args.csv))
+
+    graph = build_graph(merged, config)
+    write_json(Path(args.graph), graph)
+
     generated_at = datetime.now(timezone.utc)
 
     Path(args.readme).write_text(render_readme(config, merged, generated_at), encoding="utf-8")
@@ -832,6 +1194,9 @@ def main() -> int:
             "generated_at": generated_at.isoformat(timespec="seconds"),
             "fetched_this_run": len(fetched),
             "records_total": len(merged),
+            "graph_nodes": graph["meta"]["node_count"],
+            "graph_links": graph["meta"]["link_count"],
+            "graph_papers": graph["meta"]["paper_count"],
             "sources": [name for name, enabled in config["sources"].items() if enabled],
         },
     )
