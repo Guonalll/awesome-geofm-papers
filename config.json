@@ -2,7 +2,7 @@
   "project": {
     "name": "Awesome GeoFM Papers",
     "description": "Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.",
-    "homepage": "https://github.com/Guonalll/awesome-geofm-papers"
+    "homepage": "https://github.com/your-name/awesome-geofm-papers"
   },
   "sources": {
     "arxiv": true,
@@ -15,9 +15,9 @@
     "max_results_per_query": 25,
     "keep_recent_days": 3650,
     "include_without_abstract_match": false,
-    "page_size": 100,
+    "page_size": 25,
     "max_pages": 2,
-    "request_pause_seconds": 5
+    "request_pause_seconds": 2.5
   },
   "api": {
     "crossref_mailto": "guonaliang@gmail.com",
@@ -25,63 +25,78 @@
   },
   "keyword_system": {
     "core_model_terms": [
-      "geofm",
-      "geo-fm",
+      "foundation model",
+      "foundation models",
       "geospatial foundation model",
       "geographic foundation model",
       "remote sensing foundation model",
       "earth observation foundation model",
-      "foundation model",
-      "vision-language",
+      "geofm",
+      "geo-fm",
+      "spatial foundation model",
+      "spatial intelligence model",
+      "vision-language model",
       "large vision model",
       "large multimodal model",
-      "segment anything",
+      "multimodal foundation model",
       "pretrain",
       "pretrained",
-      "pre-trained",
+      "pre-training",
       "pretraining",
       "self-supervised",
       "self supervised",
+      "self-supervised learning",
       "representation learning",
       "masked autoencoder",
       "contrastive learning"
     ],
     "geo_context_terms": [
-      "geofm",
-      "geo-fm",
       "geospatial",
       "geographic",
       "geoai",
       "remote sensing",
       "earth observation",
       "satellite",
-      "aerial",
+      "satellite imagery",
+      "satellite image",
+      "aerial image",
+      "aerial imagery",
       "hyperspectral",
       "sar",
+      "synthetic aperture radar",
       "spatial",
       "map",
-      "earth observation imagery",
-      "satellite image",
-      "satellite imagery"
+      "cartography",
+      "earth observation imagery"
     ],
     "must_have_any": [
+      "foundation model",
       "geofm",
       "geo-fm",
-      "geospatial foundation model",
-      "geographic foundation model",
-      "remote sensing foundation model",
-      "earth observation foundation model",
-      "foundation model",
-      "vision-language",
-      "large vision model",
-      "large multimodal model",
-      "segment anything",
-      "self-supervised",
-      "self supervised",
       "pretraining",
+      "self-supervised",
       "representation learning",
       "masked autoencoder",
-      "contrastive learning"
+      "contrastive learning",
+      "vision-language",
+      "multimodal",
+      "geo-localization",
+      "geolocalization",
+      "cross-view matching",
+      "cross-view retrieval",
+      "ground-to-satellite",
+      "place recognition",
+      "image retrieval",
+      "captioning",
+      "visual question answering",
+      "vqa",
+      "segmentation",
+      "classification",
+      "detection",
+      "prediction",
+      "super-resolution",
+      "image fusion",
+      "registration"
     ],
     "exclude_terms": [
       "medical imaging",
@@ -121,7 +136,29 @@
       "\"earth observation\" \"contrastive learning\"",
       "\"remote sensing\" \"masked autoencoder\"",
       "\"satellite\" \"vision-language\"",
-      "\"earth observation\" multimodal"
+      "\"earth observation\" multimodal",
+
+      "\"geo-localization\" satellite",
+      "\"cross-view matching\" satellite",
+      "\"ground to satellite\" image",
+      "\"place recognition\" satellite",
+      "\"image retrieval\" satellite",
+      "\"spatial intelligence\" remote sensing",
+      "\"geospatial reasoning\"",
+      "\"visual geo-localization\"",
+
+      "\"vision-language\" geospatial",
+      "\"multimodal\" satellite",
+      "\"image-text retrieval\" remote sensing",
+      "\"remote sensing\" captioning",
+      "\"remote sensing\" visual question answering",
+
+      "\"foundation model\" flood",
+      "\"foundation model\" agriculture",
+      "\"foundation model\" urban",
+      "\"foundation model\" disaster",
+      "\"multimodal\" wildfire",
+      "\"remote sensing\" landslide model"
     ],
     "arxiv": [
       "\"geospatial foundation model\"",
@@ -135,7 +172,26 @@
       "\"remote sensing\" pretraining",
       "\"remote sensing\" \"representation learning\"",
       "\"remote sensing\" \"masked autoencoder\"",
-      "\"satellite\" \"vision-language\""
+      "\"satellite\" \"vision-language\"",
+
+      "\"geo-localization\" satellite",
+      "\"cross-view matching\" satellite",
+      "\"ground to satellite\" image",
+      "\"place recognition\" satellite",
+      "\"image retrieval\" satellite",
+      "\"spatial intelligence\" remote sensing",
+      "\"visual geo-localization\"",
+
+      "\"vision-language\" geospatial",
+      "\"multimodal\" satellite",
+      "\"image-text retrieval\" remote sensing",
+      "\"remote sensing\" captioning",
+      "\"remote sensing\" visual question answering",
+
+      "\"foundation model\" flood",
+      "\"foundation model\" agriculture",
+      "\"foundation model\" urban",
+      "\"foundation model\" disaster"
     ],
     "openalex": [
       "\"geospatial foundation model\"",
@@ -157,7 +213,29 @@
       "\"earth observation\" \"contrastive learning\"",
       "\"remote sensing\" \"masked autoencoder\"",
       "\"satellite\" \"vision-language\"",
-      "\"earth observation\" multimodal"
+      "\"earth observation\" multimodal",
+
+      "\"geo-localization\" satellite",
+      "\"cross-view matching\" satellite",
+      "\"ground to satellite\" image",
+      "\"place recognition\" satellite",
+      "\"image retrieval\" satellite",
+      "\"spatial intelligence\" remote sensing",
+      "\"geospatial reasoning\"",
+      "\"visual geo-localization\"",
+
+      "\"vision-language\" geospatial",
+      "\"multimodal\" satellite",
+      "\"image-text retrieval\" remote sensing",
+      "\"remote sensing\" captioning",
+      "\"remote sensing\" visual question answering",
+
+      "\"foundation model\" flood",
+      "\"foundation model\" agriculture",
+      "\"foundation model\" urban",
+      "\"foundation model\" disaster",
+      "\"multimodal\" wildfire",
+      "\"remote sensing\" landslide model"
     ],
     "crossref": [
       "\"geospatial foundation model\"",
@@ -173,7 +251,26 @@
       "\"remote sensing\" \"representation learning\"",
       "\"earth observation\" \"representation learning\"",
       "\"remote sensing\" \"contrastive learning\"",
-      "\"remote sensing\" \"masked autoencoder\""
+      "\"remote sensing\" \"masked autoencoder\"",
+
+      "\"geo-localization\" satellite",
+      "\"cross-view matching\" satellite",
+      "\"ground to satellite\" image",
+      "\"place recognition\" satellite",
+      "\"image retrieval\" satellite",
+      "\"spatial intelligence\" remote sensing",
+      "\"visual geo-localization\"",
+
+      "\"vision-language\" geospatial",
+      "\"multimodal\" satellite",
+      "\"image-text retrieval\" remote sensing",
+      "\"remote sensing\" captioning",
+      "\"remote sensing\" visual question answering",
+
+      "\"foundation model\" flood",
+      "\"foundation model\" agriculture",
+      "\"foundation model\" urban",
+      "\"foundation model\" disaster"
     ],
     "semanticscholar": [
       "\"geospatial foundation model\"",
@@ -189,7 +286,26 @@
       "\"remote sensing\" pretraining",
       "\"earth observation\" pretraining",
       "\"remote sensing\" \"representation learning\"",
-      "\"earth observation\" \"representation learning\""
+      "\"earth observation\" \"representation learning\"",
+
+      "\"geo-localization\" satellite",
+      "\"cross-view matching\" satellite",
+      "\"ground to satellite\" image",
+      "\"place recognition\" satellite",
+      "\"image retrieval\" satellite",
+      "\"spatial intelligence\" remote sensing",
+      "\"visual geo-localization\"",
+
+      "\"vision-language\" geospatial",
+      "\"multimodal\" satellite",
+      "\"image-text retrieval\" remote sensing",
+      "\"remote sensing\" captioning",
+      "\"remote sensing\" visual question answering",
+
+      "\"foundation model\" flood",
+      "\"foundation model\" agriculture",
+      "\"foundation model\" urban",
+      "\"foundation model\" disaster"
     ]
   },
   "topic_rules": {
@@ -197,15 +313,65 @@
       "foundation model",
       "geofm",
       "geo-fm",
+      "spatial foundation model",
+      "remote sensing foundation model",
+      "earth observation foundation model",
       "pretrain",
       "pretrained",
-      "pre-trained",
+      "pre-training",
       "pretraining",
       "self-supervised",
-      "self supervised",
       "representation learning",
       "masked autoencoder",
       "contrastive learning"
+    ],
+    "Vision-Language": [
+      "vision-language",
+      "multimodal",
+      "language model",
+      "captioning",
+      "visual question answering",
+      "vqa",
+      "image-text retrieval"
+    ],
+    "Geo-localization": [
+      "geo localization",
+      "geo-localization",
+      "geolocalization",
+      "visual geo-localization",
+      "cross-view geo-localization",
+      "cross-view matching",
+      "cross-view retrieval",
+      "ground-to-satellite",
+      "ground to satellite",
+      "street-to-satellite",
+      "place recognition"
+    ],
+    "Segmentation": [
+      "segmentation",
+      "semantic segmentation",
+      "instance segmentation",
+      "segment anything",
+      "sam",
+      "change detection"
+    ],
+    "Detection": [
+      "object detection",
+      "building detection",
+      "road extraction",
+      "target detection"
+    ],
+    "Retrieval": [
+      "retrieval",
+      "cross-modal retrieval",
+      "image retrieval",
+      "satellite retrieval"
+    ],
+    "Prediction": [
+      "prediction",
+      "forecasting",
+      "time series",
+      "spatiotemporal prediction"
     ],
     "Remote Sensing": [
       "remote sensing",
@@ -215,26 +381,55 @@
       "hyperspectral",
       "sar"
     ],
-    "Vision-Language": [
-      "vision-language",
-      "multimodal",
-      "language model",
-      "caption",
-      "visual question answering"
-    ],
-    "Segmentation": [
-      "segmentation",
-      "segment anything",
-      "sam",
-      "semantic segmentation",
-      "change detection"
-    ],
     "Geospatial AI": [
       "geospatial",
       "geoai",
       "geographic",
       "spatial",
-      "map"
+      "map",
+      "cartography"
+    ],
+    "Flood": [
+      "flood",
+      "inundation",
+      "urban flood"
+    ],
+    "Agriculture": [
+      "agriculture",
+      "crop",
+      "farmland"
+    ],
+    "Urban": [
+      "urban",
+      "city",
+      "transportation",
+      "regional planning"
+    ],
+    "Disaster": [
+      "disaster",
+      "wildfire",
+      "landslide",
+      "earthquake",
+      "emergency"
+    ],
+    "Ecology": [
+      "ecology",
+      "ecosystem",
+      "forestry",
+      "biodiversity",
+      "environmental monitoring"
+    ],
+    "Data": [
+      "dataset",
+      "data collection",
+      "benchmark dataset",
+      "corpus"
+    ],
+    "Benchmark": [
+      "benchmark",
+      "leaderboard",
+      "evaluation suite",
+      "benchmarking"
     ]
   }
 }
