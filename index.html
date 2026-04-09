@@ -131,7 +131,7 @@
     .stats {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      grid-template-columns: repeat(5, minmax(140px, 1fr));
       gap: 12px;
     }
 
@@ -523,7 +523,11 @@
         <div class="stats" id="stats">
           <div class="stat-card">
             <div class="stat-value" id="stat-total">0</div>
-            <div class="stat-label">Total Papers</div>
+            <div class="stat-label">Library Papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-visible">0</div>
+            <div class="stat-label">Visible Papers</div>
           </div>
           <div class="stat-card">
             <div class="stat-value" id="stat-foundation">0</div>
@@ -633,6 +637,7 @@
     const pageInfo = document.getElementById("pageInfo");
 
     const statTotal = document.getElementById("stat-total");
+    const statVisible = document.getElementById("stat-visible");
     const statFoundation = document.getElementById("stat-foundation");
     const statSources = document.getElementById("stat-sources");
     const statYears = document.getElementById("stat-years");
@@ -695,6 +700,7 @@
 
     function updateStats(papers) {
       statTotal.textContent = papers.length;
+      statVisible.textContent = papers.length;
 
       const foundationCount = papers.filter(
         p => safeText(p.category).toLowerCase() === "foundation model"
@@ -712,6 +718,10 @@
       } else {
         statYears.textContent = "-";
       }
+    }
+
+    function updateFilteredStats(papers) {
+      statVisible.textContent = papers.length;
     }
 
     function renderActiveChips() {
@@ -814,6 +824,7 @@
       filteredPapers = sortPapers(filteredPapers);
       currentPage = 1;
       renderActiveChips();
+      updateFilteredStats(filteredPapers);
       renderPapers(filteredPapers);
     }
 
