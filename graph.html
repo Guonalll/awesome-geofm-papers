@@ -13,13 +13,12 @@
       --sub: #6b7280;
       --line: #e5e7eb;
       --brand: #2563eb;
+      --brand-2: #1d4ed8;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -60,9 +59,10 @@
 
     .title-wrap p {
       margin: 8px 0 0;
-      color: rgba(255,255,255,0.86);
+      color: rgba(255,255,255,0.88);
       font-size: 14px;
       line-height: 1.6;
+      max-width: 760px;
     }
 
     .nav-links {
@@ -92,7 +92,7 @@
 
     .page {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
+      grid-template-columns: minmax(0, 1fr) 360px;
       gap: 18px;
       padding: 18px;
       height: calc(100vh - 108px);
@@ -112,13 +112,40 @@
       box-shadow: var(--shadow);
     }
 
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(120px, 1fr));
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .stat-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fbfdff;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: var(--sub);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .toolbar {
       padding: 16px;
     }
 
     .toolbar-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr 1fr 1fr auto;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
       gap: 12px;
       align-items: end;
     }
@@ -153,6 +180,34 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
+    .toolbar-actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--sub);
+      font-weight: 700;
+    }
+
     .btn {
       border: 1px solid var(--line);
       background: #fff;
@@ -170,24 +225,10 @@
       color: var(--brand);
     }
 
-    .meta-bar {
+    .btn-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 10px;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--sub);
-      font-weight: 700;
     }
 
     .graph-wrap {
@@ -203,6 +244,32 @@
       display: block;
       background: #fbfdff;
       border-radius: var(--radius);
+    }
+
+    .graph-overlay {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .overlay-chip {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--sub);
+      font-weight: 700;
+      backdrop-filter: blur(8px);
     }
 
     .side {
@@ -256,6 +323,29 @@
       color: #1d4ed8;
     }
 
+    .action-box {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .small-btn:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
     .legend {
       margin-top: 18px;
       padding-top: 14px;
@@ -285,7 +375,7 @@
 
     .tooltip {
       position: fixed;
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(15, 23, 42, 0.94);
       color: #fff;
       padding: 8px 10px;
       border-radius: 10px;
@@ -296,11 +386,11 @@
       transform: translateY(4px);
       transition: opacity 0.12s ease, transform 0.12s ease;
       z-index: 20;
-      max-width: 260px;
+      max-width: 280px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1180px) {
       .page {
         grid-template-columns: 1fr;
         height: auto;
@@ -310,12 +400,20 @@
         height: 72vh;
       }
 
+      .stats-grid {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+      }
+
       .toolbar-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 760px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+
       .toolbar-grid {
         grid-template-columns: 1fr;
       }
@@ -337,7 +435,7 @@
         <h1>GeoFM Knowledge Graph</h1>
         <p>
           Explore papers, authors, venues, and topics in an interactive graph.
-          Click a node to highlight its local network and inspect details.
+          Search, focus local networks, and inspect cluster-level knowledge structure.
         </p>
       </div>
 
@@ -350,7 +448,32 @@
 
   <main class="page">
     <section class="left-col">
-      <div class="panel toolbar">
+      <section class="panel">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-papers">0</div>
+            <div class="stat-label">Papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-authors">0</div>
+            <div class="stat-label">Authors</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-topics">0</div>
+            <div class="stat-label">Topics</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-venues">0</div>
+            <div class="stat-label">Venues</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-clusters">0</div>
+            <div class="stat-label">Clusters</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel toolbar">
         <div class="toolbar-grid">
           <div class="field">
             <label for="searchInput">Search Node</label>
@@ -378,36 +501,52 @@
           <div class="field">
             <label for="focusMode">View Mode</label>
             <select id="focusMode">
-              <option value="all">Show Full Graph</option>
-              <option value="neighbors">Focus Selected Network</option>
+              <option value="all">Overview</option>
+              <option value="neighbors">Local Network</option>
             </select>
           </div>
 
           <button class="btn" id="resetBtn">Reset View</button>
         </div>
 
-        <div class="meta-bar" id="metaBar">
-          <div class="chip">Loading graph...</div>
-        </div>
-      </div>
+        <div class="toolbar-actions">
+          <div class="chips" id="metaBar">
+            <div class="chip">Loading graph...</div>
+          </div>
 
-      <div class="panel graph-wrap">
+          <div class="btn-row">
+            <button class="btn" id="locateBtn">Locate Match</button>
+            <button class="btn" id="clearSelectionBtn">Clear Selection</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel graph-wrap">
+        <div class="graph-overlay">
+          <div class="overlay-chip" id="selectedHint">No node selected</div>
+          <div class="overlay-chip" id="viewHint">Overview mode</div>
+        </div>
         <svg id="graph"></svg>
-      </div>
+      </section>
     </section>
 
     <aside class="panel side">
-      <h2>Node Details</h2>
+      <h2>Knowledge Panel</h2>
       <div class="muted" id="details">
         Click a node in the graph to inspect its details, neighbors, cluster, and related metadata.
       </div>
 
       <div class="legend">
         <h3>Legend</h3>
-        <div class="legend-item"><span class="dot" style="background:#ef4444;"></span> Paper</div>
+        <div class="legend-item"><span class="dot" style="background:#ef4444;"></span> Paper nodes use cluster colors</div>
         <div class="legend-item"><span class="dot" style="background:#3b82f6;"></span> Author</div>
         <div class="legend-item"><span class="dot" style="background:#10b981;"></span> Topic</div>
         <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span> Venue</div>
+      </div>
+
+      <div class="legend">
+        <h3>Edge Meaning</h3>
+        <div class="legend-item">Related paper links combine topic overlap, author overlap, venue similarity, and text similarity.</div>
       </div>
     </aside>
   </main>
@@ -425,6 +564,17 @@
     const clusterFilter = document.getElementById("clusterFilter");
     const focusMode = document.getElementById("focusMode");
     const resetBtn = document.getElementById("resetBtn");
+    const locateBtn = document.getElementById("locateBtn");
+    const clearSelectionBtn = document.getElementById("clearSelectionBtn");
+
+    const statPapers = document.getElementById("stat-papers");
+    const statAuthors = document.getElementById("stat-authors");
+    const statTopics = document.getElementById("stat-topics");
+    const statVenues = document.getElementById("stat-venues");
+    const statClusters = document.getElementById("stat-clusters");
+
+    const selectedHint = document.getElementById("selectedHint");
+    const viewHint = document.getElementById("viewHint");
 
     const colorByType = {
       paper: "#ef4444",
@@ -438,7 +588,11 @@
     let nodeSelection = null;
     let linkSelection = null;
     let labelSelection = null;
+    let zoomBehavior = null;
+    let zoomLayer = null;
     let selectedNodeId = null;
+    let zoomTransform = d3.zoomIdentity;
+    let isTickingLabels = false;
 
     function escapeHtml(value) {
       return (value || "")
@@ -462,25 +616,37 @@
 
     function nodeRadius(d) {
       if (d.type === "paper") return 8;
-      if (d.type === "author") return 5.5;
+      if (d.type === "author") return 5.4;
       if (d.type === "topic") return 5;
       if (d.type === "venue") return 5.2;
       return 5;
     }
 
     function linkDistance(d) {
-      if (d.type === "authored_by") return 52;
-      if (d.type === "has_topic") return 58;
-      if (d.type === "published_in") return 62;
-      if (d.type === "coauthor") return 76;
-      if (d.type === "related_paper") return 88;
-      return 70;
+      if (d.type === "authored_by") return 50;
+      if (d.type === "has_topic") return 56;
+      if (d.type === "published_in") return 60;
+      if (d.type === "coauthor") return 72;
+      if (d.type === "related_paper") return 84;
+      return 68;
     }
 
     function linkStrokeWidth(d) {
-      if (d.type === "related_paper") return Math.max(1.2, (d.weight || 1) * 1.6);
+      if (d.type === "related_paper") return Math.max(1.2, (d.weight || 1) * 1.4);
       if (d.type === "coauthor") return Math.max(1, (d.weight || 1));
-      return 1.2;
+      return 1.15;
+    }
+
+    function countByType(nodes, type) {
+      return nodes.filter(n => n.type === type).length;
+    }
+
+    function updateStats(nodes, meta) {
+      statPapers.textContent = meta.paper_count ?? countByType(nodes, "paper");
+      statAuthors.textContent = countByType(nodes, "author");
+      statTopics.textContent = countByType(nodes, "topic");
+      statVenues.textContent = countByType(nodes, "venue");
+      statClusters.textContent = meta.cluster_count ?? 0;
     }
 
     function nodeMatchesFilters(d) {
@@ -505,11 +671,10 @@
 
     function buildMeta(meta) {
       metaBar.innerHTML = `
-        <div class="chip">Papers: ${meta.paper_count ?? 0}</div>
         <div class="chip">Nodes: ${meta.node_count ?? 0}</div>
         <div class="chip">Links: ${meta.link_count ?? 0}</div>
-        <div class="chip">Clusters: ${meta.cluster_count ?? 0}</div>
         <div class="chip">Max Papers: ${meta.max_papers ?? "-"}</div>
+        <div class="chip">Threshold: ${meta.similarity_threshold ?? "-"}</div>
       `;
     }
 
@@ -523,14 +688,24 @@
       });
 
       const options = [...seen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
-
       clusterFilter.innerHTML = `<option value="all">All Clusters</option>`;
+
       options.forEach(([value, label]) => {
         const option = document.createElement("option");
         option.value = value;
         option.textContent = `${label} (${value})`;
         clusterFilter.appendChild(option);
       });
+    }
+
+    function updateHints() {
+      if (!selectedNodeId) {
+        selectedHint.textContent = "No node selected";
+      } else {
+        const node = graphData.nodeMap.get(selectedNodeId);
+        selectedHint.textContent = node ? `${node.type}: ${node.name}` : "No node selected";
+      }
+      viewHint.textContent = focusMode.value === "neighbors" ? "Local network mode" : "Overview mode";
     }
 
     function renderDetails(node) {
@@ -576,10 +751,20 @@
       if (node.pdf_url) {
         html += `<div class="detail-row"><a href="${escapeHtml(node.pdf_url)}" target="_blank" rel="noopener noreferrer">Open PDF</a></div>`;
       }
+
+      html += `
+        <div class="action-box">
+          <button class="small-btn" onclick="window.focusSelectedNode()">Focus neighbors</button>
+          <button class="small-btn" onclick="window.clearSelectedNode()">Clear selection</button>
+          ${node.url ? `<button class="small-btn" onclick="window.open('${escapeHtml(node.url)}', '_blank')">Open page</button>` : ""}
+        </div>
+      `;
+
       if (topics.length) {
         html += `<div class="detail-block"><div class="detail-row"><strong>Topics</strong></div>`;
         html += `<div class="tags">${topics.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div></div>`;
       }
+
       if (node.abstract) {
         html += `<div class="detail-block"><div class="detail-row"><strong>Abstract</strong></div>`;
         html += `<div class="detail-row">${escapeHtml(node.abstract)}</div></div>`;
@@ -594,12 +779,9 @@
         `${escapeHtml(d.type || "")}`
       ];
 
-      if (d.cluster_label) {
-        parts.push(`Cluster: ${escapeHtml(d.cluster_label)}`);
-      }
-      if (d.year) {
-        parts.push(`Year: ${escapeHtml(d.year)}`);
-      }
+      if (d.cluster_label) parts.push(`Cluster: ${escapeHtml(d.cluster_label)}`);
+      if (d.year) parts.push(`Year: ${escapeHtml(d.year)}`);
+      if (d.category) parts.push(`Category: ${escapeHtml(d.category)}`);
 
       tooltip.innerHTML = parts.join("<br>");
       tooltip.style.opacity = "1";
@@ -613,41 +795,50 @@
       tooltip.style.transform = "translateY(4px)";
     }
 
+    function getSelectedNode() {
+      return selectedNodeId ? graphData.nodeMap.get(selectedNodeId) : null;
+    }
+
     function isNodeVisible(d) {
       if (!nodeMatchesFilters(d)) return false;
 
       if (focusMode.value === "neighbors" && selectedNodeId) {
         if (d.id === selectedNodeId) return true;
-        const selected = graphData.nodeMap.get(selectedNodeId);
+        const selected = getSelectedNode();
         const neighborSet = new Set(selected?.neighbors || []);
         return neighborSet.has(d.id);
       }
-
       return true;
     }
 
     function isLinkVisible(d) {
       const sourceId = typeof d.source === "object" ? d.source.id : d.source;
       const targetId = typeof d.target === "object" ? d.target.id : d.target;
-
       const sourceNode = graphData.nodeMap.get(sourceId);
       const targetNode = graphData.nodeMap.get(targetId);
-
       return isNodeVisible(sourceNode) && isNodeVisible(targetNode);
     }
 
+    function shouldShowLabel(d) {
+      if (!isNodeVisible(d)) return false;
+
+      const selected = getSelectedNode();
+      const neighborSet = new Set(selected?.neighbors || []);
+
+      if (selectedNodeId) {
+        return d.id === selectedNodeId || neighborSet.has(d.id);
+      }
+
+      return d.type === "paper";
+    }
+
     function updateStyles() {
-      const selected = selectedNodeId ? graphData.nodeMap.get(selectedNodeId) : null;
+      const selected = getSelectedNode();
       const neighborSet = new Set(selected?.neighbors || []);
 
       nodeSelection
         .attr("display", d => isNodeVisible(d) ? null : "none")
-        .attr("fill", d => {
-          if (d.type === "paper") {
-            return getClusterColor(d.cluster);
-          }
-          return colorByType[d.type] || "#64748b";
-        })
+        .attr("fill", d => d.type === "paper" ? getClusterColor(d.cluster) : (colorByType[d.type] || "#64748b"))
         .attr("stroke", d => {
           if (selectedNodeId && d.id === selectedNodeId) return "#111827";
           if (selectedNodeId && neighborSet.has(d.id)) return "#111827";
@@ -680,36 +871,30 @@
           if (!isLinkVisible(d)) return 0;
 
           if (!selectedNodeId) {
-            if (d.type === "related_paper") return 0.35;
-            if (d.type === "coauthor") return 0.28;
-            return 0.32;
+            if (d.type === "related_paper") return 0.28;
+            if (d.type === "coauthor") return 0.22;
+            return 0.26;
           }
 
           const sourceId = typeof d.source === "object" ? d.source.id : d.source;
           const targetId = typeof d.target === "object" ? d.target.id : d.target;
           const touchesSelected = sourceId === selectedNodeId || targetId === selectedNodeId;
 
-          if (touchesSelected) return 0.95;
-
+          if (touchesSelected) return 0.96;
           if (focusMode.value === "neighbors") return 0;
           return 0.08;
         });
 
       labelSelection
-        .attr("display", d => {
-          if (!isNodeVisible(d)) return "none";
-          if (d.type === "paper" && (selectedNodeId === d.id || !selectedNodeId)) return null;
-          if (selectedNodeId && ((graphData.nodeMap.get(selectedNodeId)?.neighbors || []).includes(d.id))) return null;
-          return "none";
-        })
+        .attr("display", d => shouldShowLabel(d) ? null : "none")
         .attr("opacity", d => {
-          if (!isNodeVisible(d)) return 0;
-          if (!selectedNodeId) return d.type === "paper" ? 0.9 : 0;
+          if (!shouldShowLabel(d)) return 0;
+          if (!selectedNodeId) return d.type === "paper" ? 0.88 : 0;
           if (d.id === selectedNodeId) return 1;
-          const selected = graphData.nodeMap.get(selectedNodeId);
-          const neighborSet = new Set(selected?.neighbors || []);
-          return neighborSet.has(d.id) ? 0.9 : 0;
+          return 0.92;
         });
+
+      updateHints();
     }
 
     function ticked() {
@@ -723,13 +908,19 @@
         .attr("cx", d => d.x)
         .attr("cy", d => d.y);
 
-      labelSelection
-        .attr("x", d => d.x + 10)
-        .attr("y", d => d.y + 4);
+      if (!isTickingLabels) {
+        isTickingLabels = true;
+        requestAnimationFrame(() => {
+          labelSelection
+            .attr("x", d => d.x + 10)
+            .attr("y", d => d.y + 4);
+          isTickingLabels = false;
+        });
+      }
     }
 
     function dragstarted(event, d) {
-      if (!event.active) simulation.alphaTarget(0.2).restart();
+      if (!event.active) simulation.alphaTarget(0.18).restart();
       d.fx = d.x;
       d.fy = d.y;
     }
@@ -745,10 +936,10 @@
       d.fy = null;
     }
 
-    function centerByCluster(nodes, width, height) {
+    function centerByCluster(nodes, width, height, clusterCount) {
       const clusterIds = [...new Set(nodes.map(n => Number(n.cluster || 0)))].sort((a, b) => a - b);
-      const cols = Math.ceil(Math.sqrt(clusterIds.length || 1));
-      const rows = Math.ceil((clusterIds.length || 1) / cols);
+      const cols = Math.ceil(Math.sqrt(clusterCount || 1));
+      const rows = Math.ceil((clusterCount || 1) / cols);
 
       const clusterCenters = new Map();
       clusterIds.forEach((cid, idx) => {
@@ -764,8 +955,46 @@
         n.x = center.x + ((idx % 7) - 3) * 8;
         n.y = center.y + ((idx % 5) - 2) * 8;
       });
+    }
 
-      return clusterCenters;
+    function fitNodeToView(node, scale = 1.35) {
+      if (!node || !zoomBehavior) return;
+
+      const container = document.querySelector(".graph-wrap");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const transform = d3.zoomIdentity
+        .translate(width / 2 - node.x * scale, height / 2 - node.y * scale)
+        .scale(scale);
+
+      svg.transition().duration(450).call(zoomBehavior.transform, transform);
+    }
+
+    function selectNode(node, autoFocus = false) {
+      if (!node) return;
+      selectedNodeId = node.id;
+      renderDetails(node);
+      updateStyles();
+      if (autoFocus) fitNodeToView(node, 1.45);
+    }
+
+    function locateFirstMatch() {
+      const visibleNodes = graphData.nodes.filter(n => nodeMatchesFilters(n));
+      if (!visibleNodes.length) return;
+
+      const best = visibleNodes.sort((a, b) => {
+        if (a.type === "paper" && b.type !== "paper") return -1;
+        if (a.type !== "paper" && b.type === "paper") return 1;
+        return (a.name || "").localeCompare(b.name || "");
+      })[0];
+
+      selectNode(best, true);
+    }
+
+    function getUrlFocusId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("focus");
     }
 
     async function loadGraph() {
@@ -788,10 +1017,17 @@
         };
 
         buildMeta(meta);
+        updateStats(nodes, meta);
         fillClusterFilter(nodes);
-
         renderGraph();
         renderDetails(null);
+
+        const focusId = getUrlFocusId();
+        if (focusId && graphData.nodeMap.has(focusId)) {
+          setTimeout(() => {
+            selectNode(graphData.nodeMap.get(focusId), true);
+          }, 450);
+        }
       } catch (err) {
         console.error(err);
         metaBar.innerHTML = `<div class="chip">Failed to load graph.json</div>`;
@@ -807,24 +1043,25 @@
       svg.selectAll("*").remove();
       svg.attr("viewBox", `0 0 ${width} ${height}`);
 
-      const zoomLayer = svg.append("g");
+      zoomLayer = svg.append("g");
       const linkLayer = zoomLayer.append("g");
       const nodeLayer = zoomLayer.append("g");
       const labelLayer = zoomLayer.append("g");
 
-      const zoom = d3.zoom()
+      zoomBehavior = d3.zoom()
         .scaleExtent([0.45, 2.6])
         .on("zoom", (event) => {
+          zoomTransform = event.transform;
           zoomLayer.attr("transform", event.transform);
         });
 
-      svg.call(zoom);
+      svg.call(zoomBehavior);
 
-      centerByCluster(graphData.nodes, width, height);
+      centerByCluster(graphData.nodes, width, height, graphData.meta.cluster_count || 1);
 
       simulation = d3.forceSimulation(graphData.nodes)
-        .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(d => linkDistance(d)).strength(0.22))
-        .force("charge", d3.forceManyBody().strength(-52))
+        .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(d => linkDistance(d)).strength(0.18))
+        .force("charge", d3.forceManyBody().strength(-46))
         .force("center", d3.forceCenter(width / 2, height / 2))
         .force("collision", d3.forceCollide().radius(d => nodeRadius(d) + 4))
         .force("x", d3.forceX(d => {
@@ -833,17 +1070,17 @@
           const idx = cid;
           const col = idx % cols;
           return ((col + 0.5) / cols) * width;
-        }).strength(0.08))
+        }).strength(0.065))
         .force("y", d3.forceY(d => {
           const cid = Number(d.cluster || 0);
           const cols = Math.ceil(Math.sqrt(graphData.meta.cluster_count || 1));
           const row = Math.floor(cid / cols);
           const rows = Math.ceil((graphData.meta.cluster_count || 1) / cols);
           return ((row + 0.5) / rows) * height;
-        }).strength(0.08))
-        .alpha(0.9)
-        .alphaDecay(0.05)
-        .velocityDecay(0.34);
+        }).strength(0.065))
+        .alpha(0.8)
+        .alphaDecay(0.06)
+        .velocityDecay(0.38);
 
       linkSelection = linkLayer
         .selectAll("line")
@@ -866,9 +1103,10 @@
             .on("end", dragended)
         )
         .on("click", (event, d) => {
-          selectedNodeId = d.id;
-          renderDetails(d);
-          updateStyles();
+          selectNode(d, false);
+        })
+        .on("dblclick", (event, d) => {
+          selectNode(d, true);
         })
         .on("mousemove", (event, d) => showTooltip(event, d))
         .on("mouseleave", hideTooltip);
@@ -885,27 +1123,60 @@
         .style("pointer-events", "none");
 
       simulation.on("tick", ticked);
+      updateStyles();
+    }
 
+    function clearSelection() {
+      selectedNodeId = null;
+      renderDetails(null);
       updateStyles();
     }
 
     function resetView() {
-      selectedNodeId = null;
+      clearSelection();
       searchInput.value = "";
       typeFilter.value = "all";
       clusterFilter.value = "all";
       focusMode.value = "all";
-      renderDetails(null);
       updateStyles();
+
+      const container = document.querySelector(".graph-wrap");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      const transform = d3.zoomIdentity.translate(0, 0).scale(1);
+      svg.transition().duration(350).call(zoomBehavior.transform, transform);
     }
+
+    window.focusSelectedNode = function () {
+      const node = getSelectedNode();
+      if (!node) return;
+      focusMode.value = "neighbors";
+      updateStyles();
+      fitNodeToView(node, 1.5);
+    };
+
+    window.clearSelectedNode = function () {
+      clearSelection();
+    };
 
     searchInput.addEventListener("input", updateStyles);
     typeFilter.addEventListener("change", updateStyles);
     clusterFilter.addEventListener("change", updateStyles);
     focusMode.addEventListener("change", updateStyles);
     resetBtn.addEventListener("click", resetView);
+    clearSelectionBtn.addEventListener("click", clearSelection);
+    locateBtn.addEventListener("click", locateFirstMatch);
+
     window.addEventListener("resize", () => {
-      if (graphData) renderGraph();
+      if (graphData) {
+        const currentSelected = getSelectedNode();
+        renderGraph();
+        if (currentSelected) {
+          selectedNodeId = currentSelected.id;
+          renderDetails(currentSelected);
+          updateStyles();
+        }
+      }
     });
 
     loadGraph();
