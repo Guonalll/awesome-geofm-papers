@@ -246,6 +246,13 @@
       color: var(--brand);
     }
 
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      color: var(--sub);
+      border-color: var(--line);
+    }
+
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -268,7 +275,7 @@
     .paper-list {
       display: grid;
       gap: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 20px;
     }
 
     .paper-card {
@@ -407,10 +414,27 @@
       line-height: 1.75;
       font-size: 14px;
       display: none;
+      word-break: break-word;
     }
 
     .abstract-content.open {
       display: block;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 36px;
+      flex-wrap: wrap;
+    }
+
+    .page-info {
+      font-size: 14px;
+      color: var(--sub);
+      min-width: 140px;
+      text-align: center;
     }
 
     .empty {
@@ -573,6 +597,12 @@
       </div>
 
       <div id="paperList" class="paper-list"></div>
+
+      <div id="pagination" class="pagination" style="display:none;">
+        <button class="btn" id="prevPageBtn">Previous</button>
+        <div class="page-info" id="pageInfo">Page 1 of 1</div>
+        <button class="btn" id="nextPageBtn">Next</button>
+      </div>
     </section>
 
     <div class="footer">
@@ -583,6 +613,8 @@
   <script>
     let allPapers = [];
     let filteredPapers = [];
+    let currentPage = 1;
+    const PAGE_SIZE = 20;
 
     const paperList = document.getElementById("paperList");
     const resultCount = document.getElementById("resultCount");
@@ -594,6 +626,11 @@
     const resetBtn = document.getElementById("resetBtn");
     const activeChips = document.getElementById("activeChips");
 
+    const pagination = document.getElementById("pagination");
+    const prevPageBtn = document.getElementById("prevPageBtn");
+    const nextPageBtn = document.getElementById("nextPageBtn");
+    const pageInfo = document.getElementById("pageInfo");
+
     const statTotal = document.getElementById("stat-total");
     const statFoundation = document.getElementById("stat-foundation");
     const statSources = document.getElementById("stat-sources");
@@ -601,6 +638,15 @@
 
     function safeText(value) {
       return value ? String(value) : "";
+    }
+
+    function escapeHtml(value) {
+      return safeText(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
     }
 
     function getYear(paper) {
@@ -765,13 +811,28 @@
       });
 
       filteredPapers = sortPapers(filteredPapers);
+      currentPage = 1;
       renderActiveChips();
       renderPapers(filteredPapers);
     }
 
     function createLinkButton(label, url) {
       if (!url) return "";
-      return `<a class="paper-link" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      return `<a class="paper-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+    }
+
+    function updatePagination(totalItems) {
+      const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+
+      if (totalItems === 0) {
+        pagination.style.display = "none";
+        return;
+      }
+
+      pagination.style.display = totalPages > 1 ? "flex" : "none";
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      prevPageBtn.disabled = currentPage <= 1;
+      nextPageBtn.disabled = currentPage >= totalPages;
     }
 
     function renderPapers(papers) {
@@ -783,10 +844,18 @@
             No papers match the current filters.
           </div>
         `;
+        updatePagination(0);
         return;
       }
 
-      paperList.innerHTML = papers.map((paper, index) => {
+      const totalPages = Math.max(1, Math.ceil(papers.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      const startIndex = (currentPage - 1) * PAGE_SIZE;
+      const endIndex = startIndex + PAGE_SIZE;
+      const currentPapers = papers.slice(startIndex, endIndex);
+
+      paperList.innerHTML = currentPapers.map((paper, index) => {
         const authors = (paper.authors || []).join(", ");
         const topics = (paper.topics || []).filter(Boolean);
         const category = safeText(paper.category) || "Uncategorized";
@@ -795,7 +864,7 @@
         const venue = safeText(paper.venue);
         const published = safeText(paper.published);
         const abstract = safeText(paper.abstract);
-        const abstractId = `abs-${index}`;
+        const abstractId = `abs-${currentPage}-${index}`;
 
         const pageLink = createLinkButton("Page", paper.url);
         const pdfLink = createLinkButton("PDF", paper.pdf_url);
@@ -808,19 +877,19 @@
             <div class="paper-top">
               <div class="paper-main">
                 <h3 class="paper-title">
-                  <a href="${paper.url || "#"}" target="_blank" rel="noopener noreferrer">${title || "Untitled"}</a>
+                  <a href="${escapeHtml(paper.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(title || "Untitled")}</a>
                 </h3>
 
                 <div class="paper-meta">
-                  <div><strong>Authors:</strong> ${authors || "N/A"}</div>
-                  <div><strong>Venue:</strong> ${venue || source || "N/A"}</div>
-                  <div><strong>Source:</strong> ${source || "N/A"}</div>
+                  <div><strong>Authors:</strong> ${escapeHtml(authors || "N/A")}</div>
+                  <div><strong>Venue:</strong> ${escapeHtml(venue || source || "N/A")}</div>
+                  <div><strong>Source:</strong> ${escapeHtml(source || "N/A")}</div>
                 </div>
 
                 <div class="paper-tags">
-                  <span class="tag category">${category}</span>
-                  ${source ? `<span class="tag source">${source}</span>` : ""}
-                  ${topics.map(t => `<span class="tag">${t}</span>`).join("")}
+                  <span class="tag category">${escapeHtml(category)}</span>
+                  ${source ? `<span class="tag source">${escapeHtml(source)}</span>` : ""}
+                  ${topics.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
                 </div>
 
                 <div class="paper-links">
@@ -835,23 +904,28 @@
                     <span id="${abstractId}-toggle">Show</span>
                   </div>
                   <div class="abstract-content" id="${abstractId}">
-                    ${abstract || "No abstract available."}
+                    ${escapeHtml(abstract || "No abstract available.")}
                   </div>
                 </div>
               </div>
 
               <div class="paper-side">
-                <div class="date-pill">${published || "Unknown date"}</div>
+                <div class="date-pill">${escapeHtml(published || "Unknown date")}</div>
               </div>
             </div>
           </article>
         `;
       }).join("");
+
+      updatePagination(papers.length);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function toggleAbstract(id) {
       const el = document.getElementById(id);
       const toggle = document.getElementById(`${id}-toggle`);
+      if (!el || !toggle) return;
+
       const isOpen = el.classList.contains("open");
 
       if (isOpen) {
@@ -863,6 +937,21 @@
       }
     }
 
+    function goToPreviousPage() {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        renderPapers(filteredPapers);
+      }
+    }
+
+    function goToNextPage() {
+      const totalPages = Math.max(1, Math.ceil(filteredPapers.length / PAGE_SIZE));
+      if (currentPage < totalPages) {
+        currentPage += 1;
+        renderPapers(filteredPapers);
+      }
+    }
+
     window.toggleAbstract = toggleAbstract;
 
     function resetFilters() {
@@ -871,6 +960,7 @@
       sourceFilter.value = "All";
       yearFromFilter.value = "All";
       sortFilter.value = "date_desc";
+      currentPage = 1;
       filterPapers();
     }
 
@@ -895,6 +985,7 @@
             Failed to load <code>data/papers.json</code>. Please check whether GitHub Pages has deployed the latest files.
           </div>
         `;
+        pagination.style.display = "none";
       }
     }
 
@@ -904,6 +995,8 @@
     yearFromFilter.addEventListener("change", filterPapers);
     sortFilter.addEventListener("change", filterPapers);
     resetBtn.addEventListener("click", resetFilters);
+    prevPageBtn.addEventListener("click", goToPreviousPage);
+    nextPageBtn.addEventListener("click", goToNextPage);
 
     loadPapers();
   </script>
