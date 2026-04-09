@@ -2,19 +2,26 @@
   "project": {
     "name": "Awesome GeoFM Papers",
     "description": "Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.",
-    "homepage": "https://github.com/your-name/awesome-geofm-papers"
+    "homepage": "https://github.com/Guonalll/awesome-geofm-papers"
   },
   "sources": {
     "arxiv": true,
     "openalex": true,
     "crossref": true,
-    "semanticscholar": false
+    "semanticscholar": true
   },
   "search": {
-    "days_back": 14,
-    "max_results_per_query": 30,
+    "days_back": 3650,
+    "max_results_per_query": 100,
     "keep_recent_days": 3650,
-    "include_without_abstract_match": false
+    "include_without_abstract_match": false,
+    "page_size": 100,
+    "max_pages": 5,
+    "request_pause_seconds": 1.1
+  },
+  "api": {
+    "crossref_mailto": "guonaliang@gmail.com",
+    "semanticscholar_env_key": "S2_API_KEY"
   },
   "keyword_system": {
     "core_model_terms": [
@@ -32,7 +39,12 @@
       "pretrain",
       "pretrained",
       "pre-trained",
-      "self-supervised"
+      "pretraining",
+      "self-supervised",
+      "self supervised",
+      "representation learning",
+      "masked autoencoder",
+      "contrastive learning"
     ],
     "geo_context_terms": [
       "geofm",
@@ -47,7 +59,10 @@
       "hyperspectral",
       "sar",
       "spatial",
-      "map"
+      "map",
+      "earth observation imagery",
+      "satellite image",
+      "satellite imagery"
     ],
     "must_have_any": [
       "geofm",
@@ -61,7 +76,12 @@
       "large vision model",
       "large multimodal model",
       "segment anything",
-      "self-supervised"
+      "self-supervised",
+      "self supervised",
+      "pretraining",
+      "representation learning",
+      "masked autoencoder",
+      "contrastive learning"
     ],
     "exclude_terms": [
       "medical imaging",
@@ -89,7 +109,19 @@
       "\"large vision model\" \"remote sensing\"",
       "\"large multimodal model\" \"remote sensing\"",
       "\"segment anything\" \"remote sensing\"",
-      "\"self-supervised\" \"remote sensing\" \"foundation model\""
+      "\"self-supervised\" \"remote sensing\" \"foundation model\"",
+      "\"remote sensing\" \"self-supervised learning\"",
+      "\"earth observation\" \"self-supervised learning\"",
+      "\"remote sensing\" pretraining",
+      "\"earth observation\" pretraining",
+      "\"satellite image\" pretraining",
+      "\"remote sensing\" \"representation learning\"",
+      "\"earth observation\" \"representation learning\"",
+      "\"remote sensing\" \"contrastive learning\"",
+      "\"earth observation\" \"contrastive learning\"",
+      "\"remote sensing\" \"masked autoencoder\"",
+      "\"satellite\" \"vision-language\"",
+      "\"earth observation\" multimodal"
     ],
     "arxiv": [
       "\"geospatial foundation model\"",
@@ -98,7 +130,12 @@
       "\"Earth observation foundation model\"",
       "\"foundation model\" \"remote sensing\"",
       "\"vision-language\" \"remote sensing\"",
-      "\"segment anything\" \"remote sensing\""
+      "\"segment anything\" \"remote sensing\"",
+      "\"remote sensing\" \"self-supervised learning\"",
+      "\"remote sensing\" pretraining",
+      "\"remote sensing\" \"representation learning\"",
+      "\"remote sensing\" \"masked autoencoder\"",
+      "\"satellite\" \"vision-language\""
     ],
     "openalex": [
       "\"geospatial foundation model\"",
@@ -108,7 +145,19 @@
       "\"Earth observation foundation model\"",
       "\"foundation model\" \"remote sensing\"",
       "\"foundation model\" \"earth observation\"",
-      "\"large multimodal model\" \"remote sensing\""
+      "\"large multimodal model\" \"remote sensing\"",
+      "\"remote sensing\" \"self-supervised learning\"",
+      "\"earth observation\" \"self-supervised learning\"",
+      "\"remote sensing\" pretraining",
+      "\"earth observation\" pretraining",
+      "\"satellite image\" pretraining",
+      "\"remote sensing\" \"representation learning\"",
+      "\"earth observation\" \"representation learning\"",
+      "\"remote sensing\" \"contrastive learning\"",
+      "\"earth observation\" \"contrastive learning\"",
+      "\"remote sensing\" \"masked autoencoder\"",
+      "\"satellite\" \"vision-language\"",
+      "\"earth observation\" multimodal"
     ],
     "crossref": [
       "\"geospatial foundation model\"",
@@ -116,7 +165,15 @@
       "\"remote sensing foundation model\"",
       "\"Earth observation foundation model\"",
       "\"foundation model\" \"remote sensing\"",
-      "\"vision-language\" \"remote sensing\""
+      "\"vision-language\" \"remote sensing\"",
+      "\"remote sensing\" \"self-supervised learning\"",
+      "\"earth observation\" \"self-supervised learning\"",
+      "\"remote sensing\" pretraining",
+      "\"earth observation\" pretraining",
+      "\"remote sensing\" \"representation learning\"",
+      "\"earth observation\" \"representation learning\"",
+      "\"remote sensing\" \"contrastive learning\"",
+      "\"remote sensing\" \"masked autoencoder\""
     ],
     "semanticscholar": [
       "\"geospatial foundation model\"",
@@ -126,7 +183,13 @@
       "\"foundation model\" \"remote sensing\"",
       "\"large vision model\" \"remote sensing\"",
       "\"large multimodal model\" \"remote sensing\"",
-      "\"self-supervised\" \"remote sensing\" \"foundation model\""
+      "\"self-supervised\" \"remote sensing\" \"foundation model\"",
+      "\"remote sensing\" \"self-supervised learning\"",
+      "\"earth observation\" \"self-supervised learning\"",
+      "\"remote sensing\" pretraining",
+      "\"earth observation\" pretraining",
+      "\"remote sensing\" \"representation learning\"",
+      "\"earth observation\" \"representation learning\""
     ]
   },
   "topic_rules": {
@@ -137,7 +200,12 @@
       "pretrain",
       "pretrained",
       "pre-trained",
-      "self-supervised"
+      "pretraining",
+      "self-supervised",
+      "self supervised",
+      "representation learning",
+      "masked autoencoder",
+      "contrastive learning"
     ],
     "Remote Sensing": [
       "remote sensing",
