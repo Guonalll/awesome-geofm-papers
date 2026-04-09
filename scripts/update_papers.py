@@ -245,47 +245,60 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
     topics_text = " ".join(topics or []).lower()
     full_text = f"{text} {topics_text}"
 
-    if any(k in full_text for k in [
-        "dataset", "data set", "benchmark dataset", "training dataset",
-        "corpus", "data collection", "geobench", "bigearthnet", "sen12ms"
-    ]):
+    data_terms = [
+        "dataset", "benchmark dataset", "data collection", "corpus",
+        "annotated dataset", "training dataset",
+        "geobench", "bigearthnet", "sen12ms", "million-aid", "fmow"
+    ]
+    benchmark_terms = [
+        "benchmark", "leaderboard", "evaluation suite", "benchmarking",
+        "empirical benchmark", "comprehensive evaluation"
+    ]
+    foundation_terms = [
+        "foundation model", "foundation models", "geofm", "geo-fm",
+        "pretraining", "pretrain", "pretrained", "pre-trained",
+        "self-supervised", "self supervised", "representation learning",
+        "masked autoencoder", "contrastive learning",
+        "large multimodal model", "vision-language model",
+        "remote sensing foundation model", "earth observation foundation model"
+    ]
+    task_terms = [
+        "segmentation", "classification", "detection",
+        "geo-localization", "geo localization", "geolocalization",
+        "cross-view matching", "cross-view retrieval",
+        "retrieval", "registration", "captioning", "vqa",
+        "prediction", "forecasting", "fusion", "super-resolution",
+        "place recognition", "image retrieval"
+    ]
+    application_terms = [
+        "flood", "agriculture", "urban", "disaster", "wildfire",
+        "landslide", "hydrology", "ecology", "climate",
+        "forestry", "biodiversity", "transportation"
+    ]
+
+    # Data：必须更像“数据集论文”，避免把方法论文错判成 Data
+    has_data = any(k in full_text for k in data_terms)
+    has_foundation = any(k in full_text for k in foundation_terms)
+    has_task = any(k in full_text for k in task_terms)
+    has_application = any(k in full_text for k in application_terms)
+    has_benchmark = any(k in full_text for k in benchmark_terms)
+
+    if has_data and not (has_foundation or has_task):
         return "Data"
 
-    if any(k in full_text for k in [
-        "benchmark", "leaderboard", "evaluation suite", "empirical benchmark",
-        "comprehensive evaluation", "benchmarking"
-    ]):
+    if has_benchmark and not has_foundation:
         return "Benchmark"
 
-    if any(k in full_text for k in [
-        "foundation model", "foundation models",
-        "geospatial foundation model", "remote sensing foundation model",
-        "earth observation foundation model",
-        "geofm", "pretrain", "pre-trained", "pretrained",
-        "self-supervised", "self supervised",
-        "masked autoencoder", "mae",
-        "contrastive learning",
-        "general-purpose model", "general purpose model"
-    ]):
+    if has_foundation:
         return "Foundation Model"
 
-    if any(k in full_text for k in [
-        "flood", "urban", "agriculture", "crop", "farmland",
-        "disaster", "landslide", "wildfire", "city", "regional planning",
-        "hydrology", "climate adaptation"
-    ]):
-        return "Application"
-
-    if any(k in full_text for k in [
-        "segmentation", "classification", "detection",
-        "change detection", "retrieval", "prediction",
-        "mapping", "object detection", "scene classification",
-        "super-resolution", "fusion", "tracking"
-    ]):
+    if has_task:
         return "Downstream Task"
 
-    return "Downstream Task"
+    if has_application:
+        return "Application"
 
+    return "Downstream Task"
 
 def paper_keys(paper: "Paper") -> List[str]:
     keys = []
