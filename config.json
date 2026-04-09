@@ -12,12 +12,12 @@
   },
   "search": {
     "days_back": 3650,
-    "max_results_per_query": 100,
+    "max_results_per_query": 25,
     "keep_recent_days": 3650,
     "include_without_abstract_match": false,
     "page_size": 100,
-    "max_pages": 5,
-    "request_pause_seconds": 1.1
+    "max_pages": 2,
+    "request_pause_seconds": 5
   },
   "api": {
     "crossref_mailto": "guonaliang@gmail.com",
