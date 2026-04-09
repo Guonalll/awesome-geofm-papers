@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-04-08T22:27:51+00:00",
-  "fetched_this_run": 38,
-  "records_total": 25,
+  "generated_at": "2026-04-09T02:47:22+00:00",
+  "fetched_this_run": 3450,
+  "records_total": 1517,
   "sources": [
     "arxiv",
     "openalex",
-    "crossref"
+    "crossref",
+    "semanticscholar"
   ]
 }
