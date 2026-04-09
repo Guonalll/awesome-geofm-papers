@@ -2,6 +2,7 @@ import argparse
 import csv
 import html
 import json
+import os
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -14,7 +15,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = "AwesomeGeoFMPapers/0.2 (https://github.com/your-name/awesome-geofm-papers)"
+USER_AGENT = "AwesomeGeoFMPapers/0.3 (https://github.com/Guonalll/awesome-geofm-papers)"
 ROOT = Path(__file__).resolve().parents[1]
 ARXIV_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
@@ -85,10 +86,32 @@ def short_authors(authors: List[str], limit: int = 4) -> str:
     return ", ".join(authors[:limit]) + " et al."
 
 
-def get_text(url: str, params: Optional[Dict] = None, pause: float = 0.5) -> str:
+def get_pause(config: Dict, default: float = 0.5) -> float:
+    return float(config.get("search", {}).get("request_pause_seconds", default))
+
+
+def get_crossref_mailto(config: Dict) -> str:
+    return config.get("api", {}).get("crossref_mailto", "your_email@example.com")
+
+
+def get_semanticscholar_api_key(config: Dict) -> str:
+    env_name = config.get("api", {}).get("semanticscholar_env_key", "S2_API_KEY")
+    return os.environ.get(env_name, "").strip()
+
+
+def get_text(
+    url: str,
+    params: Optional[Dict] = None,
+    pause: float = 0.5,
+    headers: Optional[Dict[str, str]] = None,
+) -> str:
     if params:
         url = f"{url}?{urlencode(params)}"
-    request = Request(url, headers={"User-Agent": USER_AGENT})
+    request_headers = {"User-Agent": USER_AGENT}
+    if headers:
+        request_headers.update(headers)
+
+    request = Request(url, headers=request_headers)
     try:
         with urlopen(request, timeout=60) as response:
             payload = response.read().decode("utf-8")
@@ -96,12 +119,18 @@ def get_text(url: str, params: Optional[Dict] = None, pause: float = 0.5) -> str
         raise RuntimeError(f"HTTP {exc.code} while fetching {url}") from exc
     except URLError as exc:
         raise RuntimeError(f"Network error while fetching {url}: {exc}") from exc
+
     time.sleep(pause)
     return payload
 
 
-def get_json(url: str, params: Optional[Dict] = None, pause: float = 0.5) -> Dict:
-    return json.loads(get_text(url, params=params, pause=pause))
+def get_json(
+    url: str,
+    params: Optional[Dict] = None,
+    pause: float = 0.5,
+    headers: Optional[Dict[str, str]] = None,
+) -> Dict:
+    return json.loads(get_text(url, params=params, pause=pause, headers=headers))
 
 
 def parse_date(value: str) -> str:
@@ -191,21 +220,18 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
     topics_text = " ".join(topics or []).lower()
     full_text = f"{text} {topics_text}"
 
-    # 1) Data
     if any(k in full_text for k in [
         "dataset", "data set", "benchmark dataset", "training dataset",
         "corpus", "data collection", "geobench", "bigearthnet", "sen12ms"
     ]):
         return "Data"
 
-    # 2) Benchmark
     if any(k in full_text for k in [
         "benchmark", "leaderboard", "evaluation suite", "empirical benchmark",
         "comprehensive evaluation", "benchmarking"
     ]):
         return "Benchmark"
 
-    # 3) Foundation Model
     if any(k in full_text for k in [
         "foundation model", "foundation models",
         "geospatial foundation model", "remote sensing foundation model",
@@ -218,7 +244,6 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
     ]):
         return "Foundation Model"
 
-    # 4) Application
     if any(k in full_text for k in [
         "flood", "urban", "agriculture", "crop", "farmland",
         "disaster", "landslide", "wildfire", "city", "regional planning",
@@ -226,7 +251,6 @@ def classify_paper(title: str, abstract: str = "", topics: Optional[List[str]] =
     ]):
         return "Application"
 
-    # 5) Downstream Task
     if any(k in full_text for k in [
         "segmentation", "classification", "detection",
         "change detection", "retrieval", "prediction",
@@ -311,215 +335,284 @@ def load_existing(path: Path) -> List["Paper"]:
 
 def fetch_arxiv(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
+    page_size = int(config["search"].get("page_size", config["search"].get("max_results_per_query", 100)))
+    max_pages = int(config["search"].get("max_pages", 5))
     days_back = int(config["search"]["days_back"])
+    pause = get_pause(config, 0.5)
     queries = build_query_groups(config)["arxiv"]
 
     for query in queries:
-        payload = get_text(
-            "https://export.arxiv.org/api/query",
-            {
-                "search_query": arxiv_search_query(query),
-                "start": 0,
-                "max_results": max_results,
-                "sortBy": "submittedDate",
-                "sortOrder": "descending",
-            },
-        )
-        root = ET.fromstring(payload)
-        for entry in root.findall("atom:entry", ARXIV_NS):
-            published = parse_date(entry.findtext("atom:published", default="", namespaces=ARXIV_NS))
-            if not is_recent(published, days_back, today):
-                continue
-
-            raw_id = entry.findtext("atom:id", default="", namespaces=ARXIV_NS)
-            pdf_url = ""
-            for link in entry.findall("atom:link", ARXIV_NS):
-                if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
-                    pdf_url = link.attrib.get("href", "")
-                    break
-
-            papers.append(
-                Paper(
-                    id=raw_id.rsplit("/", 1)[-1],
-                    source="arXiv",
-                    title=normalize_space(entry.findtext("atom:title", default="", namespaces=ARXIV_NS)),
-                    authors=[
-                        normalize_space(author.findtext("atom:name", default="", namespaces=ARXIV_NS))
-                        for author in entry.findall("atom:author", ARXIV_NS)
-                    ],
-                    published=published,
-                    updated=parse_date(entry.findtext("atom:updated", default="", namespaces=ARXIV_NS)),
-                    venue="arXiv",
-                    url=raw_id,
-                    pdf_url=pdf_url,
-                    doi=normalize_space(entry.findtext("arxiv:doi", default="", namespaces=ARXIV_NS)),
-                    abstract=normalize_space(entry.findtext("atom:summary", default="", namespaces=ARXIV_NS)),
-                    topics=[],
-                    category="",
-                    query=query,
-                )
+        for page in range(max_pages):
+            start = page * page_size
+            payload = get_text(
+                "https://export.arxiv.org/api/query",
+                {
+                    "search_query": arxiv_search_query(query),
+                    "start": start,
+                    "max_results": page_size,
+                    "sortBy": "submittedDate",
+                    "sortOrder": "descending",
+                },
+                pause=pause,
             )
+
+            root = ET.fromstring(payload)
+            entries = root.findall("atom:entry", ARXIV_NS)
+            if not entries:
+                break
+
+            old_hit = False
+
+            for entry in entries:
+                published = parse_date(entry.findtext("atom:published", default="", namespaces=ARXIV_NS))
+                if not is_recent(published, days_back, today):
+                    old_hit = True
+                    continue
+
+                raw_id = entry.findtext("atom:id", default="", namespaces=ARXIV_NS)
+                pdf_url = ""
+                for link in entry.findall("atom:link", ARXIV_NS):
+                    if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
+                        pdf_url = link.attrib.get("href", "")
+                        break
+
+                papers.append(
+                    Paper(
+                        id=raw_id.rsplit("/", 1)[-1],
+                        source="arXiv",
+                        title=normalize_space(entry.findtext("atom:title", default="", namespaces=ARXIV_NS)),
+                        authors=[
+                            normalize_space(author.findtext("atom:name", default="", namespaces=ARXIV_NS))
+                            for author in entry.findall("atom:author", ARXIV_NS)
+                        ],
+                        published=published,
+                        updated=parse_date(entry.findtext("atom:updated", default="", namespaces=ARXIV_NS)),
+                        venue="arXiv",
+                        url=raw_id,
+                        pdf_url=pdf_url,
+                        doi=normalize_space(entry.findtext("arxiv:doi", default="", namespaces=ARXIV_NS)),
+                        abstract=normalize_space(entry.findtext("atom:summary", default="", namespaces=ARXIV_NS)),
+                        topics=[],
+                        category="",
+                        query=query,
+                    )
+                )
+
+            if len(entries) < page_size or old_hit:
+                break
+
     return papers
 
 
 def fetch_openalex(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
+    page_size = int(config["search"].get("page_size", config["search"].get("max_results_per_query", 100)))
+    max_pages = int(config["search"].get("max_pages", 5))
     since = today - timedelta(days=int(config["search"]["days_back"]))
+    pause = get_pause(config, 0.5)
     queries = build_query_groups(config)["openalex"]
 
     for query in queries:
-        payload = get_json(
-            "https://api.openalex.org/works",
-            {
-                "search": query.replace('"', ""),
-                "filter": f"from_publication_date:{since.isoformat()},to_publication_date:{today.isoformat()}",
-                "sort": "publication_date:desc",
-                "per-page": max_results,
-            },
-        )
-        for item in payload.get("results", []):
-            doi = normalize_space(item.get("doi") or "").replace("https://doi.org/", "")
-            authors = [
-                auth.get("author", {}).get("display_name", "")
-                for auth in item.get("authorships", [])
-                if auth.get("author", {}).get("display_name")
-            ]
-            source = item.get("primary_location", {}).get("source") or {}
-            papers.append(
-                Paper(
-                    id=item.get("id", ""),
-                    source="OpenAlex",
-                    title=normalize_space(item.get("display_name", "")),
-                    authors=authors,
-                    published=parse_date(item.get("publication_date", "")),
-                    updated=parse_date(item.get("updated_date", "")),
-                    venue=normalize_space(source.get("display_name", "")),
-                    url=item.get("doi") or item.get("id", ""),
-                    pdf_url=((item.get("primary_location") or {}).get("pdf_url") or ""),
-                    doi=doi,
-                    abstract=rebuild_openalex_abstract(item.get("abstract_inverted_index") or {}),
-                    topics=[],
-                    category="",
-                    query=query,
-                )
+        for page in range(1, max_pages + 1):
+            payload = get_json(
+                "https://api.openalex.org/works",
+                {
+                    "search": query.replace('"', ""),
+                    "filter": f"from_publication_date:{since.isoformat()},to_publication_date:{today.isoformat()}",
+                    "sort": "publication_date:desc",
+                    "per-page": page_size,
+                    "page": page,
+                },
+                pause=pause,
             )
+
+            results = payload.get("results", [])
+            if not results:
+                break
+
+            for item in results:
+                doi = normalize_space(item.get("doi") or "").replace("https://doi.org/", "")
+                authors = [
+                    auth.get("author", {}).get("display_name", "")
+                    for auth in item.get("authorships", [])
+                    if auth.get("author", {}).get("display_name")
+                ]
+                source = item.get("primary_location", {}).get("source") or {}
+
+                papers.append(
+                    Paper(
+                        id=item.get("id", ""),
+                        source="OpenAlex",
+                        title=normalize_space(item.get("display_name", "")),
+                        authors=authors,
+                        published=parse_date(item.get("publication_date", "")),
+                        updated=parse_date(item.get("updated_date", "")),
+                        venue=normalize_space(source.get("display_name", "")),
+                        url=item.get("doi") or item.get("id", ""),
+                        pdf_url=((item.get("primary_location") or {}).get("pdf_url") or ""),
+                        doi=doi,
+                        abstract=rebuild_openalex_abstract(item.get("abstract_inverted_index") or {}),
+                        topics=[],
+                        category="",
+                        query=query,
+                    )
+                )
+
+            if len(results) < page_size:
+                break
+
     return papers
 
 
 def fetch_crossref(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
+    page_size = int(config["search"].get("page_size", config["search"].get("max_results_per_query", 100)))
+    max_pages = int(config["search"].get("max_pages", 5))
     since = today - timedelta(days=int(config["search"]["days_back"]))
+    pause = get_pause(config, 1.1)
     queries = build_query_groups(config)["crossref"]
+    mailto = get_crossref_mailto(config)
 
     for query in queries:
-        payload = get_json(
-            "https://api.crossref.org/works",
-            {
-                "query.title": query,
-                "rows": max_results,
-                "sort": "published",
-                "order": "desc",
-                "filter": f"from-pub-date:{since.isoformat()},until-pub-date:{today.isoformat()}",
-                "mailto": "your_email@example.com"
-            },
-            pause=1.0,
-        )
-        for item in payload.get("message", {}).get("items", []):
-            title = normalize_space(" ".join(item.get("title", [])))
-            authors = []
-            for a in item.get("author", []):
-                name = normalize_space(f"{a.get('given', '')} {a.get('family', '')}")
-                if name:
-                    authors.append(name)
-
-            published_parts = (
-                item.get("published-print", {}).get("date-parts")
-                or item.get("published-online", {}).get("date-parts")
-                or item.get("created", {}).get("date-parts")
-                or []
+        for page in range(max_pages):
+            offset = page * page_size
+            payload = get_json(
+                "https://api.crossref.org/works",
+                {
+                    "query.title": query,
+                    "rows": page_size,
+                    "offset": offset,
+                    "sort": "published",
+                    "order": "desc",
+                    "filter": f"from-pub-date:{since.isoformat()},until-pub-date:{today.isoformat()}",
+                    "mailto": mailto,
+                },
+                pause=pause,
             )
-            pub_date = ""
-            if published_parts and published_parts[0]:
-                parts = published_parts[0]
-                year = str(parts[0])
-                month = f"{parts[1]:02d}" if len(parts) > 1 else "01"
-                day = f"{parts[2]:02d}" if len(parts) > 2 else "01"
-                pub_date = f"{year}-{month}-{day}"
 
-            doi = normalize_space(item.get("DOI", ""))
-            url = f"https://doi.org/{doi}" if doi else item.get("URL", "")
-            venue = normalize_space(" ".join(item.get("container-title", [])))
+            items = payload.get("message", {}).get("items", [])
+            if not items:
+                break
 
-            papers.append(
-                Paper(
-                    id=doi or item.get("URL", ""),
-                    source="Crossref",
-                    title=title,
-                    authors=authors,
-                    published=pub_date,
-                    updated=parse_date(item.get("created", {}).get("date-time", "")),
-                    venue=venue,
-                    url=url,
-                    pdf_url="",
-                    doi=doi,
-                    abstract=extract_crossref_abstract(item.get("abstract", "")),
-                    topics=[],
-                    category="",
-                    query=query,
+            for item in items:
+                title = normalize_space(" ".join(item.get("title", [])))
+                authors = []
+                for a in item.get("author", []):
+                    name = normalize_space(f"{a.get('given', '')} {a.get('family', '')}")
+                    if name:
+                        authors.append(name)
+
+                published_parts = (
+                    item.get("published-print", {}).get("date-parts")
+                    or item.get("published-online", {}).get("date-parts")
+                    or item.get("created", {}).get("date-parts")
+                    or []
                 )
-            )
+                pub_date = ""
+                if published_parts and published_parts[0]:
+                    parts = published_parts[0]
+                    year = str(parts[0])
+                    month = f"{parts[1]:02d}" if len(parts) > 1 else "01"
+                    day = f"{parts[2]:02d}" if len(parts) > 2 else "01"
+                    pub_date = f"{year}-{month}-{day}"
+
+                doi = normalize_space(item.get("DOI", ""))
+                url = f"https://doi.org/{doi}" if doi else item.get("URL", "")
+                venue = normalize_space(" ".join(item.get("container-title", [])))
+
+                papers.append(
+                    Paper(
+                        id=doi or item.get("URL", ""),
+                        source="Crossref",
+                        title=title,
+                        authors=authors,
+                        published=pub_date,
+                        updated=parse_date(item.get("created", {}).get("date-time", "")),
+                        venue=venue,
+                        url=url,
+                        pdf_url="",
+                        doi=doi,
+                        abstract=extract_crossref_abstract(item.get("abstract", "")),
+                        topics=[],
+                        category="",
+                        query=query,
+                    )
+                )
+
+            if len(items) < page_size:
+                break
+
     return papers
 
 
 def fetch_semanticscholar(config: Dict, today: date) -> List["Paper"]:
     papers: List[Paper] = []
-    max_results = int(config["search"]["max_results_per_query"])
+    page_size = int(config["search"].get("page_size", config["search"].get("max_results_per_query", 100)))
+    max_pages = int(config["search"].get("max_pages", 5))
     days_back = int(config["search"]["days_back"])
+    pause = max(get_pause(config, 1.1), 1.1)
     queries = build_query_groups(config)["semanticscholar"]
+    api_key = get_semanticscholar_api_key(config)
 
     fields = "paperId,title,abstract,authors,year,venue,url,openAccessPdf,externalIds"
+    headers = {}
+    if api_key:
+        headers["x-api-key"] = api_key
 
     for query in queries:
-        payload = get_json(
-            "https://api.semanticscholar.org/graph/v1/paper/search",
-            {
-                "query": query,
-                "limit": max_results,
-                "fields": fields,
-            },
-            pause=1.0,
-        )
-        for item in payload.get("data", []):
-            year = item.get("year")
-            published = f"{year}-01-01" if year else ""
-            if not is_recent(published, days_back, today):
-                continue
-
-            external_ids = item.get("externalIds", {}) or {}
-            doi = normalize_space(external_ids.get("DOI", ""))
-            pdf_url = ((item.get("openAccessPdf") or {}).get("url") or "")
-
-            papers.append(
-                Paper(
-                    id=item.get("paperId", ""),
-                    source="Semantic Scholar",
-                    title=normalize_space(item.get("title", "")),
-                    authors=[normalize_space(a.get("name", "")) for a in item.get("authors", []) if a.get("name")],
-                    published=published,
-                    updated="",
-                    venue=normalize_space(item.get("venue", "")),
-                    url=item.get("url", "") or (f"https://doi.org/{doi}" if doi else ""),
-                    pdf_url=pdf_url,
-                    doi=doi,
-                    abstract=normalize_space(item.get("abstract", "")),
-                    topics=[],
-                    category="",
-                    query=query,
-                )
+        for page in range(max_pages):
+            offset = page * page_size
+            payload = get_json(
+                "https://api.semanticscholar.org/graph/v1/paper/search",
+                {
+                    "query": query,
+                    "limit": page_size,
+                    "offset": offset,
+                    "fields": fields,
+                },
+                pause=pause,
+                headers=headers,
             )
+
+            items = payload.get("data", [])
+            if not items:
+                break
+
+            old_hit = False
+
+            for item in items:
+                year = item.get("year")
+                published = f"{year}-01-01" if year else ""
+                if not is_recent(published, days_back, today):
+                    old_hit = True
+                    continue
+
+                external_ids = item.get("externalIds", {}) or {}
+                doi = normalize_space(external_ids.get("DOI", ""))
+                pdf_url = ((item.get("openAccessPdf") or {}).get("url") or "")
+
+                papers.append(
+                    Paper(
+                        id=item.get("paperId", ""),
+                        source="Semantic Scholar",
+                        title=normalize_space(item.get("title", "")),
+                        authors=[normalize_space(a.get("name", "")) for a in item.get("authors", []) if a.get("name")],
+                        published=published,
+                        updated="",
+                        venue=normalize_space(item.get("venue", "")),
+                        url=item.get("url", "") or (f"https://doi.org/{doi}" if doi else ""),
+                        pdf_url=pdf_url,
+                        doi=doi,
+                        abstract=normalize_space(item.get("abstract", "")),
+                        topics=[],
+                        category="",
+                        query=query,
+                    )
+                )
+
+            if len(items) < page_size or old_hit:
+                break
+
     return papers
 
 
@@ -688,6 +781,7 @@ def main() -> int:
             "sources": [name for name, enabled in config["sources"].items() if enabled],
         },
     )
+
     print(json.dumps(load_json(Path(args.summary), {}), ensure_ascii=False, indent=2))
     return 0
 
