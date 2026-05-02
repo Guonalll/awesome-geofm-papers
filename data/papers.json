@@ -601,6 +601,200 @@
     "query": "\"remote sensing\" pretraining"
   },
   {
+    "id": "10.4018/979-8-3373-7554-0.ch004",
+    "source": "Crossref",
+    "title": "Climate Science Reimagined AI for Weather Forecasting, Disaster Prediction, and Biodiversity Monitoring",
+    "authors": [
+      "Fransiskus Desales Bayu Priatmoko",
+      "Binastya Anggara Sekti"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-04-16",
+    "venue": "Advances in Computational Intelligence and Robotics Predicting and Monitoring Climate Risks Through Green AI",
+    "url": "https://doi.org/10.4018/979-8-3373-7554-0.ch004",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-7554-0.ch004",
+    "abstract": "This chapter, per the authors, examines the transformative role of Artificial Intelligence (AI) in advancing climate science, weather forecasting, disaster prediction, and biodiversity monitoring. It explores the emergence of Green AI as a paradigm that balances computational efficiency, interpretability, and environmental sustainability. The chapter highlights how machine learning and deep learning models, including Pangu-Weather, GraphCast, and FuXi, have surpassed traditional numerical models in accuracy and speed. Furthermore, it discusses ethical and governance dimensions such as data transparency, algorithmic fairness, and equitable access for developing nations. By integrating responsible AI principles and sustainable computing practices, this chapter proposes a roadmap for energy-efficient, explainable, and inclusive climate intelligence that supports global resilience and aligns with the United Nations Sustainable Development Goals.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Disaster",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" disaster"
+  },
+  {
+    "id": "10.4018/979-8-3373-2922-2.ch008",
+    "source": "Crossref",
+    "title": "Enhancing the AI-Driven Vision Transformer Security",
+    "authors": [
+      "M. Bhavana",
+      "U. Roopa"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-04-10",
+    "venue": "Advances in Computational Intelligence and Robotics AI-Driven Cybersecurity for Autonomous Systems",
+    "url": "https://doi.org/10.4018/979-8-3373-2922-2.ch008",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-2922-2.ch008",
+    "abstract": "Vision Transformers (ViTs) offer significant potential for vision tasks in autonomous systems, but their susceptibility to adversarial attacks and real-time deployment challenges pose critical issues. This study analyzes ViTs' security, highlighting patch-based and backdoor attacks as primary threats, with ViT-S/16's robust accuracy declining to 40.4% and an 85% misclassification rate, respectively. Defense strategies, including adversarial training and SEViT ensembles, improve robustness by 13.1% and achieve a 0.93 AUC for adversarial detection, while denoised smoothing ensures a 59.44% certified robust accuracy. Deployment obstacles emerge with ViT-L/16's 120 ms latency, twice that of CNNs, impacting safety-critical performance. Through empirical assessments and simulations, this research emphasizes the necessity of scalable defenses and lightweight ViT designs to optimize robustness, efficiency, and safety, providing a framework to enhance ViT reliability in autonomous applications.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" \"remote sensing\""
+  },
+  {
+    "id": "10.4018/979-8-3373-5223-7.ch005",
+    "source": "Crossref",
+    "title": "Adversarial Machine Learning in Intrusion Detection Systems",
+    "authors": [
+      "Anorgul Ashirova",
+      "Ulugbek Bobamuratov",
+      "S. Aarthi",
+      "R. N. Ravikumar"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-04-09",
+    "venue": "Advances in Computational Intelligence and Robotics AI-Driven Intrusion Detection and Prevention for Business Cybersecurity",
+    "url": "https://doi.org/10.4018/979-8-3373-5223-7.ch005",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-5223-7.ch005",
+    "abstract": "This chapter explores the vulnerabilities of AI-driven Intrusion Detection Systems (IDS) to Adversarial Machine Learning (AML) attacks and presents a multi-layered defense framework. It examines how adversarial tactics such as evasion, poisoning, and model inversion mislead IDS models using crafted inputs. Techniques like Fast Gradient Sign Method (FGSM), Projected Gradient Descent (PGD), and Generative Adversarial Networks (GANs) are used to bypass detection. To counter these threats, the chapter proposes adversarial training, input preprocessing, gradient masking, ensemble learning, and Explainable AI (SHAP, LIME). Real-world case studies in banking and cloud environments highlight improvements in detection accuracy and reduction in false negatives. Future research directions include adaptive learning, privacy-preserving federated systems, and real-time explainability. The proposed approach enhances IDS robustness by up to 50%, offering practical solutions to secure enterprise systems against evolving adversarial threats.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "10.4018/979-8-3373-3536-0.ch002",
+    "source": "Crossref",
+    "title": "AI and Machine Learning Applications in Ethical Hacking",
+    "authors": [
+      "R. Siva Subramanian",
+      "Venkata Ramana Kaneti",
+      "G. Saranya",
+      "N. P. Ponnuviji"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-03-26",
+    "venue": "Ethical Hacking and Penetration Testing in Cybersecurity",
+    "url": "https://doi.org/10.4018/979-8-3373-3536-0.ch002",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-3536-0.ch002",
+    "abstract": "The integration of Artificial Intelligence (AI) and Machine Learning (ML) in ethical hacking has significantly enhanced cybersecurity defense mechanisms. AI-driven techniques enable automated vulnerability detection, malware analysis, phishing prevention, and real-time intrusion detection, making security operations more efficient and proactive. Advanced AI models, including deep learning and reinforcement learning, strengthen penetration testing and threat intelligence. However, challenges such as adversarial AI attacks, data privacy concerns, biases in AI models, and high computational costs pose significant risks. Future research focuses on autonomous AI-powered ethical hacking frameworks, federated learning for secure threat intelligence sharing, and AI-human collaboration for effective cybersecurity governance. As cyber threats become more sophisticated, leveraging AI responsibly will be essential for advancing cybersecurity defenses while ensuring transparency and ethical compliance.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "10.4018/979-8-3373-6274-8.ch010",
+    "source": "Crossref",
+    "title": "A Special Focus on Natural Disasters in the Field of Earth Sciences",
+    "authors": [
+      "Yaver Batu",
+      "Mehmet Ali Çelik",
+      "Muhittin Kulak"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-03-04",
+    "venue": "Interdisciplinary Studies on Global Disasters",
+    "url": "https://doi.org/10.4018/979-8-3373-6274-8.ch010",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-6274-8.ch010",
+    "abstract": "This study analyzes 9,116 scientific reports to explore research trends in natural disasters within Earth sciences. Keyword network and clustering analyses reveal that “natural disasters” and “climate change” are the most central themes, highlighting their strong interconnection. Technologies such as GIS, remote sensing, and artificial intelligence (deep learning, neural networks) play crucial roles in disaster prediction, risk assessment, and damage evaluation. Tsunami-related research exemplifies advancements in early warning and management systems, particularly in Japan, Indonesia, and Turkey. The study also emphasizes societal resilience and recovery processes after disasters. Based on the World Risk Index, India and Indonesia show the highest vulnerability, while the U.S. and Germany demonstrate strong adaptive capacities. Turkey's moderate index underlines the need for improved preparedness. Bibliometric data identify China, the U.S., and India as leading contributors to disaster-related research.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "10.4018/979-8-3373-6691-3.ch008",
+    "source": "Crossref",
+    "title": "Investigation of Disease Prediction Based on DNA Using Deep Model Techniques",
+    "authors": [
+      "S. Puvaneswari",
+      "G. Indirani",
+      "G. Revathy"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-02-25",
+    "venue": "Advances in Computational Intelligence and Robotics AI Techniques for Association Rule Mining in Medical Data",
+    "url": "https://doi.org/10.4018/979-8-3373-6691-3.ch008",
+    "pdf_url": "",
+    "doi": "10.4018/979-8-3373-6691-3.ch008",
+    "abstract": "Precision medicine has never had more prospects thanks to the explosive growth of genetic data caused by the quick development of genomic sequencing technologies. This paper investigates the use of sophisticated deep neural networks (DNNs) for risk factor evaluation and illness prediction using DNA sequences. The suggested method uses extensive genomic datasets to create reliable prediction models that can recognize intricate genetic patterns linked to a range of illnesses. The technology captures both spatial and sequential dependencies in DNA data by integrating recurrent neural networks (RNNs) with convolutional neural networks (CNNs).",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159629531",
+    "source": "OpenAlex",
+    "title": "Landslide Detection and Susceptibility Mapping Using Machine Learning and Deep Learning: A Comprehensive Review",
+    "authors": [
+      "D.B.Mirajkar",
+      "Yasmeen Shaikh"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-02",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.19947868",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.19947868",
+    "abstract": "Every year, landslides kill thousands of people and wipe out infrastructure worth billions of dollars, yet predicting where and when they will occur remains stubbornly difficult. Over the last decade or so, the combination of freely available satellite imagery and fast-maturing machine learning (ML) and deep learning (DL) techniques has begun to change that picture in meaningful ways. This paper reviews the trajectory of that change examining how researchers have moved from simple statistical classifiers to sophisticated transformer-based segmentation models, and what that progression has actually delivered in terms of practical detection capability. We surveyed around 45 peer-reviewed studies published between 2015 and 2024, covering landslide susceptibility mapping, pixel-level inventory mapping, change detection from multi-temporal imagery, and real-time early warning integration. Our analysis draws on work using optical sensors (Sentinel-2, Landsat), SAR platforms (Sentinel-1, ALOS-2), and a growing variety of public benchmark datasets such as Bijie, COOLR, and HR-GLDD. We find that while ensemble classifiers like Random Forest still hold their own for susceptibility mapping, encoder-decoder architectures particularly U-Net variants have become the workhorse for segmentation tasks, with more recent transformer hybrids pushing IoU scores above 0.85 on standard benchmarks. That said, the field carries some persistent and underappreciated weaknesses: almost all top-performing models have been trained and tested within narrow geographic windows; labeled data remains scarce outside China, Italy, and Central Europe; and the jump from research prototype to operational warning system has proven far harder than benchmark numbers suggest. We close the review by pointing to foundation models, physics-informed learning, and federated training as directions that may genuinely move the needle on these limitations.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Disaster",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159569221",
+    "source": "OpenAlex",
+    "title": "FloodDET",
+    "authors": [
+      "Gautam Singha",
+      "Debanga Raj Neog"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-02",
+    "venue": "Mendeley Data",
+    "url": "https://doi.org/10.17632/px48m7vwvf",
+    "pdf_url": "",
+    "doi": "10.17632/px48m7vwvf",
+    "abstract": "The FloodDET dataset is a large-scale, unified image collection designed to train deep learning models for the automatic detection and fine-grained quantification of urban flood levels. Addressing the disjointed annotation schemas of previous resources, this dataset provides a consistent, pixel-level re-annotation of 10,262 images exported in the standard MS COCO JSON format for seamless integration with major computer vision libraries. The dataset is split into training (7,477), validation (1,535), and test (1,250) sets, and incorporates non-flooded negative samples to minimize false positives. It employs a unique \"regression-ready\" 45-class schema that frames flood estimation as a fine-grained object detection task. By linearly mapping the 11 granular submersion levels (0 to 10) of four reference objects—Person (classes 1–11), Bicycle (12–22), Car (23–33), and Bus (34–44)—alongside a general \"Flood\" class (45), models can mathematically derive ground-truth regression targets directly from the class IDs. This harmonized dataset builds upon the extensive foundational data collection efforts of previous researchers. FloodDET consists of completely re-annotated raw imagery originally sourced from the DEEPFLOOD dataset (Chaudhary et al., 2020), FloodIMG (Karanjit et al., 2023), Mapillary Vistas (Neuhold et al., 2017), and MS COCO (Lin et al., 2014), which provided the essential non-flooded urban scene samples. We extend our full gratitude to these original authors for providing the raw imagery that made this unified resource possible. References: 1. Chaudhary, P., D’Aronco, S., Leitão, J., Schindler, K., Wegner, J., 2020. Water level prediction from social media images with a multi-task ranking approach. ISPRS Journal of Photogrammetry and Remote Sensing 167, 252–262 2. Karanjit, R., Pally, R., Samadi, S., 2023. Floodimg: Flood image database system. Data in Brief 48, 109164 3. Neuhold, G., Ollmann, T., Bulò, S.R., Kontschieder, P., 2017. The mapillary vistas dataset for semantic understanding of street scenes, in: 2017 IEEE International Conference on Computer Vision (ICCV), pp. 5000–5009. 4. Lin, T.Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dollár, P., Zitnick, C.L., 2014. Microsoft coco: Common objects in context, in: European conference on computer vision, Springer. pp. 740–755.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Flood",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
     "id": "10.1002/env.70094",
     "source": "Crossref",
     "title": "Spatiotemporal Magnitude Classification: A New Approach Using a Graph Convolution LSTM Model",
@@ -2511,6 +2705,135 @@
     ],
     "category": "Foundation Model",
     "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159547097",
+    "source": "OpenAlex",
+    "title": "The Nonverbal Syntax Framework: An Evidence-Based Tiered System for Inferring Learner States from Observable Behavioral Cues",
+    "authors": [
+      "Sherzod Turaev",
+      "Mary John",
+      "Jaloliddin Rustamov",
+      "Zahiriddin Rustamov",
+      "Saja Aldabet",
+      "Nazar Zaki",
+      "Khaled Shuaib"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-05-02",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159547097",
+    "pdf_url": "https://arxiv.org/pdf/2604.25612",
+    "doi": "",
+    "abstract": "Understanding learners' cognitive and affective states underpins adaptive educational systems and effective teaching. Although research links nonverbal cues to internal states, no framework calibrates them to evidence. We present the Nonverbal Syntax Framework, drawn from a systematic review of 908 studies and 17,043 cue-state mappings (Turaev et al., 2026). The framework addresses three challenges: terminological fragmentation (behaviors described inconsistently), evidence heterogeneity (single observations to replicated findings), and state ambiguity (similar patterns indicating multiple states). Normalization consolidated 5,537 state labels into 2,010 canonical states (63.7%) and 11,521 cues into 6,434 normalized cues (44.2%) across nine behavioral channels. Dual-evidence assessment separately evaluates Component Evidence (coverage of cues and states) and Relationship Evidence (independent studies per cue-state link). 52% of \"Very High\" relationships rest on one paper, so separation enables calibrated rather than overconfident inference from preliminary findings. The framework's four levels comprise a Cue Vocabulary of 6,434 indicators classified as observable/instrumental; State Clusters linking 2,010 states to indicative cues; State Profiles with multimodal behavioral signatures and actionable specifications; and Discriminative Analysis distinguishing 1,215 confusable state pairs. We identify 480 actionable R1-R4 relationships (three or more independent papers), the replicated core of six decades of research, covering 35.5% of mappings across 47 key learning states and 111 distinct indicators. The remaining 91.5% (9,653 single-paper findings) form exploratory hypotheses for replication. The framework gives researchers an empirical foundation for identifying gaps, practitioners evidence-based tools for state inference, and technologists validated features for multimodal detection.",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7159546738",
+    "source": "OpenAlex",
+    "title": "Quantum-Inspired Robust and Scalable SAR Object Classification",
+    "authors": [
+      "Maximilian Schärf",
+      "Marco Trenti",
+      "Felix Bock",
+      "Padraig Davidson",
+      "Tobias Brosch",
+      "Benjamin Rodrigues de Miranda",
+      "Sigurd Huber",
+      "Timo Felser"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-05-02",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159546738",
+    "pdf_url": "https://arxiv.org/pdf/2604.25755",
+    "doi": "",
+    "abstract": "SAR image classification naturally has to deal with huge noise and a high dynamic range particularly requiring robust classification models. Additionally, the deployment of these models on edge devices, such as drones and military aircraft, requires a careful balance between model size and classification accuracy. This study explores the potential of tensor networks to meet these robustness requirements, specifically evaluating their resilience to data poisoning. Unlike previous works that concentrated on conventional neural networks for SAR object detection, this research focuses on the robustness and model reduction capabilities of tensor networks in object classification. Our findings indicate that tensor networks are adept at addressing both the challenges of robustness and the need for model efficiency, thereby contributing valuable insights to the ongoing discourse in radar applications and deep learning methodologies in general.",
+    "topics": [
+      "Detection",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7158809851",
+    "source": "OpenAlex",
+    "title": "Keke-Aware Vehicle Counting for Traffic Measurement Using YOLO: Dataset and Field Evaluation",
+    "authors": [
+      "Moses U. Akujobi",
+      "Abdulhameed U. Abubakar",
+      "R.J. Mailabari",
+      "Iliya T. Thuku",
+      "Saidu Y. Musa",
+      "Ibrahim M. Visa",
+      "Ayodeji O. Abioye"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-05-02",
+    "venue": "Applied Sciences",
+    "url": "https://doi.org/10.3390/app16094316",
+    "pdf_url": "",
+    "doi": "10.3390/app16094316",
+    "abstract": "Accurate vehicle counts from traffic videos are fundamental to traffic measurement and to estimating roadway demand for infrastructure planning and maintenance. However, many vision-based traffic datasets and pretrained models under-represent vehicle types that are prevalent in developing countries, such as the keke (globally known as auto-rickshaw/three-wheeler), which can bias traffic composition estimates and downstream workload indicators. This paper presents a keke-aware vehicle detection and counting pipeline that combines fine-tuned YOLO-based detectors with BoT-SORT/ByteTrack tracking and ROI-based counting, together with a newly curated and publicly released traffic-video dataset that includes a dedicated keke class. The detectors are fine-tuned from pretrained weights on a six-class dataset (bicycle, bus, car, motorcycle, truck, keke) and evaluated on held-out roadside test videos with a manual counting baseline. On the validation split (2088 images; 8400 instances), the fine-tuned YOLO11l model achieves P=0.752, R=0.696, mAP@0.5=0.766, and mAP@0.5:0.95=0.578, with the keke class attaining mAP@0.5=0.772, while YOLO26l achieves slightly higher overall precision (P=0.766) and stronger keke recall and mAP@0.5:0.95. In system-level counting, the selected tuned ROI-based variants produce the most reliable results on the Yola Road downward flow, where keke counts remain close to the manual baseline, but performance is strongly direction- and scene-dependent, with substantially larger errors in the Yola upward flow and the more challenging Mubi Road scene. Flow-rate and ESAL-rate analyses further show that class misclassification can severely distort pavement-loading estimates even when total traffic flow appears close to baseline, underscoring the need for localized class ontologies and robust heavy-vehicle discrimination in mixed-traffic ITS deployments. The released dataset and baseline pipeline provide a practical reference for keke-aware traffic monitoring and for infrastructure-relevant traffic measurement in developing-country contexts.",
+    "topics": [
+      "Foundation Models",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Foundation Model",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7159546740",
+    "source": "OpenAlex",
+    "title": "DenseScout: Algorithm-System Co-design for Budgeted Tiny Object Selection on Edge Platforms",
+    "authors": [
+      "Xiong Zhouzhi",
+      "Zimo Zeng",
+      "Yi Chen",
+      "Shuqi Xu",
+      "Yunfeng Yan",
+      "Donglian Qi"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-05-02",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159546740",
+    "pdf_url": "https://arxiv.org/pdf/2604.25300",
+    "doi": "",
+    "abstract": "Deploying tiny object perception on edge platforms is challenging because practical systems must satisfy both strict compute budgets and end-to-end latency constraints. A common strategy is to first select a small number of candidate patches from a high-resolution image and then apply downstream processing only to the selected regions. However, existing detector-based frontends are not well aligned with this setting: strong offline detection accuracy does not necessarily yield effective low-budget patch prioritization, nor does it guarantee usable performance once transport and inference delays are considered. In this work, we study budgeted tiny object selection on edge platforms from a joint algorithm--system perspective. We present DenseScout, a lightweight dense-response selector with only 1.01M parameters, which directly ranks candidate patch locations from a high-resolution scene via a lightweight proxy input and is better aligned with low-budget tiny-object prioritization than detector-style frontends. To bridge offline selector quality and deployable utility, we further develop a transport-aware runtime realization on heterogeneous edge devices and adopt QoS-constrained recall, which counts a target as successfully perceived only if it is covered by the selected regions and the end-to-end processing finishes before the deadline. Experiments show that DenseScout consistently outperforms detector-based baselines in offline budgeted patch-selection evaluation, especially in low-budget regimes, while cross-platform results on RK3588 and Jetson Orin NX show that deployable performance depends jointly on selector quality and runtime realization efficiency. These results suggest that edge tiny object perception should be optimized as an algorithm--system co-design problem rather than as isolated model selection.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7159547061",
+    "source": "OpenAlex",
+    "title": "Behaviour-aware Hybrid Architecture for Trust-driven Transmissions",
+    "authors": [
+      "Dhrumil Bhatt",
+      "Anakha Kurup"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-05-02",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159547061",
+    "pdf_url": "https://arxiv.org/pdf/2604.25201",
+    "doi": "",
+    "abstract": "Reliable and secure communication is essential for mission-critical aerospace and defence operations involving autonomous platforms such as Unmanned Aerial Vehicles (UAVs), satellites, and ground control systems. In contested or dynamic environments, communication links are frequently exposed to jamming, interference, and cyberattacks, making network resilience a key operational requirement. This paper presents a trust-aware Software-Defined Networking (SDN) framework that enables secure, low-latency failover between heterogeneous communication channels. The proposed architecture integrates a high-bandwidth primary link (e.g., satellite or tactical LTE) with a low-power fallback channel (e.g., RF or mesh), managed by an SDN controller that enforces zero-trust routing policies. A real-time Intrusion Detection System (IDS) continuously updates node trust scores; when trust or link reliability degrades, the controller autonomously switches traffic to the secondary channel, ensuring uninterrupted connectivity. Simulation results in a Mininet-based test environment demonstrate sub-5 ms failover latency, efficient flow installation, and significant reduction in packet loss compared with conventional single-channel or static routing systems. The proposed framework provides a scalable and resilient communication backbone for next-generation aerospace networks, enhancing mission reliability, cyber defence, and autonomous coordination across distributed aerial and space assets.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
   },
   {
     "id": "https://openalex.org/W7157882209",
@@ -4694,6 +5017,33 @@
     ],
     "category": "Downstream Task",
     "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "https://openalex.org/W7159546696",
+    "source": "OpenAlex",
+    "title": "Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System",
+    "authors": [
+      "Yifei Wei",
+      "Linqing Zhong",
+      "Yi Liu",
+      "Yuxiang Lu",
+      "Xindong He",
+      "Maoqing Yao",
+      "Guanghui Ren"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-05-02",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159546696",
+    "pdf_url": "https://arxiv.org/pdf/2604.24921",
+    "doi": "",
+    "abstract": "Vision-Language-Action (VLA) models are a promising paradigm for generalist robotic manipulation by grounding high-level semantic instructions into executable physical actions. However, prevailing approaches typically adopt a monolithic generation paradigm, directly mapping visual-linguistic features to high-frequency motor commands in a flat, non-hierarchical fashion. This strategy overlooks the inherent hierarchy of robotic manipulation, where complex actions can be naturally modeled in a Hybrid Action Space, decomposing into discrete macro-directional reaching and continuous micro-pose alignment, severely widening the semantic-actuation gap and imposing a heavy representational burden on grounding high-level semantics to continuous actions. To address this, we introduce Libra-VLA, a novel Coarse-to-Fine Dual-System VLA architecture. We explicitly decouple the learning complexity into a coarse-to-fine hierarchy to strike a training equilibrium, while simultaneously leveraging this structural modularity to implement an asynchronous execution strategy. The Semantic Planner predicts discrete action tokens capturing macro-directional intent, while the Action Refiner conditions on coarse intent to generate high-frequency continuous actions for precise alignment. Crucially, our empirical analysis reveals that performance follows an inverted-U curve relative to action decomposition granularity, peaking exactly when the learning difficulty is balanced between the two sub-systems. With the asynchronous design, our approach offers a scalable, robust, and responsive solution for open-world manipulation.",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"visual geo-localization\""
   },
   {
     "id": "https://openalex.org/W7158422222",
@@ -6962,6 +7312,38 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7159575128",
+    "source": "OpenAlex",
+    "title": "UAV Visual Localization via Multimodal Fusion and Multi-Scale Attention Enhancement",
+    "authors": [
+      "Y Wang",
+      "Yushuai Zhang",
+      "ZHENYU WANG",
+      "Jianxin Guo",
+      "Feng Wang",
+      "Rui Zhu",
+      "Dejing Lin"
+    ],
+    "published": "2026-04-25",
+    "updated": "2026-05-02",
+    "venue": "Sustainability",
+    "url": "https://doi.org/10.3390/su18094277",
+    "pdf_url": "",
+    "doi": "10.3390/su18094277",
+    "abstract": "For power-grid applications such as transmission corridor inspection, substation asset inspection, and post-disaster emergency repair, reliable UAV self-localization under GNSS-degraded or GNSS-denied conditions is critical to ensuring operational safety and accurate defect geotagging. Due to substantial discrepancies in viewpoint, scale, and geometric structure between oblique UAV images and nadir satellite images, conventional RGB-based cross-view retrieval methods often suffer from unstable alignment and insufficient geometric modeling, particularly in scenarios with repetitive textures and partial overlap. To address these challenges, we propose a cross-view visual geo-localization model that integrates RGBD multimodal inputs with multi-scale attention enhancement. Specifically, MiDaS is used to estimate relative depth from UAV imagery, which is concatenated with RGB to form a four-channel input, while satellite images are padded with an additional zero channel to maintain dimensional consistency. A shared-weight ViTAdapter is adopted to learn joint semantic–geometric representations, and a lightweight Efficient Multi-scale Attention (EMA) module is adopted on spatial feature maps to strengthen multi-scale spatial consistency. In addition, an IoU-weighted InfoNCE loss is employed to accommodate partial matching during training, thereby improving the robustness of feature alignment. Experiments on the GTA-UAV dataset under the cross-area protocol show stable performance across both retrieval and localization metrics. Specifically, Recall@1, Recall@5, and Recall@10 reach 18.12%, 38.83%, and 49.47%, respectively; AP is 28.01 and SDM@3 is 0.53; meanwhile, the top-1 geodesic distance error Dis@1 is 1052.73 m. These results indicate that explicit geometric priors combined with multi-scale spatial enhancement can effectively improve cross-view feature alignment, leading to enhanced robustness and accuracy for localization in challenging power inspection scenarios.",
+    "topics": [
+      "Vision-Language",
+      "Geo-localization",
+      "Retrieval",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Disaster",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
   },
   {
     "id": "https://openalex.org/W7158422420",
@@ -95995,6 +96377,35 @@
     ],
     "category": "Foundation Model",
     "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "d78e1a7889d05bcb49078fe3bea068280b16a217",
+    "source": "Semantic Scholar",
+    "title": "FireRisk: A Remote Sensing Dataset for Fire Risk Assessment with Benchmarks Using Supervised and Self-supervised Learning",
+    "authors": [
+      "Shuchang Shen",
+      "Sachith Seneviratne",
+      "Xinye Wanyan",
+      "M. Kirley"
+    ],
+    "published": "2023-01-01",
+    "updated": "",
+    "venue": "International Conference on Digital Image Computing: Techniques and Applications",
+    "url": "https://www.semanticscholar.org/paper/d78e1a7889d05bcb49078fe3bea068280b16a217",
+    "pdf_url": "https://arxiv.org/pdf/2303.07035",
+    "doi": "10.1109/DICTA60407.2023.00034",
+    "abstract": "In recent decades, wildfires have caused tremendous property losses, fatalities, and extensive damage to forest ecosystems. Inspired by the abundance of publicly available remote sensing projects and the burgeoning development of deep learning in computer vision, our research focuses on assessing fire risk using remote sensing imagery.In this work, we propose a novel remote sensing dataset, FireRisk, consisting of 7 fire risk classes with a total of 91872 labelled images for fire risk assessment. This dataset is labelled with the fire risk classes supplied by the Wildfire Hazard Potential (WHP) raster dataset [9], and remote sensing images are collected using the National Agriculture Imagery Program (NAIP) [27], a high-resolution remote sensing imagery program. On FireRisk, we present benchmark performance for supervised and self-supervised representations, with Masked Autoencoders (MAE) [16] pre-trained on ImageNet1k [8] achieving the highest classification accuracy, 65.29%.This remote sensing dataset, FireRisk, provides a new direction for fire risk assessment, and we make it publicly available on https://github.com/CharmonyShen/FireRisk.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Agriculture",
+      "Disaster",
+      "Ecology",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" \"self-supervised learning\""
   },
   {
     "id": "8ad7600c2f49291f8c4ed6a5119dd2fea2fc404f",
