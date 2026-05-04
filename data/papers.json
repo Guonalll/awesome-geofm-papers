@@ -601,6 +601,136 @@
     "query": "\"remote sensing\" pretraining"
   },
   {
+    "id": "https://openalex.org/W7159975746",
+    "source": "OpenAlex",
+    "title": "Operationalizing Data Fitness-for-Purpose Through Standardized Metrics, Local Uncertainty, and LLM-Extracted Quality Reasoning",
+    "authors": [
+      "Markus Möller",
+      "Mahdi Hedayat Mahmoudi",
+      "Paul Peschel"
+    ],
+    "published": "2026-05-03",
+    "updated": "2026-05-04",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.20014927",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.20014927",
+    "abstract": "Making geospatial data FAIR requires more than metadata standardization - it demands transparent, structured reporting of data quality and uncertainty that allows researchers to assess fitness-for-purpose across diverse applications. Yet most FAIR implementations still treat quality as a generic metadata field, while uncertainty and fitness‑for‑purpose remain buried in narrative documentation and disciplinary tacit knowledge. In the FAIRagro consortium, we operationalize an application‑oriented quality framework using the example of Germany‑wide phenology time series (1 km, 1993-2022) by combining three components: (1) standardized producer‑side quality metrics (global R² and RMSE following ISO 19157‑1 for each crop, phase, and year), (2) spatially explicit local uncertainty layers, and (3) a machine‑actionable, application‑specific data quality matrix (AS‑DQM) that captures documented use contexts, validation strategies, limitations, and fitness‑for‑purpose statements from existing publications and workflow descriptions. Large Language Models (LLMs) are central to this workflow: after structure‑preserving conversion of PDFs to enriched Markdown, multimodal LLMs extract quality‑relevant concepts from text, tables, and figures, normalize them against a formal schema, and generate provenance‑linked AS‑DQM JSON profiles that can be queried and reused across applications. These quality, uncertainty, and fitness profiles are then packaged as FAIR Digital Objects using interoperable containers for version‑controlled, reproducible workflows and RO‑CRATE standards for structured research object metadata - enabling seamless integration with research data management infrastructure and discovery systems. This approach ensures that quality reasoning, local uncertainty estimates, and application contexts travel together with phenology data through the research lifecycle, preserving provenance and enabling automated quality‑aware dataset selection. This poster represents a transferable template for domain-specific FAIR implementation, demonstrating that structured uncertainty reporting, ISO-compliant quality metrics, LLM-assisted formalization of fitness-for-purpose information, and user-centered fitness-for-purpose assessments are essential bridges between abstract FAIR principles and practical, cross-disciplinary data reuse. For application, users can query not only \"where are data FAIR?\" but \"where are data sufficiently accurate, well‑validated, and uncertainty‑constrained for this specific decision context?\". By embedding LLM‑derived quality knowledge, uncertainty products, and an application matrix into machine‑actionable FAIR Digital Objects, we move from static compliance towards dynamic, evidence‑based fitness‑for‑purpose assessment - thereby strengthening trust in public data sets.",
+    "topics": [
+      "Vision-Language",
+      "Prediction",
+      "Geospatial AI",
+      "Agriculture",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial reasoning\""
+  },
+  {
+    "id": "https://openalex.org/W7159964028",
+    "source": "OpenAlex",
+    "title": "GeoLens: A Multi-Modal Earth Analysis Platform for Integrated Satellite Imagery Processing and AI-Driven Environmental Insights",
+    "authors": [
+      "Dr.  Varsha S Jadhav",
+      "Dr.  Rajashekarappa",
+      "Manisha Agrawale",
+      "Mohammad Husen Neginal",
+      "Sujal Sooryavamshi"
+    ],
+    "published": "2026-05-03",
+    "updated": "2026-05-04",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.20000905",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.20000905",
+    "abstract": "The escalating threat of environmental degradation demands a paradigm shift in real-time Earth observation. Conventional computational approaches in geographic information systems (GIS), including manual remote sensing and desktop-bound scripting, are prohibitively slow and resource-intensive, making them ill-suited for the pace at which climate and urban landscapes evolve. This research presents a comprehensive, full-stack computational architecture designed to integrate robust satellite image processing, adaptive vegetation profiling, and real-time interaction analysis into a single operational pipeline. The platform utilizes Sentinel-2 L2A optical arrays to predict localized land-cover changes and compute the Normalized Difference Vegetation Index (NDVI) with high precision. The central contribution is the advanced Geospatial Core Engine, which processes high-dimensional raster feature vectors through deterministic morphological operations, evaluating structural stability via OpenCV to isolate optimal variance regions. Deep multimodal profiles are computed for high-priority spatial complexes in real time using Gemini 2.5 Pro, providing clinically relevant environmental indicators. A Conversational Laboratory module simulates interactive querying and quantifies spatial deviations via natural language processing. Experimental evaluations on 500 validated coordinate pairs yield a Root Mean Square Error (RMSE) of 0.62 and an R2 of 0.89, with an average inference latency of 15 seconds—establishing the platform as a practical alternative to classical desktop GIS pipelines. The full-stack implementation combines a React/Vite frontend with a FastAPI REST backend, JWT-based security, and a MongoDB persistence layer.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Application",
+    "query": "\"earth observation\" multimodal"
+  },
+  {
+    "id": "https://openalex.org/W7159954816",
+    "source": "OpenAlex",
+    "title": "Agrosense: A Service-Oriented Architecture for Intelligent Crop Advisory",
+    "authors": [
+      "Rishita Raina",
+      "Aditya Upadhyay",
+      "Mr.  Ganesh Shanker"
+    ],
+    "published": "2026-05-03",
+    "updated": "2026-05-04",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.20002134",
+    "pdf_url": "",
+    "doi": "10.5281/zenodo.20002134",
+    "abstract": "AgroSense is an AI-driven crop advisory system developed on the foundation of SOA architecture that leverages data for decision-making in modern agricultural practices. AgroSense recommends a suitable crop for cultivation based on macronutrient composition (Nitrogen, Phosphorus, Potassium), soil pH, temperature, humidity, and precipitation. Various independent microservices like data ingestion, machine learning inference, weather integration, irrigation advisory, and notifications are orchestrated using a Flask-based API gateway. XGBoost, which is the primary model used in predicting crops, achieves 99.09% accuracy on Kaggle Crop Recommendation Dataset (2,200 samples, 22 classes) and surpasses the accuracy of other models such as Decision Tree (90.00%), KNN (97.27%), Logistic Regression (95.00%), SVM (98.18%), and Random Forest (99.09%). Real-time weather information obtained using the OpenWeatherMap API contributes to enhancing predictions, which has been confirmed with the inference result that reaches 98.80% confidence level for muskmelon cultivation in Mumbai's climate. AgroSense uses a Streamlit-based web application that generates a downloadable PDF report using fpdf2 for each advisory suggestion made by the system.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Agriculture",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" agriculture"
+  },
+  {
+    "id": "https://openalex.org/W7159985077",
+    "source": "OpenAlex",
+    "title": "Optimizing land use and land cover classification with deep learning on multi-resolution datasets.",
+    "authors": [
+      "A. Raut",
+      "Sagar Tomar"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-04",
+    "venue": "PubMed",
+    "url": "https://doi.org/10.1007/s10661-026-15391-1",
+    "pdf_url": "",
+    "doi": "10.1007/s10661-026-15391-1",
+    "abstract": "Land use and land cover (LULC) classification is essential for environmental monitoring, urban planning, and resource management. This study explores the performance of three state-of-the-art deep learning architectures, MobileNetV3, ResNet34, and GoogleNet, which were enhanced with transfer learning, data augmentation, and adaptive learning rate scheduling. We evaluate these models on two benchmark datasets: EuroSAT, consisting of Sentinel-2 satellite imagery across 10 land cover classes, and PatternNet, a high-resolution aerial dataset with 38 diverse classes. The results demonstrate that MobileNetV3 achieved the highest overall accuracy (97.83% on EuroSAT and 99.23% on PatternNet) with minimal inference time, making it ideal for real-time applications. ResNet34 achieved 97.56% and 99.06% accuracy, respectively, excelling in classifying complex, visually similar classes due to its residual learning blocks. GoogleNet's balanced performance and efficiency achieved 97.36% and 99.58% accuracy across both datasets. An ablation study confirmed that data augmentation, transfer learning, and learning rate scheduling contributed to improvements in accuracy of 5-13%. This research highlights the effectiveness of modern deep learning architectures and optimized training pipelines for LULC classification across diverse datasets, providing a foundation for future advancements in cross-domain remote sensing applications.",
+    "topics": [
+      "Remote Sensing",
+      "Urban",
+      "Ecology",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159973865",
+    "source": "OpenAlex",
+    "title": "Lightweight liquid siamese neural network for robust multimodal satellite image change detection.",
+    "authors": [
+      "Sai Bhargav Kasetty",
+      "K Rajakumar"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-04",
+    "venue": "PubMed",
+    "url": "https://doi.org/10.1038/s41598-026-45655-2",
+    "pdf_url": "",
+    "doi": "10.1038/s41598-026-45655-2",
+    "abstract": "The detection of changes with a high degree of accuracy in multi-temporal satellite imagery is still a challenge due to sensor incapability, location problems and misalignment, radiometric noise, and non-linear temporal variations, which have recently motivated registration-aware and semantic-consistency-based change detection frameworks. Traditional CNNs and Transformer-based methods often have difficulty in effectively computing such continuous-time dynamics. This paper proposes an LSNN model, which is a Lightweight Liquid Siamese Neural Network, that has two branches sharing weights for processing the bi-temporal images acquired at times [Formula: see text] and [Formula: see text] and to capture the long-range dependencies and temporal irregularities through liquid time-constant neurons. A cross-feature differencing module is integrated into the system in order to facilitate the detection of fine-grained structural transitions and to eliminate variations that are not relevant. The experiments carried out on RGB-RGB and synthetic aperture radar (SAR)-multispectral datasets with separate train-test splits and extensive statistical analysis indicate that the LSNN has superior performance with SeK = 87.46%, OA = 96.18%, F1 = 94.38%, IoU = 91.22%, NSE = 0.92, and PBIAS = - 1.82%. The results presented are superior to the current best methods, that is, the state-of-the-art models, which also include Transformer- and CNN-based ones like SCaNet. Furthermore, the model's robustness to real-world perturbations is showcased by additional evaluations under Gaussian noise, speckle noise, and illumination variations coupled with slight spatial shifts. The LSNN architecture is thus an efficient and trustworthy alternative for satellite-based high-accuracy change detection because of its excellent temporal modeling capacity, low operational cost, and offering steady performance even under diverse sensing conditions.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
     "id": "10.4018/979-8-3373-7554-0.ch004",
     "source": "Crossref",
     "title": "Climate Science Reimagined AI for Weather Forecasting, Disaster Prediction, and Biodiversity Monitoring",
@@ -1604,6 +1734,517 @@
     "topics": [
       "Vision-Language",
       "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "https://openalex.org/W7159905776",
+    "source": "OpenAlex",
+    "title": "Розробка гібридної бортової діагностичної архітектури з легким машинним навчанням для систем CubeSat з обмеженими ресурсами",
+    "authors": [
+      "Ainur Kuttybayeva",
+      "Samal Zhamalova",
+      "Anargul Boranbayeva",
+      "Zhansaya Myrzayeva",
+      "Гульнар Имашева",
+      "Zhanat Kaskatayev",
+      "Y. Chinibayev",
+      "N. A. Ospanova",
+      "Mukhit Abdullayev",
+      "Kalmukhamed Tazhen"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "The Scientific Issues of Ternopil Volodymyr Hnatiuk National Pedagogical University Series pedagogy",
+    "url": "https://openalex.org/W7159905776",
+    "pdf_url": "",
+    "doi": "",
+    "abstract": "The object of the study is the onboard diagnostic process in CubeSat nanosatellite systems, with particular emphasis on fault detection based on real-time analysis of multivariate telemetry data under real-time embedded operating conditions. The problem statement is the gap between the relatively low computational expenses and predictability of classical FDIR approaches and their limited ability to detect complex anomalies, and, conversely, the greater anomaly sensitivity and lower embedded performance of machine-learning models. A hybrid onboard diagnostic architecture that integrates telemetry acquisition, telemetry preprocessing, statistical feature extraction, a deterministic FDIR branch, a lightweight machine-learning branch, and decision fusion into one onboard diagnostics session has been elaborated. The proposed hybrid onboard diagnostic architecture has been evaluated based on hardware-in-the-loop testing using representative telemetry and fault cases for CubeSat systems. The evaluation metrics were the fault-detection accuracy, the detection latency, the CPU consumption, the memory consumption, and the resistance to telemetry noise. The hybrid onboard diagnostic architecture was compared to the conventional threshold-based FDIR system and standalone machine learning algorithms under the same HIL conditions. In the reported experiment setup, the proposed hybrid onboard diagnostic architecture demonstrated the fault-detection accuracy of 94%, while the classical FDIR method provided 71%, and the standalone machine-learning approach provided 88%. The average detection latency was decreased to 83 ms, in contrast to 120 ms and 95 ms, respectively. The embedded solution requires only 17.6% CPU and 58 KB of memory. Under the highest telemetry-noise level, the fault-detection accuracy of the proposed hybrid onboard diagnostic architecture decreases to 80%, whereas the standalone machine-learning and the classical FDIR baselines provide only 65% and 43% fault-detection accuracy, respectively.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159897105",
+    "source": "OpenAlex",
+    "title": "Оцінка фреймворку інтерактивного еволюційного недомінованого генетичного алгоритму сортування на основі машинного навчання для оптимізації гіперпараметрів U-Net у сегментації сільськогосподарських угідь",
+    "authors": [
+      "Artughrul Gayibov",
+      "Вагіф Гасимов",
+      "Esmira Mustafayeva",
+      "Kamala Aliyeva",
+      "Dilara Guluzada"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "The Scientific Issues of Ternopil Volodymyr Hnatiuk National Pedagogical University Series pedagogy",
+    "url": "https://openalex.org/W7159897105",
+    "pdf_url": "",
+    "doi": "",
+    "abstract": "The object of the study is the hyperparameter configuration space of the U-Net architecture for agricultural land segmentation from Sentinel-2 satellite imagery. The problem being solved is the excessive cost of multi-objective hyperparameter optimization, because non-dominated sorting in the non-dominated sorting genetic algorithm II (NSGA-II), with complexity O(MN2), becomes a bottleneck for deep segmentation models. To address this problem, an interactive evolutionary non-dominated sorting genetic algorithm II (IENSGA-II) framework is evaluated, in which a logistic regression classifier is trained on hyperparameter vectors and Pareto ranks from initial NSGA-II generations, then used to predict ranks in subsequent generations instead of full sorting. Unlike existing surrogate-assisted approaches, this work predicts Pareto ranks without additional model evaluations. On the panoptic agricultural satellite time series (PASTIS) benchmark, the framework reduced execution time by 20.07%, 16.39%, and 38.80% for 5, 10, and 15 generations, and in the 10-generation setting improved validation criteria, reaching an area under the receiver operating characteristic curve (AUC) of 0.9072 versus 0.9004 and validation loss of 0.6057 versus 0.6212. These results were achieved because the method accelerates selection rather than replacing model evaluation, while AUC-based tie-breaking preserves preference for more accurate solutions among candidates with same predicted rank. Effectiveness stems from a regular relationship between hyperparameters and Pareto ranks in early evolutionary data. In practice, the method is used in resource-constrained multi-objective learning when initial generations provide representative data for rank prediction",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159892017",
+    "source": "OpenAlex",
+    "title": "UHR-Net: An Uncertainty-Aware Hypergraph Refinement Network for Medical Image Segmentation",
+    "authors": [
+      "Shuokun Cheng",
+      "Jinghao Shi",
+      "Kun Sun"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159892017",
+    "pdf_url": "https://arxiv.org/pdf/2604.28095",
+    "doi": "",
+    "abstract": "Accurate lesion segmentation is crucial for clinical diagnosis and treatment planning. However, lesions often resemble surrounding tissues and exhibit ill-defined boundaries, leading to unstable predictions in boundary/transition regions. Moreover, small-lesion cues can be diluted by multi-scale feature extraction, causing under- or over-segmentation. To address these challenges, we propose an Uncertainty-Aware Hypergraph Refinement Network (UHR-Net). First, we introduce an Uncertainty-Oriented Instance Contrastive (UO-IC) pretraining strategy that couples geometry-aware copy-paste augmentation with hard-negative mining of lesion-like background regions to improve instance-level discrimination for small and visually ambiguous lesions. Second, we design an Uncertainty-Guided Hypergraph Refinement (UGHR) block, which derives an entropy-based uncertainty map from a coarse probability map to guide hypergraph refinement. By splitting hyperedge prototypes into foreground and background groups, UGHR decouples higher-order interactions and improves refinement in ambiguous regions. Experiments on five public benchmarks demonstrate consistent gains over strong baselines. Code is available at: https://github.com/CUGfreshman/UHR-Net.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891657",
+    "source": "OpenAlex",
+    "title": "Toward Scalable SDN for LEO Mega-Constellations: A Graph Learning Approach",
+    "authors": [
+      "Sivaram Krishnan",
+      "Bassel Al Homssi",
+      "Zhouyou Gu",
+      "Jihong Park",
+      "Sung-Min Oh",
+      "Jinho Choi"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891657",
+    "pdf_url": "https://arxiv.org/pdf/2604.27478",
+    "doi": "",
+    "abstract": "Terrestrial network limitations drive the integration of non-terrestrial networks (NTNs), notably mega-constellations comprising thousands of low Earth orbit (LEO) satellites. While these satellites act as interconnected network switches via inter-satellite links (ISLs), their massive scale creates severe bottlenecks for network management. To address this, we propose a scalable, hierarchical software-defined networking (SDN) framework. Our architecture leverages graph neural networks (GNNs) to compactly represent the constellation topology, and Koopman theory to linearize nonlinear dynamics. Specifically, a Graph Koopman Autoencoder (GKAE) forecasts spatio-temporal behavior within a linear subspace for each orbital shell. A central SDN controller then aggregates these shell-level predictions for globally coordinated control. Simulations on the Starlink constellation demonstrate that our approach achieves at least a 42.8\\% improvement in spatial compression and a 10.81\\% improvement in temporal forecasting compared to established baselines, all while utilizing a significantly smaller model footprint.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159890974",
+    "source": "OpenAlex",
+    "title": "Student Classroom Behavior Recognition Based on Improved YOLOv8s",
+    "authors": [
+      "Xiang Gao",
+      "Shuai Hang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159890974",
+    "pdf_url": "https://arxiv.org/pdf/2604.27293",
+    "doi": "",
+    "abstract": "In classroom teaching, student behavior can reflect their learning state and classroom participation, which is of great significance for teaching quality analysis. To address the problems of dense student targets, numerous small objects, frequent occlusions, and imbalanced class distribution in real classroom scenes, this paper proposes an improved student classroom behavior recognition model named ALC-YOLOv8s based on YOLOv8s. The model introduces SPPF-LSKA to enhance contextual feature extraction, employs CFC-CRB and SFC-G2 to optimize multi-scale feature fusion, and incorporates ATFLoss to improve the learning ability for minority classes and hard samples. Experimental results show that compared with the baseline model, the improved model achieves increases of 1.8% in mAP50 and 2.1% in mAP50-95. Compared with several mainstream detection methods, the proposed model can well meet the requirements of automatic student behavior recognition in complex classroom scenarios.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7159891205",
+    "source": "OpenAlex",
+    "title": "Spectral Dynamic Attention Network for Hyperspectral Image Super-Resolution",
+    "authors": [
+      "Tengya Zhang",
+      "Feng Gao",
+      "Lin Qi",
+      "Junyu Dong",
+      "Qian Du"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891205",
+    "pdf_url": "https://arxiv.org/pdf/2604.27326",
+    "doi": "",
+    "abstract": "Hyperspectral image super-resolution is essential for enhancing the spatial fidelity of HSI data, yet existing deep learning methods often struggle with substantial spectral redundancy and the limited non-linear modeling capacity of standard feed-forward networks (FFNs). To address these challenges, we propose Spectral Dynamic Attention Network (SDANet), a framework designed to adaptively suppress redundant spectral interactions. SDANet integrates two key components: 1) Dynamic Channel Sparse Attention (DCSA) module that computes channel-wise correlations and selectively preserves the most informative attention responses through dynamic and data-dependent sparsification. 2) Frequency-Enhanced Feed-Forward Network (FE-FFN) that jointly models spatial and frequency-domain representations to enhance non-linear expressiveness. Extensive experiments on two benchmark datasets demonstrate that SDANet achieves state-of-the-art HISR performance while maintaining competitive efficiency. The code will be made publicly available at https://github.com/oucailab/SDANet.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891745",
+    "source": "OpenAlex",
+    "title": "Robust Lightweight Crack Classification for Real-Time UAV Bridge Inspection",
+    "authors": [
+      "Wei Li",
+      "Haisheng Li",
+      "Weijie Li",
+      "Jiandong Wang",
+      "Kaichen Ma",
+      "Lin Yang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891745",
+    "pdf_url": "https://arxiv.org/pdf/2604.27617",
+    "doi": "",
+    "abstract": "With the widespread application of Unmanned Aerial Vehicles (UAVs) in bridge structural health monitoring, deep learning-based automatic crack detection has become a major research focus. However, practical UAV inspections still face four key challenges: weak crack features, degraded imaging conditions, severe class imbalance, and limited computational resources for practical UAV inspection workflows. To address these issues, this paper proposes a unified lightweight convolutional neural network framework composed of four synergistic components: a lightweight backbone network, a Convolutional Block Attention Module (CBAM) for channel and spatial enhancement, a directed robust augmentation strategy based on inspection-scene priors, and Focal Loss for hard-sample learning under class imbalance. Experiments on the SDNET2018 bridge deck dataset show that the proposed method achieves an inference speed of 825 FPS with only 11.21M parameters and 1.82G FLOPs. Compared with the baseline model, the complete framework improves the F1-score by 2.51% and recall by 3.95%. In addition, Grad-CAM visualizations indicate that the introduced attention module shifts the model's focus from scattered regions to precise tracking along crack trajectories. Overall, this study achieves a strong balance among accuracy, speed, and robustness, providing a practical solution for ground-station assisted real-time deployment in UAV bridge inspections. The source code is available at: https://github.com/skylynf/AttXNet .",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891262",
+    "source": "OpenAlex",
+    "title": "Predicting Covariate-Driven Spatial Deformation for Nonstationary Gaussian Processes",
+    "authors": [
+      "M. H. Gu",
+      "Weizhi Lin",
+      "Qiang Huang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891262",
+    "pdf_url": "https://arxiv.org/pdf/2604.27280",
+    "doi": "",
+    "abstract": "Nonstationary Gaussian processes (GPs) are essential for modeling complex, locally heterogeneous spatial data. A common modeling approach is the spatial deformation method that warps the domain to recover isotropy. However, this static method does not account for changes in spatial correlation induced by covariates, limiting its ability to predict nonstationary GPs under new covariate conditions. To enable predictive modeling of the deformation method, we propose to model the spatial deformation as a function of covariates. The spaces of diffeomorphic deformations and Euclidean covariate vectors are connected by characterizing deformations as generated by velocity fields living in a Lie algebra. To overcome the estimation instability caused by high-order interactions between multiple covariates in a general Lie algebra, we prove that those interactions can be truncated with a moderate physical assumption. Based on the theoretical results, a concise functional form of deformations driven by multiple covariates can be established, and an efficient estimation-inference algorithm is developed for out-of-sample nonstationary GP prediction with limited covariate-deformation sample pairs. The effectiveness and generalizability of the method are demonstrated on a simulation study and two case studies, in the fields of manufacturing and geostatistics, respectively.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891233",
+    "source": "OpenAlex",
+    "title": "Neural Aided Kalman Filtering for UAV State Estimation in Degraded Sensing Environments",
+    "authors": [
+      "Akhil Gupta",
+      "Erhan Guven"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891233",
+    "pdf_url": "https://arxiv.org/pdf/2604.28107",
+    "doi": "",
+    "abstract": "Accurate state estimation of nonlinear dynamical systems is fundamental to modern aerospace operations across air, sea, and space domains. Online tracking of adversarial unmanned aerial vehicles (UAVs) is especially challenging due to agile nonlinear motion, noisy and sparse sensor measurements, and unknown control inputs; conditions that violate key assumptions of classical Kalman filter variants and degrade estimation performance. Neural networks (NNs) can learn complex nonlinear relationships from data, but lack principled uncertainty quantification, which is critical for state estimation tasks where confidence bounds drive downstream decisions. We address this with Bayesian Neural Networks (BNNs), which model uncertainty through distributions over network weights and produce predictive means and uncertainties via Monte Carlo sampling. Building on this, we propose the Bayesian Neural Kalman Filter (BNKF): a hybrid framework coupling a trained BNN with a Kalman correction step for robust online UAV state estimation. Unlike related neural Kalman approaches, BNKF produces full state predictions and incorporates Bayesian uncertainty directly into covariance propagation, improving robustness under high noise conditions. We evaluate BNKF under varying radar noise levels and sampling rates using synthetic nonlinear UAV flight data. Five fold cross validation demonstrates that BNKF outperforms Extended and Unscented Kalman Filters in accuracy, precision, and truth containment under degraded sensing. An ensemble variant (BNKFe) further improves precision in high-noise edge cases at a slight accuracy tradeoff. Runtime analysis confirms minimal inference overhead, supporting real-time deployment feasibility.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"contrastive learning\""
+  },
+  {
+    "id": "https://openalex.org/W7159891774",
+    "source": "OpenAlex",
+    "title": "Multi-Level Narrative Evaluation Outperforms Lexical Features for Mental Health",
+    "authors": [
+      "Yuxi Ma",
+      "Jieming Cui",
+      "Muyang Li",
+      "Ye Zhao",
+      "Yu Li",
+      "Yixuan Wang",
+      "Chi Zhang",
+      "Yinyin Zang",
+      "Yixin Zhu"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891774",
+    "pdf_url": "https://arxiv.org/pdf/2604.27846",
+    "doi": "",
+    "abstract": "How people narrate their experiences offers a window into how the mind organizes them. Computational approaches to therapeutic writing have evolved from lexical counting to neural methods, yet remain fragmented: dictionary tools miss discourse structure, while embeddings conflate local coherence with global organization. No existing framework maps these techniques onto the hierarchical processes through which narratives are constructed. Here we introduce a three-level framework - micro-level lexical features, meso-level semantic embeddings, and macro-level LLM narrative evaluation - and show, across 830 Chinese therapeutic texts spanning depression, anxiety, and trauma, that macro-level evaluation substantially outperforms lexical and embedding features for mental health prediction. This challenges the field's emphasis on word-counting: formal structural features (Labov's story grammar, RST coherence, propositional composition) demonstrate that narrative organization per se carries predictive signal, while clinically-grounded narrative dimensions capture how psychological states are expressed through discourse. Semantic embeddings add minimal independent value but yield incremental gains in multi-level classification. By grounding computational levels in discourse processing theory, this framework identifies macro-structural organization as the primary locus of clinical signal and generates testable hypotheses for intervention design and longitudinal research.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" disaster"
+  },
+  {
+    "id": "https://openalex.org/W7159891080",
+    "source": "OpenAlex",
+    "title": "Long-term study of the gamma-ray emission of Cygnus X-3 with MAGIC and Fermi-LAT",
+    "authors": [
+      "K. Abe",
+      "S. Abe",
+      "J. Abhir",
+      "A. Abhishek",
+      "V. A. Acciari",
+      "A. Aguasca-Cabot",
+      "I. Agudo",
+      "I. Albanese",
+      "T. Aniello",
+      "S. Ansoldi",
+      "L. A. Antonelli",
+      "A. Arbet Engels",
+      "C. Arcaro",
+      "T. T. H. Arnesen",
+      "A. Babić",
+      "C. Bakshi",
+      "U. Barres de Almeida",
+      "J. A. Barrio",
+      "L. Barrios-Jiménez",
+      "I. Batković",
+      "J. Baxter",
+      "J. Becerra González",
+      "W. Bednarek",
+      "E. Bernardini",
+      "J. Bernete",
+      "A. Berti",
+      "J. Besenrieder",
+      "C. Bigongiari",
+      "A. Biland",
+      "O. Blanch",
+      "G. Bonnoli",
+      "P. Bordas",
+      "Ž. Bošnjak",
+      "E. Bronzini",
+      "I. Burelli",
+      "C. Campa",
+      "A. Campoy-Ordaz",
+      "A. Carosi",
+      "R. Carosi",
+      "M. Carretero-Castrillo",
+      "A. J. Castro-Tirado",
+      "D. Cerasole",
+      "G. Ceribella",
+      "A. Cerviño",
+      "A. Chilingarian",
+      "G. Chon",
+      "A. Cifuentes Santos",
+      "J. L. Contreras",
+      "J. Cortina",
+      "S. Covino",
+      "G. D'Amico",
+      "P. Da Vela",
+      "F. Dazzi",
+      "A. De Angelis",
+      "B. De Lotto",
+      "M. Delfino",
+      "J. Delgado",
+      "F. Di Pierro",
+      "R. Di Tria",
+      "L. Di Venere",
+      "A. Dinesh",
+      "D. Dominis Prester",
+      "A. Donini",
+      "D. Dorner",
+      "M. Doro",
+      "L. Eisenberger",
+      "D. Elsaesser",
+      "L. Foffano",
+      "L. Font",
+      "F. Frías García-Lago",
+      "S. Fröse",
+      "Y. Fukazawa",
+      "S. García Soto",
+      "M. Gaug",
+      "J. G. Giesbrecht Paiva",
+      "N. Giglietto",
+      "F. Giordano",
+      "P. Gliwny",
+      "N. Godinović",
+      "T. Gradetzke",
+      "R. Grau",
+      "J. G. Green",
+      "P. Günther",
+      "D. Hadasch",
+      "A. Hahn",
+      "G. Harutyunyan",
+      "T. Hassan",
+      "J. Herrera Llorente",
+      "D. Hrupec",
+      "D. Israyelyan",
+      "J. Jahanvi",
+      "I. Jiménez Martínez",
+      "J. Jiménez Quiles",
+      "S. Kankkunen",
+      "J. Konrad",
+      "P. M. Kouch",
+      "H. Kubo",
+      "J. Kushida",
+      "M. Láinez",
+      "A. Lamastra"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891080",
+    "pdf_url": "https://arxiv.org/pdf/2604.27671",
+    "doi": "",
+    "abstract": "Cygnus X-3 is a microquasar composed of a compact object of unknown nature closely orbiting around a Wolf-Rayet star. The particularities of this source make it a unique case among microquasars. This fact, together with its recent establishment as a PeV particle accelerator, makes Cygnus X-3 a very interesting target for the investigation of the physical processes leading to gamma-ray production. In this work, the TeV and GeV gamma-ray emission of Cygnus X-3 is studied in order to determine its origin and constrain the properties of the system. For that purpose, a point-like analysis of 130 h of data taken with the MAGIC telescopes between 2013 and 2024 was performed, which represents the largest available sample for Cygnus X-3 at $\\sim$TeV energies. Additionally, contemporary data from Fermi-LAT were also analysed to better contextualize the MAGIC observations. For a more detailed investigation of the source physics, the data were divided into three subsets according to the flaring state of the source and orbital phase. No significant detection of Cygnus X-3 is found between 0.1 and 7 TeV for any of the datasets, and differential and integral flux upper limits are reported over the long-term monitoring of the source. The Fermi-LAT fluxes can be considered compatible with previous results, taking into account the different data samples used across studies. The MAGIC upper limits presented in this work represent the most constraining ones up to date at $\\sim$TeV energies. An eventual detection of Cygnus X-3 at these energies would significantly constrain the source properties, and is not unreasonable to expect given that the source has already been detected in both the GeV and PeV regimes during flaring states. Further observations of Cygnus X-3 at energies above tens of GeV would be valuable for this purpose.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891397",
+    "source": "OpenAlex",
+    "title": "Graph World Models: Concepts, Taxonomy, and Future Directions",
+    "authors": [
+      "Jiawei Liu",
+      "Senqiao Yang",
+      "Mingjun Wang",
+      "Yu Wang",
+      "Bei Yu"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891397",
+    "pdf_url": "https://arxiv.org/pdf/2604.27895",
+    "doi": "",
+    "abstract": "As one of the mainstream models of artificial intelligence, world models allow agents to learn the representation of the environment for efficient prediction and planning. However, classical world models based on flat tensors face several key problems, including noise sensitivity, error accumulation and weak reasoning. To address these limitations, many recent studies use graph structure to decompose the environment into entity nodes and interactive edges, and model virtual environments in a structured space. This paper systematically formalizes and unifies these emerging graph-based works under the concept of graph world models (GWMs). To the best of our knowledge, GWMs have not yet been explicitly defined and surveyed as a unified research paradigm. Furthermore, we propose a taxonomy based on relational inductive biases (RIB), categorizing GWMs by the specific structural priors they inject: (1) spatial RIB for topological abstraction; (2) physical RIB for dynamic simulation; and (3) logical RIB for causal and semantic reasoning. For each model category, we outline the key design principles, summarize representative models, and conduct comparative analyses. We further discuss open challenges and future directions, including dynamic graph adaptation, probabilistic relational dynamics, multi-granularity inductive biases, and the need for dedicated benchmarks and evaluation metrics for GWMs.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891641",
+    "source": "OpenAlex",
+    "title": "FUN: A Focal U-Net Combining Reconstruction and Object Detection for Snapshot Spectral Imaging",
+    "authors": [
+      "Dahua Gao",
+      "Yubo Dong",
+      "Anqi Li",
+      "Zhenyuan Lin",
+      "Ang Gao",
+      "Danhua Liu",
+      "Guangming Shi"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891641",
+    "pdf_url": "https://arxiv.org/pdf/2604.27653",
+    "doi": "",
+    "abstract": "Conventional push-broom hyperspectral imaging suffers from slow acquisition speeds, precluding real-time object detection; in contrast, snapshot spectral imaging enables instantaneous hyperspectral images (HSIs) capture, making real-time object detection feasible, yet its potential is often compromised by time-consuming post-capture reconstruction. To address this issue, we propose the Focal U-shaped Network (FUN), a novel end-to-end framework that jointly performs HSI reconstruction and object detection via multi-task learning. FUN employs a shared U-shaped backbone, where reconstruction provides underlying spectral information while detection guides semantic-aware priors learning, facilitating mutually beneficial task interaction. Crucially, we introduce focal modulation, an efficient alternative to self-attention that modulates spatial and spectral features while reducing quadratic computational complexity, enabling a self-attention-free architecture for joint reconstruction and detection. Furthermore, we contribute a new HSI object detection dataset with 8712 annotated objects across 363 HSIs to facilitate evaluation of the proposed method. Experiments demonstrate that FUN achieves state-of-the-art performance on both tasks, using 40% fewer parameters and 30% less computation than recent alternatives, making it promising for future real-time edge deployment. The code and datasets are available: https://github.com/ShawnDong98/FUN.",
+    "topics": [
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7160005042",
+    "source": "OpenAlex",
+    "title": "Complex-valued unitary superposition-driven multi-qubit encoding for quantum video transmission",
+    "authors": [
+      "Udara Jayasinghe",
+      "Anil Fernando"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "Strathprints: The University of Strathclyde institutional repository (University of Strathclyde)",
+    "url": "https://openalex.org/W7160005042",
+    "pdf_url": "https://strathprints.strath.ac.uk/96168/1/Jayasinghe-Fernando-Electronics-2026-Complex-valued-unitary-superposition-driven-multi-qubit-encoding.pdf",
+    "doi": "",
+    "abstract": "Reliable high-fidelity video transmission over noisy quantum channels remains challenging, especially due to temporal dependencies introduced by modern video compression standards. These codecs, such as versatile video coding (VVC), employ inter-frame prediction and group-of-pictures (GOP) structures, which are highly sensitive to channel noise and can lead to error propagation across frames. Conventional quantum encoding schemes, such as Hadamard-based superposition encoding, use fixed real-valued basis transformations that provide limited phase diversity and underutilize the multi-qubit state-space, reducing robustness under noisy quantum channels. To overcome these limitations, this study proposes a multi-qubit complex-valued orthogonal unitary superposition (COUS) encoding framework for quantum video transmission. In the proposed system, VVC-compressed video bitstreams are first protected using classical channel encoding, then segmented and mapped onto multi-qubit COUS quantum states, enabling joint amplitude and phase representation with improved resilience to quantum noise. At the receiver, transmitted quantum states undergo sequential COUS decoding, channel decoding, and VVC bitstream reconstruction to recover the original video frames. The simulation results show that COUS-based multi-qubit system outperforms the Hadamard encoding-based multi-qubit system, achieving peak signal-to-noise ratio (PSNR) up to 47.22 dB, structural similarity index measure (SSIM) up to 0.9905, and video multi-method assessment fusion (VMAF) up to 96.49. Even single-qubit COUS encoding achieves 3–4 dB channel SNR gain, while higher-qubit configurations further enhance robustness and reconstructed video quality. These results confirm that the proposed framework is scalable, noise-resilient, and provides high-fidelity quantum video transmission over noisy channels.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159891110",
+    "source": "OpenAlex",
+    "title": "Calibrating Attribution Proxies for Reward Allocation in Participatory Weather Sensing",
+    "authors": [
+      "Mark C. Ballandies",
+      "Michael Chiu",
+      "Claudio J. Tessone"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7159891110",
+    "pdf_url": "https://arxiv.org/pdf/2604.27944",
+    "doi": "",
+    "abstract": "Large-scale IoT weather sensing networks require incentive mechanisms to sustain participation, yet determining how much value individual data contributions bring to the network remains an open problem. Existing approaches address data quality but not data valuation; in operational meteorology, adjoint-based methods derive value from the forecast model itself but require full data assimilation infrastructure. We propose to utilise differentiable AI weather models to fill this gap and characterise gradient-based attribution on gridded GFS analysis inputs as a candidate value signal, evaluating fidelity, calibration, cost, and gaming vulnerability across more than 400 configurations. Attribution captures near-optimal sensor placement utility with monotonically faithful payments, but can be inflated by adversarial inputs, with detection requiring external baseline data. These findings establish gradient attribution as a computationally validated signal for model-informed reward allocation in participatory weather sensing.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7159960557",
+    "source": "OpenAlex",
+    "title": "AI-driven multi-agent framework for smart irrigation and crop health monitoring in Indian rice and sugarcane farming",
+    "authors": [
+      "V A Sheetal",
+      "BM Vikranth",
+      "SHV Adarsha"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-05-04",
+    "venue": "Plant Science Today",
+    "url": "https://doi.org/10.14719/pst.12797",
+    "pdf_url": "",
+    "doi": "10.14719/pst.12797",
+    "abstract": "Disease prevention and water management are important to all the crops, particularly rice and sugarcane production in India. The article proposes a reinforcement learning (RL) based intelligent irrigation management system that is capable of optimising water consumption and crop nutrition in response to the changing agricultural climatic conditions. Decentralised reinforcement learning (RL) is used in a network of irrigation agents that utilise soil and microclimate sensor networks to set the terms of water allocation, water use efficiency (WUE) and crop health. At the same time, deep convolutional networks can be used to differentiate between plant stress/disease and leaf images and take applicable proactive actions. It is a framework that incorporates satellite-derived indices (NDVI, EVI, land surface temperature) with local sensor measurements and image-based health measurements through multimodal deep learning. Far-reaching simulations (including Indian climate and crop calendars) demonstrate that the multi-agent system lowers water consumption and preserves the yields and properly notifies stressed plants. The scores of disease detection with plantvillage-based fine-tuned on rice (120 (3 disease types) and 3829 (5 disease types) and sugarcane (2569 images for all disease types, Convolutional Neural Network (CNN) yield results of &gt;98 % accuracy. Crop mapping (rice/sugarcane) Satellite/LSTM-based crop mapping (with Sentinel-1 / Sentinel-2) achieves more than 97 % accuracy. The suggested structure provides a data-driven, scalable system for precision agriculture to enhance the management of irrigation periods and crop health. Simulation experiments show that the RL-based controller can reduce water consumption while preserving optimal soil moisture levels when compared to rule-based irrigation strategies.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture"
     ],
     "category": "Downstream Task",
     "query": "\"multimodal\" satellite"
@@ -70975,6 +71616,46 @@
     ],
     "category": "Foundation Model",
     "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "339ab575365009743bc662d3bdb4e44c7be68f89",
+    "source": "Semantic Scholar",
+    "title": "Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards",
+    "authors": [
+      "Chenhui Xu",
+      "Fuxun Yu",
+      "Mike Bianco",
+      "Jacob Kovarskiy",
+      "Raphael Tang",
+      "Qi Zhang",
+      "Zirui Xu",
+      "William Levine",
+      "Brandon Dubbs",
+      "Heming Liao",
+      "C. Burgess",
+      "Suvam Bag",
+      "Jay Patravali",
+      "Rupanjali Kukal",
+      "Mikael Figueroa",
+      "R. Madhok",
+      "Nikolaos Karianakis",
+      "Jinjun Xiong"
+    ],
+    "published": "2025-01-01",
+    "updated": "",
+    "venue": "",
+    "url": "https://www.semanticscholar.org/paper/339ab575365009743bc662d3bdb4e44c7be68f89",
+    "pdf_url": "",
+    "doi": "",
+    "abstract": "Training robust reasoning vision-language models (VLMs) in rare domains (such as geospatial) is fundamentally constrained by supervision scarcity. While raw geospatial imagery is abundant, the amount of task-direct supervision falls far behind that of common domains. In this work, we validate an important conclusion: indirect verifiable rewards, derived from seemingly unrelated metadata, are sufficient to induce sophisticated and generalizable geospatial reasoning across a wide range of downstream tasks (25+). We present Geo-R1 as one empirical instantiation of this paradigm. Rather than relying on limited task-specific annotations (i.e., direct rewards), Geo-R1 utilizes scalable, verifiable indirect proxy rewards based on cross-view alignment with metadata (geolocation information) to drive reinforcement learning at scale. Such indirect rewards successfully motivate the model to discover and internalize zero-shot geospatial reasoning across diverse tasks, achieving extraordinary zero-shot transfer on out-of-distribution benchmarks and even surpassing fully supervised specialists on certain benchmarks. These findings indicate that optimizing for indirect verifiable rewards may provide a scalable pathway to unlock generalized reasoning capabilities in rare domains with massive unlabeled data archives. Our code is availavle at: https://github.com/miniHuiHui/Geo-R1.",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI",
+      "Urban",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"vision-language\" geospatial"
   },
   {
     "id": "d718c0a6f9c43e587b00758dbaabc26d97706a50",
