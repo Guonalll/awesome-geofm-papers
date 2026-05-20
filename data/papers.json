@@ -510,6 +510,30 @@
     "query": "\"remote sensing foundation model\""
   },
   {
+    "id": "10.1364/optcon.595843",
+    "source": "Crossref",
+    "title": "OFDM-based optical integrated sensing and communication framework using embedded pilot subcarriers",
+    "authors": [
+      "Md. Firoz Ahmed",
+      "Riaz Uddin Mondal",
+      "M. Hasnat Kabir",
+      "Aurangzib Md. Abdur Rahman"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-05-08",
+    "venue": "Optics Continuum",
+    "url": "https://doi.org/10.1364/optcon.595843",
+    "pdf_url": "",
+    "doi": "10.1364/optcon.595843",
+    "abstract": "This work investigates an optical integrated sensing and communication (O-ISAC) system based on orthogonal frequency-division multiplexing (OFDM) with embedded pilot subcarriers. A shared optical waveform is employed to support simultaneous data transmission and sensing without additional spectral overhead. Pilot tones originally introduced for channel estimation are reused to extract sensing-related information, enabling dual functionality within a single OFDM frame. A MATLAB-based simulation framework is developed to evaluate both communication reliability and sensing accuracy under additive white Gaussian noise (AWGN) channel conditions representative of short-reach optical links. The transmitter and receiver hardware configurations are explicitly defined, including a Mach-Zehnder modulator (MZM)-based optical frontend ( λ = 1550 nm , V π = 4 V ) and a coherent detection receiver with 64-point FFT processing. Numerical results show that the proposed system achieves pre-forward-error-correction bit error rates below 10 −3 at optical signal-to-noise ratios above 12 dB using 16-QAM modulation, while sensing accuracy improves monotonically with increasing SNR, as reflected by reduced mean absolute pilot error (MAPE). The results demonstrate that pilot-assisted optical OFDM provides an effective trade-off between communication performance and sensing capability, supporting spectrally efficient multifunctional operation. This study offers a practical simulation-based performance benchmark for optical ISAC systems and provides a foundation for future experimental validation and system optimization",
+    "topics": [
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
     "id": "10.1080/2150704x.2026.2658202",
     "source": "Crossref",
     "title": "End-to-end open-set domain adaptation for cross-scene remote sensing image classification",
@@ -532,6 +556,32 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.1007/s41324-026-00684-x",
+    "source": "Crossref",
+    "title": "Integrating time series remote sensing and proximal data for wheat grain yield prediction using machine learning models",
+    "authors": [
+      "Samireh Nazari",
+      "Shuai Zhao",
+      "Shamsollah Ayoubi",
+      "Mahmood Rostaminia",
+      "Seyed Roohollah Mousavi",
+      "Artemi Cerda"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-05-20",
+    "venue": "Spatial Information Research",
+    "url": "https://doi.org/10.1007/s41324-026-00684-x",
+    "pdf_url": "",
+    "doi": "10.1007/s41324-026-00684-x",
+    "abstract": "",
+    "topics": [
+      "Prediction",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" \"remote sensing\""
   },
   {
     "id": "10.1007/s10044-026-01685-0",
@@ -1351,6 +1401,901 @@
     "query": "\"multimodal\" satellite"
   },
   {
+    "id": "10.1029/2026gl123448",
+    "source": "Crossref",
+    "title": "iTransformer‐Informed Hourly Surface Ozone Forecasting Using Geostationary Satellite Observations",
+    "authors": [
+      "Fan Cheng",
+      "Jing Wei",
+      "Fuzhong Weng",
+      "Shan Zhou",
+      "Zeyu Yang",
+      "Yang Cheng",
+      "Jian Gao",
+      "Xinghua Qiu",
+      "Tong Zhu"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-20",
+    "venue": "Geophysical Research Letters",
+    "url": "https://doi.org/10.1029/2026gl123448",
+    "pdf_url": "",
+    "doi": "10.1029/2026gl123448",
+    "abstract": "Abstract Previous machine learning approaches for surface ozone (O 3 ) forecasting are often limited to site‐specific applications and struggle to capture regional pollution dynamics. Here, we introduce an inverted Transformer (iTransformer), a time‐series model that integrates hourly satellite‐derived surface O 3 with key meteorological and environmental drivers. The model is applied to eastern China and demonstrates strong skill in 72‐hr surface O 3 forecasting, achieving an overall correlation of 0.86 (mean bias = 0.29 μg/m 3 ). It effectively captures spatial patterns, diurnal variability, and high‐ozone episodes, maintaining stable performance over time. During pollution events, the model reproduces both localized and large‐scale ozone enhancements with high fidelity. Forecast biases remain low, particularly at shorter lead times, indicating robust predictive skill. Overall, the results highlight the ability of advanced deep learning architectures to bridge satellite observations and air quality forecasting, offering a scalable framework for near‐real‐time ozone prediction and supporting timely environmental and public health decision‐making.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.1177/14759217261448415",
+    "source": "Crossref",
+    "title": "The limit does exist: Evaluating digital image correlation scenarios on graph neural networks for subsurface damage detection in structures",
+    "authors": [
+      "Ayatollah S. Yehia",
+      "Samuel Segal",
+      "Zhidong Zhang",
+      "Devin Harris"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Structural Health Monitoring",
+    "url": "https://doi.org/10.1177/14759217261448415",
+    "pdf_url": "",
+    "doi": "10.1177/14759217261448415",
+    "abstract": "Digital image correlation (DIC) is a non-contact optical measurement technique used to quantify surface-level deformation. While DIC can indicate the presence of subsurface damage through surface deformation patterns, it does not provide direct insight into the extent or impact of internal damage. Machine learning models, particularly those trained on simulated data embedded with noise characteristics representative of DIC outputs, offer a potential pathway to infer subsurface damage with a quantifiable degree of confidence. However, limited research has been conducted to experimentally validate and evaluate such models using real DIC data. This study investigates the robustness of a graph neural network (GNN) trained to localize and characterize unseen or internal damage within a structural system under load. The GNN was trained on simulated data informed by representative noise inherent to real-world DIC measurements and validated against experimental specimens. A novel algorithm was developed to extract three-dimensional marker coordinates from laser scanning measurements, facilitating the alignment between DIC and finite element model (FE model) coordinate systems, a critical step in identification of damage from real-world measurement data. Following spatial alignment of the model and experimental coordinate systems, nodal results from both FE model and DIC datasets were used to map experimental measurements to FE model nodes, with smoothing applied to remaining unmatched points. The resulting data were then converted into a graph structure for damage classification. The proposed GNN-powered model was evaluated using a series of experimental specimens with varying configurations. Results demonstrate that the models were able to detect the location and severity of damage, highlighting the GNN’s ability to generalize to previously unseen noisy experimental conditions. This research provides quantified reference for practical implementation of the GNN-powered subsurface damage detection tool and shows the potential of this surrogate model being incorporated into future digital twin and structural health monitoring applications.",
+    "topics": [
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.64898/2026.05.18.725545",
+    "source": "Crossref",
+    "title": "The ATLAS Penalty: Auxiliary-Transformed Location-Aware Smoothing with Applications to Spatial Transcriptomics",
+    "authors": [
+      "Qian Tang",
+      "Eric C. Chi",
+      "Wenyi Wang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.64898/2026.05.18.725545",
+    "pdf_url": "",
+    "doi": "10.64898/2026.05.18.725545",
+    "abstract": "We address the problem of fitting a collection of location-specific models under a spatial smoothness assumption. Existing approaches penalize roughness in the model parameters directly, an assumption that breaks down when smoothness is a function of parameters and auxiliary covariates rather than the parameters themselves. Our framework, the Auxiliary-Transformed Location-Aware Smoothing (ATLAS) penalty, generalizes spatial smoothness by penalizing roughness in transformations of model parameters using auxiliary information. As a concrete case study, we develop a spatially smooth deconvolution model for spatial transcriptomics that estimates tumor mixing coefficients from thousands of spots distributed on a single tissue slide. To handle the computational challenges posed by the nonlinear likelihood, nonsmooth nonconvex penalty, and spatially coupled estimation, we propose an alternating direction method of multipliers (ADMM) algorithm. Through simulation studies, we demonstrate that our framework provides substantially better spatial domain detection than approaches that smooth model parameters directly, with particularly strong gains when auxiliary covariates carry calibrated spatial structure.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.3390/rs18101643",
+    "source": "Crossref",
+    "title": "TCF-VQGAN: Two-Stage Codebook Fusion Vector-Quantized GAN for Multimodal Remote Sensing Image Cloud Removal",
+    "authors": [
+      "Chunyang Wang",
+      "Hanyu Feng",
+      "Yanmei Zheng",
+      "Wei Yang",
+      "Xian Zhang",
+      "Gaige Wang",
+      "Yihan Wang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Remote Sensing",
+    "url": "https://doi.org/10.3390/rs18101643",
+    "pdf_url": "",
+    "doi": "10.3390/rs18101643",
+    "abstract": "With the advancement of remote sensing technology, image acquisition has become more convenient and the amount of information captured has significantly increased, playing a vital role in numerous fields. However, cloud cover often results in missing image data, severely affecting data usability. In recent years, although deep learning methods have made progress in cloud removal tasks, the complexity of modeling multispectral band relationships and the scarcity of paired data remain major challenges. To address this, this paper proposes a two-stage codebook fusion vector-quantized generative adversarial network (TCF-VQ GAN) and a training framework. The first stage employs synthetic aperture radar (SAR), MODIS, and cloud-free data for unsupervised training; the second stage performs fusion fine-tuning using SAR and MODIS on paired cloudy/cloud-free data. The model incorporates a space-channel jointed gated convolution (SCGC) module to model irregular cloud cover and combines channel attention for band selection, while a dynamically weighted wavelet alignment loss function (DW2A) is designed to enhance multiscale feature representation. Experiments on the SEN12MS-CR and SMILE-CR datasets demonstrate that the proposed method outperforms existing methods across all metrics: on SEN12MS-CR, PSNR is 31.0397 and SAM is 4.7243; they are 33.5191 and 2.1663, respectively, on SMILE-CR. Furthermore, under fixed paired data conditions, simply adding auxiliary and cloud-free data further improves performance, validating the method’s effectiveness in data-scarce scenarios.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.1038/s40494-026-02631-3",
+    "source": "Crossref",
+    "title": "Spatial distribution and influencing factors of national and provincial reserves of cultural ecology in China",
+    "authors": [
+      "Ping Wang",
+      "Weihong Feng",
+      "Yuanyuan Qiu"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "npj Heritage Science",
+    "url": "https://doi.org/10.1038/s40494-026-02631-3",
+    "pdf_url": "",
+    "doi": "10.1038/s40494-026-02631-3",
+    "abstract": "Abstract China has established the largest Reserve of Cultural Ecology (RCE) system to safeguard intangible cultural heritage and its habitats. This study analyzes the factors influencing the distribution of RCEs utilizing methods such as the standard deviation ellipse, the optimal parameter geographic detector, and the hierarchical cluster analysis. The study indicates that China has 266 RCEs, mainly concentrated in the southwest, covering 3.15 × 10 6 km². The mean slope, ethnic minority ratio, and number of nationally designated poverty counties, which passed the 0.05 significance threshold, exhibit the highest explanatory power for RCEs distribution. Significantly, the distribution of RCEs is influenced not only by individual factors but also by the local environment, which is shaped by the interplay of multiple factors, as evidenced by the pronounced interaction between any two factors. The regional types of RCE emphasize the necessity to develop a zoning or classification management plan.",
+    "topics": [
+      "Geospatial AI",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.3390/s26103241",
+    "source": "Crossref",
+    "title": "Scale-Constrained Synthetic Construction for Small-Sample Satellite Power Tower Damage Assessment Under Cross-Scale Mismatch",
+    "authors": [
+      "Yulong Liu",
+      "Qi Wen",
+      "Jianghong Zhao",
+      "Runyu Ma",
+      "Atta-ur Rahman",
+      "Xiaolin Tian"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Sensors",
+    "url": "https://doi.org/10.3390/s26103241",
+    "pdf_url": "",
+    "doi": "10.3390/s26103241",
+    "abstract": "Satellite-based assessment of power tower damage is essential for rapid disaster response but is challenged by the scarcity of damage samples and the cross-scale mismatch between close-range UAV imagery and satellite imagery. Existing data augmentation methods, including copy-based strategies and diffusion-based generation, often fail to produce reliable samples due to their dependence on the training data distribution and the lack of explicit control over object scale and domain discrepancy. To address these issues, we propose a scale-constrained and frequency-adaptive diffusion-based data construction framework that explicitly models the scale distribution prior of power towers in the remote sensing domain and incorporates frequency-domain adaptation before image generation. Specifically, scale-aware instance embedding is used to construct training samples that conform to satellite-scale statistics, while frequency-domain adaptation is introduced to reduce spectral and texture discrepancies between UAV-derived damaged references and satellite imagery. A diffusion-based inpainting model is then trained on the constructed dataset to reconstruct damage at original tower locations. The experimental results, including feature statistical analysis and downstream change detection validation, demonstrate that the proposed method achieves better alignment with real satellite-scale distributions, reduces geometric and spectral–textural inconsistencies, and improves boundary continuity and structural realism under cross-resolution conditions.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Urban",
+      "Disaster",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.14741/ijcet/v.16.3.3",
+    "source": "Crossref",
+    "title": "RE-FusionNet: A Resource-Efficient Multi-Task Network for Joint Traffic Element Detection and State Recognition",
+    "authors": [
+      "Hemant Kumar",
+      "Pushpa Mamoria"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "International Journal of Current Engineering and Technology",
+    "url": "https://doi.org/10.14741/ijcet/v.16.3.3",
+    "pdf_url": "",
+    "doi": "10.14741/ijcet/v.16.3.3",
+    "abstract": "Autonomous driving is dependent upon reliable perception of traffic elements including traffic lights and traffic signs in order to ensure both safety and efficiency in making decisions. However, latest computer vision-based approaches treat object detection and semantic state recognition as either separate tasks, or they utilize expensive, hardware-dependent sensor technology to continuously feed in video data that can greatly increase the processing cost and limit deployments in resource-limited environments. This problem has been addressed through the development of Re-FusionNet; a lightweight, attention-enhanced convolutional architecture designed to perform both joint traffic light and traffic sign detection along with semantic state recognition utilizing only RGB image data. The Re-FusionNet utilizes a dual-path fusion encoder (DPFE), differential attention module (DAM), along with a compact convolutional backbone to enable contextual feature representation to be enhanced and to focus on relevant traffic-related objects. In addition to its ability to process images sequentially by only sampling a few frames from a video stream rather than continuously feeding it into the network, it enables efficient capture of contextual information. Finally, all three tasks are performed simultaneously via a single multi-task prediction head that predicts both object location and state, allowing for joint training. Results demonstrate that the Re-FusionNet achieves an average precision (mAP) of 97.3% @ 0.5 IoU on the BDD100K dataset while achieving a state recognition accuracy of 90.0%, and an mAP of 94.2% @ 0.5 IoU on the LISA dataset. Moreover, due to the low computational requirements, it can achieve frame rates above 150 fps. Overall, results clearly show that the Re-FusionNet represents an efficient and deployable method for real-time traffic perception applications within autonomous vehicles and intelligent transportation systems.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Prediction",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "10.1002/rob.70245",
+    "source": "Crossref",
+    "title": "QRIVAS: Quadruped Robot‐Based Intelligent Visual Acquisition System for Bridge Component Inspection",
+    "authors": [
+      "Yuxuan Li",
+      "Linlong Meng",
+      "Liangjing Yang",
+      "Yuki Nishimura",
+      "Weilei Yu",
+      "Hengda Hu",
+      "Yasutaka Narazaki"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Journal of Field Robotics",
+    "url": "https://doi.org/10.1002/rob.70245",
+    "pdf_url": "",
+    "doi": "10.1002/rob.70245",
+    "abstract": "ABSTRACT Bridge inspection constitutes a critical yet labor‐intensive task in civil infrastructure maintenance, often requiring access to confined, structurally complex environments. Conventional manual inspection suffers from low efficiency and high operational risks, and the robotic solutions encounter limitations in GNSS‐denied and low illumination environments with texture‐deficient surfaces. This study proposes QRIVAS (quadruped robot based intelligent visual acquisition system), an autonomous framework for structural component image acquisition without relying on prior maps to reduce the workload for manual close‐proximity inspection. QRIVAS integrates 3D LiDAR SLAM with real‐time semantic segmentation, enabling reliable navigation and precise structural component identification. In this paper, we focus on the exploration and inspection of bridge column—a representative and critical structural component of bridge systems. Experimental validation across simulated concrete railway viaducts and physical laboratory‐scale bridge models (1:3 scale) shows that QRIVAS achieved 100% navigation success rate in simulation environments and 96.7% average task navigation success rate across six bridge columns in laboratory‐scale bridge specimen. Compared to existing research, QRIVAS shows consistent performance improvements across varying tolerance conditions (25 cm and 50 cm radius), maintaining robust operation under both flat concrete floor and rough artificial grass terrain conditions. This work demonstrates the potential of AI‐driven robotic systems to transform traditional infrastructure maintenance practices.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"visual geo-localization\""
+  },
+  {
+    "id": "https://openalex.org/W7161701552",
+    "source": "OpenAlex",
+    "title": "Post-hurricane building damage assessment using street-view imagery and structured data: a multimodal deep learning approach",
+    "authors": [
+      "Xiaojian Zhang",
+      "Zhuoqun Xue",
+      "David O. Prevatt",
+      "Jennifer A. Bridge",
+      "Susu Xu",
+      "Xilei Zhao"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Urban Lifeline",
+    "url": "https://doi.org/10.1007/s44285-026-00070-x",
+    "pdf_url": "",
+    "doi": "10.1007/s44285-026-00070-x",
+    "abstract": "Abstract Post-event residential building damage assessment supports reconnaissance, screening, and recovery planning following major hazard events. Recent hurricanes have generated large volumes of satellite, aerial, and street-level imagery, creating challenges not of data scarcity but of integrating heterogeneous visual and contextual information into consistent and reviewable damage classifications. This study presents a multimodal deep-learning framework, the Multimodal Swin Transformer (MMST), that combines street-view imagery with structured building and hazard attributes to classify post-hurricane residential building damage. The model is evaluated using a curated dataset derived from extensive Structural Extreme Events Reconnaissance (StEER) field reconnaissance following Hurricane Ian (2022), which incorporates human interpretation, quality control, and selective sampling across impacted communities. Results show that integrating visual features with contextual information such as building age, building value, and wind speed improves classification performance relative to image-only baselines, achieving an accuracy of 92.67%. Attention-based visualizations further enable post-hoc inspection of image regions the model weighted most heavily, supporting qualitative review of model behavior rather than physical interpretation. The proposed MMST serves as a decision-support tool to augment reconnaissance workflows and enhance the continuity of critical community infrastructure in future hurricanes.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.1007/s44394-026-00021-8",
+    "source": "Crossref",
+    "title": "Parameter estimation of an atmospheric model using geostationary satellite observation to improve prediction of tropical cyclones: an idealized experiment",
+    "authors": [
+      "Yuki Hirose",
+      "Le Duc",
+      "Futo Tomizawa",
+      "Yohei Sawada"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Journal of the Meteorological Society of Japan",
+    "url": "https://doi.org/10.1007/s44394-026-00021-8",
+    "pdf_url": "",
+    "doi": "10.1007/s44394-026-00021-8",
+    "abstract": "Abstract One of the major uncertainties in atmospheric modeling is parametric uncertainty. It is important to infer appropriate parameters in various parameterizations from observation. Despite previous efforts on the calibration of parameters in atmospheric models, there is no existing work that comprehensively calibrates parameters using geostationary satellite observations although they are of paramount importance to monitor tropical cyclones. In this study, we estimate the posterior distribution of parameters of a meso-scale atmospheric model using brightness temperature observations from a geostationary satellite toward the improvement of the simulation of tropical cyclones. With the aid of an image-processing inspired evaluation index and machine-learning-based surrogate models, we developed a method to calibrate model parameters of a meso-scale atmospheric model by geostationary satellite observations. We found that parameters in cloud microphysics and boundary layer schemes could be efficiently estimated by geostationary infrared satellite observation. The estimated posterior distribution of parameters not only improves the accuracy of the prediction of satellite images but also partly reduces errors in the prediction of tropical cyclone intensity. We demonstrate the potential of adjusting multiple parameters based on satellite data and its implications of model development to improve the accuracy of the simulation of tropical cyclones. Although we did not consider uncertainty in initial conditions, this work would be extended to meso-scale ensemble forecasting systems which explicitly consider uncertainty in both initial conditions and model parameters.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Agriculture"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" pretraining"
+  },
+  {
+    "id": "10.3390/s26103224",
+    "source": "Crossref",
+    "title": "PPFS-YOLO: Physics-Prior Frequency-Spatial Fusion for Robust Container Surface Damage Detection",
+    "authors": [
+      "Jingze Liu",
+      "Feng Gao"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Sensors",
+    "url": "https://doi.org/10.3390/s26103224",
+    "pdf_url": "",
+    "doi": "10.3390/s26103224",
+    "abstract": "Container surface damage detection is critical for ensuring the structural integrity and operational safety of intermodal freight transport. However, visual pseudo-textures arising from rust stains, specular reflections, and paint weathering cause frequent false positives, while the scarcity of puncture-type defects (Hole class) leads to missed detections. Existing YOLO-family detectors address neither the frequency-domain characteristics of such pseudo-textures nor the physical priors inherent in genuine structural damage. In this paper, we propose PPFS-YOLO, a physics-prior frequency-spatial fusion framework built upon YOLOv12s. Two lightweight modules are introduced: (1) Frequency-Spatial Fusion (FSF), which applies a learnable spectral mask in the Fourier domain and performs gated fusion with spatial features to suppress pseudo-texture responses; and (2) Edge-Guided Auxiliary Supervision Module (FIM), which encodes Sobel-derived edge priors as a differentiable L1 constraint (Lphy) to regularize feature learning toward physically plausible damage boundaries. Three pairs of FSF–FIM are inserted into the YOLOv12s neck and head at P3, P4, and P4-head scales. Experiments on a container damage dataset containing 7013 images and three classes (Dent, Hole, Rusty) demonstrate that PPFS-YOLO achieves 64.86% mAP@50, a +12.35 percentage-point improvement over the YOLO12s baseline (SGD, unified optimizer), with only +0.79 M additional parameters (+8.6%) and a modest latency overhead of 2.9 ms (17.2 ms vs. 14.3 ms at 640×640 on an NVIDIA RTX 3090 GPU (NVIDIA Corporation, Santa Clara, CA, USA)). Ablation analysis reveals that Lphy is the critical catalyst: without it, the combined FSF+FIM modules yield only +0.83 pp, whereas the full model achieves +12.10 pp—underscoring the synergy between frequency-domain fusion and physics-prior regularization.",
+    "topics": [
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.1371/journal.pcbi.1014248",
+    "source": "Crossref",
+    "title": "Multimodal data integration to determine viral and innate immune kinetics in human airway epithelium",
+    "authors": [
+      "Pascal Lukas",
+      "Aurélien Gibeaud",
+      "Clarisse Schumer",
+      "Jonas Arruda",
+      "Jeremie Guedj",
+      "Olivier Terrier",
+      "Frederik Graw"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "PLOS Computational Biology",
+    "url": "https://doi.org/10.1371/journal.pcbi.1014248",
+    "pdf_url": "",
+    "doi": "10.1371/journal.pcbi.1014248",
+    "abstract": "Understanding the mechanisms that govern viral spread in human airway epithelium (HAE) remains a major challenge, particularly with regard to identifying and quantifying key factors such as cell-type-specific infectivity, viral transmission paths, and the innate immune dynamics. Although mathematical models and experimental advances have provided valuable insights into respiratory infections, revealing the complex spatio-temporal interactions of infection and immune processes on a tissue-level have remained elusive. Here, we present a novel workflow that combines time-resolved bulk measurements and spatially-explicit image information to allow the inference of viral and immune kinetics within HAE for respiratory viruses. While standard inference methods typically require custom summary statistics and resourceful fitting procedures for each individual data set, our workflow relies on the combination of different, simulation-based trained neural networks using BayesFlow , a framework for neural posterior estimation that allows for amortized inference and the integrative analysis of multimodal data. We validated our approach by simulating viral infection dynamics in HAE using systems of increasing complexity that account for tissue heterogeneity, cell-type specific kinetics and interferon-mediated immune responses, mirroring experimental measurements. Thereby, we could show that integrating spatial information is essential to reliably infer viral transmission kinetics and innate immune interactions on a tissue-level. Applying our approach to experimental data on SARS-CoV-2 infection dynamics within HAE culture systems, we estimated that 84% [58%,100%] of all infections were due to cell-associated transmission, pointing towards local transmission as the dominant mode of SARS-CoV-2 spread within HAE. Our workflow can be readily applied to HAE culture systems for inference of viral and innate immune kinetics of different respiratory viruses, allowing multimodal data integration without the need for frequent resourceful re-fitting approaches.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.21203/rs.3.rs-9056417/v1",
+    "source": "Crossref",
+    "title": "Multimodal Fusion and Pseudo-Labeling for Enhanced Weakly-Supervised Camouflaged Object Detection",
+    "authors": [
+      "Danyang Yang",
+      "Zao Liu",
+      "Zhihong Zeng",
+      "Bei Cheng"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-9056417/v1",
+    "pdf_url": "",
+    "doi": "10.21203/rs.3.rs-9056417/v1",
+    "abstract": "Abstract Camouflaged object detection (COD) is a challenging task in computer vision, aiming to accurately identify and locate objects that blend into complex backgrounds. Traditional COD methods rely heavily on pixel-level annotations, which are labour-intensive and prone to subjective bias. To address this, we propose a weakly-supervised COD approach that leverages multimodal information, specifically RGB and depth data, to enhance detection accuracy. Our method introduces a cross-modal adaptive relationship fusion module to dynamically adjust the contribution of each modality, ensuring optimized feature integration. Additionally, we employ a cross-modal pseudo-supervised label mapping method to generate comprehensive pseudo-RGB-D labels for network supervision. To ensure complete supervision across all modalities, we introduce a modality-specific loss function called deep dual loss. Experimental results on four benchmark datasets demonstrate that our approach significantly outperforms existing state-of-the-art methods, establishing a new benchmark in weakly-supervised COD. Here, we show an average improvement of 3.2% in structure measure (\\((S_\\alpha)\\)) and 2.5% in mean E-measure (\\((E^{mean} _\\xi)\\)) across datasets, highlighting the effectiveness of our multimodal fusion and pseudo-labeling strategies.",
+    "topics": [
+      "Vision-Language",
+      "Detection",
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.38124/ijisrt/26may116",
+    "source": "Crossref",
+    "title": "Multimodal Architectures and Benchmarking for Hospital Readmission Prediction: A Comparative Analysis of Machine Learning Methodologies",
+    "authors": [
+      "Sharad Mathur",
+      "Deepak Mathur"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "International Journal of Innovative Science and Research Technology",
+    "url": "https://doi.org/10.38124/ijisrt/26may116",
+    "pdf_url": "",
+    "doi": "10.38124/ijisrt/26may116",
+    "abstract": "Hospital readmissions, particularly those occurring within 30 days of discharge, represent a pivotal failure in the continuity of healthcare delivery, contributing significantly to patient morbidity, mortality, and escalating operational costs. As healthcare systems globally transition toward value-based care models, the imperative to accurately identify patients at high risk of readmission has catalyzed a surge in computational research. This research provides an exhaustive analysis of machine learning (ML) and deep learning (DL) applications in this domain. We critically examine the persistent performance dichotomy between ensemble tree-based methods (e.g., XGBoost) and deep neural architectures (e.g., LSTM, Transformer) on structured electronic health record (EHR) data. Furthermore, we explore the emerging frontier of multimodal fusion, where unstructured clinical notes are integrated via Large Language Models (LLMs) and Graph Neural Networks (GNNs) to capture semantic nuances missed by tabular data. Through a rigorous benchmarking analysis utilizing the MIMIC-IV and eICU databases, this paper delineates the comparative efficacy of Early, Late, and Joint Fusion strategies. Finally, we address the critical barriers to clinical deployment, including model interpretability (XAI), reproducibility, and the architectural requirements for real-time inference, offering a roadmap for the next generation of clinical decision support systems.",
+    "topics": [
+      "Vision-Language",
+      "Prediction",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.3390/buildings16102025",
+    "source": "Crossref",
+    "title": "MTL-Light: An Explainable Chained Multi-Task Learning Framework for Rapid Daylighting Performance Prediction in Office Units",
+    "authors": [
+      "Gaoyang Liu",
+      "Yuting Chen",
+      "Yue Zeng"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Buildings",
+    "url": "https://doi.org/10.3390/buildings16102025",
+    "pdf_url": "",
+    "doi": "10.3390/buildings16102025",
+    "abstract": "Accurate evaluation of indoor daylighting performance is essential for improving visual comfort and reducing lighting energy use in office buildings. However, simulation-based daylighting analysis is often too time-consuming to support rapid comparison of multiple design options in early-stage design. To address this issue, this study proposes MTL-Light, an explainable chained multi-task learning framework for fast daylighting performance prediction in typical office units. A parametric simulation dataset was constructed, and multiple representative daylighting indicators were extracted from the spatial distribution of daylight factors on the work plane. MTL-Light was then developed to jointly predict these indicators by modeling their interdependencies within a lightweight multi-task learning architecture. In addition, SHAP was employed to interpret the prediction results by quantifying the marginal contributions of geometric design variables. The results show that, compared with single-task models, MTL-Light achieves higher accuracy and more stable performance across multiple indicators, particularly for metrics sensitive to spatial distribution. Moreover, it reduces daylighting evaluation from minute-level simulation to millisecond-level inference. The interpretability analysis further indicates that room depth and window geometry dominate daylighting performance, while different indicators exhibit different sensitivities to geometric variables.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
+  },
+  {
+    "id": "10.31223/x5377d",
+    "source": "Crossref",
+    "title": "Integrating machine learning with a process-based model for estimating global wetland methane emissions",
+    "authors": [
+      "Chris Smith",
+      "Shuo Chen",
+      "Sparkle Malone",
+      "Gavin McNicol",
+      "Qing Zhu",
+      "Licheng Liu",
+      "Youmi Oh"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.31223/x5377d",
+    "pdf_url": "",
+    "doi": "10.31223/x5377d",
+    "abstract": "Methane emissions from natural wetlands are a major contributor to the changing global climate. However, estimates of such emissions are uncertain and depend on the modeling approach used. Process-based modeling of wetland emissions incorporates scientific knowledge of the underlying biogeochemical process, but prediction accuracy is insufficient. Machine learning models have the potential to improve emissions estimates; however, they often struggle to generalize to new prediction sites. We explore combined process-based machine learning strategies for estimating wetland emissions globally. One such strategy, cross-domain model stacking — using the output from a process-based surrogate model as an additional input to a second neural network trained on real data — improved reducing prediction error by 2.1%, while other transfer learning methods did not improve performance. In addition, we find that learning features from MODIS satellite images local to each measurement site served as a valuable input to the neural network, improving performance by 3.7%. Finally, we estimate global-scale emissions using a new, hybrid approach: conditional model selection dependent on local environment. The hybrid approach resulted in a global emissions estimate of 180.9 teragrams of methane per year, which is larger than either of the individual models, although the global sum was strongly affected by the inundation map. Last, integrating process-based information with machine learning improved alignment with established trend and seasonal behaviors while maintaining or enhancing agreement with independent machine learning-based global estimates.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Flood"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "10.3389/frai.2026.1814362",
+    "source": "Crossref",
+    "title": "Image processing and AI techniques for climate change detection using remote sensing: a comprehensive review",
+    "authors": [
+      "Anirudh Agarwal",
+      "Shreya Kumar",
+      "G. K. Rajini",
+      "Indragandhi Vairavasundaram"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Frontiers in Artificial Intelligence",
+    "url": "https://doi.org/10.3389/frai.2026.1814362",
+    "pdf_url": "",
+    "doi": "10.3389/frai.2026.1814362",
+    "abstract": "Climate change is accelerating spatially complex transformations in land, water, coasts, cryosphere, and ecosystems, creating a critical need for reliable, scalable, and timely monitoring based on Earth observation imagery. Conventional approaches that rely on sparse in-situ measurements, manual image interpretation, and simple spectral indices or thresholding often fail to capture subtle, heterogeneous, and multiscale changes, and they do not scale to today's multi-sensor, multi-temporal satellite archives. This review synthesizes image processing and AI techniques applied to optical, SAR, thermal, and hyperspectral remote sensing for climate change detection, covering classical change detection methods, machine learning classifiers, deep learning architectures (including Siamese and segmentation networks), spatio-temporal models for satellite image time series, and multi-sensor fusion, across application domains such as land use/land cover (LULC) and deforestation, hydrology and flooding, coastal and mangrove dynamics, cryospheric change, urban heat, ecosystems, and natural hazards. In addition, we analyze how these methods are evaluated using common performance metrics–Overall Accuracy (OA), precision, recall, F1-score, Intersection over Union (IoU), Kappa coefficient, and error measures such as RMSE–and discuss key challenges related to data quality and annotation, domain shift and generalization, computational and operational constraints, interpretability, and integration with climate and impact models. The distinctive contribution of this review is a unified method-application taxonomy that explicitly links algorithm families to specific climate monitoring tasks, a systematic comparison of reported performance metrics that clarifies trade-offs between techniques under different data and class-imbalance conditions, and a practical decision framework to guide researchers and practitioners in selecting appropriate image processing and AI approaches for given sensors, regions, and operational requirements, while outlining promising future directions such as foundation models, standardized benchmarks, and interoperable climate decision-support systems. Across the reviewed literature, deep learning approaches consistently demonstrate higher accuracy (e.g., improved IoU and F1-scores) in complex and heterogeneous environments, while classical methods remain effective for large-scale and data-scarce applications. However, significant gaps persist in model generalization across regions, availability of labeled datasets, and integration of multi-sensor time-series data.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Flood",
+      "Urban",
+      "Ecology",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.21203/rs.3.rs-9312223/v1",
+    "source": "Crossref",
+    "title": "Hybrid Digital Forensic Framework for Multimodal Deepfake Detection",
+    "authors": [
+      "Shavez Mushtaq Qureshi",
+      "Atif Saeed",
+      "Farooq Ahmad",
+      "Mohammed A. Al Ghamdi",
+      "Idrees Nasser Alsolbi"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-9312223/v1",
+    "pdf_url": "",
+    "doi": "10.21203/rs.3.rs-9312223/v1",
+    "abstract": "Abstract The rapid advancement of deepfake technology driven by Generative Adversarial Networks and diffusion models threatens digital media authenticity. Existing detection approaches are largely unimodal, limiting their effectiveness against coordinated multimodal deepfakes. This study proposes a hybrid digital forensic framework that integrates a Vision Transformer for visual analysis and Mel Frequency Cepstral Coefficients for audio modeling, combined through a rule based fusion strategy for interpretable decision making. Evaluated on the 2025 DeepFake Detection Challenge dataset and Celeb DF v2, the framework achieves 94% accuracy, demonstrating improved robustness and reliability for digital forensic and media verification applications.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.3390/s26103236",
+    "source": "Crossref",
+    "title": "FAMA-DET: A Frequency-Domain Adaptive Multi-Scale Attention Detection Network for Aircraft Target Detection in Optical Remote Sensing Images",
+    "authors": [
+      "Lan Ma",
+      "Mingyang Peng",
+      "Yun Luo",
+      "Yujie Pi"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Sensors",
+    "url": "https://doi.org/10.3390/s26103236",
+    "pdf_url": "",
+    "doi": "10.3390/s26103236",
+    "abstract": "Aircraft target detection in optical remote sensing imagery is hindered by severe scale variation, cluttered backgrounds, and the limited capacity of the spatial-domain convolution to represent frequency-selective target features. We propose FAMA-DET, a frequency-domain adaptive detection framework built on YOLO11, which pursues a unified design principle of content-adaptive spectral representation across all architectural levels. The Frequency-Domain Adaptive Cross-Stage Feature Extractor (FDACFE) replaces static kernels with frequency-domain parameterised convolution driven by learnable DFT basis vectors, enabling differentiated perception of high-frequency edge details and low-frequency semantic components. The Soft-Aligned Bidirectional Feature Pyramid Network (SABFPN) eliminates upsampling amplitude distortion through scale-normalised interpolation and enriches cross-scale fusion with multi-receptive-field textural modelling. The Adaptive Multi-Scale Recalibrated Decoupled Detection Head (AMRDDHead) embeds multi-scale channel recalibration into both localisation and classification branches to suppress background redundancy and reinforce discriminative activations. On MAR20, FAMA-DET improves mAP50 and mAP50-95 over the YOLO11n baseline by 1.8% and 1.6% at only 5.4 GFLOPs, while maintaining real-time throughput of 109.7 FPS. Under zero-shot cross-domain transfer to CORS-ADD, FAMA-DET achieves the highest mAP50 of 93.3% among all compared methods, surpassing RT-DETR-R18 in mAP50 while using 91.0% fewer GFLOPs, confirming that frequency-domain adaptive design yields both strong generalisation and deployment efficiency.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.64898/2026.05.17.26353399",
+    "source": "Crossref",
+    "title": "Evaluating OCT Device-Reported Image Quality Score: Towards a Task-Specific Quality Gate for Deep Learning-based Outer-Retina and Choroid Boundary Segmentation",
+    "authors": [
+      "Adarsh Gadari",
+      "Atharva Ajay Vichare",
+      "Francesca Corona",
+      "Sharat Chandra Vupparaboina",
+      "Shreyaa Rohindra Lall",
+      "Giulia Gregori",
+      "Nasiq Hasan",
+      "José-Alain Sahel",
+      "Jay Chhablani",
+      "Sandeep Chandra Bollepalli",
+      "Kiran Kumar Vupparaboina"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.64898/2026.05.17.26353399",
+    "pdf_url": "",
+    "doi": "10.64898/2026.05.17.26353399",
+    "abstract": "Manufacturer-defined signal-strength indices are frequently employed as quality benchmarks for automated optical coherence tomography analysis, yet their empirical relationship with deep learning segmentation accuracy remains unclear. Because these metrics were originally developed for conventional image-processing pipelines, their ability to predict modern model-based segmentation accuracy has not been empirically validated. To address this gap, we evaluated the Heidelberg Spectralis Q-score against U-Net segmentation performance across 5,047 B-scans from 103 eyes for three anatomical boundaries of the posterior segment of the eye: the Ellipsoid Zone (EZ), Bruch's Membrane (BM), and Choroid Outer Boundary (COB). Alongside standard boundary agreement metrics (MAE, MSE, Dice Similarity Coefficient), we adapted the Earth Mover's Distance (EMD) from optimal transport theory as a boundary evaluation metric. Unlike column-wise averages, EMD quantifies boundary agreement as a 2-D geometric displacement, directly measuring residual spatial displacement between the model segmented boundary and the ground-truth boundary. Our results demonstrate that the Q-score - originally designed to gate image-processing-based automated analysis - is a poor predictor of deep learning boundary segmentation accuracy, with explained variance (R 2 ) failing to exceed 1.4% across all three boundaries. We further observed a monotonically increasing error hierarchy with anatomical depth (EZ < BM < COB), consistent across metrics, which is unexplained by the signal strength. At the COB, correlations were paradoxically positive, explained by a B-scan-level mediation chain: higher Q-scores correspond to greater choroidal thickness (r=0.113, ρ=0.158), which in turn predicts higher COB segmentation error (r=0.165, ρ=0.191) - a localization difficulty that global signal strength cannot capture. Collectively, these findings challenge the implicit assumption that signal-strength-based quality thresholds are a reliable proxy for deep learning model performance, and motivate a shift toward task-specific acquisition quality criteria calibrated to model performance rather than signal interpretability.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.1038/s41598-026-53405-7",
+    "source": "Crossref",
+    "title": "Efficient UAV object detection using spectro-spatial synergistic learning and implicit recursive refinement",
+    "authors": [
+      "Xiaoji Wei",
+      "Zhongbin Luo",
+      "Bilu Luo",
+      "JunHao Li"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-53405-7",
+    "pdf_url": "",
+    "doi": "10.1038/s41598-026-53405-7",
+    "abstract": "",
+    "topics": [
+      "Detection",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.3390/s26103230",
+    "source": "Crossref",
+    "title": "Delay-Doppler Domain Time-Hopping Key Generation and Security Analysis for Orthogonal Time Frequency Space Satellite Communication Systems",
+    "authors": [
+      "Wei Li",
+      "Zhendie Bai",
+      "Jikang Wang",
+      "Xiaofan Xu",
+      "Xianggeng Zhu"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Sensors",
+    "url": "https://doi.org/10.3390/s26103230",
+    "pdf_url": "",
+    "doi": "10.3390/s26103230",
+    "abstract": "Physical-layer key generation (PLKG) is a technique that produces symmetric encryption keys by exploiting the inherent characteristics of wireless channels. It offers advantages including high physical-layer security, elimination of pre-shared keys, dynamic upgradability, and resistance to quantum attacks, making PLKG a promising security solution for next-generation (6G) networks. However, satellite communication channels exhibit high dynamics and long propagation delays. Characteristics such as large Doppler shifts, short coherence times, and orbital predictability pose severe challenges to PLKG, including reciprocity degradation, low key generation rate (KGR), and susceptibility to channel-prediction attacks. This work proposes a delay-Doppler domain time-hopping key generation scheme (KE-DD-TH) based on Orthogonal Time Frequency Space (OTFS) modulation for high-speed links between Low-Earth-Orbit (LEO)/Medium-Earth-Orbit (MEO) satellites and ground terminals in Ka/Ku bands. The scheme performs non-uniform sampling on the DD domain grid of OTFS symbols using an ephemeris-driven pseudo-random time-hopping sequence generated by cascaded linear feedback shift registers (LFSRs) and a nonlinear matrix transformation. Both legitimate parties estimate the channel only at time-hopping instants and multiply two adjacent estimates to construct an “equivalent channel” matrix, yielding a random source with high entropy, high reciprocity, and low predictability. The eavesdropper’s key disagreement rate (KDR) remains close to 0.5 under all signal-to-noise ratio (SNR) conditions, corresponding to the ideal random-guessing baseline. This indicates that Eve obtains negligible mutual information, i.e., I(KA;KE)≈0. By contrast, the conventional KE-DD scheme allows Eve’s KDR to degrade to 0.014 at 30 dB SNR, indicating near-complete key recovery. The generated keys pass all 12 randomness tests of the NIST SP 800-22 statistical test suite.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.47852/bonviewjcce62027652",
+    "source": "Crossref",
+    "title": "Deep Learning for Medicinal Plant Classification: A Comprehensive Review of Recent Advances and Challenges",
+    "authors": [
+      "Monir Hossain",
+      "Fahmid Al Farid",
+      "Momotaz Begum",
+      "Jia Uddin",
+      "Hezerul Bin Abdul Karim"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Journal of Computational and Cognitive Engineering",
+    "url": "https://doi.org/10.47852/bonviewjcce62027652",
+    "pdf_url": "",
+    "doi": "10.47852/bonviewjcce62027652",
+    "abstract": "Deep learning classifies medicinal plants, driven by the need to preserve traditional knowledge and automate identification for practical uses. This review extensively summarizes 30 recent studies (2021–June 2025) on applying deep learning, primarily using image data, to classify medicinal plants. This review analyzes research distribution, dataset preparation, image preprocessing, augmentation, and deep learning architectures like convolutional neural networks, Vision Transformers, and hybrid models. Our analysis reveals a strong geographic focus, with 50% of the selected studies originating from India and Bangladesh. The focus is overwhelmingly on leaf imagery, with 29 out of the 30 studies relying on this approach. The field is also characterized by its dependence on existing data, as 56.6% of studies utilized public datasets and another 26.6% employed a hybrid of public and private data, with dataset sizes ranging from a minimum of 637 to a maximum of 13,500 images. Methodologically, the vast majority of studies rely on a transfer learning approach (36.7%), achieving robust accuracy rates between 74% and 99.9%. Furthermore, we recognize significant limitations, such as the absence of standardized and diverse datasets, insufficient inclusion of uncommon or endangered species, and inadequate representation of whole-plant imaging. The research underscores the necessity for collaborative, multidisciplinary initiatives to develop centralized, high-quality, and geographically comprehensive datasets. We delineate prospective avenues, including multimodal feature integration, the development of real-world applications, and optimization for privacy-preserving frameworks such as federated learning. This study guides academics advancing deep learning for medicinal plant classification and biodiversity conservation. Received: 13 September 2025 | Revised: 8 December 2025 | Accepted: 5 March 2026 Conflicts of Interest The authors declare that they have no conflicts of interest to this work. Data Availability Statement Data sharing is not applicable to this article as no new data were created or analyzed in this study. Author Contribution Statement Monir Hossain: Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation, Data curation, Writing – original draft, Writing – review & editing, Visualization, Supervision. Fahmid Al Farid: Validation, Formal analysis, Investigation, Resources, Writing – review & editing, Visualization. Momotaz Begum: Conceptualization, Methodology, Validation, Formal analysis, Investigation, Resources, Data curation, Writing – review & editing, Visualization. Jia Uddin: Conceptualization, Validation, Formal analysis, Investigation, Resources, Writing – review & editing, Visualization, Supervision, Project administration. Hezerul Bin Abdul Karim: Validation, Formal analysis, Investigation, Resources, Writing – review & editing, Visualization, Funding acquisition.",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI",
+      "Ecology",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "10.3389/fcomp.2026.1865390",
+    "source": "Crossref",
+    "title": "Correction: Beyond the looking glass: multimodal LLM-based depth-sensing for spatial behavior modeling in media architecture",
+    "authors": [
+      "Zhikun Wu",
+      "Ava Fatah gen. Schieck"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Frontiers in Computer Science",
+    "url": "https://doi.org/10.3389/fcomp.2026.1865390",
+    "pdf_url": "",
+    "doi": "10.3389/fcomp.2026.1865390",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.28924/2291-8639-24-2026-157",
+    "source": "Crossref",
+    "title": "Compactness Theory in Complex Neutrosophic Soft Spaces and Its Application to Visual Cosine Similarity Analysis",
+    "authors": [
+      "Jamil J. Hamja",
+      "Raed Hatamleh",
+      "Diana Amin Mohammad Mahmoud",
+      "Giorgio Nordo",
+      "Haitham Qawaqneh",
+      "Aqeedat Hussain",
+      "Regimar A. Rasid",
+      "Aliazer H. Jinang",
+      "Arif Mehmood Khattak",
+      "Cris L. Armada"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "International Journal of Analysis and Applications",
+    "url": "https://doi.org/10.28924/2291-8639-24-2026-157",
+    "pdf_url": "",
+    "doi": "10.28924/2291-8639-24-2026-157",
+    "abstract": "In the framework of complex neutrosophic soft topology, the paper investigates locally compact spaces and complex neutrosophic soft compact spaces. Complex neutrosophic soft open covers, finite sub-covers, closed set intersections, centered families, and several comparable requirements are used to define the idea of compactness. Compact subsets of Hausdorff space were shown to be closed, and compact Hausdorff spaces were shown to be normal. The relationships between compactness axioms, closed ness axioms, Hausdorff ness axioms, normalcy axioms, and separation axioms (\\(T_1\\), \\(T_2\\), \\(T_3\\)) are investigated. The concept of complicated neutrosophic soft local compactness, which is a weakening of compactness expressed in terms of neighborhoods with compact closures, is then defined. Refined neighborhood confinement is established, and it is shown that both open and closed subspaces of locally compact Hausdorff spaces exhibit local compactness. These results provide a solid foundation for modeling the localized uncertainty and are generalized to the complex neutrosophic soft environment from the classical compactness theory. Using both quantitative and advanced visualization methods, this research offers a thorough and graphical analysis of the cosine similarity trends between the different dimensional cues and class templates. The strongest relationship is always found between Signal \\(S_2\\) and Template \\(T_1\\). Each of the cosine similarity scores is evaluated separately to display the predominant, moderate, and weak signal-template cross section. Through a number of complementary visual techniques such as normalized heatmaps, 2D and 3D bar graphs, surface plots, spline interpolations, PCA projection, and t-SNE embedding, the similarity matrix is rendered as an informative geometric structure in the form of peaks, ridges, and valleys. These visualizations offer an insightful understanding of the level of agreement, robustness and sensitivity by exhibiting stable similarity points, transitions and fragile points. Moreover, stable and sensitive matches where the confidence for classification is the highest and where we need to be careful are detected through the sensitivity and derivative analysis of the landscape. In general, the hybrid visual-metric approach provides a formal yet intuitive way to understand the correlation between signal and template that explains why the cosine similarity is a successful method of pattern recognition, clustering, and interpretation of multidimensional data.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"visual geo-localization\""
+  },
+  {
+    "id": "10.21203/rs.3.rs-7961411/v1",
+    "source": "Crossref",
+    "title": "Classification of agroforestry systems by photo-interpretation of satellite imagery and application to quantify above-ground carbon density",
+    "authors": [
+      "Ouadya Tahiri",
+      "Damien Beillouin",
+      "Patrice Dumas",
+      "Rémi Prudhomme",
+      "David Makowski"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-7961411/v1",
+    "pdf_url": "",
+    "doi": "10.21203/rs.3.rs-7961411/v1",
+    "abstract": "Abstract Photo-interpretation is widely used for land-use mapping but has not yet been operationally applied to agroforestry systems. One way to monitor these systems is to collect georeferenced samples at fine spatial scales, which can be used to evaluate existing land-use maps, develop agroforestry inventories, and train machine learning models for large-scale mapping. We propose a photo-interpretation-based classification method to identify three agroforestry types—hedgerows, alley cropping, and scattered agroforestry—and two non-agroforestry categories: woody monocrops and unmanaged trees outside forest (TOF)/forest trees (FT). Five interpreters tested the method on 300 georeferenced sample points distributed across multiple global regions. Overall accuracy ranged from 0.75 to 0.81, depending on the interpreter, increasing to 0.86 after adjusting for interpreter errors. Hedgerows were consistently well classified (2% omission, no commission error), whereas alley cropping and woody monocrops were more frequently confused. Identifying scattered agroforestry systems proved more challenging, with 19% of points misclassified as unmanaged TOF/ FT. After validation, the method was applied at a global scale to produce 7,131 georeferenced sample points representing four tree-based agricultural systems: alley cropping, hedgerows, scattered agroforestry, and woody monocrops. Overlaying these points with the ESA Above-Ground Biomass Map (2020) revealed distinct above-ground carbon (AGC) median densities: woody monocrops (9.7 MgC ha⁻¹, alley cropping (7.3), scattered agroforestry (4.2), and hedgerows (2.9). These results demonstrate that the proposed classification method, combined with photo-interpretation, can effectively generate large-scale georeferenced agroforestry datasets, support map validation and agroforestry inventories, and enable scalable carbon monitoring.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture",
+      "Ecology",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.3389/fmed.2026.1735771",
+    "source": "Crossref",
+    "title": "Behavior recognition and assessment of spinal dysfunction based on an attention mechanism",
+    "authors": [
+      "YanJun Guo",
+      "Xiaobing Li"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Frontiers in Medicine",
+    "url": "https://doi.org/10.3389/fmed.2026.1735771",
+    "pdf_url": "",
+    "doi": "10.3389/fmed.2026.1735771",
+    "abstract": "Introduction Behavior recognition and assessment of spinal dysfunction are crucial for accurately diagnosing complex motor patterns, postural deviations, and movement abnormalities. Traditional approaches often rely on handcrafted features and static analysis, which struggle to capture the dynamic and context-dependent nature of human motion. We develop an attention-augmented deep neural framework designed to advance behavioral data analytics and facilitate early recognition of spinal dysfunctions. Methods The proposed framework consists of two core components: the Spinal Dysfunction Attention Recognition Network (SDARN) and the Adaptive Attention-Based Strategy (AABS). SDARN integrates advanced feature extraction, attention-driven temporal modeling, and classification modules to effectively learn spatial and temporal dependencies in movement sequences. This design enables the network to focus on relevant motion segments that correspond to abnormal spinal patterns. Meanwhile, AABS dynamically refines the attention distribution by incorporating domain-specific constraints and temporal regularization, enhancing both robustness and interpretability. Together, these components form a unified system capable of adaptive learning from complex behavioral data. Results and discussion Experimental evaluations conducted on benchmark datasets confirm that the proposed method achieves notable gains in recognition accuracy and interpretability compared to conventional models, providing a promising tool for clinical assessment and rehabilitation of spinal dysfunctions.",
+    "topics": [
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "10.3389/fmed.2026.1828838",
+    "source": "Crossref",
+    "title": "Association of multimodal analgesic protocol with postpartum depression incidence and sleep quality in high-risk parturients",
+    "authors": [
+      "Hui Zhang",
+      "Yan an Jiang",
+      "Huajun Fu",
+      "Lin Zhang",
+      "Gang Zhang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Frontiers in Medicine",
+    "url": "https://doi.org/10.3389/fmed.2026.1828838",
+    "pdf_url": "",
+    "doi": "10.3389/fmed.2026.1828838",
+    "abstract": "Background Postpartum depression (PPD) affects 10–20% of women after childbirth, with incidence reaching 30–50% in high-risk populations. Acute postoperative pain and sleep disturbance represent modifiable risk factors. This study evaluated whether a multimodal analgesic protocol combining dexmedetomidine and esketamine is associated with reduced PPD incidence in high-risk parturients undergoing cesarean delivery. Methods This single-center, retrospective cohort study included 82 high-risk parturients who received intraoperative esketamine (0.25 mg/kg) followed by postoperative dexmedetomidine-esketamine patient-controlled analgesia for 48 h between January 2023 and December 2024. Historical controls ( n = 79) from 2022 received standard sufentanil-based analgesia. The primary outcome was PPD incidence at 6 weeks (Edinburgh Postnatal Depression Scale &gt;10). Results PPD incidence was significantly lower in the intervention group versus controls (14.6% vs. 29.1%; relative risk 0.50, 95% confidence interval 0.27–0.93; p = 0.028; number needed to treat 6.9). Edinburgh Postnatal Depression Scale (EPDS) score decreased more in the intervention group (−2.8 ± 3.4 vs. +0.6 ± 4.1; p &lt; 0.001). Sleep quality at postoperative day 7 was better (Pittsburgh Sleep Quality Index 6.2 ± 2.8 vs. 8.9 ± 3.1; p &lt; 0.001). Opioid consumption decreased by 21.2% ( p &lt; 0.001). Exploratory biomarker assessment in a subset suggested lower interleukin-6 and higher brain-derived neurotrophic factor (both p &lt; 0.001), though these data were non-systematic. Psychotomimetic effects occurred in 8.5%, all transient. No significant differences in cardiovascular or respiratory adverse events were observed. Conclusion A multimodal analgesic protocol incorporating dexmedetomidine-esketamine multimodal analgesic protocol was associated with lower postpartum depression incidence, better sleep quality, and acceptable safety in high-risk parturients. Randomized trials are needed to establish causality.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Application",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.3389/or.2026.1757059",
+    "source": "Crossref",
+    "title": "Applications of large language models in tumor boards: a systematic review",
+    "authors": [
+      "Benjamin Konzmann",
+      "Maurice Henkel",
+      "Christian Breit",
+      "Christian Wetterauer"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Oncology Reviews",
+    "url": "https://doi.org/10.3389/or.2026.1757059",
+    "pdf_url": "",
+    "doi": "10.3389/or.2026.1757059",
+    "abstract": "Background Multidisciplinary tumor boards (MDTs) are the gold standard for cancer care but currently face significant pressure from rising case volumes and the increasing complexity of precision medicine. Large Language Models (LLMs) offer potential as Clinical Decision Support Systems (CDSS) to augment these workflows. This systematic review evaluates the current applications, accuracy, and safety of LLMs in MDT decision-making. Methods A systematic review was conducted following PRISMA 2020 guidelines. We searched PubMed/MEDLINE, Embase, IEEE Xplore, and arXiv for primary research published between January 2023 and November 2025. Inclusion criteria required studies to evaluate LLM performance in tumor board settings against human consensus or established clinical guidelines. Results Thirty-one studies encompassing 3,845 unique patient cases were included. The analysis revealed a distinct “complexity gap” in model performance. In standardized, high-incidence domains such as breast and prostate cancer, advanced models (particularly the GPT-4 family) demonstrated high concordance (up to 94%) with human experts. However, performance degraded significantly in complex, rare, or multimodal scenarios—such as sarcoma or neuro-oncology—where models struggled with “gray zone” decision-making and lacked the ability to interpret non-textual data. While LLMs showed utility in administrative tasks and guideline retrieval, they remained prone to hallucinations and lacked the nuance required for holistic patient assessment. Conclusion Current LLMs exhibit sufficient maturity to function as assistive tools for documentation and decision support in routine oncological cases but are not yet reliable enough for autonomous decision-making. Successful clinical implementation will require “human-in-the-loop” safeguards, the development of multimodal architectures, and rigorous prospective validation to ensure patient safety.",
+    "topics": [
+      "Vision-Language",
+      "Retrieval",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" \"remote sensing\""
+  },
+  {
+    "id": "10.5194/acp-26-6825-2026",
+    "source": "Crossref",
+    "title": "Airborne remote sensing of nitrous acid in the troposphere: potential sources of excess HONO",
+    "authors": [
+      "Benjamin Weyland",
+      "Simon Rosanka",
+      "Domenico Taraborrelli",
+      "Birger Bohn",
+      "Andreas Zahn",
+      "Florian Obersteiner",
+      "Eric Förster",
+      "Mariano Mertens",
+      "Patrick Jöckel",
+      "Helmut Ziereis",
+      "Katharina Kaiser",
+      "Horst Fischer",
+      "John N. Crowley",
+      "Nijing Wang",
+      "Achim Edtbauer",
+      "Jonathan Williams",
+      "Maria Dolores Andrés Hernández",
+      "John P. Burrows",
+      "Flora Kluge",
+      "Meike K. Rotermund",
+      "Andre Butz",
+      "Klaus Pfeilsticker"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Atmospheric Chemistry and Physics",
+    "url": "https://doi.org/10.5194/acp-26-6825-2026",
+    "pdf_url": "",
+    "doi": "10.5194/acp-26-6825-2026",
+    "abstract": "Abstract. The photolysis of nitrous acid (HONO) produces hydroxyl radicals (OH), the most important cleaning agent of the troposphere. For decades, HONO has been measured in concentrations which exceed the photo-stationary concentration arising from its gas phase formation via the reaction NO + OH and destruction by photolysis. Several photochemical and heterogeneous formation mechanisms, including the photolysis of nitrate have been proposed which may explain this excess HONO. This study reports on airborne remote sensing measurements of the mini-DOAS instrument over continental Europe, Southeast Asia, and the tropical Atlantic. The observations form a C-shaped profile in the troposphere with maximum volume mixing ratios of approximately 150 ppt in the planetary boundary layer, about 10 ppt in the free troposphere and up to 100 ppt in the tropical upper troposphere. These measurements of HONO throughout the troposphere exceed model predictions by up to an order of magnitude. Together with a host of other measured species and parameters, various formation mechanisms are explored to investigate in situ HONO sources. Although a precise formation mechanism in the polluted boundary layer remains elusive, the photolysis of particulate nitrate may explain excess HONO in the marine boundary layer. The excess HONO observed in the upper troposphere requires a gas phase source with a formation rate of up to 300 ppt h−1. The possible role of peroxynitrous acid (HOONO), formed by the reactions NO + HO2 + M and NO2 + OH + M, and further oxidation by reactions with NO or O3, is explored.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.3389/fnbot.2026.1779125",
+    "source": "Crossref",
+    "title": "Active physical human-exoskeleton interaction based on motion intention adaptive recognition and synchronous tracking",
+    "authors": [
+      "Weiguo Shi",
+      "Weiqun Wang",
+      "Jiaxing Wang",
+      "Shengda Liu",
+      "Xu Liang",
+      "Tianyu Lin",
+      "Kexin Xiang",
+      "Zeng-Guang Hou"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Frontiers in Neurorobotics",
+    "url": "https://doi.org/10.3389/fnbot.2026.1779125",
+    "pdf_url": "",
+    "doi": "10.3389/fnbot.2026.1779125",
+    "abstract": "Active physical human–exoskeleton interaction has been widely studied. However, the challenges of human motion intention recognition and synchronous tracking have not been well-addressed. In this article, a motion intention recognition method based on biophysical information fusion and adaptive learning was proposed to overcome the limitations of existing approaches. First, a lower-limb joint angle prediction model was developed by integrating surface electromyography (sEMG), historical joint angles and centers of gravity. The convolutional neural network, Mamba network, and multilayer perceptron network were used respectively for feature extraction, information fusion, and joint angle prediction. Second, an online adaptive method for the angle prediction model was designed based on a style transfer mapping technique to address the issue of recognition accuracy decline. In this method, the new sEMG features were mapped into the initial feature space, by which the prediction model can maintain the predictive performance during long-term implementation. Furthermore, a real-time control method for the exoskeleton synchronous tracking was given based on the predicted angles. Finally, the feasibility of the proposed methods was validated through the offline and online experiments.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "10.1190/int-2025-0050",
+    "source": "Crossref",
+    "title": "A deep learning identification method for the core of fracture-cavity bodies based on Angle domain data-driven",
+    "authors": [
+      "Zhipeng Gui",
+      "Junhua Zhang",
+      "Yu Wang",
+      "Xingliang Deng",
+      "Yintao Zhang",
+      "Peng Wang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "venue": "Interpretation",
+    "url": "https://doi.org/10.1190/int-2025-0050",
+    "pdf_url": "",
+    "doi": "10.1190/int-2025-0050",
+    "abstract": "Abstract Deep carbonate fracture-cavity reservoirs represent a class of hydrocarbon-rich reservoirs and are currently a focal area in exploration. Due to their considerable burial depth, seismic reflection structures are often coupled with sedimentary strata, making accurate identification challenging using conventional methods. Furthermore, fracture-cavity reservoirs differ from horizontally layered sedimentary reservoirs, being primarily characterized by vertical strike-slip faults and dissolution features. In seismic exploration, signals acquired at different angles contain distinct reservoir information, providing an advantage for the detailed characterization of fracture-cavity systems. To address the challenge of identifying fracture-cavity core zones, this study proposes a data-driven, angle-domain deep learning method. Unlike previous studies, our approach begins by analyzing variations in angle-domain seismic data: small-angle data (0-6°, not fixed) exhibit strong responses to horizontal strata, whereas large-angle data (27-33°, not fixed) show weaker horizontal stratigraphic influence, thereby mitigating its interference. Additionally, we introduce a neural network model incorporating multi-scale convolution, channel attention mechanisms, and spatial attention mechanisms. Comparative testing demonstrates that our method effectively resolves the mismatch between forward-modeled labels and actual samples—an issue unresolved by conventional models. Validation on field data confirms that our approach significantly outperforms second-generation coherence (C2) and the latest coherence (C4) methods in identification accuracy while also enhancing noise suppression and prediction reliability compared to small-angle and conventional migration data. In summary, our method improves the precision of fracture-cavity core prediction by optimizing both data sources and the predictive model, demonstrating broad applicability in analogous reservoirs.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
+  },
+  {
+    "id": "10.20965/jaciii.2026.p0825",
+    "source": "Crossref",
+    "title": "YOLO-CF: An Object Detection Model that Improves Feature Expression at Both Coarse-Grained and Fine-Grained Levels for Industrial Surface Image Defect Detection",
+    "authors": [
+      "Zhaowei Sun",
+      "Jintao Chen",
+      "Cong Lin",
+      "Xuebin Yue",
+      "Kuozhan Wang",
+      "Lin Meng"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-19",
+    "venue": "Journal of Advanced Computational Intelligence and Intelligent Informatics",
+    "url": "https://doi.org/10.20965/jaciii.2026.p0825",
+    "pdf_url": "",
+    "doi": "10.20965/jaciii.2026.p0825",
+    "abstract": "In industrial surface defect detection, enhancing the model’s capability to express features at both coarse-grained and fine-grained levels is crucial. Accordingly, this paper proposes YOLO Coarse and Fine (YOLO-CF), a novel object detection model that significantly enhances feature expression by integrating innovative feature fusion strategies with an improved network architecture. YOLO-CF incorporates Res2Net and Res2Net block modules, notably improving the expression of fine-grained features without increasing computational complexity. Additionally, this model introduces a multi-scale feature fusion module, which seamlessly integrates coarse and fine-grained information by combining top-down and bottom-up pathways. This enhancement effectively expands the perceptual range and significantly improves the model’s generalization capability, making YOLO-CF a powerful tool for detecting diverse defects in complex industrial images. A hybrid downsampling module is introduced, combining max pooling, average pooling, and convolution operations with a stride of 2 to provide richer feature representations. In the GC10-DET dataset, YOLO-CF achieved a mean average precision ( mAP ) of 59.09%, surpassing the second-ranked RetinaNet by 3.41 percentage points. On the PCB, crack, NEU-DET and Dish-20 public datasets, YOLO-CF achieved mAPs of 97.38%, 84.72%, 73.35%, and 99.54%, at IoU =0.5, respectively. The experimental results indicate that by integrating feature extraction at both coarse-grained and fine-grained levels, YOLO-CF effectively enhances the model’s ability to detect objects of various sizes in complex scenes, demonstrating significant performance improvements. The code is available at http://www.ihpc.se.ritsumei.ac.jp/obidataset.html.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
     "id": "10.1364/ao.590194",
     "source": "Crossref",
     "title": "EMe-DETR: an efficient and multi-scale enhanced solution for multi-object detection in optical remote sensing images",
@@ -1379,6 +2324,349 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7161750763",
+    "source": "OpenAlex",
+    "title": "Using Image Processing and Deep Learning to Detect Dwarf Galaxies in NGC 5128",
+    "authors": [
+      "Cameron Leahy"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Peer Beyond Graduate Research Conference",
+    "url": "https://doi.org/10.55016/bhst3h52",
+    "pdf_url": "",
+    "doi": "10.55016/bhst3h52",
+    "abstract": "NGC 5128, also known as Centaurus A, is the closest giant galaxy beyond the Milky Way and Andromeda (Harris et al., 2010). It is known to host a rich population of dwarf galaxy satellites, with many dwarfs waiting to be discovered (Taylor et al. 2018). In my research, I design an algorithm that uses novel image processing techniques and a custom-built convolutional neural network (CNN) to perform automatic detection of dwarf galaxy candidates in optical Dark Energy Camera imaging (DECam; Flaugher et al. 2015). While image processing routines and CNNs have been used individually in faint dwarf galaxy detection before (Bennet et al. 2017, Tanoglidis et al. 2021), the fusion of both techniques into a data-reduction pipeline for DECam imaging represents a novel contribution. The dwarf galaxy candidates uncovered by the algorithm contribute to the ongoing analysis of the NGC 5128 dwarf galaxy system and serve as a valuable testing ground for cosmological theory.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "https://openalex.org/W7161600945",
+    "source": "OpenAlex",
+    "title": "The determination of cultivated soil quality within a semi-humid climate using integrated quality index model and prediction with artificial neural network",
+    "authors": [
+      "Elis-Bright Iteke Molua",
+      "Orhan Dengiz",
+      "Sena Pacci"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-46767-5",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-46767-5_reference.pdf",
+    "doi": "10.1038/s41598-026-46767-5",
+    "abstract": "The quality of the soil is greatly influenced by soil management practices that either raise or decrease the criteria of soil quality. Therefore, it is crucial to monitor our soil to determine whether agricultural practices have a major positive or negative impact on it. The Havza district in Samsun, Turkey, which is a semi-humid climate region, experiences intensive agricultural land use, diverse soil-forming conditions, and increasing pressure from management practices, making it a vulnerable agroecosystem necessitating monitoring. Thus, this research was carried out to assess and predict the soil quality of this region. 217 soil samples were collected from the study area, and 33 soil quality parameters were selected and analyzed. The data were subjected to the Integrated Quality Index (IQI) and the Artificial Neural Network (ANN). This is to support sustainable land management, productivity, and long-term soil conservation under increasing human and climatic pressure. In addition, the Total Dataset (TDS) of soil parameters was subjected to Principal Component Analysis (PCA), and 13 soil quality parameters were chosen for the creation of a Minimum Dataset (MDS), and spatial distribution maps of the study area were created. The result showed that the Soil Quality Index (SQI) determined by IQI was similar to that predicted by ANN, with R2 values of 0.999, 0.970, and 0.987 for training, validation, and testing, respectively. The distribution maps show sporadic low-quality areas within the interior, with the lowest quality in the northern middle part of the study area. The overall soil quality was classified as medium quality. Also, the distribution maps provide valuable information for land management, ecosystem management, and the sustainability of agricultural farmlands.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Agriculture",
+      "Ecology",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161646508",
+    "source": "OpenAlex",
+    "title": "Spatial memory performance is associated with region-specific coordination of hippocampo-cortical sleep oscillations",
+    "authors": [
+      "Mauricio Caneo",
+      "Nelson Espinosa",
+      "Alejandro Aguilera",
+      "Guillermo Lazcano",
+      "Ariel Lara-Vasquez",
+      "Pablo Fuentealba"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-52285-1",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-52285-1_reference.pdf",
+    "doi": "10.1038/s41598-026-52285-1",
+    "abstract": "Sleep plays a critical role in memory consolidation, yet how coordination among sleep oscillations across hippocampo-cortical circuits relates to behavioral performance remains incompletely understood. Here, we examined how cross-regional coordination of cardinal sleep oscillations during non-rapid eye movement (nREM) sleep relates to spatial memory performance. Adult rats were trained in an object-place recognition task and allowed to sleep while local field potentials were recorded simultaneously from dorsal and ventral hippocampus (CA1d and CA1v) and retrosplenial, prefrontal, and lateral entorhinal cortices. We first confirm that nREM sleep duration, but not REM sleep, is positively associated with spatial memory performance. We then characterized the temporal relationships between hippocampal sharp-wave ripples and cortical spindles and slow oscillations, revealing region- and oscillation-specific coordination patterns that depend on the dorso-ventral origin of hippocampal ripple events. Finally, by comparing task-related changes in ripple-triggered cortical activity between low- and high-performing sessions, we identify selective, performance-dependent modulation of hippocampo-cortical coupling during post-learning sleep. Spatial memory performance was consistently associated with enhanced ripple-slow oscillation coupling driven by dorsal hippocampal ripples, particularly in interactions with the slow oscillations in the retrosplenial cortex, whereas ventral hippocampal interactions failed to show behavioural association. Together, these results reveal that spatial memory performance is linked to region- and timing-specific coordination of sleep oscillations across hippocampo-cortical networks during nREM sleep, highlighting a functional differentiation of dorsal and ventral hippocampal contributions to sleep-dependent memory consolidation.",
+    "topics": [
+      "Geo-localization",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161701356",
+    "source": "OpenAlex",
+    "title": "Satellite imagery encodes features predictive of regional mortality and life expectancy",
+    "authors": [
+      "Yasuhito Mitsuyama",
+      "Kenichi Saito",
+      "Sota Kurimoto",
+      "Shannon L. Walston",
+      "Hirotaka Takita",
+      "Daiju Ueda"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "medRxiv",
+    "url": "https://doi.org/10.64898/2026.05.17.26353439",
+    "pdf_url": "",
+    "doi": "10.64898/2026.05.17.26353439",
+    "abstract": "Background Increasingly accessible satellite imagery provides scalable measures of the built and natural environment relevant to population health. However, whether such imagery can capture subnational variation in mortality and life expectancy remains unclear. We therefore assessed its predictive value for regional mortality and life expectancy across OECD regions. Methods We conducted an ecological, cross-sectional prediction study using 2023 data from OECD Territorial Level 3 (TL3) regions. Annual cloud-masked composites from the Harmonized Landsat and Sentinel-2 collection were processed in the Google Earth Engine, tiled at 224 x 224 pixels, and encoded with the pretrained Prithvi foundation model to derive region-level satellite embeddings. For each outcome, we trained LightGBM regressors for a country-only baseline, a satellite-only model, a combined model (country + satellite), and a final contextual model that additionally included prespecified socioeconomic and environmental covariates. Performance was evaluated using 10-fold outer cross-validation with held-out test folds; R 2 was the primary metric. Results The analytic sample comprised 2,414 OECD TL3 regions across 38 countries, for which 939,959 satellite image tiles were processed. In paired bootstrap comparisons, adding satellite features to country indicators improved predictive performance for all outcomes, with incremental R 2 ranging from 0.097 to 0.233. The final contextual model achieved R 2 values of 0.78 (95% CI, 0.74–0.81) for crude mortality, 0.87 (0.84–0.89) for age-adjusted mortality, 0.86 (0.82–0.88) for infant mortality, and 0.76 (0.69–0.84) for life expectancy. In SHAP analyses, the aggregated satellite image effect consistently ranked among the top predictors across outcomes. Conclusion Satellite imagery captures subnational environmental heterogeneity relevant to regional mortality and life expectancy beyond country identity alone. Earth observation may therefore provide a scalable, complementary data source for characterizing geographic disparities in population health.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161654628",
+    "source": "OpenAlex",
+    "title": "Pluvial flooding damage scenarios using remote sensing and deep learning models for urban object detection",
+    "authors": [
+      "Arianna Cauteruccio",
+      "Matteo Maragliano",
+      "Roozbeh Rajabi Toostani",
+      "Giorgio Boni",
+      "Gabriele Moser"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.5194/egusphere-2026-1625",
+    "pdf_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-1625/egusphere-2026-1625.pdf",
+    "doi": "10.5194/egusphere-2026-1625",
+    "abstract": "Abstract. A quantitative assessment of the risk of pluvial flooding in an urban area is subject to various uncertainties. These include evaluating the intensity and patterns of rainfall across the area, and the exposure and specific vulnerability of different targets. In this study, the impact of rainfall pattern and intensity description is evaluated using rainfall information obtained from innovative opportunistic sensors based on satellite links and traditional rain gauges, located both within and outside the flood-prone area. Urban Flood Drifters (UFDs) are considered the primary targets, with a focus on motor vehicles (cars, vans, and motorbikes). Aerial images and deep learning–based object detection are used to evaluate the exposure of potential UFDs in terms of their numerosity and location within flood-prone urban areas. The specific vulnerability of these targets is considered using stability and damage curves from the literature, based on water depth and flow velocity. The magnitude and spatial distribution of these flood characteristics are obtained by running hydrodynamic simulations of two-dimensional pluvial flooding propagation in the urban area, based on rainfall patterns obtained from both opportunistic and traditional sensors. The impact is demonstrated in terms of vehicle safety, monetary damage experienced by flooded vehicles, and traffic disruption using an observed event. The results obtained from different rainfall data sources and aerial images with different spatial resolutions are compared and discussed in terms of their suitability for object detection and risk assessment. Flood hazard maps demonstrated that rain gauges positioned outside of the study area do not capture the actual magnitude of the event measured at the reference station. On the contrary, opportunistic sensors, despite significant underestimation of the peak rainfall, provide a good representation of the temporal evolution and total volume of the reference rainfall event. Damage scenarios demonstrated that the role of false negatives, in automated object detection, can be relevant to the safety analysis and the assessment of monetary damage, especially when spatial resolution is coarser, while it is quite negligible for the assessment of traffic disruption.",
+    "topics": [
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Flood",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7161624531",
+    "source": "OpenAlex",
+    "title": "Diabetic Retinopathy Detection Algorithm Based on Improved YOLOv8",
+    "authors": [
+      "Hui Lv",
+      "Xubo Zhang",
+      "Fangxuan Zhao",
+      "Peiyang Li"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Cognitive Computation",
+    "url": "https://doi.org/10.1007/s12559-026-10589-4",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12559-026-10589-4.pdf",
+    "doi": "10.1007/s12559-026-10589-4",
+    "abstract": "The existing methods of detecting Microaneurysms (MA) and Hemorrhage (HA) are not yet mature, and timely detection of Microaneurysms (MA) and Hemorrhage (HA) in color photos is helpful for the diagnosis of Diabetic Retinopathy (DR) and the prevention of visual impairment and even blindness. In view of this situation, an Efficient Channel Attention and RepNCSPELAN (ERep-YOLO) network based on YOLOv8 was proposed on the basis of YOLOv8. Firstly, the original Cross-stage Partial fusion (C2f) convolutional structure is replaced by a lightweight generalized high-efficiency layer aggregation network RepNCSPELAN, and a new backbone is formed with the attention mechanism Efficient Channel Attention (ECA) to improve the network's feature extraction ability for very small targets and enhance multi-scale learning. Secondly, the Generalized Intersection over Union (GIOU) loss is used to replace the Complete Intersection over Union (CIOU)loss to enhance the border regression performance during network training. Compared with YOLOv8, the improved Efficient Channel Attention and RepNCSPELAN (ERep-YOLO) network has a 12.3% increase in mAP, a training speed of 11 frames per second, and a 16% reduction in the number of network parameters. In summary, compared with the original YOLOv8 network, the proposed model reduces the number of model parameters and improves the detection accuracy and detection speed, which is more conducive to the detection of Diabetic Retinopathy (DR) lesions.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161635386",
+    "source": "OpenAlex",
+    "title": "Detection of atmospheric rivers affecting the western Mediterranean and producing extreme rainfall over northern-central Italy",
+    "authors": [
+      "Silvio Davolio",
+      "Isacco Sala",
+      "Alessandro Comunian",
+      "Daniele Mastrangelo",
+      "Mario Marcello Miglietta",
+      "Lucia Drago Pitura",
+      "Federico Grazzini"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Natural hazards and earth system sciences",
+    "url": "https://doi.org/10.5194/nhess-26-2291-2026",
+    "pdf_url": "https://nhess.copernicus.org/articles/26/2291/2026/nhess-26-2291-2026.pdf",
+    "doi": "10.5194/nhess-26-2291-2026",
+    "abstract": "Abstract. Atmospheric rivers (ARs) have been recently identified in the Mediterranean basin, where they have been shown to play an important role in intense precipitation events over northern Italy and the Alpine chain. In fact, as demonstrated by two recent severe events (27–29 October 2018; 2–3 October 2020), the synoptic pattern conducive to heavy rainfall in this area may favour intense moisture transport from remote regions towards the Alps. In these events there was either a south-westerly moisture advection directly from the Atlantic Ocean Tropical area across the African continent, or a north-westerly transport over the Atlantic area, entering the Mediterranean in correspondence of the Gibraltar Strait. In order to identify ARs in such a complex geographical area, a well-known algorithm of objective detection has been adapted to the morphology of the Mediterranean basin and to the peculiar shape of the organized water vapour transport, which may differ from that generally observed in the ARs over the open ocean. The two above-mentioned case studies have been used for testing the procedure. The algorithm has been applied in conjunction with some additional selection criteria to identify only those AR events in the western Mediterranean that affected northern-central Italy over the last ∼ 60 years. A climatological analysis is provided and the possible correspondence between the most intense identified ARs and extreme rainfall events is investigated. Exploiting a precipitation dataset for northern-central Italy (ArCIS), some areas turned out to be particularly exposed to extreme precipitation events in the presence of ARs.",
+    "topics": [
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161547653",
+    "source": "OpenAlex",
+    "title": "Design and validation of an SNP-based assay for detecting Juglans ailantifolia introgression into Juglans cinerea populations or living collections",
+    "authors": [
+      "Martin Williams",
+      "Manuel Lamothe",
+      "Aziz Ebrahimi",
+      "Berni Van Der Meer",
+      "Mojtaba Zamani Faradonbeh",
+      "Anna O. Conrad",
+      "James Warren",
+      "Carolyn C. Pike",
+      "Douglass F. Jacobs",
+      "Nathalie Isabel"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Tree Genetics & Genomes",
+    "url": "https://doi.org/10.1007/s11295-026-01735-y",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11295-026-01735-y.pdf",
+    "doi": "10.1007/s11295-026-01735-y",
+    "abstract": "Abstract Butternut ( Juglans cinerea L.) is a rapidly declining tree species threatened by Ophiognomonia clavigignenti-juglandacearum (Oc-j), the causal agent of butternut canker. The introduction of Japanese walnut ( Juglans ailantifolia Carrière), which hybridizes with butternut and exhibits greater resistance to the disease, presents both a conservation challenge and a potential avenue for genetic improvement. Identifying non-admixed butternuts is critical for conservation efforts and breeding programs aimed at preserving the species’ genetic integrity while exploring resistance strategies. However, morphological identification of first and advanced generation hybrids is unreliable, necessitating the development of efficient detection tools. In this study, we developed and validated a cost-effective, high-throughput SNP genotyping tool using the MassARRAY platform to distinguish between J. cinerea , J. ailantifolia , and their hybrids. The panel consists of 28 nuclear SNPs and two chloroplast SNPs and demonstrates strong concordance with genotyping-by-sequencing (GBS) results using nearly 12,000 SNPs (R² = 0.98), indicating high predictive accuracy. Field testing this genotyping tool to 1,269 trees from natural stands and breeding programs in Canada and the U.S. revealed substantial hybridization, particularly in U.S. plantations, where hybrids comprised up to 18% of tested trees. Chloroplast analysis confirmed asymmetrical hybridization patterns, with J. ailantifolia acting predominantly as the maternal parent. This SNP panel provides a valuable tool for conservation, breeding, and regulatory applications by enabling rapid and accurate hybrid identification. Its implementation will help guide recovery strategies for butternut, ensuring that conservation efforts are informed by precise genetic data.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" urban"
+  },
+  {
+    "id": "https://openalex.org/W7161641129",
+    "source": "OpenAlex",
+    "title": "DDSF-YOLO for accurate multi-scale text detection in Jiandu images",
+    "authors": [
+      "Qiang Zhang",
+      "Yutong Li",
+      "Chenyang Wang",
+      "Teng Wan",
+      "Shuo Feng",
+      "Jiazhen Qin",
+      "Ying Qi"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "npj Heritage Science",
+    "url": "https://doi.org/10.1038/s40494-026-02639-9",
+    "pdf_url": "https://www.nature.com/articles/s40494-026-02639-9_reference.pdf",
+    "doi": "10.1038/s40494-026-02639-9",
+    "abstract": "Jiandu images often exhibit dense text, large scale variations, random spatial distribution, and slight geometric deformation, which pose significant challenges to character-level detection. To address these issues, this paper proposes a DDSF-YOLO framework for Jiandu text detection. Specifically, the DBS module is introduced into the backbone network to adaptively adjust the receptive field through deformable convolution. During feature extraction, the DFF module is used to fuse local details with global semantics. In the feature pyramid, SAFMN-FPN is incorporated together with learnable upsampling to enhance multi-scale feature representation. In addition, a small-object detection head is added to improve the recall of dense small characters. Experimental results show that the proposed method achieves 97.5% precision, 95.8% recall, and 96.6% F1-score on the JianduMix-dataset, outperforming multiple comparative methods. The results demonstrate that the proposed method can effectively improve text detection performance in complex Jiandu scenes.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161627854",
+    "source": "OpenAlex",
+    "title": "An integrated remote sensing-machine learning framework for assessing plant air pollution tolerance using satellite-derived air quality and reanalysis meteorological data",
+    "authors": [
+      "Chamila Priyankara Hetti Arachchige",
+      "Vacharaporn Soonsin",
+      "Emlyn David Qivitoq Witt"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "ENVIRONMENTAL SYSTEMS RESEARCH",
+    "url": "https://doi.org/10.1186/s40068-026-00477-z",
+    "pdf_url": "",
+    "doi": "10.1186/s40068-026-00477-z",
+    "abstract": "Plant responses to air pollution are complex under dynamic environments, requiring advanced integrated approaches for capturing interactions among pollutant exposure, meteorology, and plant physio-biochemical responses in real-world conditions. This study developed an integrated remote sensing and machine learning framework to predict species-level plant air pollution tolerance from satellite-derived pollutant exposures, reanalysis meteorology, and plant deciduous-state indicator, using laboratory-derived Air Pollution Tolerance Index (APTI) as the response variable. APTI was calculated from pH, relative water content, ascorbic acid concentration, and total chlorophyll content as indicators of plant response to air pollution stress. Sentinel-5P (NO2, SO2, O3), MODIS (PM2.5-derived), and satellite/reanalysis datasets, CHIRPS (rainfall) and ERA5-Land (temperature, humidity) data were processed in Google Earth Engine. Leaf samples of Pterocarpus indicus Willd. were collected across multiple provinces in Thailand under varying air pollutant and meteorological conditions, and laboratory analysis was conducted to calculate APTI. Random Forest (RF), Gradient Boosting Regressor (GBR), Extreme Gradient Boosting (XGB), Support Vector Regression (SVR), and Multiple Linear Regression (MLR) algorithms were evaluated for APTI prediction. Model performance was evaluated using R2, RMSE, and MAE, and robustness was assessed with cross-validation (CV) and bootstrap resampling. XGB and GBR showed the highest predictive performance, with test R² values of 0.814 and 0.794 and CV R² values of 0.691 and 0.698, respectively. In contrast, SVR and MLR underperformed in capturing the highly complex and nonlinear patterns. The findings demonstrate the potential of multi-source geospatial data fusion for species-level assessment of plant air pollution tolerance under heterogeneous environmental conditions, especially where ground monitoring is limited. The proposed framework provides a useful basis for future plant selection and urban green infrastructure planning, subject to further validation across broader spatiotemporal settings.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"contrastive learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161632366",
+    "source": "OpenAlex",
+    "title": "An explainable multi-modal fusion framework for robust detection and classification of GNSS jamming attacks in critical infrastructures",
+    "authors": [
+      "Serkan Savaş"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "International Journal of Information Security",
+    "url": "https://doi.org/10.1007/s10207-026-01267-5",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10207-026-01267-5.pdf",
+    "doi": "10.1007/s10207-026-01267-5",
+    "abstract": "Abstract Global Navigation Satellite Systems (GNSS) serve as critical components for positioning and timing in modern infrastructures, yet their inherent signal vulnerability makes them prime targets for intentional jamming attacks. While existing detection methods often rely on single-modality data, they frequently fail to capture the complex temporal and spectral signatures of diverse interference types, leading to a \"black-box\" decision process that lacks engineering trust. This study proposes an explainable multi-modal intrusion detection framework that fuses statistical features, raw 1D temporal dynamics via 1D-CNN, and 2D time-frequency representations using EfficientNetB0. The integrated features are classified using an XGBoost ensemble, achieving a high classification accuracy of 99.33% on a diverse dataset of six jamming classes. To ensure the reliability of the system for security operators, a comprehensive Explainable AI (XAI) strategy using SHAP and Grad-CAM is implemented. This research provides a transparent and robust security solution for protecting GNSS dependent systems against evolving electronic threats. Contribute 74.22% to the detection mechanism, highlighting the importance of raw signal dynamics over traditional image-centric approaches.",
+    "topics": [
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "https://openalex.org/W7161634357",
+    "source": "OpenAlex",
+    "title": "An Efficient Remote Sensing Cross-Modal Retrieval Method Based on Hashing Contrastive Learning",
+    "authors": [
+      "Jifei Fang",
+      "Dali Zhu"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Remote Sensing",
+    "url": "https://doi.org/10.3390/rs18101630",
+    "pdf_url": "",
+    "doi": "10.3390/rs18101630",
+    "abstract": "Cross-modal image–text retrieval enables searching and retrieving of semantically relevant data across heterogeneous modalities, acting as a pivotal technology for interpreting massive remote sensing (RS) data. Despite recent progress, most existing methods in remote sensing cross-modal image–text retrieval (RSCIR) rely on high-dimensional real-valued embeddings, which suffer from excessive storage overhead and slow retrieval speeds, severely limiting their scalability in real-world applications. Conversely, while hashing techniques offer efficiency, traditional methods often fail to preserve the fine-grained semantic consistency required for complex RS scenes, leading to significant performance degradation. To bridge this gap, this paper proposes a novel framework named ConHash (Cross-modal Contrastive Hashing), which transfers the discriminative power of pre-trained vision–language models into a compact binary Hamming space. Specifically, ConHash comprises three synergistic components: (1) a hash module designed to project continuous embeddings into a latent discrete space while reducing information loss; (2) a hash-aware contrastive constraint that enforces cross-modal alignment directly in the hash space; and (3) a collaborative hybrid optimization strategy that jointly constrains real-valued embeddings and hash representations. Extensive experiments on RSICD and RSITMD demonstrate that ConHash achieves a favorable balance between accuracy and efficiency. Using 512-bit hash codes with L1 quantization loss as the main configuration, ConHash achieves mR values of 21.69% and 35.79% on RSICD and RSITMD, respectively. It also provides up to 3.50× retrieval speedup and a 32× theoretical storage reduction compared with 512-dimensional float32 embeddings, making it suitable for scalable remote sensing retrieval applications.",
+    "topics": [
+      "Foundation Models",
+      "Vision-Language",
+      "Retrieval",
+      "Remote Sensing"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" \"contrastive learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161640746",
+    "source": "OpenAlex",
+    "title": "AI-Driven Plant Disease and Pest Surveillance: Deep Learning, IoT, and Next-Generation Crop Protection",
+    "authors": [
+      "Parshuram Sial",
+      "Ashok Kumar Choudhary",
+      "Sneh Gangwar",
+      "Sridhar Krishnaswami",
+      "Subha Loganathan",
+      "K. Dhinesh Babu"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-20",
+    "venue": "Journal of Advances in Biology & Biotechnology",
+    "url": "https://doi.org/10.9734/jabb/2026/v29i53967",
+    "pdf_url": "",
+    "doi": "10.9734/jabb/2026/v29i53967",
+    "abstract": "Plant disease and pest surveillance is undergoing a profound technological transition. Conventional crop protection has historically depended on episodic field scouting, expert visual inspection, and broad-spectrum preventative spraying, all of which are constrained by labour intensity, uneven diagnostic accuracy, and weak temporal resolution. In contrast, recent advances in artificial intelligence, deep learning, the Internet of Things, remote sensing, and edge computing have enabled crop-health monitoring systems that are more continuous, data-rich, and spatially explicit. This review analyses the evolution of AI-driven plant disease and pest surveillance, with particular attention to how image-based deep learning, connected environmental sensing, unmanned aerial vehicle platforms, cloud-edge infrastructures, and multimodal analytics are reshaping next-generation crop protection. The article argues that the central innovation is not merely automated diagnosis, but the emergence of surveillance ecosystems capable of recognising symptoms, estimating risk, localising hotspots, and informing more selective intervention. The review synthesises major developments in convolutional neural networks, object detection, semantic segmentation, transfer learning, domain adaptation, transformer-based computer vision, anomaly detection, environmental time-series modelling, and multimodal analytics. It also evaluates the practical obstacles that still limit real-world deployment, including dataset bias, annotation uncertainty, poor cross-domain generalisation, limited interoperability, energy and connectivity constraints, weak model explainability, and uneven economic accessibility. The article further considers how AI-based surveillance may strengthen integrated pest management by supporting earlier warning, more precise treatment timing, reduced blanket pesticide use, and stronger alignment between biological risk and management action. It concludes that the future of crop protection will depend less on isolated improvements in benchmark accuracy and more on the development of trustworthy, scalable, and biologically meaningful surveillance systems that can support sustainable decisions under real agricultural conditions.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture",
+      "Ecology",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing\" \"contrastive learning\""
   },
   {
     "id": "10.15625/2615-9783/24668",
@@ -1459,6 +2747,31 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "10.1088/2631-8695/ae7028",
+    "source": "Crossref",
+    "title": "Satellite-Driven Prediction of Fine Particulate Matter (PM2.5 <sub/> ) Concentrations: Machine Learning and Explainable Artificial Intelligence",
+    "authors": [
+      "Tuyet Nam Thi Nguyen",
+      "Tan Dat Trinh"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "venue": "Engineering Research Express",
+    "url": "https://doi.org/10.1088/2631-8695/ae7028",
+    "pdf_url": "",
+    "doi": "10.1088/2631-8695/ae7028",
+    "abstract": "Abstract Accurate estimation of fine particulate matter (PM2.5) is essential for air quality management, particularly in regions with sparse ground-monitoring networks. This study provides a systematic review of literature published between 2015 and 2025, synthesizing advancements in integrating satellite-derived data with machine learning (ML) and deep learning (DL) for PM2.5 concentration prediction. The review evaluates different satellite products, including Aerosol Optical Depth (AOD) from low Earth orbit (LEO) and geostationary (GEO) platforms, as well as top-of-atmosphere (TOA) reflectance and Ångström Exponent (AE). This study also highlights the importance of auxiliary datasets, such as meteorological variables, land-use indicators, demographic, and infrastructural factors, in reducing predictive bias. Methodological developments in data fusion and data preprocessing, specifically regarding data normalization and handling missing AOD values, are identified as main factors affecting the model stability. Comparisons among the model performance reveal that conventional ML models (e.g., Random Forest) remain robust benchmarks, whereas advanced DL architectures like hybrids DL models and transformer-based frameworks achieve better accuracy by capturing complex spatiotemporal dependencies. Furthermore, this study explores the emerging role of Explainable Artificial Intelligence (XAI) in enhancing model transparency and bridging the gap between data-driven results and physical atmospheric laws. This study concludes by identifying several challenges, such as gaps of satellite data and limited model transferability, and proposes future research directions focusing on spatiotemporal XAI and physics-guided learning. This review serves as a roadmap for researchers and policymakers to develop interpretable and high-resolution monitoring systems for air quality.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"geo-localization\" satellite"
   },
   {
     "id": "10.1117/12.3112319",
@@ -2350,6 +3663,372 @@
     "query": "\"ground to satellite\" image"
   },
   {
+    "id": "https://openalex.org/W7161639085",
+    "source": "OpenAlex",
+    "title": "Weather Prediction Using Artificial Intelligence Approaches, Challenges, and Future Directions",
+    "authors": [
+      "Mahak Yadav and Anmol Tanwar"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "International Journal of Advanced Research in Science Communication and Technology",
+    "url": "https://doi.org/10.48175/ijarsct-35484",
+    "pdf_url": "https://doi.org/10.48175/ijarsct-35484",
+    "doi": "10.48175/ijarsct-35484",
+    "abstract": "Weather forecasting has always been one of the most technically demanding areas in applied science, requiring the simultaneous processing of vast, multi-dimensional datasets while accounting for the chaotic and non-linear dynamics that govern atmospheric systems. Traditional numerical weather prediction (NWP) methods, though reliable to a considerable extent, are computationally intensive and struggle to capture fine-grained, localized weather phenomena with adequate precision. Over the past decade, artificial intelligence — and more specifically, deep learning — has begun to reshape the forecasting landscape in fundamental ways. This paper examines the role of AI techniques, including convolutional neural networks (CNNs), recurrent neural networks (RNNs), long short-term memory networks (LSTMs), and hybrid transformer-based architectures, in improving the accuracy, efficiency, and spatial resolution of weather prediction. Drawing on recent advances such as Google DeepMind's GraphCast and NVIDIA's FourCastNet, we explore how these models are trained on decades of reanalysis data and how they compare against established operational forecasting systems. The paper also addresses key challenges — including interpretability, data quality, and model generalization — and outlines promising directions for future research. Our findings suggest that AI-driven forecasting, particularly when integrated with physical modeling, offers a compelling and increasingly practical path toward more reliable and accessible weather prediction.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161594412",
+    "source": "OpenAlex",
+    "title": "Perception-Edge-Cloud Architecture for Post-Stroke Rehabilitation: A Biosensor-Based Intelligent System for Movement Recognition and Compliance Assessment",
+    "authors": [
+      "Tianhui Li"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Informatica",
+    "url": "https://doi.org/10.31449/inf.v50i13.13639",
+    "pdf_url": "https://www.informatica.si/index.php/informatica/article/download/13639/6723",
+    "doi": "10.31449/inf.v50i13.13639",
+    "abstract": "To address the problem of distorted NC (Nursing Compliance) assessment for stroke patients during home rehabilitation, this paper proposes a four-level collaborative intelligent assessment and guidance system architecture: \"Perception-Edge-Cloud-Feedback.\" First, upper limb movement and electromyography signals are synchronously collected using IMU (Inertial Measurement Unit) and sEMG (Surface Electromyography) sensors. Signal preprocessing, combined with wavelet denoising and SW (Sliding Window) segmentation, improves interference resistance in unstructured home environments. Second, multidimensional features are extracted from the time-frequency-spatial domain, and the input space is optimized. Finally, an attention-enhanced LSTM (Long Short-Term Memory)-Gated Recurrent Unit (GRU) hybrid architecture is constructed to adaptively capture key spatiotemporal features. Finally, a mapping mechanism between action semantics and rehabilitation prescriptions was constructed, along with a dynamically weighted compliance scoring model. The methodology integrates Daubechies wavelet denoising, sliding window segmentation, and an attention-enhanced LSTM-GRU network to process synchronous IMU and sEMG signals. Experimental validation involving 32 patients demonstrates that this system achieves an average recognition accuracy of 93.6%, an Intraclass Correlation Coefficient (ICC) of 0.89 between automatic and manual compliance scoring, and a significant improvement in Fugl- Meyer Assessment scores (p &lt; 0.001) for the high-adherence group.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7161579141",
+    "source": "OpenAlex",
+    "title": "PGCFuse: a U-Net-based progressive gated convmixer network with global context aggregation for infrared-visible image fusion",
+    "authors": [
+      "Hafiz Tayyab Mustafa",
+      "Hamza Mustafa",
+      "Mujtaba Asad",
+      "Syed Farooq Ali",
+      "Muhammad Bilal",
+      "Muhammad Shehzad Hanif"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-51313-4",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-51313-4_reference.pdf",
+    "doi": "10.1038/s41598-026-51313-4",
+    "abstract": "Infrared (IR) and visible (VI) image fusion aims to integrate complementary information from heterogeneous modalities to enhance visual perception in a wide range of applications such as remote sensing, military surveillance, and autonomous driving. While transformer-based and diffusion-driven methods have advanced fusion quality, their computational complexity and resource demands limit practical deployment. Furthermore, combining features in a single step may result in the loss of critical information. To address this, we propose PGCFuse, a novel progressive deep learning framework to fuse VI and IR images. The proposed method employs a multilevel progressive feature extraction strategy to preserve multi-scale spatial features, capturing fine-grained local details and global contextual semantics simultaneously. Unlike single-stream hierarchical approaches, our encoder leverages four parallel streams with progressive downsampling, coupled with a multi-scale spatial attention fusion module to adaptively emphasize salient regions across modalities. In particular, we introduce a Gated Convmixer Block that combines depthwise separable convolutions with gating mechanisms to enhance modality-specific feature representation. An Adaptive Global Feature Aggregation block is introduced that models long-range dependencies to refine feature representations. A nested skip-connected decoder reconstructs the fused image while retaining critical structural and thermal information. Comparative evaluations on the benchmark datasets demonstrate that PGCFuse outperforms recent and SOTA DL-based approaches in fusion quality and computational efficiency.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7161556175",
+    "source": "OpenAlex",
+    "title": "Multi-sensor tracking of pyroconvection reveals discrepancies between satellite cloud-top detection and convective dynamics",
+    "authors": [
+      "Adrien Guyot",
+      "Jacob Vile",
+      "Louis Soulard-Fischer",
+      "Hamish McGowan",
+      "Alain Protat",
+      "Caroline Poulsen"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.5194/egusphere-2026-1907",
+    "pdf_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-1907/egusphere-2026-1907.pdf",
+    "doi": "10.5194/egusphere-2026-1907",
+    "abstract": "Abstract. Clouds generated by intense wildfires can evolve from pyrocumulus (pyroCu) to pyrocumulonimbus (pyroCb), injecting smoke into the upper troposphere and occasionally the stratosphere. Automated satellite-based detection of pyroCb is therefore critical for monitoring extreme fire–atmosphere interactions, yet such approaches inherently rely on cloud-top properties rather than the underlying convective dynamics. Here, we evaluate the pyroCb detection algorithm of Peterson et al. (2017), originally developed for GOES observations over North America, in the Australian context using Himawari-8 multispectral imagery during the 2019–2020 Black Summer bushfires. Satellite-derived classifications are assessed against independent observations from operational weather radar and total lightning networks within a multi-sensor framework implemented in the PyroScope platform. An object-based tracking approach is used to compare the temporal evolution of radar- and satellite-derived pyroconvective features. Satellite observations reliably capture the onset of deep pyroconvective development, showing strong agreement with radar-derived echo-top heights and lightning activity during the early phase. However, a systematic divergence emerges as events evolve, with satellite-derived objects increasingly dominated by horizontally advected anvil structures rather than the actively convecting core. This behaviour is reflected in increasing centroid displacement, decreasing spatial overlap, and an apparent overestimation of plume extent and persistence in satellite retrievals. To investigate this limitation, we introduce an additional spectral test to separate detached or decaying anvils (class 4) from intense pyroCb (class 5), and explicitly evaluate the impact of this classification on object-based metrics. Restricting the analysis to class 5 reduces the spatial extent and persistence of satellite-derived objects, but does not fully eliminate the divergence with radar observations at later stages, highlighting the inherent limitations of an anvil-based detection paradigm. These results demonstrate that satellite-based pyroCb detection should be interpreted as a cloud-top representation of pyroconvection rather than a direct measure of the actively convecting core. Multi-sensor integration is therefore essential to distinguish between initiation, mature, and decay phases of pyroconvection. The object-based tracking framework developed here provides a foundation for future studies of pyroCb lifecycle, including the quantification of growth, decay, and potential precursors to pyroCb formation.",
+    "topics": [
+      "Retrieval",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "https://openalex.org/W7161570936",
+    "source": "OpenAlex",
+    "title": "Mineralogical composition of transported desert dust over Cabo Verde and comparison with model predictions",
+    "authors": [
+      "Maria Tsichla",
+      "Konrad Kandler",
+      "S. Aryasree",
+      "Stavros Solomos",
+      "Christos Spyrou",
+      "Alexandra Tsekeri",
+      "Anna Kampouri",
+      "Anna Gialitaki",
+      "Eleni Drakaki",
+      "Thanasis Natsis",
+      "Maria Kezoudi",
+      "Alkistis Papetta",
+      "Franco Marenco",
+      "Jean Sciare",
+      "Eleni Marinou",
+      "Kalliopi Artemis Voudouri",
+      "Nikos Mihalopoulos",
+      "Vassilis Amiridis"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.5194/egusphere-2026-921",
+    "pdf_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-921/egusphere-2026-921.pdf",
+    "doi": "10.5194/egusphere-2026-921",
+    "abstract": "Abstract. The mineralogical and chemical composition of desert dust particles strongly influences their cloud-forming ability and radiative effects. This study provides quantitative estimates of the main mineralogical and elemental components of desert dust during atmospheric transport above Cabo Verde based on in-situ measurements from the ASKOS campaign in summer 2022, obtained using impactors mounted on unmanned aerial vehicles. Simulations from the METAL-WRF model were used for comparison with sun-photometer observations of total dust load and with in-situ measurements of relative elemental mass fractions of key elements. Across all cases, particle chemical signatures were dominated by illite/muscovite (62%), followed by smectite (9%), kaolinite (9%), quartz (7%), feldspar (5%), calcite (4%), gypsum (3%), and Fe-oxide/Fe-hydroxide (1%). Trajectory and source–receptor analyses combined with satellite observations revealed enhanced calcite fractions for air-masses originating from northern Mali, whereas air masses from southern Mali exhibited increased proportions of Fe-oxide/hydroxide. Good agreement was found between METAL-WRF-derived total dust mass concentrations and independent AERONET observations (slope = 0.62, r = 0.87). Based on in-situ measurements, Si was the dominant elemental component (~25%), followed by Al (~12%), Fe (~6%), Ca (~2.7%), and S (~0.4%). While METAL-WRF reproduced the mean relative abundances of Fe and Ca over the 20-day period, it did not capture the case-to-case variability. Nevertheless, Fe exhibited good agreement, within overlapping uncertainty, between modelled and measured values for most cases, which is particularly relevant for studies of ocean biogeochemistry and dust-related radiative processes.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "https://openalex.org/W7161536842",
+    "source": "OpenAlex",
+    "title": "Mapping Cultural Emotions in Smart Tourism Destinations: A Multimodal UGC Analysis and Affective Visualisation Framework Applied to Zhangjiajie, China",
+    "authors": [
+      "Ya Yu",
+      "Qingjun Xu",
+      "Yushen Wang",
+      "Maowei Chen"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Research Square",
+    "url": "https://doi.org/10.21203/rs.3.rs-9332716/v1",
+    "pdf_url": "https://www.researchsquare.com/article/rs-9332716/latest.pdf",
+    "doi": "10.21203/rs.3.rs-9332716/v1",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7161554461",
+    "source": "OpenAlex",
+    "title": "Learning Seismic Wavefield Structure from Regional Arrays with Self-Supervised Deep Learning",
+    "authors": [
+      "Miro Ronac Giannone",
+      "Stephen Arrowsmith",
+      "Eric Larson"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.31223/x5qz1z",
+    "pdf_url": "https://eartharxiv.org/repository/object/13083/download/23171/",
+    "doi": "10.31223/x5qz1z",
+    "abstract": "Seismic wavefields recorded across regional arrays exhibit spatial structure governed by propagation physics, including phase alignment, apparent slowness, and source directionality. These properties underpin array processing, yet in sparsely sampled arrays the wavefield is only partially observed, making it difficult to determine how information is distributed across sensors. Particularly, it remains unclear which stations provide the strongest constraints on the wavefield and how spatial coherency can be exploited when inter-station redundancy is limited. In this study, we introduce a U-Net–inspired convolutional-Transformer model that learns an implicit representation of the seismic wavefield from partial array observations through self-supervised reconstruction. We show that the model captures physically meaningful, array-consistent structure, across both body and surface waves as evidenced by improved agreement with ground-truth back azimuth from frequency-wavenumber analysis in challenging reconstruction scenarios. The model further demonstrates robustness to complex waveform conditions, including multi-event windows, temporally offset arrivals, and component-specific transient noise, which it suppresses in favor of coherent wavefield energy. Attention-based analysis reveals that spatially isolated sensors contribute disproportionately useful information for reconstruction, reflecting their unique geometric constraints. These results indicate that our model learns a representation of seismic wavefields with implications for sparse array analysis and future sensor network design.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161592353",
+    "source": "OpenAlex",
+    "title": "Integrating spectral signatures and microbial profiling to differentiate diseased and healthy corals in the Red sea",
+    "authors": [
+      "Ahmed M. Khalifa",
+      "Khaled Z. ElBaghdady",
+      "Moaz M. Hamed",
+      "Ashraf S. Mohammad",
+      "Mostafa A. Khaled"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-50675-z",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-50675-z.pdf",
+    "doi": "10.1038/s41598-026-50675-z",
+    "abstract": "Coral reef ecosystems face increasing threats from microbial diseases, especially those induced by bacterial infections. Conventional diagnostic techniques often require invasive sampling, extended processing time and are limited in their spatial applicability. Spectral reflectance analysis offers a non-invasive means for detecting subtle physiological alterations associated with coral disease; however, its application in characterizing microbiological changes remains largely unexplored. This research aimed to differentiate healthy from diseased coral colonies by analyzing the spectral fingerprints of the disease and their associated bacterial communities, using hyperspectral data, microbial profiling, and multivariate statistical analysis. The bacterial species identified in healthy coral samples included Bacillus subtilis, Cytobacillus firmus, Bacillus amyloliquefaciens, and Bacillus sporothermodurans. In contrast, the bacteria associated with diseased coral samples were Vibrio pelagius and Vibrio fortis. Healthy corals demonstrate consistently lower reflectance across all bands in comparison to diseased corals. The reflectance of diseased Favia lacuna showed a notable increase when compared to healthy specimens, especially at wavelengths of 594 nm, 649 nm, and 702 nm. In contrast, Acropora humilis exhibited heightened peaks at wavelengths of 580 nm, 693 nm, and 702 nm. The analysis of the second derivative revealed that coral colonies affected by disease exhibited distinct negative peaks at wavelengths of 450-460 nm, 580-590 nm, and 700-800 nm. The identified peaks are likely associated with tissue thinning, skeletal exposure, or microbial biofilm accumulation rather than pigment absorption, given that this region is dominated by scattering effects. In contrast, healthy colonies exhibited stable characteristics at approximately 675 nm, indicating the presence of intact symbiotic chlorophyll and preserved physiological structure. The present study demonstrates that hyperspectral reflectance profiling of bacterially infected corals shows promising potential as a non-invasive approach for differentiating healthy and diseased coral microbiomes. The integration of spectral indicators with microbial community data provides preliminary insights into coral health assessment and may contribute to the development of improved strategies for disease detection and understanding coral-microbe interactions under environmental stress.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161547722",
+    "source": "OpenAlex",
+    "title": "Inspection of power line insulator using an enhanced faster region-convolutional neural network",
+    "authors": [
+      "P. Lakshmi Priya",
+      "Sushma S. Kamlu"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-51304-5",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-51304-5_reference.pdf",
+    "doi": "10.1038/s41598-026-51304-5",
+    "abstract": "Inspection of power line insulators is crucial to the safe and reliable operation of power transmission networks. Manual inspection techniques are deficient in terms of efficiency, accuracy, availability, security, and cost. To overcome these problems, this article proposes an improved version, Enhanced Faster R-CNN I2D-Net, which uses faster region-based convolutional neural network (Faster R-CNN) with some quality of feature integration and attention-based features to achieve consistent insulator defects detection in complicated scenes. The suggested architecture is an integration of a residual network backbone (ResNet-50) which extracts features, a bidirectional feature pyramid network (BiFPN) which learns fusion weights to achieve adaptive multiscale fusion of features and receptive field attention plus (RFA+) which optimises the features and improves the overall detection performance. The model also has an Improved Context Perception Module (I-CPM) that comes after the Region Proposal Network (RPN). Also employs dilated convolution to achieve better categorization and bounding-box regression. Additionally, Gradient-weighted Class Activation Mapping (Grad-CAM) is utilized on the feature maps produced by the RFA+ module to illustrate defect-associated areas and create heatmaps that pinpoint defect evidence. This work is new because it successfully combines multi-scale feature fusion, attention mechanisms, and contextual modeling into one framework for strong insulator defect detection. The suggested method works better than the ones that are already out there. It has a mean Average Precision (mAP) of 98.03%, a precision of 99.05%, and a recall of 98.96% for finding faults.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7161591599",
+    "source": "OpenAlex",
+    "title": "Explainable Artificial Intelligence for deriving 3D dynamic rainfall thresholds for landslide triggering using Kolmogorov-Arnold Networks",
+    "authors": [
+      "Lukas Schild",
+      "Ascanio Rosi",
+      "Filippo Catani"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.5194/egusphere-2026-1796",
+    "pdf_url": "https://egusphere.copernicus.org/preprints/2026/egusphere-2026-1796/egusphere-2026-1796.pdf",
+    "doi": "10.5194/egusphere-2026-1796",
+    "abstract": "Abstract. Landslides triggered by rainfall are a significant hazard in mountainous regions worldwide, posing risks to both infrastructure and human safety. Projections regarding climate change indicate an increase in both extreme weather events and subsequent landslide incidents. Therefore, accurately forecasting these rainfall-induced landslides is essential for implementing effective hazard mitigation and evacuation strategies. Traditionally, predictions have relied on physically based models and empirical rainfall thresholds that account for both rainfall intensity and duration. With the introduction of Machine Learning, the ability to incorporate static factors such as slope gradients and soil classifications has been significantly improved, thereby enhancing predictive accuracy and enabling broader spatial applications. Nonetheless, recent research involving Machine Learning has predominantly concentrated on established deep learning frameworks, while innovative approaches have not been thoroughly investigated. This hesitance to embrace contemporary deep learning techniques may stem from challenges in interpreting the decisions made by these models, which are vital for effective operational landslide early warning systems. Recent studies emphasising traditional Machine Learning frequently include analyses of network behaviour through post-hoc interpretations, utilising methods such as Shapley values and assessments of feature importance. However, the use of inherently explainable deep learning networks for rainfall-induced landslide prediction remains underexplored. To address this gap, we propose employing Kolmogorov-Arnold Networks (KANs) to predict rainfall-induced landslides, leveraging precipitation time series obtained from a globally accessible satellite product. The proposed model achieves competitive performance compared to various established models while maintaining interpretability. In addition to utilising interpretable activation functions, we also suggest implementing Dynamic Rainfall Thresholds (DRT) as a visual interpretation tool for the model. This combination of interpretative tools, paired with a low rate of missed alarms, positions the model as a suitable option for critical applications such as landslide early warning systems.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W4403709560",
+    "source": "OpenAlex",
+    "title": "Assessing the potential of LIGO-India in resolving the Hubble Tension",
+    "authors": [
+      "Kanchan Soni",
+      "A. Vijaykumar",
+      "Sanjit Mitra"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Classical and Quantum Gravity",
+    "url": "https://doi.org/10.1088/1361-6382/ae6f64",
+    "pdf_url": "",
+    "doi": "10.1088/1361-6382/ae6f64",
+    "abstract": "Abstract Conclusive determination of the Hubble constant ($H_0$) is a major challenge in current astronomy due to the observed discrepancies between early and late universe measurements. Joint detections of gravitational waves (GW) and electromagnetic (EM) signals from binary neutron star (BNS) mergers promise an independent probe for $H_0$. However, this requires tens of such detections, requiring decades of observation with the present detectors. LIGO-India can significantly accelerate this process. LIGO-India's addition to the detector network could boost event detections by $\\sim 70\\%$ and double the number of properly localized (``triple-coincidence'') detections. Through end-to-end simulations, we show that LIGO-India could increase the EM follow-up rate of kilonovae by $\\sim 2-7$ times, reducing the $H_0$ estimation error by a factor of $\\approx 1.65-2.82$ for Vera Rubin LSST, thus significantly reducing the observation time required to attain the necessary precision. Moreover, LIGO-India can improve sky localization precision by many folds ($\\sim 5$), allowing much deeper EM follow-ups, potentially reducing the time needed to resolve the ``Hubble tension'' from decades to a few years.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161609681",
+    "source": "OpenAlex",
+    "title": "A hybrid PCA-ICA and multi-level feature scaling framework with bidirectional LSTM-GRU architecture improves multivariate time series forecasting accuracy",
+    "authors": [
+      "Yuvaraja Boddu",
+      "A. Manimaran",
+      "Jayanth Talabathula",
+      "M. Sucharitha"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-51868-2",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-51868-2_reference.pdf",
+    "doi": "10.1038/s41598-026-51868-2",
+    "abstract": "Precise multivariate time series (MTS) forecasting, particularly in atmospheric applications like air quality monitoring, is still a challenging task because of high dimensionality, temporal correlations, and non-stationary interactions between features. The classical methods such as Auto Regressive Integrated Moving Average) ARIMA and isolated Long Short-Term Memory (LSTM) are likely to fail to capture nonlinear relationships and are highly sensitive to the scale of features, and Principal Component Analysis (PCA) based dimensionality reduction is likely to result in information loss. To mitigate these constraints, we introduce PIHS-Bi-LSTM-GRU, a deep learning hybrid model that combines PCA-ICA-based reduction of dimensions, multi-level hybrid scaling of features, and an improved Bidirectional LSTM- Gated Recurrent Unit (GRU) architecture with dual-layer normalization and dropout. Our approach begins by taking a weighted ensemble of Min-Max, Z-Score, and Robust scalers for stabilizing heterogeneous distributions of features. PCA is used to alleviate redundancy, followed by Independent Component Analysis (ICA) to yield statistically independent latent signals. The deep learning model subsequently learns temporal patterns from the transformed sequences. A new component-wise inverse transformation mechanism provides exact reconstruction in the original feature space. Comprehensive evaluation on actual air quality data shows that the proposed model considerably outperforms baseline methods in Mean Absolute Error (MAE), Root Mean Square Error (RMSE), Mean Absolute Percentage Error (MAPE), and [Formula: see text] on all features. The findings verify the effectiveness of the framework in picking up on intricate temporal-spatial relations and enhancing predictive reliability under multivariate prediction situations.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Benchmark",
+    "query": "\"earth observation\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7161571994",
+    "source": "OpenAlex",
+    "title": "A dendritic strontium river isoscape for fisheries applications in the Sacramento River basin, California, USA",
+    "authors": [
+      "Kyle Brennan",
+      "Anna M. Sturrock",
+      "Malte Willmes",
+      "Kohma Arai",
+      "Corey C. Phillis",
+      "Peter Weber",
+      "Rachel C. Johnson"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "North American Journal of Fisheries Management",
+    "url": "https://doi.org/10.1093/najfmt/vqag027",
+    "pdf_url": "https://academic.oup.com/najfm/advance-article-pdf/doi/10.1093/najfmt/vqag027/68328430/vqag027.pdf",
+    "doi": "10.1093/najfmt/vqag027",
+    "abstract": "Abstract Objective Understanding the origins and movements of fish is fundamental to effective conservation and fisheries management. Strontium isotope ratios (87Sr/86Sr) in otoliths provide a powerful tracer of natal origin and migratory pathways. However, existing 87Sr/86Sr isoscapes for the Sacramento River basin, an ecosystem that supports ecologically and economically important salmon populations, rely on discrete classification approaches that overlook unsampled habitats and do not incorporate spatial uncertainty. Our objective was to develop a continuous, network-explicit 87Sr/86Sr isoscape with quantified uncertainty to fill in data gaps and enable probabilistic assignments of fish origin and movement. Methods We used river water 87Sr/86Sr data from 106 sites (1997–2021) to develop spatial stream network models that use dendritic connectivity and watershed characteristics (lithology, bedrock age, and land cover) to predict river water 87Sr/86Sr throughout the basin. Models were fitted using maximum and restricted likelihood and were evaluated via Akaike’s information criterion and leave-one-out cross validation. We produced both historical (pre-dam) and present-day (below-dam) isoscapes, delineated uncertainty-informed isotopic ranges using k﻿-means clustering, and applied a proof-of-concept Bayesian assignment to estimate natal origins and early rearing habitats for two endangered winter-run Chinook Salmon Oncorhynchus tshawytscha. Results Cross validation indicated strong performance of the 87Sr/86Sr model (leave-one-out cross validation: R2 = 0.91; root mean square error = 0.0005). Uncertainty-informed clustering identified 19 isotopic “suites” (reaches with indistinguishable 87Sr/86Sr values) in present-day anadromous habitats and 25 suites in the historical network. Example natal and early rearing assignments included predictions that challenged expectations for juvenile salmon migration based on predicted river 87Sr/86Sr compositions. Conclusions This study developed a continuous, network-explicit 87Sr/86Sr isoscape that integrates existing river data to predict 87Sr/86Sr in unsampled reaches and the likely achievable range and resolution of otolith-based origin and life history inference. The resulting river isoscape provides a valuable tool to predict salmon movements and identify habitats supporting their survival and growth that otherwise might remain undetected. Coupling these predictions with complementary approaches that ground-truth juvenile presence (e.g., targeted fish surveys) represents an important step toward science-informed restoration and management of critical habitats throughout the Sacramento River basin.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7161562488",
+    "source": "OpenAlex",
+    "title": "A Decade of Monthly Frontal Ablation at 147 Tidewater Glaciers in Svalbard",
+    "authors": [
+      "D. R. Pyles",
+      "Marcel Dreier",
+      "Anna Wendleder",
+      "Will Kochtitzky",
+      "Nora Gourmelon",
+      "Vincent Christlein",
+      "Thorsten Seehaus"
+    ],
+    "published": "2026-05-18",
+    "updated": "2026-05-20",
+    "venue": "",
+    "url": "https://doi.org/10.5194/essd-2026-273",
+    "pdf_url": "https://essd.copernicus.org/preprints/essd-2026-273/essd-2026-273.pdf",
+    "doi": "10.5194/essd-2026-273",
+    "abstract": "Abstract. We present a novel, regional-scale monthly analysis of frontal ablation at 147 tidewater glacier basins in Svalbard from January 2015 through December 2024. A multi-temporal, deep-learning segmentation model was implemented to reduce the manual labor cost inherent to mapping 203,294 terminus positions, yielding 15,647 monthly-averaged calving fronts derived from Sentinel-1 SAR imagery. In addition, a monthly ice discharge time series is developed from the extensive ITS_LIVE velocity database, as well as regionally existing ice thickness products. To account for ice mass loss due to surface processes between the fluxgate and terminus (i.e. the glacier domain), the climatic mass balance is integrated over the domain area using monthly aggregated daily outputs from the MAR regional climate model. The result is a frontal ablation time series at an unprecedented spatio-temporal scale with 15,500 monthly estimates of frontal ablation, allowing new insights and progress towards a process understanding of frontal ablation. The mean annual frontal ablation rate across all glaciers from 2015 to 2024 is 21.57 ± 0.97 Gt a-1. The Austfonna ice cap accounts for ~48% of Svalbard's frontal ablation, due to the dominant Austfonna Basin 3, with a 5.05 ± 0.35 Gt a-1 annually averaged rate. As frontal ablation measurements have historically been limited to annual and decadal temporal resolution, this dataset addresses the intra-annual and seasonal variability knowledge gap, while providing valuable reference data for the modeling community. The frontal ablation, ice discharge, and calving front time series are publicly available at https://doi.org/10.5281/zenodo.19481461 (Pyles et al., 2026).",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
     "id": "https://openalex.org/W7161578647",
     "source": "OpenAlex",
     "title": "WS-DINO: A DINOv2-Based Weed Segmentation Method with Feature Priors and Spatial Fusion",
@@ -2765,27 +4444,6 @@
     "query": "\"remote sensing\" pretraining"
   },
   {
-    "id": "10.31449/inf.v50i13.13639",
-    "source": "Crossref",
-    "title": "Perception-Edge-Cloud Architecture for Post-Stroke Rehabilitation: A Biosensor-Based Intelligent System for Movement Recognition and Compliance Assessment",
-    "authors": [
-      "Tianhui Li"
-    ],
-    "published": "2026-05-18",
-    "updated": "2026-05-18",
-    "venue": "Informatica",
-    "url": "https://doi.org/10.31449/inf.v50i13.13639",
-    "pdf_url": "",
-    "doi": "10.31449/inf.v50i13.13639",
-    "abstract": "To address the problem of distorted NC (Nursing Compliance) assessment for stroke patients during home rehabilitation, this paper proposes a four-level collaborative intelligent assessment and guidance system architecture: \"Perception-Edge-Cloud-Feedback.\" First, upper limb movement and electromyography signals are synchronously collected using IMU (Inertial Measurement Unit) and sEMG (Surface Electromyography) sensors. Signal preprocessing, combined with wavelet denoising and SW (Sliding Window) segmentation, improves interference resistance in unstructured home environments. Second, multidimensional features are extracted from the time-frequency-spatial domain, and the input space is optimized. Finally, an attention-enhanced LSTM (Long Short-Term Memory)-Gated Recurrent Unit (GRU) hybrid architecture is constructed to adaptively capture key spatiotemporal features. Finally, a mapping mechanism between action semantics and rehabilitation prescriptions was constructed, along with a dynamically weighted compliance scoring model. The methodology integrates Daubechies wavelet denoising, sliding window segmentation, and an attention-enhanced LSTM-GRU network to process synchronous IMU and sEMG signals. Experimental validation involving 32 patients demonstrates that this system achieves an average recognition accuracy of 93.6%, an Intraclass Correlation Coefficient (ICC) of 0.89 between automatic and manual compliance scoring, and a significant improvement in Fugl- Meyer Assessment scores (p < 0.001) for the high-adherence group.",
-    "topics": [
-      "Segmentation",
-      "Geospatial AI"
-    ],
-    "category": "Downstream Task",
-    "query": "\"place recognition\" satellite"
-  },
-  {
     "id": "10.25258/ijddt.16.28s.13",
     "source": "Crossref",
     "title": "Pathophysiological Mechanisms Of Photoreceptor Degeneration In Retinitis Pigmentosa And Stargardt Disease: A Multimodal Analytical Framework",
@@ -2800,30 +4458,6 @@
     "pdf_url": "",
     "doi": "10.25258/ijddt.16.28s.13",
     "abstract": "Inherited retinal dystrophies, notably retinitis pigmentosa (rp) and stargardt disease, represent a profound global health burden, progressively leading to severe visual impairment and eventual blindness. The underlying pathophysiological mechanisms involve complex spatiotemporal dynamics, including the premature death of rod and cone photoreceptors in rp and the toxic accumulation of lipofuscin within the retinal pigment epithelium (rpe) in stargardt disease. Despite advances in ophthalmic imaging and genetic profiling, fully mapping the trajectory of photoreceptor degeneration remains a critical challenge. This paper proposes a comprehensive, multimodal analytical framework that integrates functional optical coherence tomography (oct), fluorescence anisotropy, and advanced machine learning models to capture both structural and biochemical disease markers. By synergizing purely mathematical models of cellular interaction with in vivo imaging data, this approach aims to elucidate the precise mechanisms of visual cycle failure, offering a robust foundation for early diagnosis and the evaluation of novel therapeutic interventions.",
-    "topics": [
-      "Vision-Language",
-      "Geospatial AI"
-    ],
-    "category": "Downstream Task",
-    "query": "\"multimodal\" satellite"
-  },
-  {
-    "id": "10.21203/rs.3.rs-9332716/v1",
-    "source": "Crossref",
-    "title": "Mapping Cultural Emotions in Smart Tourism Destinations: A Multimodal UGC Analysis and Affective Visualisation Framework Applied to Zhangjiajie, China",
-    "authors": [
-      "Ya Yu",
-      "Qingjun Xu",
-      "Yushen Wang",
-      "Maowei Chen"
-    ],
-    "published": "2026-05-18",
-    "updated": "2026-05-18",
-    "venue": "",
-    "url": "https://doi.org/10.21203/rs.3.rs-9332716/v1",
-    "pdf_url": "",
-    "doi": "10.21203/rs.3.rs-9332716/v1",
-    "abstract": "Abstract Smart tourism increasingly emphasises emotional engagement in cultural communication, yet existing mapping systems predominantly rely on static displays that fail to capture visitors' authentic cultural sentiments. This study proposes a three-tiered \"semantic–emotional–narrative\" cultural sentiment visualisation framework, applied to Zhangjiajie, China. Analysing 18,667 UGC review texts, 2,043 images, and 128 official texts from Chinese tourism platforms (September 2020–September 2025), the framework integrates: (1) TF-IDF/TextRank semantic network analysis to extract cultural keyword clusters; (2) dual-channel sentiment analysis combining BERT-based aspect-level text modelling with facial emotion recognition (ResNet-50/AffectNet) and scene sentiment extraction (InceptionV3); and (3) spatial emotion mapping using kernel density estimation and LISA spatial autocorrelation in QGIS/GeoDa. Results reveal three cultural semantic clusters—peak forest landscapes, ecological nature, and ethnic culture—with significant spatial emotional autocorrelation (Global Moran's I = 0.437, p < 0.001). The multimodal fusion model (BiLSTM + InceptionV3) achieved F1 = 0.90 across 24 theme–emotion classes. An interactive cultural map prototype using Unity3D-GIS demonstrated emotion-driven narrative path generation, with three thematic routes exhibiting distinct emotional profiles. These findings contribute to integrating affective geography with smart tourism while providing a replicable pipeline for emotion-intelligent cultural communication design.",
     "topics": [
       "Vision-Language",
       "Geospatial AI"
