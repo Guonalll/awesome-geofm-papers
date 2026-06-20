@@ -305,6 +305,29 @@
     "query": "\"ground to satellite\" image"
   },
   {
+    "id": "10.1007/s12518-026-00742-x",
+    "source": "Crossref",
+    "title": "Satellite-derived bathymetry in optically complex waters: testing an SDB–KED hybrid approach in the Venice Lagoon",
+    "authors": [
+      "Federica Gerla",
+      "Caterina Balletti"
+    ],
+    "published": "2026-09-01",
+    "updated": "2026-06-20",
+    "venue": "Applied Geomatics",
+    "url": "https://doi.org/10.1007/s12518-026-00742-x",
+    "pdf_url": "",
+    "doi": "10.1007/s12518-026-00742-x",
+    "abstract": "Abstract Accurate and up-to-date bathymetric data are essential for the management and spatial planning of transitional coastal environments, yet conventional survey methods remain costly and difficult to implement at large spatial scales and high temporal frequency. This study investigates the potential of Satellite-Derived Bathymetry ( SDB ) as a cost-effective monitoring tool, using the Venice Lagoon as a morphologically and optically complex test site. Two methodological axes were developed. The first applies a stratified log-ratio Band Ratio Method (Stumpf et al. 2003) using Sentinel-2 multitemporal imagery, calibrated against the 2002 full-lagoon bathymetric dataset (Sarretta et al. 2010), achieving a Root Mean Square Error (RMSE) of 1.09 m and an R² of 0.87 across the entire depth range. The second axis refines this approach through advanced radiometric pre-processing, including sun-glint correction and clean-water compositing, combined with a Random Forest substrate classification and a stratified SDB calibration for sandy versus muddy seafloors. The resulting SDB was further integrated with Kriging with External Drift ( KED ), using the 2013 CNR-ISMAR (National Research Council Institute of Marine Sciences) multibeam survey as ground truth. This hybrid SDB-KED model achieved an R² of 0.73, an RMSE of 2.55 m, and a near-zero bias (-0.09 m) over more than 320,000 validation points, demonstrating effective bathymetric reconstruction across the full lagoon depth range. Residual uncertainties are concentrated at channel margins and in areas exceeding 15 m depth, where optical signal extinction limits satellite penetration. The proposed framework, implemented entirely on open-source data and cloud computing platforms, offers a replicable and scalable protocol for supporting spatial planning in dynamic coastal and marine environments.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
     "id": "10.1007/s12518-026-00754-7",
     "source": "Crossref",
     "title": "Built-up area mapping for sustainable urban planning: a novel satellite imagery based approach for detection of urbanization and landscape changes",
@@ -690,6 +713,27 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "10.1007/s00371-026-04604-w",
+    "source": "Crossref",
+    "title": "Advanced background learning for hyperspectral anomaly detection via synthetic spectral sample generation",
+    "authors": [
+      "Mohamad Ebrahim Aghili"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-06-20",
+    "venue": "The Visual Computer",
+    "url": "https://doi.org/10.1007/s00371-026-04604-w",
+    "pdf_url": "",
+    "doi": "10.1007/s00371-026-04604-w",
+    "abstract": "",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
   },
   {
     "id": "10.1007/s00604-026-08198-x",
@@ -1147,6 +1191,182 @@
     "query": "\"spatial intelligence\" remote sensing"
   },
   {
+    "id": "10.4271/2026-01-0721",
+    "source": "Crossref",
+    "title": "Robustness Analysis of a Computationally Efficient Time Domain Virtual Sensing Framework for Exterior Vibroacoustic Problems",
+    "authors": [
+      "Luyao Dong",
+      "Yinshan Cai",
+      "Hervé Denayer",
+      "Elke Deckers"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "SAE Technical Paper Series",
+    "url": "https://doi.org/10.4271/2026-01-0721",
+    "pdf_url": "",
+    "doi": "10.4271/2026-01-0721",
+    "abstract": "<div class=\"section abstract\"><div class=\"htmlview paragraph\">Reconstruction of acoustic radiation from vibrating structures is central in vibroacoustics, as full-field sound information is essential for identifying radiation mechanisms and improving structural-acoustic performance. Conventional microphone-based measurements are limited by spatial sampling constraints and high experimental cost, while purely numerical approaches such as Finite Element Method (FEM) simulations offer flexibility but are strongly affected by parameter uncertainties, discretization errors, and imperfect boundary conditions. To overcome these drawbacks, this work develops a hybrid time-domain framework to reconstruct the radiated acoustic field by coupling vibration measurements to a FEM-based vibroacoustic model. The FEM model is reduced using Krylov subspace projection, yielding a compact state-space representation that captures the dominant vibroacoustic modes while remaining computationally efficient for sequential data assimilation. The acoustic radiation domain is truncated with perfectly matched layers (PML) to eliminate non-physical reflections, which are formulated for arbitrary convex boundaries to achieve efficient model size. Fusion of measurement and simulation is achieved via a discrete-time Kalman filter, which operates as a state observer for the reduced vibroacoustic system. The FEM model provides time-domain predictions of the radiated field, while the Kalman update step incorporates acceleration data from accelerometer measurements to correct model drift, compensate for parameter uncertainties, and attenuate experimental noise. In this work, the robustness of the proposed framework is systematically investigated. Particular attention is given to the influence of model-measurement mismatch on estimation accuracy and stability, sensitivity to sensor configurations, and conditioning of covariance matrices. A series of numerical tests are conducted to evaluate the reliability and convergence behavior of the Kalman-based virtual sensing approach under controllable model uncertainties and dummy sensor employment, for stable and accurate reconstruction of acoustic fields from structural measurements in practical vibroacoustic systems.</div></div>",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Geospatial AI",
+      "Agriculture"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" \"remote sensing\""
+  },
+  {
+    "id": "10.1117/12.3119346",
+    "source": "Crossref",
+    "title": "RMT-YOLO: lightweight building detection in remote sensing images",
+    "authors": [
+      "Mengqi Wu",
+      "Anni Wang",
+      "Ting Wang",
+      "Zhaoyang Wang",
+      "Yun Ge"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "International Conference on Computer Vision and Neural Networks (CVNN 2026)",
+    "url": "https://doi.org/10.1117/12.3119346",
+    "pdf_url": "",
+    "doi": "10.1117/12.3119346",
+    "abstract": "",
+    "topics": [
+      "Detection",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "10.46647/rdems0206012",
+    "source": "Crossref",
+    "title": "INFLUENCE OF HIGHWAY WIDENING ON LAND USE AND LAND COVER PATTERN USING GEOSPATIAL TECHNIQUES",
+    "authors": [
+      "K.VENU",
+      "M CHANDRAN"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "Research Digest on Engineering Management and Social Innovations",
+    "url": "https://doi.org/10.46647/rdems0206012",
+    "pdf_url": "",
+    "doi": "10.46647/rdems0206012",
+    "abstract": "India has the third largest road network globally, with national and state highways expanding rapidly in recent decades. Highway widening projects, however, face persistent challenges related to environmental concerns, funding limitations, and planning constraints. This study examines the environmental impacts of highway expansion along the Tambaram–Tindivanam stretch of NH45 in Tamil Nadu. Using remote sensing and GIS techniques, land use and land cover (LULC) changes were analyzed across five time periods (1999, 2003, 2007, 2011, and 2015) using Landsat ETM+ and Landsat 8 imagery. Supervised classification and hotspot analysis revealed significant correlations between road widening and shifts in land categories, including builtup areas, forests, agricultural land, wasteland, and water bodies. Regression modelling demonstrated strong predictive capacity (R² = 0.8417), with wasteland showing a negative correlation and other land types exhibiting positive associations with expansion. Geographically Weighted Regression (GWR) highlighted spatial heterogeneity, confirming that highway development accelerates urbanization and alters land resources. Field surveys validated these spatial findings, underscoring the socioeconomic implications of infrastructure growth. The study concludes that highway widening substantially influences LULC dynamics, contributing to urban expansion and regional economic development. It recommends integrating ethnographic studies to assess sociocultural impacts alongside environmental evaluations, thereby ensuring balanced growth aligned with national development priorities.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" geospatial"
+  },
+  {
+    "id": "10.1038/s41598-026-58326-z",
+    "source": "Crossref",
+    "title": "Capsule-enhanced hierarchical vision transformers for rare disease classification from medical images",
+    "authors": [
+      "E. S. Phalguna Krishna",
+      "Gowtham Mamidisetti",
+      "Sai Srinivas Vellela",
+      "Kranthi Kumar Lella",
+      "Veeraiah Duggineni",
+      "N. Balakrishna"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-58326-z",
+    "pdf_url": "",
+    "doi": "10.1038/s41598-026-58326-z",
+    "abstract": "Abstract Automated medical image analysis plays a vital role in rare disease detection, yet existing deep learning models often struggle with severe class imbalance, limited labeled data, and subtle morphological variations. To address these challenges, this paper proposes Swin-CapsuleNet, a hybrid architecture that integrates a hierarchical Swin Transformer with capsule-based representations, tailored for rare disease classification. The framework integrates a Swin Transformer backbone for multi-scale contextual feature extraction with a capsule-based classification head that preserves part–whole spatial relationships through dynamic routing. A class-balanced capsule loss is introduced to improve sensitivity toward under-represented disease categories. Extensive experiments conducted on a multi-center rare disease dataset demonstrate that Swin-CapsuleNet consistently outperforms state-of-the-art CNN, transformer, and capsule-based baselines. The proposed model achieves 94.1% accuracy, a 93.2% F1-score, and an AUC of 0.972, while attaining a macro-F1 of 0.899 for rare disease classes. Ablation studies validate the complementary contributions of hierarchical attention, capsule representations, and the proposed loss function. Furthermore, computational analysis shows that Swin-CapsuleNet offers a favorable balance between performance and efficiency, supporting its applicability in real-world clinical decision-support systems.",
+    "topics": [
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" geospatial"
+  },
+  {
+    "id": "10.55041/isjem07960",
+    "source": "Crossref",
+    "title": "COAQNN-Based Real-Time NIFTY-50 Stock Price Prediction Using Deep Learning and Financial Indicators",
+    "authors": [
+      "Navateja G",
+      "Dr. Kiran B M",
+      "Dr. Kaja Masthan",
+      "Venkateshwarlu M"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "International Scientific Journal of Engineering and Management",
+    "url": "https://doi.org/10.55041/isjem07960",
+    "pdf_url": "",
+    "doi": "10.55041/isjem07960",
+    "abstract": "Abstract— Stock market prediction is a complex task due to the highly volatile and non-linear nature of financial markets. Accurate forecasting of stock prices can help investors make informed financial decisions and reduce investment risks. This research proposes a COAQNN-based stock price prediction system for NIFTY-50 stocks using real-time financial data and deep learning techniques. Historical and live stock market data are collected using the Yahoo Finance API and processed using technical indicators such as RSI, EMA, MACD, volatility, moving averages, and lag features. The proposed COAQNN (Coati Optimization Algorithm–Quantum Neural Network) model predicts both mid and closing stock prices with improved accuracy. The system performance is evaluated using MAE, RMSE, MAPE, and Accuracy, and compared with Random Forest Regression and Linear Regression models. Experimental results demonstrate that the proposed COAQNN model achieved an accuracy of 99.06%, outperforming several existing approaches from the literature survey, including Logistic Regression-based prediction models with 68.62% accuracy and other hybrid forecasting methods. A Streamlit-based web application is also developed for real-time stock price prediction and analysis. Keywords— Stock Price Prediction, COAQNN, Deep Learning, NIFTY-50, Financial Forecasting, Technical Indicators, Machine Learning, Streamlit, Yahoo Finance API",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
+  },
+  {
+    "id": "10.9734/ijecc/2026/v16i75519",
+    "source": "Crossref",
+    "title": "Assessment of Land Use and Land Cover Change Dynamics Using Google Earth Engine",
+    "authors": [
+      "Shashi Bhushan Kumar",
+      "Krishna Mondal",
+      "Ashok Mishra",
+      "Suyog Babasaheb Khose"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-20",
+    "venue": "International Journal of Environment and Climate Change",
+    "url": "https://doi.org/10.9734/ijecc/2026/v16i75519",
+    "pdf_url": "",
+    "doi": "10.9734/ijecc/2026/v16i75519",
+    "abstract": "This study assessed land use and land cover (LULC) dynamics in the Subarnarekha River Basin, eastern India, using multi-temporal satellite datasets and cloud-based geospatial analysis. The study aimed to map LULC changes during 2019–2021, evaluate their spatial and temporal variability, and compare the performance of Random Forest and Support Vector Machine classifiers within Google Earth Engine. Sentinel-2 multispectral imagery and Sentinel-1 synthetic-aperture radar data were integrated to reduce limitations associated with cloud cover and spectral ambiguity. Seasonal, annual and combined LULC maps were generated for seven classes: trees, shrubland, grassland, cropland, built-up areas, bare/sparse vegetation and permanent water bodies. The overall classification accuracy ranged from 65.16% to 73.87%, while the kappa coefficient ranged from 0.61 to 0.69. Combined multi-temporal datasets produced higher classification accuracy than single-season datasets, indicating the value of temporal integration for reducing classification uncertainty. The results showed a gradual decline in forest cover, accompanied by increases in cropland and built-up areas. Grassland and bare/sparse vegetation showed moderate variability, whereas permanent water bodies remained comparatively stable with seasonal fluctuations. These changes indicate increasing anthropogenic pressure associated with agricultural expansion and urban development. The findings provide baseline spatial information for understanding land-transformation processes and supporting sustainable land and water resource management in the Subarnarekha River Basin.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" pretraining"
+  },
+  {
+    "id": "10.1093/ehjcr/ytag448",
+    "source": "Crossref",
+    "title": "Stable Valve Function After Post-Transapical TAVR With Anchoring Strut Fracture: A 3-Year Multimodal Imaging Follow-up Case Report",
+    "authors": [
+      "Weili Liu",
+      "Dacheng Li",
+      "Kai Zhang",
+      "Sumin Yang",
+      "Lei Jiang"
+    ],
+    "published": "2026-06-20",
+    "updated": "2026-06-16",
+    "venue": "European Heart Journal - Case Reports",
+    "url": "https://doi.org/10.1093/ehjcr/ytag448",
+    "pdf_url": "",
+    "doi": "10.1093/ehjcr/ytag448",
+    "abstract": "Abstract Background Transcatheter aortic valve replacement (TAVR) for native aortic regurgitation (AR) remains technically challenging due to the absence of annular calcification and difficulties in achieving stable anchoring. Mechanical complications such as anchoring strut fracture are rare but may have implications for long-term valve durability. Case summary A 64-year-old man with severe symptomatic native AR underwent transapical TAVR using a 29-mm self-expanding J-Valve system. Routine echocardiography and gated CT on postoperative day 7 identified an isolated fracture of the right coronary sinus anchoring strut without migration, leaflet dysfunction, or hemodynamic compromise. No balloon post-dilatation was performed. Serial multimodal imaging over nearly three years demonstrated persistent structural stability, preserved valve function, and marked left-ventricular reverse remodeling. Discussion This case provides long-term multimodal imaging follow-up of isolated anchoring strut fracture after TAVR for native AR. Early fracture detection and absence of calcification support a deployment-related stress mechanism rather than late cyclic fatigue. Although this favorable evolution suggests that isolated fracture does not necessarily result in immediate structural valve dysfunction, prognostic conclusions cannot be generalized. Careful, individualized imaging surveillance remains essential.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
     "id": "10.3847/2041-8213/ae71c7",
     "source": "Crossref",
     "title": "Legacy Analysis of Milky Way Dwarf Spheroidal Satellite Galaxies: An Update",
@@ -1221,6 +1441,49 @@
     ],
     "category": "Downstream Task",
     "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "https://openalex.org/W7165138574",
+    "source": "OpenAlex",
+    "title": "Public Finance Problems and Use of Artificial Intelligence: Opportunities and Challenges in Pakistan Micro-Finance in Pakistan: Institutional Practices, Challenges and Way Forward",
+    "authors": [
+      "Saba Asghar Bhutta"
+    ],
+    "published": "2026-06-19",
+    "updated": "2026-06-20",
+    "venue": "Journal of Pakistan Administration",
+    "url": "https://doi.org/10.65755/jpa-20264701-130",
+    "pdf_url": "https://journal.nspp.gov.pk/index.php/jpa/article/download/130/117",
+    "doi": "10.65755/jpa-20264701-130",
+    "abstract": "Pakistan’s Public Finance Management (PFM) system faces deep-rooted inefficiencies which include low tax collection, fragmented data systems, and weak transparency. These structural challenges have led to exiguity of fiscal space and eroded public trust in governance. This paper aims to address such structural intrackabilities by examining the potential role of Artificial Intelligence (AI) and using Estonia’s digital governance model as a comparative benchmark. The study adopts a qualitative and analytical approach as a methodology. It draws on secondary data, international policy documents, and case evidence. It also employs a SWOT analysis and a comparative case study of Estonia to assess Pakistan’s readiness for AI adoption in PFM. The scope covers four core PFM functions encompassing budgeting, taxation, auditing, and transparency. It assesses potential applications of AI such as predictive analytics, anomaly detection, and digital citizen services. The findings indicate that AI could enhance Pakistan’s tax-to-GDP ratio by 3% while improving annual fiscal gains up to PKR 900 billion. It can also aid in improving fiscal transparency by reducing fraud-related losses by more than PKR 200 billion. Comparably, implementation costs are estimated at only PKR 700 billion over a decade. Thus, making the projected return on investment over 25 times the cost. However, barriers such as rudimentary ICT infrastructure, siloed governance, and weak regulatory frameworks must be addressed. The paper concludes that AI is not a magic wand rather it is a strategic enabler. AI revolution in Pakistan can be achieved by adopting a phased roadmap. Focus must be kept on building digital infrastructure, trained manpower and creating ethical safeguards. AI tools can catalyze governance modernization in Pakistan and its ramifications transcend beyond efficiency gains. It underscores AI’s potential to fortify fiscal justice and reinvigorate the social contract between state and the society.",
+    "topics": [
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7165127685",
+    "source": "OpenAlex",
+    "title": "Geospatial Analysis of Sustainable Forestry: Using GIS and Improved Particle Swarm Optimization (PSO) Algorithms to Detect and Predict Pine Wilt Disease",
+    "authors": [
+      "Shiwei Chu",
+      "Wenxia Bao"
+    ],
+    "published": "2026-06-19",
+    "updated": "2026-06-20",
+    "venue": "Journal of Sustainable Forestry",
+    "url": "https://doi.org/10.1080/10549811.2026.2689972",
+    "pdf_url": "",
+    "doi": "10.1080/10549811.2026.2689972",
+    "abstract": "This study seamlessly integrates Geographic Information System (GIS) with an enhanced Particle Swarm Optimization (PSO) algorithm to conduct a detailed geospatial analysis of pine wood nematode disease, a severe forest affliction. Our research team curated a comprehensive disease database and utilized GIS technology to delve into the spatial distribution characteristics of the disease. By merging this data with the PSO algorithm, we developed a disease recognition model capable of precise detection and analysis of the disease. Experimental outcomes highlight that the fusion of GIS and Memetic Computing (MC) methods provides a more accurate reflection of the spatiotemporal distribution of the disease. Notably, the recognition model forged with the PSO algorithm achieved an exceptional accuracy rate of 98.41%, outperforming other methodologies. This research not only deepens the understanding of the spatiotemporal patterns of pine wood nematode disease but also offers a scientific foundation for the formulation of more effective prevention and control strategies, significantly contributing to the monitoring and management of forest diseases.",
+    "topics": [
+      "Geospatial AI",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
   },
   {
     "id": "https://openalex.org/W7165208124",
@@ -1501,6 +1764,29 @@
     ],
     "category": "Downstream Task",
     "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "10.1088/2631-8695/ae7fd3",
+    "source": "Crossref",
+    "title": "Feature-Based 1D-CNN for Intelligent Fault Localization in Power Transformer Cores",
+    "authors": [
+      "Priyanka Tiwari",
+      "Shweta Singh",
+      "Vinod Kumar Singh",
+      "Swami Nath Maurya"
+    ],
+    "published": "2026-06-19",
+    "updated": "2026-06-19",
+    "venue": "Engineering Research Express",
+    "url": "https://doi.org/10.1088/2631-8695/ae7fd3",
+    "pdf_url": "",
+    "doi": "10.1088/2631-8695/ae7fd3",
+    "abstract": "Abstract Accurate fault localization in power transformer cores is critical for ensuring system reliability and preventing catastrophic failures. Conventional diagnostic techniques, including vibration analysis and thermal monitoring, are often limited by low spatial resolution, sensitivity to operating conditions, and reliance on manual interpretation. Recent deep learning approaches have improved fault detection; however, most existing studies focus on classification using raw signals and lack robustness to load variations, while offering limited capability for precise fault localization within transformer cores. To address these challenges, this study proposes a feature-based one-dimensional convolutional neural network (1D-CNN) for intelligent fault localization using vibration signal analysis. Instead of relying on raw data, the proposed model integrates domain-specific features, including fast fourier transform (FFT) components and time-delay estimation derived from cross-correlation (TDOA), to construct a compact and informative feature matrix. A lightweight 1D-CNN model is then trained to classify fault locations across transformer core limbs under varying load conditions. Experimental validation on a 2 kVA transformer demonstrates that the proposed model achieves high localization accuracy up to 99.34%, with improved robustness compared with previously developed deep learning models. The results confirm that the feature-based design enhances interpretability while reducing computational complexity, making it suitable for real-time condition monitoring applications.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
   },
   {
     "id": "10.1142/s2424922x2640005x",
@@ -1874,6 +2160,30 @@
     ],
     "category": "Downstream Task",
     "query": "\"vision-language\" \"remote sensing\""
+  },
+  {
+    "id": "10.1088/2631-8695/ae7fd7",
+    "source": "Crossref",
+    "title": "A Lightweight License Plate Recognition System Based on Improved YOLO11 and SCG-LPRNet for Resource-Constrained Edge Devices",
+    "authors": [
+      "Zehong Kong",
+      "Fuhao Guo",
+      "Yudong Lian"
+    ],
+    "published": "2026-06-19",
+    "updated": "2026-06-19",
+    "venue": "Engineering Research Express",
+    "url": "https://doi.org/10.1088/2631-8695/ae7fd7",
+    "pdf_url": "",
+    "doi": "10.1088/2631-8695/ae7fd7",
+    "abstract": "Abstract License plate recognition (LPR) forms a key technical foundation for modern intelligent transportation systems, yet deploying high-accuracy LPR models on edge devices with constrained computing power and memory remains a practical challenge. This paper proposes a compact, high-precision LPR framework built on YOLO11 and LPRNet to address this issue. For the detection pipeline, we optimize YOLO11 from three dimensions: a reshape-driven lightweight GMH-C3k2 attention module to reduce computational redundancy, an improved WIoUv2 loss embedded with license plate aspect-ratio priors to enhance bounding box regression, and a knowledge distillation pipeline to compress model size without accuracy loss. For character recognition, we design SCG-LPRNet by integrating a lightweight spatial transformer network, Ghost convolutions and a convolutional block attention module into baseline LPRNet, which simultaneously improves geometric robustness, reduces parameter overhead and strengthens feature discrimination. Experiments on CCPD and CBLPRD datasets validate the effectiveness of the proposed system. The optimized detector achieves an mAP50-95 of 0.667, while cutting parameters by 57.7% and computational cost by 47.6% compared with baseline YOLO11n. The recognition network reaches 99.90% accuracy with 36.1% fewer parameters and 32.1% lower computational cost. The whole system achieves a balance between inference efficiency and recognition performance, supporting deployment on resource-constrained edge devices.",
+    "topics": [
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "10.9734/ajgr/2026/v9i3418",
@@ -2726,6 +3036,64 @@
     "query": "\"spatial intelligence\" remote sensing"
   },
   {
+    "id": "2606.20224v1",
+    "source": "arXiv",
+    "title": "TOI-2147 b and TOI-6019 b: Two eccentric warm Jupiters detected and characterized with TESS and MaHPS",
+    "authors": [
+      "Luis Thomas",
+      "Louise D. Nielsen",
+      "Hanna Kellermann",
+      "Bibiana Prinoth",
+      "Yutong Liu",
+      "Elif Zeynep Özden",
+      "Arno Riffeser",
+      "Claus Gössl",
+      "Frank Grupp",
+      "Jerome de Leon",
+      "Karen A. Collins",
+      "Allyson Bieryla",
+      "Lorena Acuña-Aguirre",
+      "Keith Baka",
+      "Malte Busmann",
+      "David R. Ciardi",
+      "Catherine A. Clark",
+      "Juliana Ehrhardt",
+      "Mark E. Everett",
+      "Akihiko Fukui",
+      "Jan-Vincent Harre",
+      "Keisuke Isogai",
+      "Felipe Murgas",
+      "Norio Narita",
+      "Enric Palle",
+      "Hannu Parviainen",
+      "Jan-Niklas Pippert",
+      "Christoph Ries",
+      "Boris S. Safonov",
+      "Thomas Schäfer",
+      "Michael Schmidt",
+      "Richard P. Schwarz",
+      "Laura Schöller",
+      "Gregorg Srdoc",
+      "Ivan A. Strakhov",
+      "Suzanne Taylor",
+      "Raphael Zöller"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "venue": "arXiv",
+    "url": "http://arxiv.org/abs/2606.20224v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.20224v1",
+    "doi": "",
+    "abstract": "The population of Jupiter-sized exoplanets with orbital periods between 10 and 200 days (WJs) exhibits a broad range of orbital eccentricities and system architectures, suggesting a diversity of formation and migration pathways. In this work, we report the detection and characterization of two new eccentric WJs, TOI-2147 b and TOI-6019 b, initially identified as planet candidates by the Transiting Exoplanet Survey Satellite (TESS). We combined TESS photometry with ground-based follow-up observations, including multiband photometry from LCOGT and MuSCAT2, high-angular-resolution speckle imaging, and high-precision radial velocity measurements from the high-resolution Manfred Hirt Planet Finder Spectrograph (MaHPS). Using these data, we were able to confirm the planetary nature of both candidates. TOI-2147 b has a radius of $10.5 \\pm 0.3\\,\\mathrm{R}_\\oplus$ and a mass of $116 \\pm 22\\,\\mathrm{M}_\\oplus$. It orbits its slightly metal-poor ($\\mathrm{[Fe/H]} = -0.29^{+0.07}_{-0.08}$) G-type host star on an eccentric orbit ($e = 0.29 \\pm 0.07$) with a period of 26.2 days. TOI-6019 b has a radius of $12.3 \\pm 0.3\\,\\mathrm{R}_\\oplus$ and a mass of $149 \\pm 15\\,\\mathrm{M}_\\oplus$. It orbits a slightly evolved, solar-metallicity G-type sub-giant with a period of 14.5 days on a significantly eccentric orbit ($e = 0.48^{+0.05}_{-0.04}$). Both planets have bulk densities below that of Jupiter, indicating mildly inflated radii, with interior structure modeling using GASTLI. This suggests that tidal heating from the nonzero eccentricities likely contributes to this inflation and disfavors large atmospheric metal enrichment. No significant signals from additional companions were detected in the radial velocity time series or transit timing variations. Together with the elevated eccentricities, this is consistent with a high-eccentricity migration origin for both systems.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
     "id": "10.21203/rs.3.rs-9774617/v1",
     "source": "Crossref",
     "title": "Structural degradation of xerophytic thickets masked by limited net area loss: a 36-year Landsat assessment (1989–2025)",
@@ -3020,6 +3388,41 @@
     "query": "\"multimodal\" satellite"
   },
   {
+    "id": "2606.20291v1",
+    "source": "arXiv",
+    "title": "Integrating national forest inventory, airborne lidar, and satellite imagery for wall-to-wall mapping of forest structure with computer vision",
+    "authors": [
+      "Luke J. Zachmann",
+      "David D. Diaz",
+      "Vincent A. Landau",
+      "Chelsey Walden-Schreiner",
+      "Tony Chang",
+      "Nathan E. Rutenbeck",
+      "Katharyn A. Duffy",
+      "Kiarie Ndegwa",
+      "Andreas Gros",
+      "Scott Conway",
+      "Guy Bayes"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "venue": "arXiv",
+    "url": "http://arxiv.org/abs/2606.20291v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.20291v1",
+    "doi": "",
+    "abstract": "Remote sensing is increasingly relied upon to deliver actionable science for forest and wildfire risk management across large landscapes. Wall-to-wall, annually updated maps are a persistent need for effective forest management. Many planning systems and data collections combine disparate data sources with different purposes, vintages, and prediction quality, which leads to confounding behavior in operational planning systems. We introduce the VibrantForests framework, developed and applied to map forest attributes and provide a coherent foundation for effective forest and wildfire planning. VibrantForests includes a satellite-based forest structure model trained on lidar-derived samples and applied across the contiguous United States to concurrently generate estimates of canopy cover, canopy height, aboveground live tree biomass, basal area, and quadratic mean diameter at 10-meter resolution. We demonstrate predictive capability spanning the full spectrum of forest conditions ranging from sparse-canopy/low-biomass to dense-canopy/high-biomass. Results show that our model extends the range at which saturation is commonly encountered in comparable passive-sensor models, and reduces regression-to-mean behavior that commonly produces overestimation of forest attributes in small/sparse conditions and underestimation in large/dense conditions. The VibrantForests framework addresses a key limitation in large-area forest and wildfire planning by delivering coherent wall-to-wall estimates of management-relevant attributes at annual cadence and 10m resolution.",
+    "topics": [
+      "Segmentation",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Disaster",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
     "id": "10.1007/s44196-026-01429-2",
     "source": "Crossref",
     "title": "Inception ResNet Layers-Based Dual Image Multi-Layer Mapping and Auto-Decision-Making Methodology for Early Detection of Cervical Spondylosis",
@@ -3093,6 +3496,30 @@
     ],
     "category": "Downstream Task",
     "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "2606.20034v1",
+    "source": "arXiv",
+    "title": "Exploring the potential of AlphaEarth and TESSERA embeddings for Fine-scale Local Climate Zone Mapping: A case study across five cities in Switzerland",
+    "authors": [
+      "Htet Yamin Ko Ko",
+      "Clement Atzberger"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "venue": "arXiv",
+    "url": "http://arxiv.org/abs/2606.20034v1",
+    "pdf_url": "https://arxiv.org/pdf/2606.20034v1",
+    "doi": "",
+    "abstract": "Understanding urban spatial morphology is critical for climate modeling, risk assessment, and sustainable urban design, and Local Climate Zone (LCZ) mapping provides the basic framework for this. However, many cities still use coarse ~100-m resolution LCZ records, which are unsuitable for fine-scale urban research. In this study, precomputed embeddings from TESSERA (Feng et al., 2025) and AlphaEarth (Brown et al., 2025) are compared to traditional Sentinel-1/2 (S1S2) composites in five Swiss cities to see if they can upscale coarse LCZ maps to 10-m resolution using an attention-based U-Net. Three experiments assess multi-city transferability, the impact of higher-resolution reference data, and temporal robustness to year-to-year phenology changes. We find that all datasets achieve strong performance with test data Intersection-over-Union (IoU) ranging from 0.59-0.69 and 0.77-0.82 in the first two experiments. TESSERA consistently outperforms both S1S2 and AlphaEarth across both settings As expected, we find that the transfer of embedding-based models from one year to another remains an open challenge. Overall, however, our results demonstrate the promising potential of embeddings derived from EO foundation models to reduce time consuming preprocessing, respectively, manual feature engineering tasks and to guide a universal deep learning-based LCZ mapping workflow. When combined with a simple location-aware attention U-Net architecture, the embeddings enhance regional transferability and scalability, supporting the development of comprehensive and reproducible fine-scale LCZ maps for global urban climate applications Improving reference data quality remains the strongest lever for further accuracy gains.",
+    "topics": [
+      "Foundation Models",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Foundation Model",
+    "query": "\"foundation model\" urban"
   },
   {
     "id": "10.3126/injet.v3i2.95537",
@@ -134112,6 +134539,34 @@
     "query": "\"remote sensing\" \"self-supervised learning\""
   },
   {
+    "id": "1a7a3c0f395ad996fc1ecf3860bb0868aab6df4c",
+    "source": "Semantic Scholar",
+    "title": "SGE-GLoc: Semantic Gaussian Ellipsoid Scene Graphs for Efficient LiDAR Global Localization",
+    "authors": [
+      "Xi-Meng Cai",
+      "Ji Wu",
+      "Shu Han",
+      "Li Yu",
+      "Wen Yang",
+      "Huai Yu",
+      "Gui-Song Xia"
+    ],
+    "published": "2026-01-01",
+    "updated": "",
+    "venue": "IEEE Robotics and Automation Letters",
+    "url": "https://www.semanticscholar.org/paper/1a7a3c0f395ad996fc1ecf3860bb0868aab6df4c",
+    "pdf_url": "",
+    "doi": "10.1109/LRA.2025.3643266",
+    "abstract": "Global localization, encompassing robust place recognition and precise transformation estimation, is crucial for mobile robot navigation when the global navigation satellite system (GNSS) is unavailable. While LiDAR-based approaches are favored for their accuracy in 3D perception and resilience to illumination changes, existing methods often suffer from complex scene representations or computationally intensive processes, hindering scalability in large-scale applications. This letter introduces SGE-GLoc, a novel LiDAR-based global localization framework, which utilizes a compact scene graph representation where individual objects are modeled as Semantic Gaussian Ellipsoids (SGEs), encapsulating both geometric and semantic attributes. For efficient place recognition, we encode SGE features into histograms and employ a Graph Neural Network (GNN) to learn local and global topological information, generating a discriminative two-stage descriptor for scene similarity scoring. For accurate 6-DoF transformation estimation, we first establish initial correspondences based on SGE matching and subsequently refine the transformation by exploiting geometric constraints between SGEs. Extensive evaluations on four public datasets, including KITTI, KITTI-360, Apollo, and HeLiPR, demonstrate that SGE-GLoc achieves high place recognition accuracy and low localization error, while maintaining a highly compact scene graph representation with an average storage of only 1.28 KB per scene. Furthermore, the integration of SGE-GLoc into a SLAM system showcases its practical efficacy in real-world scenarios.",
+    "topics": [
+      "Geo-localization",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "2dc9dda0ae3cc7153d2aae66db976e5c45f983e5",
     "source": "Semantic Scholar",
     "title": "S2EDL: Selective Semantic Efficient Distillation Learning for Large-Scale Remote Sensing Representation",
@@ -134372,6 +134827,30 @@
     ],
     "category": "Foundation Model",
     "query": "\"earth observation\" pretraining"
+  },
+  {
+    "id": "827f8e5aef3f90e997c14a05e5fdd8721c71f010",
+    "source": "Semantic Scholar",
+    "title": "NaviLoc: Trajectory-Level Visual Localization for GNSS-Denied UAV Navigation",
+    "authors": [
+      "Pavel Shpagin",
+      "Taras Panchenko"
+    ],
+    "published": "2026-01-01",
+    "updated": "",
+    "venue": "Drones",
+    "url": "https://www.semanticscholar.org/paper/827f8e5aef3f90e997c14a05e5fdd8721c71f010",
+    "pdf_url": "",
+    "doi": "10.3390/drones10020097",
+    "abstract": "Aerial-to-satellite visual localization enables GNSS-denied UAV navigation, but the appearance gap between low-altitude (50–150 m) UAV imagery and nadir satellite tiles makes per-frame Visual Place Recognition (VPR) unreliable. Under perceptual aliasing, high-similarity matches are often geographically inconsistent, so naïve anchoring fails. We introduce NaviLoc, a training-free three-stage trajectory-level estimator that treats VPR as a noisy measurement source and exploits Visual-Inertial Odometry (VIO) as a relative-motion prior. Stage 1 (Global Align) estimates a global SE(2) transform by maximizing an explicit trajectory-level similarity objective. Stage 2 (Refinement) performs sliding-window bounded weighted Procrustes updates. Stage 3 (Smoothing) computes a strictly convex MAP trajectory estimate that fuses VIO displacements with VPR anchors while clamping detected outliers. On a challenging low-altitude rural UAV benchmark, NaviLoc attains 19.5 m Mean Localization Error (MLE)—a 16.0× reduction compared to state-of-the-art localization method AnyLoc-VLAD, and 32.1× compared to raw VIO drift. End-to-end inference runs at 9 FPS on Raspberry Pi 5, enabling real-time embedded deployment.",
+    "topics": [
+      "Geo-localization",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "3c18adcefea1f0ae6e091348ac3df424fd96cf40",
@@ -156846,6 +157325,36 @@
     "query": "\"remote sensing\" captioning"
   },
   {
+    "id": "a4077090f2d6f944632e5e2449c39a0a2470356b",
+    "source": "Semantic Scholar",
+    "title": "GeoVINS: Geographic-Visual-Inertial Navigation System for Large-Scale Drift-Free Aerial State Estimation",
+    "authors": [
+      "Chunyu Li",
+      "Mengfan He",
+      "Chao Chen",
+      "Jiacheng Liu",
+      "Xu Lyu",
+      "Guoquan Huang",
+      "Ziyang Meng"
+    ],
+    "published": "2025-01-01",
+    "updated": "",
+    "venue": "IEEE Transactions on robotics",
+    "url": "https://www.semanticscholar.org/paper/a4077090f2d6f944632e5e2449c39a0a2470356b",
+    "pdf_url": "",
+    "doi": "10.1109/TRO.2025.3613467",
+    "abstract": "This article introduces GeoVINS, a vision-based navigation framework designed for large-scale global state estimation. By utilizing geographic information from satellite orthoimagery, GeoVINS tackles scale ambiguity and accumulative drift problems inherent in standard visual-inertial simultaneous localization and mapping systems, and provides accurate, robust, and real-time global localization. In particular, to address the challenge of memory explosion issue for large-scale localization, we propose a novel aerial “<italic>classify-then-retrieve</italic>” aerial visual place recognition (VPR) approach, where geographic locations can be efficiently identified and memory usage can be reduced by 3 to 4 orders of magnitude compared to classical retrieval-based approaches. In addition, a hierarchical geographic data association scheme, enhanced by state-of-the-art deep learning-based feature matching, guarantees high efficiency and robustness against variations in appearance and viewpoint. Relying on the obtained three-dimensional (3-D) geographic information, GeoVINS achieves efficient <italic>global</italic> state initialization and precise motion tracking. To address GPU limitations in embedded devices, a collaborative CPU–GPU utilization approach is proposed, seamlessly integrating asynchronous global information to eliminate accumulative errors. Relying solely on satellite imagery and without requiring any other prior information, GeoVINS achieves rapid place recognition in unseen environments of city-scale (e.g., 2500 <inline-formula><tex-math notation=\"LaTeX\">$\\text{km}^{2}$</tex-math></inline-formula>) on an embedded computing device with an inference time of <inline-formula><tex-math notation=\"LaTeX\">$43 \\,\\mathrm{m}\\mathrm{s}$</tex-math></inline-formula>, and performs state estimation at a frequency of <inline-formula><tex-math notation=\"LaTeX\">$25 \\,\\mathrm{Hz}$</tex-math></inline-formula>. The system enables autonomous aerial vehicle navigation as an alternative to Global Navigation Satellite System.",
+    "topics": [
+      "Geo-localization",
+      "Retrieval",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "4aaf3c6d07bbd052b4261dba02a435417b473bd4",
     "source": "Semantic Scholar",
     "title": "GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing",
@@ -166424,6 +166933,37 @@
     "query": "\"place recognition\" satellite"
   },
   {
+    "id": "2c2a8570f5fd4ea79102340f3a847af57cc325d4",
+    "source": "Semantic Scholar",
+    "title": "Visual Localization system for GPS-Blind Environments in Unmanned Aerial Vehicles",
+    "authors": [
+      "Yazan Murhij",
+      "Dmitriy Gavrilov",
+      "Vladislav Buzdin",
+      "Wissam Kafa",
+      "E. Tatarinova",
+      "A. Fateev",
+      "Sergey Shkatula",
+      "Daniil Krichevets"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "International Conference on Speech Technology and Human-Computer Dialogue",
+    "url": "https://www.semanticscholar.org/paper/2c2a8570f5fd4ea79102340f3a847af57cc325d4",
+    "pdf_url": "",
+    "doi": "10.1109/ICCT62929.2024.10875019",
+    "abstract": "Integrating computer vision with unmanned aerial vehicles (UAVs) has significantly reduced costs and increased accessibility across various applications, enabling advanced capabilities such as visual navigation, localization, and obstacle avoidance. However, current limitations in autonomous navigation systems hinder UAV operation in GPS-denied environments, posing challenges for fully autonomous flights. As the adoption of UAVs expands, developing robust backup strategies is crucial for ensuring safe and reliable navigation in the event of Global Navigation Satellite Systems (GNSS) failures or cyber-attacks. Visual localization emerges as a promising alternative, offering accuracy comparable to or exceeding that of GNSS-based systems. In this paper, we present a Visual Place Recognition-Based Navigation Subsystem for UAVs, specifically designed for GPS-denied environments at high altitudes. Our pipeline addresses key localization challenges, enabling precise positioning even without accurate initial coordinates. We validate the effectiveness of our approach through extensive testing on our proposed dataset “AeroVL”, which covers over 80 km2 of diverse and challenging landscapes, including urban areas, farmlands, and forests.",
+    "topics": [
+      "Geo-localization",
+      "Remote Sensing",
+      "Agriculture",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "57a1f2b5e96cbc1d097c1728b2757338394a225a",
     "source": "Semantic Scholar",
     "title": "Visual Global-Salient-Guided Network for Remote Sensing Image-Text Retrieval",
@@ -166725,6 +167265,31 @@
     ],
     "category": "Downstream Task",
     "query": "\"cross-view matching\" satellite"
+  },
+  {
+    "id": "ef91ecaa56840492288b7c2f786d02b4ff9e6f43",
+    "source": "Semantic Scholar",
+    "title": "Triplet-Graph: Global Metric Localization Based on Semantic Triplet Graph for Autonomous Vehicles",
+    "authors": [
+      "Weixin Ma",
+      "Shoudong Huang",
+      "Yuxiang Sun"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "IEEE Robotics and Automation Letters",
+    "url": "https://www.semanticscholar.org/paper/ef91ecaa56840492288b7c2f786d02b4ff9e6f43",
+    "pdf_url": "",
+    "doi": "10.1109/LRA.2024.3358752",
+    "abstract": "Global metric localization is one of the fundamental capabilities for autonomous vehicles. Most existing methods rely on global navigation satellite systems (GNSS). Some methods relieve the need of GNSS by using 3-D LiDARs. They first achieve place recognition with a pre-built geo-referenced point-cloud database for coarse global localization, and then achieve 3-DoF/6-DoF pose estimation for fine-grained metric localization. However, these methods require accessing point-cloud features and raw point clouds, making them inefficient and hard to be deployed in large-scale environments. To provide a solution to this issue, we propose a global metric localization method with triplet-based histogram descriptors. Specifically, we first convert the input LiDAR point clouds into a semantic graph and describe the vertices in the graph with the proposed descriptor for vertex matching and pose estimation. These vertex descriptors are then selected and aggregated into a global descriptor to decide whether two places correspond to the same place according to a similarity score. Experimental results on the KITTI dataset demonstrate that our method generally outperforms the sate-of-the-art methods.",
+    "topics": [
+      "Geo-localization",
+      "Segmentation",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "393abcbcb2b73a347c7a0958350b06a5a99f9a72",
@@ -171413,6 +171978,87 @@
     "query": "\"foundation model\" agriculture"
   },
   {
+    "id": "75b12752190afd812b081d2e407d3262fe72de5d",
+    "source": "Semantic Scholar",
+    "title": "Dehaze-TGGAN: Transformer-Guide Generative Adversarial Networks With Spatial-Spectrum Attention for Unpaired Remote Sensing Dehazing",
+    "authors": [
+      "Yitong Zheng",
+      "Jia Su",
+      "Shun Zhang",
+      "Mingliang Tao",
+      "Ling Wang"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+    "url": "https://www.semanticscholar.org/paper/75b12752190afd812b081d2e407d3262fe72de5d",
+    "pdf_url": "",
+    "doi": "10.1109/TGRS.2024.3435470",
+    "abstract": "Satellite imagery plays a critical role in target detection. However, the quality and usability of optical remote sensing images can be severely compromised by atmospheric conditions, particularly haze, which significantly reduces the recognition accuracy of target detection algorithms such as ships. On the other hand, paired training data, i.e., the remote sensing data with or without fog at the same place, are difficult to obtain in real-world scenarios, leading to the failure of many existing dehazing methods. To deal with these issues, this article proposes a Transformer-Guide CycleGAN framework generative adversarial networks (Dehaze-TGGAN) incorporating an extra attention mechanism from the frequency domain. First, an SSA mechanism is proposed by using a 2-D fast Fourier transform (2D FFT) in the spatial domain, which enables the model to understand the relationships within the three-channel frequency domain information and to recover the spectral features of the hazy image through the spectrum encoder block. Then, a pre-training approach using semi-transparent masks (STM), which can effectively simulate hazy conditions by adjusting the transparency of masks, is presented as a key strategy to accelerate the convergence rate. Finally, the applicability of the transformer architecture is extended by incorporating total variation loss (TV Loss). The results of simulated and measured optical remote sensing data show that the recognition accuracy and the efficiency of the proposed algorithm are greatly improved.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "60b7b42771657da20a2c421a99b9f0d704e2121c",
+    "source": "Semantic Scholar",
+    "title": "Deep Learning with Butterfly Optimization Algorithm Based Vehicle Detection Using Remote Sensing Imagery",
+    "authors": [
+      "Dr. R. Sivaraman",
+      "B. Ravisankar",
+      "Ms.A.Kavitha",
+      "Ms D.Maheswari",
+      "AP Sr",
+      "Mr S.Ohmshankar"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "International Conference on Advanced Infocomm Technology",
+    "url": "https://www.semanticscholar.org/paper/60b7b42771657da20a2c421a99b9f0d704e2121c",
+    "pdf_url": "",
+    "doi": "10.1109/ICAIT61638.2024.10690578",
+    "abstract": "Remote Sensing Images (RSI) and then estimate the kind and place of this objective. Object recognition is the procedure of identifying cases of semantic things of a definite class (like airplanes, birds or human) in digital video or images. In RSI, the challenging research is the target recognition. Presently, the growth of deep learning (DL) and target recognition model has gained huge and rapid development. But, in RSI application, owing to the small aim, huge assortment, minor texture, and difficult background, the present target recognition model cannot attain people's confidence. Automatic recognition of small objects like transports in satellite images is a very stimulating task due to its difficulty of background, vehicle colors, the huge extent of ground sample distance (GSD) and blocking triggered by trees and buildings. Numerous techniques were projected for this task by employing handcrafted features, but, Convolutional Neural Network (CNN) have been verified to be possibly more real. This study presents a Deep Learning with Butterfly Optimization Algorithm based Vehicle Detection (DLBOA-VD) using RSI. The technique integrates the YOLOv5 vehicle detector for the exact localization of vehicles within the images. Also, a deep Long Short-Term Memory (LSTM) system is utilized for vehicle identification, capturing time-based dependences in the series of noticed objects. The Butterfly Optimization Algorithm (BOA) is then combined for hyperparameter tuning, enhancing the DL methods for improved robustness and accuracy. The DLBOA-VD model displays excellent performance in vehicle recognition and classification, leveraging the powers of LSTM, YOLOv5, and BOA. The complete assessment of RSI authorizes the efficiency of the developed model, representing its probable uses in traffic observation, urban planning, and transport organization.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "dd4b7e46bb0b4923d5902dfbfd795db015c7e654",
+    "source": "Semantic Scholar",
+    "title": "Deep Learning Based Panchromatic2RGB Image Generation from VHR Images",
+    "authors": [
+      "Ceyda Nigar Ünyılmaz",
+      "B. Kulavuz",
+      "Tolga Bakırman",
+      "Bulent Bayram"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "Mersin photogrammetry journal",
+    "url": "https://www.semanticscholar.org/paper/dd4b7e46bb0b4923d5902dfbfd795db015c7e654",
+    "pdf_url": "https://dergipark.org.tr/en/download/article-file/4377617",
+    "doi": "10.53093/mephoj.1587804",
+    "abstract": "Image colorization is the process of obtaining colored images by assigning RGB color values to a grayscale or panchromatic image. This technique has an important place in the field of computer vision because colored images provide a better visual experience and are widely used in areas such as image recognition and object detection. It also has many practical applications such as coloring historical photographs, adding colors to be used in the analysis of medical images, and improving the analysis of satellite images. Colorization methods are divided into two main categories: brush coloring and sample-based coloring. Both methods have certain limitations. The performance of these methods depends on the selected reference images and may sometimes contain false colors or significant errors. While these methods require operator intervention or pre-defined rules, deep learning based methods are largely automated and uses neural networks to understand the global and local context of an image, leading to more realistic and contextually accurate colorizations. The presented study uses the Denoising Diffusion Null-Space Model (DDNM) architecture. DDNM is a method that aims to obtain more efficient and high-quality results compared to the coloring approaches available in literature. In the study, the weight data of the DDNM architecture was used to predict colored images from panchromatic images using the SpaceNet 6 open access dataset. The SpaceNet 6 dataset includes a combination of Capella Space 0.5m Synthetic Aperture Radar (SAR) imagery and Maxar's 0.5m electro-optical (EO) imagery. In order to assess the results, Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index Measure (SSIM) accuracy metrics are calculated.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "a2493f457ba2a8200504ca2221481a1f2e966bea",
     "source": "Semantic Scholar",
     "title": "Cross-view image geo-localization with Panorama-BEV Co-Retrieval Network",
@@ -172319,6 +172965,35 @@
     ],
     "category": "Foundation Model",
     "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "1be4c8b9cf6346ace83e12ff6736d1c49674c4c7",
+    "source": "Semantic Scholar",
+    "title": "AerialVL: A Dataset, Baseline and Algorithm Framework for Aerial-Based Visual Localization With Reference Map",
+    "authors": [
+      "Mengfan He",
+      "Chao Chen",
+      "Jiacheng Liu",
+      "Chunyu Li",
+      "Xu Lyu",
+      "Guoquan Huang",
+      "Ziyang Meng"
+    ],
+    "published": "2024-01-01",
+    "updated": "",
+    "venue": "IEEE Robotics and Automation Letters",
+    "url": "https://www.semanticscholar.org/paper/1be4c8b9cf6346ace83e12ff6736d1c49674c4c7",
+    "pdf_url": "",
+    "doi": "10.1109/LRA.2024.3441491",
+    "abstract": "Visual localization plays an essential role in the autonomous flight of Unmanned Aerial Vehicles (UAVs) especially for the Global Navigation Satellite System (GNSS) denied environments. Existing aerial-based visual localization methods mainly focus on eliminating image variance between database map and captured frames. However, these is a lack of public dataset and baseline for method comparisons, which impedes the development of aerial-based visual localization. To address this issue, we construct AerialVL, a large-scale dataset, which is collected using UAV flying at different altitudes, along various routes, and during diverse time periods. AerialVL consists of 11 image sequences covering approximately 70 km of trajectory and includes a reference satellite image database corresponding to the flight area. Leveraging AerialVL, we perform thorough evaluations on various mainstream solutions designed for aerial-based visual localization for the first time. This evaluation encompasses visual place recognition, visual alignment localization and visual odometry, serving as comparison baselines. Furthermore, we present a general aerial-based visual localization framework, which unifies various methods and integrates them into a modular architecture. We note that across all flight trajectories, the proposed framework achieves higher localization accuracy and robustness against the existing methods.",
+    "topics": [
+      "Geo-localization",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "a89af193c92abb6897a2501ab897f982789d863a",
@@ -174817,33 +175492,6 @@
     "query": "\"image-text retrieval\" remote sensing"
   },
   {
-    "id": "2305.13456v1",
-    "source": "arXiv",
-    "title": "Revisiting pre-trained remote sensing model benchmarks: resizing and normalization matters",
-    "authors": [
-      "Isaac Corley",
-      "Caleb Robinson",
-      "Rahul Dodhia",
-      "Juan M. Lavista Ferres",
-      "Peyman Najafirad"
-    ],
-    "published": "2023-05-22",
-    "updated": "2023-05-22",
-    "venue": "arXiv",
-    "url": "http://arxiv.org/abs/2305.13456v1",
-    "pdf_url": "https://arxiv.org/pdf/2305.13456v1",
-    "doi": "",
-    "abstract": "Research in self-supervised learning (SSL) with natural images has progressed rapidly in recent years and is now increasingly being applied to and benchmarked with datasets containing remotely sensed imagery. A common benchmark case is to evaluate SSL pre-trained model embeddings on datasets of remotely sensed imagery with small patch sizes, e.g., 32x32 pixels, whereas standard SSL pre-training takes place with larger patch sizes, e.g., 224x224. Furthermore, pre-training methods tend to use different image normalization preprocessing steps depending on the dataset. In this paper, we show, across seven satellite and aerial imagery datasets of varying resolution, that by simply following the preprocessing steps used in pre-training (precisely, image sizing and normalization methods), one can achieve significant performance improvements when evaluating the extracted features on downstream tasks -- an important detail overlooked in previous work in this space. We show that by following these steps, ImageNet pre-training remains a competitive baseline for satellite imagery based transfer learning tasks -- for example we find that these steps give +32.28 to overall accuracy on the So2Sat random split dataset and +11.16 on the EuroSAT dataset. Finally, we report comprehensive benchmark results with a variety of simple baseline methods for each of the seven datasets, forming an initial benchmark suite for remote sensing imagery.",
-    "topics": [
-      "Foundation Models",
-      "Remote Sensing",
-      "Data",
-      "Benchmark"
-    ],
-    "category": "Foundation Model",
-    "query": "\"remote sensing\" \"self-supervised learning\""
-  },
-  {
     "id": "2305.07586v2",
     "source": "arXiv",
     "title": "Knowledge distillation with Segment Anything (SAM) model for Planetary Geological Mapping",
@@ -176685,6 +177333,33 @@
     "query": "\"remote sensing foundation model\""
   },
   {
+    "id": "923dca3ebf6e93d5e1f2806315f567e84d4c19e0",
+    "source": "Semantic Scholar",
+    "title": "Revisiting pre-trained remote sensing model benchmarks: resizing and normalization matters",
+    "authors": [
+      "I. Corley",
+      "Caleb Robinson",
+      "R. Dodhia",
+      "J. Ferres",
+      "Peyman Najafirad"
+    ],
+    "published": "2023-01-01",
+    "updated": "",
+    "venue": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+    "url": "https://www.semanticscholar.org/paper/923dca3ebf6e93d5e1f2806315f567e84d4c19e0",
+    "pdf_url": "https://arxiv.org/pdf/2305.13456",
+    "doi": "10.1109/CVPRW63382.2024.00322",
+    "abstract": "Research in self-supervised learning (SSL) with natural images has progressed rapidly in recent years and is now increasingly being applied to and benchmarked with datasets containing remotely sensed imagery. A common benchmark case is to evaluate SSL pre-trained model embeddings on datasets of remotely sensed imagery with small patch sizes, e.g., 32 × 32 pixels, whereas standard SSL pre-training takes place with larger patch sizes, e.g., 224 × 224. Furthermore, pre-training methods tend to use different image normalization preprocessing steps depending on the dataset. In this paper, we show, across seven satellite and aerial imagery datasets of varying resolution, that by simply following the preprocessing steps used in pre-training (precisely, image sizing and normalization methods), one can achieve significant performance improvements when evaluating the extracted features on downstream tasks – an important detail overlooked in previous work in this space. We show that by following these steps, ImageNet pre-training remains a competitive baseline for satellite imagery based transfer learning tasks – for example we find that these steps give +32.28 to overall accuracy on the So2Sat random split dataset and +11.16 on the EuroSAT dataset. Finally, we report comprehensive benchmark results with a variety of simple baseline methods for each of the seven datasets, forming an initial benchmark suite for remote sensing imagery.1",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "bb3b2b0d29b2032002600eccd69c1bcdcd08ce53",
     "source": "Semantic Scholar",
     "title": "Rethinking Remote Sensing Pretrained Model: Instance-Aware Visual Prompting for Remote Sensing Scene Classification",
@@ -177915,6 +178590,35 @@
     ],
     "category": "Foundation Model",
     "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "d78e1a7889d05bcb49078fe3bea068280b16a217",
+    "source": "Semantic Scholar",
+    "title": "FireRisk: A Remote Sensing Dataset for Fire Risk Assessment with Benchmarks Using Supervised and Self-supervised Learning",
+    "authors": [
+      "Shuchang Shen",
+      "Sachith Seneviratne",
+      "Xinye Wanyan",
+      "M. Kirley"
+    ],
+    "published": "2023-01-01",
+    "updated": "",
+    "venue": "International Conference on Digital Image Computing: Techniques and Applications",
+    "url": "https://www.semanticscholar.org/paper/d78e1a7889d05bcb49078fe3bea068280b16a217",
+    "pdf_url": "https://arxiv.org/pdf/2303.07035",
+    "doi": "10.1109/DICTA60407.2023.00034",
+    "abstract": "In recent decades, wildfires have caused tremendous property losses, fatalities, and extensive damage to forest ecosystems. Inspired by the abundance of publicly available remote sensing projects and the burgeoning development of deep learning in computer vision, our research focuses on assessing fire risk using remote sensing imagery.In this work, we propose a novel remote sensing dataset, FireRisk, consisting of 7 fire risk classes with a total of 91872 labelled images for fire risk assessment. This dataset is labelled with the fire risk classes supplied by the Wildfire Hazard Potential (WHP) raster dataset [9], and remote sensing images are collected using the National Agriculture Imagery Program (NAIP) [27], a high-resolution remote sensing imagery program. On FireRisk, we present benchmark performance for supervised and self-supervised representations, with Masked Autoencoders (MAE) [16] pre-trained on ImageNet1k [8] achieving the highest classification accuracy, 65.29%.This remote sensing dataset, FireRisk, provides a new direction for fire risk assessment, and we make it publicly available on https://github.com/CharmonyShen/FireRisk.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Agriculture",
+      "Disaster",
+      "Ecology",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" \"self-supervised learning\""
   },
   {
     "id": "8ad7600c2f49291f8c4ed6a5119dd2fea2fc404f",
@@ -184496,6 +185200,35 @@
     "query": "\"place recognition\" satellite"
   },
   {
+    "id": "de54da375c329e260a83d1f0541b773ae15ef304",
+    "source": "Semantic Scholar",
+    "title": "Multilabel Spatial Image Recognition using Deep Convolutional Neural Network",
+    "authors": [
+      "Nagaraj N. Bhat",
+      "K. V. Archana Hebbar",
+      "Sachin S. Bhat",
+      "Jayalakshmi",
+      "Pooja",
+      "D. Harshitha"
+    ],
+    "published": "2020-01-01",
+    "updated": "",
+    "venue": "2020 4th International Conference on Electronics, Communication and Aerospace Technology (ICECA)",
+    "url": "https://www.semanticscholar.org/paper/de54da375c329e260a83d1f0541b773ae15ef304",
+    "pdf_url": "",
+    "doi": "10.1109/ICECA49313.2020.9297545",
+    "abstract": "This exhibits multilabel classification and segmentation of remote sensing satellite images through the deep learning framework. Here, the proposed methodology uses multi labelled Land-Mercede dataset and satellite images to perform the classification. The images obtained through satellite are first preprocessed by perfroming the operations like resizing and spatial blurring. In the next step, it performs the classification to classify each object based on the classes trained and finally segmentation is carried out to detect the changes at a particular place in a different time period. This method has achieved an overall classification accuracy of about 98.58% on a test set and least validation loss of 0.0001468 was also achieved by using a proposed model. The result of this approach can be used for more practical applications like urban planning and also to identify illegal activities that take place in restricted areas, forest, etc.. One of the main applications considered here will help to detect changes that happen in land change over time.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
+  },
+  {
     "id": "89130607936cb89fa8557d774d03d1d624fb6801",
     "source": "Semantic Scholar",
     "title": "Looking Closer at the Scene: Multiscale Representation Learning for Remote Sensing Image Scene Classification",
@@ -184654,6 +185387,27 @@
     ],
     "category": "Downstream Task",
     "query": "\"image retrieval\" satellite"
+  },
+  {
+    "id": "9d27b42b78f4a11ec9e84044c92d8557515094b8",
+    "source": "Semantic Scholar",
+    "title": "Comparative analysis of image segmentation algorithms for pattern recognition",
+    "authors": [
+      "Channappa A"
+    ],
+    "published": "2020-01-01",
+    "updated": "",
+    "venue": "World Journal of Advanced Research and Reviews",
+    "url": "https://www.semanticscholar.org/paper/9d27b42b78f4a11ec9e84044c92d8557515094b8",
+    "pdf_url": "",
+    "doi": "10.30574/wjarr.2020.5.3.0048",
+    "abstract": "Image Segmentation is one of the hopeful and emerging fields in image processing. The examined algorithms are compared according to the quality of its operation at distorted images with respect to ground-truth images. It has applications in various fields like medical applications, astronomical, traffic controlling, Fingerprint recognition, digital forensics, self-driving motor cars, locating objects in satellite images etc. It is the process of splitting an image into sub regions with respect to one or more characteristics. Image segmentation is the basic step to analyse images and extract data from them. In the image segmentation process, the anatomical organization or the region of interest needs to be defined and extracted out so that it can be viewed independently. In this comparative study we venture the significant place of segmentation of images in pulling out information for decision making. Hence characterization, visualization of region of interest in any image, delineation plays an important role in image segmentation. Using the different algorithms the current methodologies of image segmentation is reviewed so that user interaction is possible for images. Image segmentation results have an effect on image analysis and it following higher order tasks. Image analysis includes object description and representation, feature measurement. Image segmentation based on Region Based, Edge Detection, Thresholding, Clustering, Fuzzy Logic and Neural Network are discussed and compared.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "1c88074ab88bc7a875fd0d03ec627511308462f2",
@@ -185183,6 +185937,28 @@
     ],
     "category": "Foundation Model",
     "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "6b73dc6d34a8b95b23179e1324527a5b7e3dede1",
+    "source": "Semantic Scholar",
+    "title": "Urban Area Delineation Using Pattern Recognition Technique",
+    "authors": [
+      "Tutu Sengupta",
+      "Satish Sharma"
+    ],
+    "published": "2018-01-01",
+    "updated": "",
+    "venue": "",
+    "url": "https://www.semanticscholar.org/paper/6b73dc6d34a8b95b23179e1324527a5b7e3dede1",
+    "pdf_url": "https://doi.org/10.23953/cloud.ijarsg.333",
+    "doi": "10.23953/CLOUD.IJARSG.333",
+    "abstract": "Urban areas are most dynamic in terms of land use changes. The temporal changes can be monitored through satellite data and reflects the development taking place. Pattern recognition techniques are used to monitor the dynamics. In the present paper, Nagpur city urban sprawl has been studied using band ratioing techniques and fuzzy classification. The result shows an increase in the impervious layer which is the bench mark of urbanization and a corresponding decrease in the vegetation cover and the open spaces. This type of output can be used for planning of industries, garden, rejuvenation of water bodies and monitor the development activities.",
+    "topics": [
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"place recognition\" satellite"
   },
   {
     "id": "8b29502bbfe1832d583c4427ed10bbd32164cebf",
