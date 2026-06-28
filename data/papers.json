@@ -176,6 +176,31 @@
     "query": "\"cross-view matching\" satellite"
   },
   {
+    "id": "10.1080/2150704x.2026.2695767",
+    "source": "Crossref",
+    "title": "F-CSFT: FiLM-driven cross-scale factorized spatio-temporal transformer for robust tree species classification in subtropical forests",
+    "authors": [
+      "Kaijian Xu",
+      "Henghui Han",
+      "Shuzhou Wang",
+      "Ping Zhao",
+      "Xueqin He",
+      "Juanjuan Bi"
+    ],
+    "published": "2026-10-03",
+    "updated": "2026-06-28",
+    "venue": "Remote Sensing Letters",
+    "url": "https://doi.org/10.1080/2150704x.2026.2695767",
+    "pdf_url": "",
+    "doi": "10.1080/2150704x.2026.2695767",
+    "abstract": "",
+    "topics": [
+      "Uncategorized"
+    ],
+    "category": "Downstream Task",
+    "query": "\"cross-view matching\" satellite"
+  },
+  {
     "id": "10.1115/1.4070798",
     "source": "Crossref",
     "title": "A Physics-Informed Multimodal Transformer Model for Machining Energy Consumption Prediction",
@@ -770,6 +795,30 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "10.1111/echo.70527",
+    "source": "Crossref",
+    "title": "Multi‐Center Adversarial Bi‐Phase Cross‐Attention Network for Right Ventricular Segmentation and Functional Classification in Echocardiography",
+    "authors": [
+      "Bozhi Zhang",
+      "Weijuan Bai"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-06-28",
+    "venue": "Echocardiography",
+    "url": "https://doi.org/10.1111/echo.70527",
+    "pdf_url": "",
+    "doi": "10.1111/echo.70527",
+    "abstract": "ABSTRACT Background Automated right ventricular (RV) analysis in 2D echocardiography is limited by the morphological complexity of RV segmentation and the domain fragility of single‐center deep learning models across ultrasound vendors. No prior framework has jointly addressed both challenges for RV‐specific segmentation. Objectives To develop and prospectively validate TACA‐Net (Bi‐Phase Adversarial Cross‐Attention Network), a unified multi‐center framework for simultaneous RV endocardial segmentation and three‐class functional severity classification (normal, mildly reduced, significantly reduced) in 2D apical four‐chamber echocardiography. Methods Data were prospectively collected from three clinical sites within a single tertiary hospital network, each equipped with a different ultrasound vendor. Centers A and B ( n = 1,240 patients) were used for training and 5‐fold cross‐validation; Center C ( n = 320 patients) served as the fully held‐out external test set. TACA‐Net integrates a gradient reversal layer‐based domain discriminator for vendor‐agnostic feature learning, a bidirectional bi‐phase cross‐attention module encoding the complementary information between end‐diastolic and end‐systolic representations, and a dual‐head decoder jointly optimizing segmentation and classification with an auxiliary bi‐phase consistency loss. Performance was benchmarked against six segmentation baselines (U‐Net, Attention U‐Net, TransUNet, Swin‐UNETR, nnU‐Net, MACS) and five classification baselines (ResNet‐50, EfficientNet‐B4, ViT‐B/16, segmentation‐then‐classify pipeline, MACS + head). Primary segmentation endpoints were Dice Similarity Coefficient (DSC) and Hausdorff Distance 95th percentile (HD95); primary classification endpoint was macro‐averaged area under the receiver operating characteristic curve (AUC). Results On the external test set, TACA‐Net achieved a DSC of 0.903 ± 0.013 and an HD95 of 7.1 ± 1.0 mm for RV segmentation, and a macro‐averaged AUC of 0.911 (95% CI: 0.885–0.937) for functional classification, statistically significantly superior to all six segmentation and five classification baselines (all p < 0.01). Ablation analyses demonstrated independent contributions of domain alignment (ΔDSC = −0.038 when removed), bi‐phase cross‐attention (ΔAUC = −0.032), and multi‐task joint training (ΔDSC = −0.014). No significant differential performance was detected across diagnosis subgroups, sex, or image quality strata. GradientSHAP attribution maps revealed highest feature importance in the RV lateral free wall, consistent with established RV pathophysiology. Expected calibration error for TACA‐Net was 0.041 on the external test set, the lowest among all classification models evaluated. Conclusions TACA‐Net achieves vendor‐agnostic RV segmentation and functional classification from routinely acquired 2D echocardiography, with robust multi‐vendor generalization demonstrated under rigorous prospective external validation. The framework provides a clinically interpretable and methodologically transparent foundation for AI‐assisted right heart assessment at scale.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"cross-view matching\" satellite"
   },
   {
     "id": "10.1007/s11760-026-05522-z",
@@ -1412,6 +1461,384 @@
     "query": "\"cross-view matching\" satellite"
   },
   {
+    "id": "10.63158/journalisi.v8i3.1641",
+    "source": "Crossref",
+    "title": "Spatio-Temporal Graph-Based Hotspot Analysis of Earthquake Events Using Spatial Autocorrelation and Community Detection in Indonesia",
+    "authors": [
+      "Ika Arfiani",
+      "Herman Yuliansyah",
+      "Nur Rochmah Dyah Puji Astuti",
+      "Arfiani Nur Khusna"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "Journal of Information Systems and Informatics",
+    "url": "https://doi.org/10.63158/journalisi.v8i3.1641",
+    "pdf_url": "",
+    "doi": "10.63158/journalisi.v8i3.1641",
+    "abstract": "Analysis of clustered seismic regions is important for understanding seismic activity patterns in tectonic regions such as Indonesia. However, conventional spatial statistical approaches generally analyze earthquake events independently and fail to capture complex spatio-temporal relationships. This study proposes a graph-based spatio-temporal hotspot analysis approach integrating spatial autocorrelation and community detection to identify regional seismic interaction patterns. The dataset used consists of 3,000 earthquake events from 2008–2025. Spatial autocorrelation was analyzed using Moran’s I, while earthquake relationships were modeled using a spatio-temporal graph with spatial and temporal thresholds of ≤400 km and ≤60 days. The results showed significant positive spatial autocorrelation with Moran’s I = 0.3367 (p = 0.001). The resulting graph consisted of 3,000 nodes and 22,896 edges, revealing substantial regional-scale connectivity and 14 major clusters with a modularity score of 0.7405, indicating a strong community structure. Degree centrality analysis identified highly connected nodes with a maximum degree of 77. These findings indicate that integrating spatial autocorrelation and graph analysis provides a more comprehensive representation of seismic interaction patterns and may support future seismic risk assessment in tectonically active regions.",
+    "topics": [
+      "Geospatial AI",
+      "Disaster",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.26833/ijeg.1870242",
+    "source": "Crossref",
+    "title": "Improving Land Cover Classification Accuracy Using Ancillary Data: A Sentinel-2 and Google Earth Engine Study in 19 Mayıs District, Türkiye",
+    "authors": [
+      "Zelalem Ayalke",
+      "Aziz Şişman"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "International Journal of Engineering and Geosciences",
+    "url": "https://doi.org/10.26833/ijeg.1870242",
+    "pdf_url": "",
+    "doi": "10.26833/ijeg.1870242",
+    "abstract": "The application of machine learning algorithms to remote sensing data enables the accurate classification of land cover, which is essential for environmental monitoring, land use planning, and sustainable natural resource management. In this study, enhanced land cover classification has been done using Sentinel 2A remote Sensing imagery by doing a comparison between Random Forest (RF) and Support Vector Machine (SVM) in Google Earth Engine (GEE) environment. We consider three different datasets for the performance assessment, particularly for the district 19 Mayis. Three datasets with spectral bands, spectral indices, and topographical features (elevation and slope) have been employed. We generated the evaluation metrics and calculated the overall accuracy (OA), the Kappa statistic (K), the user's accuracy (UA), and the producer's accuracy (PA). Overall, the RF model consistently outperformed the SVM model on each dataset. The SVM model in Dataset one gave an OA of 0.888 and K value of 0.849 but on the other hand the RF model in Dataset 1 gave OA of 0.927 and K value higher than SVM was 0.900. Based on Dataset 2 was RF with OA and K of 0.943 and 0.922 respectively. SVM model achieved OA of 0.912 and K of 0.880. The RF model achieved an OA of 0.965 and a K value of 0.952 according to Dataset 3 results while the OA of the SVM model was 0.927 and a K of 0.900. The results prove that integrating remote sensing data with advanced machine learning classifiers, particularly Random Forest, provides an effective approach for land cover mapping in complex and heterogeneous environments",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Ecology",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "10.1038/s41598-026-58565-0",
+    "source": "Crossref",
+    "title": "Deep learning for time-series segmentation of mechanical ventilator waveforms",
+    "authors": [
+      "Preeti Gupta",
+      "Aditya Nemani",
+      "Virginia R. de Sa",
+      "Alex K. Pearce",
+      "Shamim Nemati",
+      "Atul Malhotra",
+      "Jason Y. Adams"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-58565-0",
+    "pdf_url": "",
+    "doi": "10.1038/s41598-026-58565-0",
+    "abstract": "Abstract Accurate segmentation of ventilator waveforms is essential for detecting patient–ventilator asynchronies (PVAs), yet current heuristic methods can fail in noisy, real-world data. We developed and validated a deep learning model using a one-dimensional attention-gated U-Net architecture to identify inspiratory and expiratory onsets in mechanical ventilation waveforms. The model was trained and tested on 9719 breaths from 33 patients and outperformed published rule-based methods, achieving F1 scores of > 0.99 for both inspiratory and expiratory onset detection within a 0.1-s tolerance window. Performance remained robust in asynchronous breaths (F1 ≥ 0.98). When applied to quantify PVAs, the model reproduced reference standard asynchrony frequencies with no significant differences, whereas heuristic methods produced large deviations. Gradient-weighted class activation maps suggest that the model leveraged a diverse set of waveform features to inform segmentation. This computationally efficient model enables highly-accurate, clinically timely waveform analysis and provides a foundation for scalable, reproducible assessment of ventilator–patient interactions.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"self-supervised learning\""
+  },
+  {
+    "id": "10.1038/s41598-026-59063-z",
+    "source": "Crossref",
+    "title": "CASE-GANet : Context-aware and semantic-enhanced generative adversarial network for infrared and visible image fusion",
+    "authors": [
+      "J. Bineeshia",
+      "B. Vinoth Kumar"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-59063-z",
+    "pdf_url": "",
+    "doi": "10.1038/s41598-026-59063-z",
+    "abstract": "",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.26833/ijeg.1817087",
+    "source": "Crossref",
+    "title": "A Multi-Sensor Semi-Supervised and Unsupervised Framework for Post-Disaster Flood and Building Damage Assessment: The Case of the Derna Dam Collapse",
+    "authors": [
+      "Abdelrazak Youssef",
+      "Osama Moussa",
+      "Ahmed Elsharkawy",
+      "Ahmed Azouz",
+      "Mostafa Tarek"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "International Journal of Engineering and Geosciences",
+    "url": "https://doi.org/10.26833/ijeg.1817087",
+    "pdf_url": "",
+    "doi": "10.26833/ijeg.1817087",
+    "abstract": "The catastrophic collapse of the Derna Dam created an urgent need for rapid and reliable mapping of flood extent and building damage to support disaster response and recovery. This study presents a multi-sensor, multi-method change detection framework integrating open-access Sentinel-1 Synthetic Aperture Radar (SAR), Sentinel-2 optical imagery, and Very High-Resolution (VHR) Maxar imagery to detect post-event changes and assess building-level damage. Two methodological approaches were evaluated: semi-supervised and unsupervised. The semi-supervised pipeline utilizes a Multilayer Perceptron (MLP)-based post-classification to generate pseudo-labels for training two U-Net variants: single-encoder early fusion and Siamese double-encoder mid-fusion architectures. The unsupervised methods include Principal Component Analysis (PCA) with Change Vector Analysis (CVA), Kernel Canonical Correlation Analysis (KCCA) implemented efficiently with Random Fourier Features (RFF), and a novel PCA with KCCA hybrid that combines dimensionality reduction with nonlinear correlation analysis. Rapid assessment using Sentinel-2 and OpenStreetMap (OSM) data identified changed areas through Change/No-Change and Normalized Difference Moisture Index (NDMI) masks. A detailed analysis employed VHR Maxar imagery and a pretrained Mask Region-based Convolutional Neural Network (Mask R-CNN) within ArcGIS Pro to extract pre- and post-event building footprints and evaluate structural impacts. Validation against manually labeled VHR samples (131 polygons; 3,371 pixels) confirmed the robustness of the framework. Stacked Sentinel-1 + Sentinel-2 fusion improved pseudo-label quality and segmentation accuracy (semi-supervised Overall Accuracy (OA) ≈95.1%), while the PCA＋KCCA hybrid achieved the best unsupervised performance (OA ≈89.4%). For the assessment of building damage, two methods were utilized: Quick Assessment (QA) and Deliberate Assessment (DA). A total of 2,193 flooded buildings were identified using the Deliberate Assessment, while 2,694 flooded buildings were identified through the Quick Assessment. These findings were validated using data from the United Nations Satellite Center (UNOSAT). The study contributes (i) a reproducible, end-to-end workflow for rapid post-disaster mapping, (ii) an efficient RFF-based KCCA implementation, and (iii) a novel PCA＋KCCA hybrid that optimizes the balance between accuracy, robustness, and computational efficiency for operational-scale change detection.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Flood",
+      "Disaster"
+    ],
+    "category": "Foundation Model",
+    "query": "\"foundation model\" flood"
+  },
+  {
+    "id": "10.21203/rs.3.rs-9242631/v1",
+    "source": "Crossref",
+    "title": "A Modality-Missing Robust Representation Network for Multi-Sequence Brain MRI Using the Public IXI Dataset",
+    "authors": [
+      "Tian He",
+      "Ximei Xie"
+    ],
+    "published": "2026-06-28",
+    "updated": "2026-06-28",
+    "venue": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-9242631/v1",
+    "pdf_url": "",
+    "doi": "10.21203/rs.3.rs-9242631/v1",
+    "abstract": "Abstract Multi‑sequence brain magnetic resonance imaging provides complementary anatomical and physiological information that is essential for robust brain characterization, yet clinical and research settings frequently encounter missing modalities due to acquisition constraints, patient motion, or study design variations. Existing deep learning models typically assume complete input modalities and suffer from substantial performance degradation when even a single sequence is absent. This study proposes a Modality‑Missing Robust Representation Network (MMR‑Net) designed to maintain stable performance under both complete and incomplete modality conditions using only the publicly available IXI dataset, thereby avoiding any new ethical approval requirements. The proposed framework comprises modality‑specific encoders that preserve the distinct imaging characteristics of T1‑weighted, T2‑weighted, proton density, and time‑of‑flight magnetic resonance angiography sequences, a shared latent space that aligns high‑level semantic features across modalities, a cross‑modal token fusion module that dynamically aggregates information based on the set of available modalities, and consistency constraints that explicitly encourage representational similarity between complete and missing‑modality inputs. A modality dropout training strategy is introduced to simulate arbitrary missing patterns during training, forcing the network to learn robust representations that generalize to test‑time modality incompleteness. The model is trained on the IXI dataset, which contains nearly 600 healthy subjects from three London hospitals, and evaluated on age regression as the primary task and sex classification as an auxiliary task, with adversarial site debiasing to improve cross‑center generalizability. Extensive experiments are conducted under four evaluation settings, including complete modality, single‑modality missing, two‑modality missing, and single‑modality only scenarios, comparing the proposed method against a comprehensive set of baseline approaches ranging from single‑modality three‑dimensional convolutional neural networks to multi‑branch fusion networks and transformer‑based aggregators.",
+    "topics": [
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166172963",
+    "source": "OpenAlex",
+    "title": "Neural network-based forecasting of modal frequency variations in Deriner Arch Dam based on reservoir and thermal fluctuations",
+    "authors": [
+      "Ebru Kalkan Okur",
+      "Fatih Yesevi Okur",
+      "Ahmet Can Altunışık"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "Neural Computing and Applications",
+    "url": "https://doi.org/10.1007/s00521-026-12228-3",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00521-026-12228-3.pdf",
+    "doi": "10.1007/s00521-026-12228-3",
+    "abstract": "Abstract Understanding the environmental sensitivity of dam dynamics is critical for effective structural health monitoring of large-scale infrastructure. This study explores the seasonal frequency behavior of the Deriner Arch Dam, one of Türkiye’s tallest arch dams, under operational conditions, using artificial neural networks (ANNs) to learn the underlying patterns governing modal response. A continuous 14-month dataset comprising daily records of ambient frequencies, reservoir water levels, and air temperatures was utilized. Across fourteen months of monitoring, Mode 1–4 frequencies changed 1.638–1.850, 2.204–2.829, 3.103–3.364, and 3.500–4.213 Hz, respectively. Simultaneously, reservoir elevation spanned 168.09–193.28 m and ambient temperature remained within − 1.67 °C and 35.9 °C. The analysis captures the dam’s dynamic adaptation to naturally fluctuating environmental loads, offering insight beyond static assessments or short-term experiments. A feedforward ANN regression model, trained using the Neural Network Fitting method, was able to accurately approximate modal frequency behavior as a function of temperature and hydrostatic conditions. The ANN models achieved correlation coefficient (R) values of 0.8541 (Mode 1), 0.7637 (Mode 2), 0.8299 (Mode 3), and 0.7969 (Mode 4), with corresponding Mean Squared Error (MSE) values below 0.005, demonstrating satisfactory agreement between predicted and measured frequencies. The resulting frequency prediction maps provide a data-driven reference for assessing future deviations and support a proactive approach to dam safety management. By focusing on an actively operating structure over an extended time frame, this study demonstrates the practical integration of AI tools in real-world structural health monitoring systems.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166313465",
+    "source": "OpenAlex",
+    "title": "Mapping Cassava Production in Uganda",
+    "authors": [
+      "Renata Retkutė",
+      "Gilligan Christopher A."
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "Apollo",
+    "url": "https://doi.org/10.17863/cam.131498",
+    "pdf_url": "",
+    "doi": "10.17863/cam.131498",
+    "abstract": "Cassava is a critical staple crop for food security and rural livelihoods in Sub-Saharan Africa, yet high-resolution maps of its distribution remain scarce, particularly for smallholder systems. In this study, we generated a 10 m resolution cassava presence map for Uganda (CM24) by fine-tuning a Random Forest classifier on TESSERA foundation model embeddings derived from Sentinel-1 and Sentinel-2 time series. Using field survey data from the Copernicus4GEOGLAM campaign for training and validation, the model achieved excellent discriminative ability (validation AUC = 0.9532, test AUC = 0.9524). Visual validation against high-resolution satellite imagery confirmed good spatial agreement, capturing both large contiguous fields and small fragmented plots. Comparison with two existing global products (CassavaMap and SPAM2020) and two seasons of national survey data conducted by the Uganda Bureau of Statistics showed that CM24 produced national harvested area estimates that fell between the two survey totals, whereas CassavaMap and SPAM2020 systematically overestimated harvested area by factors of two to three. Our results demonstrate that foundation-model embeddings offer a robust and scalable approach for mapping cassava in heterogeneous smallholder landscapes. The resulting CM24 map provides a spatially explicit tool to support disease surveillance, agricultural monitoring, and food security planning in Uganda and beyond.",
+    "topics": [
+      "Foundation Models",
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture"
+    ],
+    "category": "Foundation Model",
+    "query": "\"foundation model\" agriculture"
+  },
+  {
+    "id": "https://openalex.org/W7166349180",
+    "source": "OpenAlex",
+    "title": "Industrial wafer edge segmentation for alignment: a dual-resolution deep learning approach with synthetic pretraining and unsupervised geometry regularization",
+    "authors": [
+      "Myungrin Woo",
+      "Byeong Su Lee",
+      "Gwang Sik Oh",
+      "Hyungson Ki"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "Journal of Intelligent Manufacturing",
+    "url": "https://doi.org/10.1007/s10845-026-02912-5",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10845-026-02912-5.pdf",
+    "doi": "10.1007/s10845-026-02912-5",
+    "abstract": "Accurate wafer alignment is crucial for successful three-dimensional integrated circuit fabrication. This task becomes particularly challenging when wafer-edge visibility is degraded by contaminants such as particles and adhesive residues, as well as variable illumination. We present a deep learning-based segmentation pipeline that detects wafer-edge geometries from high-resolution (2448 × 2048) images with pixel-level precision under such adverse conditions. Central to our approach is a dual-resolution U 2 -Net architecture that first localizes wafer edges from a low-resolution (306 × 256) image and then crops corresponding high-resolution regions for fine segmentation. This strategy enables efficient processing of large images with substantially reduced computational cost while maintaining alignment accuracy. In addition, we employ extensive training on synthetic wafer images generated via a custom simulator with systematic domain randomization, significantly reducing the need for costly real-world labeling. A novel unsupervised generative adversarial network (GAN)–based refinement stage further enhances segmentation quality by enforcing geometric plausibility through geometry-aware synthetic samples. Comprehensive evaluation shows that our method consistently outperforms baseline methods and conventional GAN variants, achieving mean intersection-over-union scores above 0.96 on real-world samples even when fine-tuned with only one labeled wafer image, defined as one annotated 2448 × 2048 image containing both carrier and device wafer regions. These results demonstrate strong robustness to occlusion and contamination, making the approach well suited for industrial wafer alignment applications.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Remote Sensing",
+      "Agriculture"
+    ],
+    "category": "Foundation Model",
+    "query": "\"foundation model\" agriculture"
+  },
+  {
+    "id": "https://openalex.org/W7166296638",
+    "source": "OpenAlex",
+    "title": "Guest editorial: Managing the ‘digitalized’ public sector: building communities and creating knowledge around an evolving DNA",
+    "authors": [
+      "Andrea Tomo",
+      "Manuela Barreca",
+      "Carl Yngfalk",
+      "Manuel Castriotta"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "International Journal of Public Sector Management",
+    "url": "https://doi.org/10.1108/ijpsm-07-2026-593",
+    "pdf_url": "",
+    "doi": "10.1108/ijpsm-07-2026-593",
+    "abstract": "In a time increasingly defined by volatility, uncertainty, complexity, ambiguity and digital predominance (VUCAD), the public sector finds itself at the heart of a critical transformation (Mintrom and O'Connor, 2024). As the world navigates through a poly-crisis era – characterized by overlapping challenges such as economic downturns, pandemics, geopolitical instabilities and acute energy shortages – the capacity of public sector organizations to anticipate, adapt and respond to these multifaceted crises has never been more crucial (Todisco et al., 2024).Many recent grand challenges (digitalization, global crisis and sustainability) are putting organizations under pressure to manage complex issues under different perspectives: social, political, economic and technological. Complex issues require complex processes to be handled and solved. Managing these issues separately may leave many aspects unsolved, while a holistic approach could provide better, and more long-time oriented, solutions (Mergel et al., 2019).We, as authors and guest editors of this special issue titled “Managing the ‘digitalized’ public sector: the struggle between internal assets and external drivers of knowledge”, have sought to encourage this kind of discussion not only in the special issue but also in our experiences as convenors and/or track chairs at conferences on public management issues over (about) the last 10 years. Therefore, in this editorial, we propose a journey in the complex issue of digital transformation in the public sector, guiding the readers through the various steps we made over the last years in different conferences and the related building of a knowing community around the theme of digital transformation in the public sector. In more detail, we trace our decade-long activity of convening academic communities through EGOS and EGPA conferences, conceptualizing these events as pracademic spaces for co-producing knowledge that bridges theory and practice. Using the metaphor of a community's evolving DNA, the editorial illustrates how conferences, dialogues and collaborative practices become potential knowing communities and collectively build a shared understanding of digital transformation in the public sector.Knowing communities are well renowned as able to improve practice (Bellini and Canonico, 2008; Wenger, 1998), and this is even more important for academics willing to provide value added to society as well as practical and effective solutions to current complex challenges (Edelheim et al., 2018).On these grounds, the editorial argues that sustainable digital transformation depends on cultivating communities of practice that foster reflexive, human-centred and anticipatory public sector reforms aligned with broader societal goals. Indeed, the articles included in this Special Issue highlight how digitalization is not merely technological but deeply organizational and societal, requiring holistic approaches that balance innovation, inclusion, and well-being and reshape governance, work practices and organizational culture.In the following section, we review the literature on digital transformation in the public sector, discussing the main trends, dimensions and challenges. In Section 3, we present our methodological approach adopted in this editorial and in the conferences as well, displaying how we framed our community-building intervention. Two sub-sections in Section 3 will then discuss the metaphor of building a community and its DNA as a knowledge creation approach. In Section 4, we discuss the takeaways emerged through the last conferences we convened, providing some theoretical and practical implications useful both for colleagues doing research in the public management field and for public sector practitioners. In this section, we also show the link to the Special Issue and introduce the papers published within the Special Issue.In the final section, we provide some concluding remarks and suggest possible avenues for future research.Over the last years, digitalization has brought many new challenges to organizations and their organizational arrangements (e.g. workflow, teamwork, leadership styles and organizational culture) (Schuster et al., 2020; Välikangas and Lewin, 2020; Palumbo, 2020; Tomo, 2023; Van der Wal, 2020), especially considering the growing use of emerging technologies and new forms of work (Palumbo, 2020; Tursunbayeva, 2019; Todisco et al., 2023).Indeed, digital transformation processes may have intertwined and interconnected effects on the individual (e.g. diversity management, control, leadership, motivation and well-being), organizational (e.g. technology, performance and flexibility) and societal levels (e.g. circular economy impact considering environmental and productivity challenges and benefits due to changing employees commuting and resources consumption habits) (Dabrowska et al., 2022; Iden and Bygstad, 2024; Saura et al., 2022; Tomo and Mangia, 2025).From an internal (micro and meso) perspective, the degree of complexity characterizing digital transformation requires a profound re-evaluation of organizational structures and processes, including workflows, teamwork dynamics, leadership models, cultural paradigms and new human resources management capabilities. Indeed, the process of digital transformation involves more than just adopting technology and designing information systems within organizations. Rather, it encompasses a deep cultural shift towards innovation and citizen-centric governance (Mergel et al., 2019). According to Mergel et al. (2019), digital transformation entails a holistic rethinking of processes, structures and services to meet contemporary societal needs using digital tools.Embracing the holistic perspective of digital transformation processes means understanding that its effectiveness depends on different dimensions, going beyond the mere adoption and use of technology: the introduction of new forms of work, the design of new workplaces, the development of new digital skills and culture and the design of new human resources management practices.For instance, new ways of working (smart, agile, hybrid, remote and telework) represent a revolution in contemporary work environments, especially for the public sector, since they have been accompanied by the acceleration of previously overlooked or not fully implemented, processes of digitalization (Todisco et al., 2023). As a result, there is nowadays a demand and an expectation for employees not only to be flexible and adaptable but also to master such new modes of working in ways that make the organizations more productive than before. This expresses to some extent what Bauman (2000), called “liquid modernity”, aiming at releasing the brakes of deregulation, liberalization, flexibilization and fluidity, marking the erosion of organizational boundaries as well as the breaking of time and space dimensions.Regarding the design of new workplaces, technology and new ways of working implied the re-organization of workplaces for employees working from distance (i.e. from co-working spaces or from their own places – home), but this has also produced effects on public employees' identities and sense-making of their work. In this regard, Tomo and Mangia (2025), starting from the paper by Wilhoit Larson (2021) where the author individuated five practices used by employees to recreate home at work, conceptualized six practices (Wilhoit Larson's five plus a sixth) used by public employees to rebuild a sense of working at home when they are in remote or smart working mode.The article aimed to understand the experiences and work dynamics within an increasingly digitized public administration and how these dynamics could impact the identity of public employees and their way of giving meaning to their role (Wilhoit Larson, 2021; Tomo, 2023; Petani and Mengis, 2021) and the degree of involvement and participation within their organizations (Gnankob et al., 2022; Barbieri et al., 2024). The six practices found by Tomo and Mangia (2025), linked to as many identity strategies (inserted in parentheses) adopted by public employees, were: (1) home worklessness (identity impoverishment and instability); (2) workspace within a private space (identity overlapping, integration or hybridization); (3) home place-making (identity sense-making); (4) creating work at home (identity segmentation); (5) there's no place like work (identity reinforcement) and (6) themed home office (identity enrichment).The use of technology, especially the most radical ones (e.g. artificial intelligence, big data analytics and blockchain), has an influence also on different types of organizational processes: decision-making and communication processes; managerial processes (management of dispersed/virtual teams, new forms of (e-)leadership and control) and operational processes (work dematerialization, enhancement and flexibility). Also, the rise of social-digital communities and new media has led to increasing online interactions and changes in communication due to instant messaging, changes in vocabulary and slang, use of abbreviations, acronyms, emojis, emoticons and avatars.To master this radical change concerning the use of technology, the development of new processes and new modes of communication, there is the need of developing new skills. According to Van Laar et al. (2017), these skills go beyond the mere basic technical skills (IT, ICT and computer literacy). Indeed, they should support employees in higher-order thinking processes and be related to cognitive processes favouring employees' continuous learning. More in detail, according to the authors, these skills are information management, critical thinking, creativity, problem solving, collaboration, communication, technical, self-direction, lifelong learning, ethical awareness, cultural awareness and flexibility.Finally, digital transformation also requires a rethinking of HRM practices. HRM practices are essential to improve employees' well-being (EWB), work-life balance (WLB), organizational citizenship behaviours (OCBs) and to sustain identification and sense-making processes (Chaudhary et al., 2022; Costa et al., 2024; Gnankob et al., 2022; Tomo and Mangia, 2025). In this regard, HRM practices may support the design of “great places to work”, especially considering the need of providing employees with resources and support for more human-centred and ergonomic workplaces when working from distance (i.e. with the new forms of work) (Petani and Mengis, 2021). Activities in this sense might be virtual team-building, regular check-ins with colleagues and encouraging employees to set clear boundaries between work and personal life (Todisco et al., 2023). Additionally, effective communication and conflict management play a crucial role in the success of virtual teams, particularly for organizations with geographically dispersed or remote employees (Klonek et al., 2022). In such cases, organizations must establish an environment conducive to e-leadership development, managing interdependencies and motivating employees (Chaudhary et al., 2022).Again, HRM practices are fundamental in creating the setting and encouraging the development of digital skills and culture (Lopes et al., 2023).However, organizations must be aware of the fact that individual conditions may differ significantly (Tomo and Mangia, 2025). Consequently, the relationship between evolving work models, employee well-being and work-life balance is complex and influenced by how new work environments are structured and supported through organizational policies.On these grounds, given the complexity and intertwined nature of the diverse socio-technical dimensions encompassing digital transformation, it is crucial to understand the challenges brought by this new context (new workplaces, practices and technologies) as well as the connected reforms and the effects they might have, after their introduction, on organizational and managerial practices, on the new forms of work and work environments at rise in the public sector and on the need of balancing internal assets and external drivers of knowledge (e.g. consultants).Indeed, from a macro and/or external perspective, the complexity characterizing digital transformation may require public administrations entrusting such a complex task to individuals or firms with more adequate and updated digital competences. Such consideration highlights the attractiveness to external consultants willing to integrate public administration's (sometimes scarce) knowledge with their expertise to handle the introduction of digital processes.However, this, in turn, may represent another challenge for public administrations, as they must deal with external consulting firms often driven by short-term goals (e.g. profits and influence over decision-making processes), also risking incurring in vendor (consulting) lock-in.In this special issue as well as in the conferences where we acted as convenors and/or track chairs, we sought to address the complexity of digital transformation in the public sector by inviting authors to reflect upon the diverse nuances and levels of impact of this process.Our journey is not just a collection of academic contributions but a living process of knowledge creation carried out within diverse networks of learning societies such as the of of community of and practitioners. networks critical through to our they have a for academics and pracademic knowledge EGOS with its on theory development and organizational while EGPA these within the public management, and governance of public between these community has digital transformation in the public sector from innovation with research has that conferences be not merely as for academic but as living for creativity, and and 2024). of the EGOS how and practices – such as the – as for academic as and This with our of conferences as pracademic spaces for knowledge where and become for both thinking and sustainable where theory and practice meet to to when we a at the EGOS on human resources management in the public sector. This has then through the years and global events and trends, the digital of the public sector. in this editorial, we build upon our as convenors at EGOS and to design a of how the issue of digital transformation in the public sector over the last years. we will our on the of the development of knowledge and of a DNA as a metaphor for to the building of a community on digital transformation of the public literature has that knowledge creation is not an individual but a social, and process that on and shared and and and research networks play a crucial role in this by creating what conceptualized as – a shared space for emerging and collaborative learning. such knowledge through the continuous between and dimensions, where learning not only by new but also by and 2019; how these and spaces sense-making and the development of shared that EGPA an where pracademic theory to public sector the link between knowledge and societal networks such as these not merely they as communities that theoretical and methodological by between diverse and and Wenger, this our as a a community where and a DNA of digital transformation in the public creation in our journey is not a of but a and The metaphor of DNA to this and paper a new a or a that the of knowledge digital transformation in the public sector. than a this DNA through to and diverse from and and we may the of our community's DNA as an between practices – approaches to governance and HRM – and that metaphor of DNA has accompanied our in EGOS as in of these of DNA, knowledge that a more complex of digital transformation in the public editorial to and these a this by adopting a and to beyond the of and as mere we these as of a process aimed at cultivating a sense of and research The community in this process of around in a of structured a of – including and – that provide the for as a of and digital practices, to different forms of knowledge and with a through by and learning, not merely as an but as an for identities within a and while in a of that and This by the introduction of a from of made the networks in the than as a the as a that and of and research and The paper knowledge where five paper and added five to possible or future on a of the This structured around the the – the – and to from to creating bridges contributions that might have the final the process in where in to of and 2024). in with the of the of structures and then these by with from and these by or to their research a that and the not only but also methodological that potential and the of the process a of online structured to and avenues for collaborative a methodological of and of and of and these while the added a of the the approach is not participation and to dynamics, and the process in the context of an EGOS may its the of and digital practices a methodological to the of and these the as an to how of knowledge and community building could more and forms of – both within and The to challenge the of academic and a space of and and and 2023). In doing we broader in the public sector, where digitalization is how knowledge is shared and as digital in public administration or collaborative (Mergel et al., academic conferences knowledge or become living of and – such as collaborative online digital and spaces – we aimed to the of digital for and design reflect an understanding of technology not merely as an of but as a that and shared and 2019). In both and the public sector, digital transformation for a of technological design community building than and learning than mere information that when digital are in and practices, they communities of practice (Edelheim et al., that organizational and In with et al. and and we the as a of – an for how and human-centred forms of digital sustain shared and This with the emerging of digital public value and in innovation not from technology itself but from its capacity to learning, and both in and in the public sector, knowledge and community building represent the for sustainable digital – where technology a means to than our capacity to and the emerged that the of the digital transformation journey in the public sector. The digital era is requiring and approaches to workflows, teamwork, leadership and organizational technologies are not but drivers of change in governance, with deep implications for leadership and the HRM practices, such as and to be crucial for both well-being and work and innovation the potential of while also the from of cases, from to and the of a approach and communities of practice in digital to well-being innovation and in the of organizational in public services on governance, and skills development, effective knowledge management, new communication and a emerged as essential for paper in this special issue be as a in this evolving of knowledge than they represent of DNA that collectively a growing research community around digital transformation in the public this special we sought to the complexity of digital transformation in the public sector by including papers this issue from different the between and Also, papers included in this special issue well represent the DNA we around the theme of digital paper by Todisco et al. in our DNA and and and a new in the public sector, the anticipatory governance and how technology and managerial challenges may be to a public administration to and by The authors, in their paper the governance as a to the technological and managerial challenges in the public also this to how and technology may in the public The that be a approach for public organizations in decision-making processes and a new way of working in to technological et titled the digital future of public and in at the of DNA and and The paper on the of working in public human and dimensions of the to systems and that this adoption are not only related to technical and economic aspects (e.g. but also to of technical shortages and the of and support for a with practical implications that public administration must not only in technical but also in human resources and for the of the et al. in their research public sector innovation processes for of innovation processes that internal and external to in a on digital In this regard, according to our DNA we this paper at the of the and and and In this et al. from the that public sector often private innovation processes, particularly when new solutions such as digital processes, for in the of The authors five the nature of the need for management the of in the benefits of innovation from the for diverse to as than drivers of the process and how the public culture the process to resources than paper by et al. and with in how digital with services in this paper in the DNA and and and since it and to a new of and In more detail, this experiences of digital and its effects on and providing or in that the digital with and digital public while of use and significantly influence and to use and expectation are critical in and particularly for more on digital but not have there are papers in the DNA and well-being and work-life as they both managerial practices, well-being and workplaces in the digital work environment brought by new forms of work this and flexible et al. in the paper titled organizational citizenship and flexible working time from the public implications the and of in the public sector. The paper to how role and task to and employee also the role of flexible working time in these within a work from this paper show that and task are related to while role is the of on but the of task the relationship between and task performance at levels of while the of task on performance is at levels of but as paper “Managing and in the from management by to by et al. the management used and for effective management of public sector In their the authors found that to manage and in the of and managing for in development support and around where work Also, show that a more management approach more effective management by In the research important in managerial to be included in public sector and management development the to on work and to provide support for and development of work the of the to the current public administrations have been to what the new and the possible and work practices – such as work from home or from – have not only structures but have also organizational identities and the relationship between and their (Palumbo, 2020; Todisco et al., 2023; Tomo and Mangia, 2025). This has the of developing anticipatory governance administrations to from to in of and der Wal, 2020; Mergel et al., 2019; Todisco et al., 2024). the and have emerged as critical dimensions of digital transformation in the public sector. and organizational must be to employee well-being and work-life balance while also with broader societal goals such as the and This requires of and the design of digital that technological adoption is not only but also just and et al., 2024; et al., the value of this special issue not only in the academic it but also in the that conferences like EGOS and EGPA as pracademic spaces of creativity, where the DNA of a field is collectively In these knowledge creation is and – innovation with and that the within a This with the for organizational to as a with and our research community at the of theory and to a more and sustainable public sector for the years to",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166330876",
+    "source": "OpenAlex",
+    "title": "EVOLVING PARADIGMS IN BIOMETRIC SECURITY: A COMPREHENSIVE SURVEY OF FACE PRESENTATION ATTACK DETECTION (PAD)",
+    "authors": [],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "International Research Journal of Modernization in Engineering Technology and Science",
+    "url": "https://doi.org/10.56726/irjmets101346",
+    "pdf_url": "https://doi.org/10.56726/irjmets101346",
+    "doi": "10.56726/irjmets101346",
+    "abstract": "Face Presentation Attack Detection (PAD) is the critical countermeasure securing biometric systems against obfuscation and spoofing attempts using artifacts ranging from 2D prints to 3D silicone masks and digital injections.This comprehensive survey critically examines the trajectory of PAD research from 2018 to 2025, delineating the paradigm shift from ad-hoc, texture-based descriptors toward scalable, generalized deep learning architectures.We structurally analyze the dichotomy between Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs), emphasizing the role of pixel-wise supervision and auxiliary signals like remote photoplethysmography (rPPG).Furthermore, we critically assess the recent, groundbreaking integration of large-scale Foundation Models (FMs), Zero-Shot Learning (ZSL) protocols via semantic embedding, and multimodal fusion strategies.These cutting-edge methodologies aim to overcome the persistent scientific bottlenecks in the field: cross-domain generalization, data scarcity, and model interpretability.Ultimately, we identify critical gaps in adversarial robustness and causal learning, proposing avenues for securing the next generation of biometric identity verification.",
+    "topics": [
+      "Foundation Models",
+      "Vision-Language",
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166394535",
+    "source": "OpenAlex",
+    "title": "CRIMINAL ANALYSIS AND PREDICTION SYSTEM USING MERN STACK AND MACHINE LEARNING",
+    "authors": [],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "International Research Journal of Modernization in Engineering Technology and Science",
+    "url": "https://doi.org/10.56726/irjmets101383",
+    "pdf_url": "https://doi.org/10.56726/irjmets101383",
+    "doi": "10.56726/irjmets101383",
+    "abstract": "Criminal identification and investigation are critical functions of modern law enforcement agencies.Traditional methods of maintaining criminal records through paper-based systems are often time-consuming, error-prone, and inefficient, resulting in delays during investigations.The increasing volume of criminal data demands a centralized and intelligent system capable of managing records efficiently and supporting data-driven decisionmaking.This paper presents a Criminal Analysis and Prediction System developed using the MERN Stack (MongoDB, Express.js,React.js, and Node.js) integrated with Python-based Machine Learning techniques.The proposed system provides a centralized platform for managing criminal records, FIR information, police station data, court records, and evidence documents.It enables police officers and authorized authorities to store, retrieve, update, and analyze criminal information through a secure web-based interface.The system incorporates Machine Learning algorithms to analyze historical crime data and generate suspect predictions based on FIR details, crime patterns, location, and criminal history.This predictive capability assists law enforcement agencies in identifying potential suspects and understanding crime trends more efficiently.The implementation of role-based access control, JWT authentication, and encrypted data storage ensures system security and data privacy.Compared to traditional record management systems, the proposed solution offers improved accessibility, faster information retrieval, centralized data management, enhanced security, and intelligent analytical support.The system contributes to the modernization of policing by reducing manual effort, improving investigation efficiency, and supporting proactive crime prevention strategies.Future enhancements may include facial recognition, GIS-based crime mapping, mobile application support, and integration with national criminal databases.",
+    "topics": [
+      "Retrieval",
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166304744",
+    "source": "OpenAlex",
+    "title": "Autonomus Vechicle Simulation System for Intelligent Transporation",
+    "authors": [
+      "Dhanashri V. Bhandare",
+      "Shruti S. Bhise",
+      "Shubham S. Kendre",
+      "Vivek K. Patil",
+      "Abhishek S. Jadhav",
+      "Pooja Sutar"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "International Research Journal on Advanced Engineering Hub (IRJAEH)",
+    "url": "https://doi.org/10.47392/irjaeh.2026.0593",
+    "pdf_url": "https://irjaeh.com/index.php/journal/article/download/1904/1740",
+    "doi": "10.47392/irjaeh.2026.0593",
+    "abstract": "Autonomous vehicles are rapidly reshaping intelligent transportation systems by reducing human intervention, enhancing safety, and improving traffic efficiency. This paper presents the Tesla Autonomous Emergency AI Dashboard: a high-fidelity, single-file autonomous vehicle simulation framework built on CARLA 0.9.11 and rendered in real-time via pygame. The system integrates a multi-modal perception layer comprising a virtual 32-channel LiDAR, RGB front and rear cameras, a semantic segmentation camera, and a forward-facing radar sensor. Deep learning inference using YOLOv8n performs real-time detection of vehicles, pedestrians, and emergency scenarios at 20Hz. Seven purpose-built feature modules—mini-map tracking, data logging, dynamic weather, speed HUD, TTC-based collision prediction, OpenCV lane detection with lane-keep assist, and LiDAR/radar visualisation—are fully merged into a single executable. The dashboard faithfully replicates a professional automotive HUD with a 1400×830 pygame window, displaying four camera tiles, an Explainable AI panel, a sensor status panel, an analog speedometer, throttle/brake/steer bars, a compass, and a five-section status bar with contextual icons. Evaluation across eight weather presets demonstrates 92% daytime and 87% night-time object detection accuracy, sub-200ms response times, 98% collision avoidance success, and 100% emergency vehicle compliance.",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Prediction",
+      "Geospatial AI",
+      "Urban",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" urban"
+  },
+  {
+    "id": "https://openalex.org/W7166290332",
+    "source": "OpenAlex",
+    "title": "Antecedents of intellectual capital in the public sector environment: a literature review",
+    "authors": [
+      "Prince Yeboah Boateng",
+      "Francis Aboagye- Otchere",
+      "Nicholas Asare"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "Future Business Journal",
+    "url": "https://doi.org/10.1186/s43093-026-00903-9",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1186/s43093-026-00903-9.pdf",
+    "doi": "10.1186/s43093-026-00903-9",
+    "abstract": "Abstract Public sector intellectual capital (IC) is vital but continues to be exiguous in the IC literature. This study aims to assess the direction of IC literature for over a decade and a half in the public sector to ascertain prospects for extended research. The literature collection spanned the years 2008–2023. The structured literature review (SLR) adopted an appropriate procedure for searching, screening, and selection of journal articles from Scopus and Google Scholar databases to arrive at a final sample. Findings from the study observed that public sector IC research remains limited and geographically concentrated in Europe and Asia, with a notable absence in Africa. Additionally, existing public sector IC studies focus predominantly on performance measurement and disclosure/reporting/practices issues, with less attention to other issues. Stakeholder, resource-based, and legitimacy theories mostly dominate the field, while alternative theoretical perspectives remain underutilized. Methodologically, quantitative approaches prevail, with limited use of qualitative and mixed methods. However, prior literature has largely relied on content analysis for qualitative research and regression analysis for quantitative research. Nonetheless, the authors discovered that education/research sector is protuberant in comparison with other sectors. This study contributes to the literature by offering a theory-integrated and critically synthesized review of IC antecedents in the public sector, introducing a sectoral (financial and non-financial) classification and identifying underexplored theoretical and methodological pathways.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geographic foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166109197",
+    "source": "OpenAlex",
+    "title": "A data- and knowledge-driven cropland parcel recognition method based on segment anything model (SAM)",
+    "authors": [
+      "Qing Geng",
+      "Kaiqi Ye",
+      "Fan Xu",
+      "Yu Meng",
+      "Miao Huang",
+      "Chunyan Yuan",
+      "Li Li",
+      "Bingbo Gao",
+      "Hu Zhou",
+      "Jie Yang",
+      "Ying Li",
+      "Jianxi Huang",
+      "Xiaochuang Yao"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-28",
+    "venue": "International Journal of Applied Earth Observation and Geoinformation",
+    "url": "https://doi.org/10.1016/j.jag.2026.105442",
+    "pdf_url": "",
+    "doi": "10.1016/j.jag.2026.105442",
+    "abstract": "In modern agricultural practices, information on cropland parcels serves as an indispensable foundation of agricultural production management. However, manual annotation of remote sensing image datasets is time-consuming and labor-intensive. Traditional models tend to focus on pixel-level segmentation while neglecting the fine-grained boundary features of cropland parcels. To address these challenges, this study first utilizes the Segment Anything Model (SAM) to generate cropland parcel label samples based on multi-source remote sensing imagery and the Third National Land Survey (TNLS) data. Morphological processing and texture feature screening are employed to enhance the quality of pseudo-labels. Subsequently, we propose a multi-task intelligent cropland parcel extraction model, Squeeze-and-Excitation Multiple Task Decoder Network (SE-MTDNet). This model adds a Normalized Difference Vegetation Index (NDVI) channel to RGB channels to extract hierarchical features. The atrous spatial pyramid pooling (ASPP) module and channel attention are introduced to aggregate multi-scale contextual information. In the decoder, multi-task joint training is adopted to prevent over-reliance on the single results. Experimental results demonstrate that SE-MTDNet significantly improves both the accuracy and boundary clarity of cropland parcel recognition. In Xi County, SE-MTDNet achieved an overall classification accuracy of 94.25%, an Intersection over Union (IoU) of 88.67%, and an F1-score of 92.76%. Furthermore, the model also outperformed other comparison models in transfer validation conducted in Lishu County. Ablation experiments further confirm that key modules and the NDVI feature contribute significantly to improved cropland parcel segmentation accuracy. Our method provides valuable insights into high-precision and automated cropland parcel recognition.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Agriculture",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
     "id": "10.31224/7438",
     "source": "Crossref",
     "title": "V2V-Enhanced Collision Risk Prediction Beyond the Sensing Horizon Using Prefix-Based Temporal Modeling",
@@ -1717,6 +2144,605 @@
     ],
     "category": "Downstream Task",
     "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "https://openalex.org/W7166126893",
+    "source": "OpenAlex",
+    "title": "Volunteer Sport Tourism: A Comprehensive Literature Review",
+    "authors": [
+      "Renato Abou-Warda",
+      "Peter Kiss",
+      "Mária Fekete‐Farkas",
+      "Zoltán Bujdosó"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Societies",
+    "url": "https://doi.org/10.3390/soc16070204",
+    "pdf_url": "https://www.mdpi.com/2075-4698/16/7/204/pdf?version=1782460107",
+    "doi": "10.3390/soc16070204",
+    "abstract": "This systematic literature review synthesises existing knowledge on volunteer sport tourism—the intersection of volunteering, sport, and tourism—in order to clarify its evolution, theoretical foundations, and practical implications, and to address the fragmentation of the field across disciplines. Following PRISMA 2020 guidelines, peer-reviewed journal articles, books, and doctoral dissertations published in English between January 1974 and December 2025 were retrieved from Web of Science, Scopus, SportDiscus, and Google Scholar, complemented by citation tracking. Studies focused on volunteers travelling to sporting events were included; conference abstracts, editorials, and works addressing only local volunteering or general tourism were excluded. The methodological quality of 32 included studies was appraised narratively by two authors independently against three criteria, with disagreements resolved through discussion. Findings were integrated through a thematic narrative synthesis supported by analytical mapping tables. The review identifies five dominant themes: motivations, volunteer experiences and satisfaction, economic and social impacts, organisational and management perspectives, and destination and legacy dimensions. The synthesis contributes to theoretical development by proposing an integrated tripartite framework that connects volunteer antecedents, event experiences, and legacy outcomes, and offers practical recommendations for event organisers, policymakers, and destination stakeholders. The review was conducted without pre-registration.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166143434",
+    "source": "OpenAlex",
+    "title": "Urban-TreeSeg: A CRUNet-based deep learning framework for urban tree crown segmentation from archived aerial imagery",
+    "authors": [
+      "Fei Tong",
+      "Yun Zhang"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Science of Remote Sensing",
+    "url": "https://doi.org/10.1016/j.srs.2026.100455",
+    "pdf_url": "",
+    "doi": "10.1016/j.srs.2026.100455",
+    "abstract": "Archived remote sensing imagery provides valuable data for assessing long-term biodiversity trends in urban environments. However, accurate delineation of individual tree crowns–a prerequisite for reliable biodiversity assessment–remains challenging due to factors such as overlapping canopies, heterogeneous backgrounds, limited spectral information, and diverse tree crown sizes. In this study, we propose Urban-TreeSeg, a deep learning framework specifically designed for urban tree crown delineation from archived aerial RGB imagery. The framework integrates three key components: (1) a CBAM Residual UNet (CRUNet) architecture for enhanced multiscale feature extraction, (2) a classification branch to improve separation of tree crowns from urban backgrounds, and (3) star-convex polygon representation to better capture irregular crown shapes. Urban-TreeSeg was evaluated in two contrasting urban landscapes: a residential neighborhood and a densely wooded park, achieving F1-scores exceeding 85% and outperforming the widely used Mask R-CNN model by over 4%. We further validate that tree crown delineation in the Fall 2020 imagery can be improved by reusing knowledge learned from Summer 2008 imagery. These results demonstrate the potential of the proposed approach for consistent and robust extraction of urban tree crown information from archived imagery, supporting long-term urban vegetation monitoring and biodiversity assessment.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Urban",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166034979",
+    "source": "OpenAlex",
+    "title": "Turning sound and force into light with AlN:Mn <sup>2+</sup> mechanoluminescence",
+    "authors": [
+      "Justyna Barzowska",
+      "Syed Shabhi Haider",
+      "Teng Zheng",
+      "Andrzej Suchocki",
+      "Philippe F. Smet",
+      "Marcin Runowski",
+      "Nerine J. Cherepy",
+      "Dengfeng Peng",
+      "Sebastian Mahlik"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Science Advances",
+    "url": "https://doi.org/10.1126/sciadv.aed5469",
+    "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.aed5469?download=true",
+    "doi": "10.1126/sciadv.aed5469",
+    "abstract": "The development of multifunctional photo- and mechanoluminescent materials capable of responding to diverse external stimuli, enabling the visualization of mechanical action and acoustic waves, is essential for next-generation sensing and optoelectronic technologies. In this study, we present Mn 2+ -doped aluminum nitride (AlN:Mn 2+ ) as a luminescent material that simultaneously exhibits bright orange photoluminescence, strong and long-lasting persistent luminescence, thermoluminescence, and mechanoluminescence (ML). AlN:Mn 2+ demonstrates multimodal ML behavior under various mechanical stimuli, including friction, impact, and ultrasonic excitation, highlighting its potential for force and sound sensing applications across a wide range of environments. This is crucial for next-generation energy transformation, enabling the conversion of heat, force, and sound into light. The integration of persistent, thermal, mechanical, and acoustic luminescence within a single, robust, and chemically stable material makes AlN:Mn 2+ a promising candidate for remote, adaptive optomechanical, and photoacoustic applications in biomedical diagnostics, structural health monitoring, anticounterfeiting, remote sensing, and innovative electronics.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7166021479",
+    "source": "OpenAlex",
+    "title": "TriAttnNet based deep learning model for automated cotton pest detection and disease classification",
+    "authors": [
+      "Mohan Ajmeera",
+      "P. Chiranjeevi",
+      "A Krishna Mohan"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-58795-2",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-58795-2_reference.pdf",
+    "doi": "10.1038/s41598-026-58795-2",
+    "abstract": "This paper presents a deep learning model to detect cotton plant pests and classify diseases, which must overcome limited datasets, class imbalance, and feature redundancy. At the preprocessing phase, the Gaussian blur filtering and Contrast Limited Adaptive Histogram Equalization (CLAHE) are used to sharpen images by improving their clarity and contrast. To increase and diversify the data, Spa-GAN-based data augmentation is used to produce realistic synthetic samples. To obtain an accurate Region of Interest (RoI), an Attention-Guided Multi-Scale Residual U-Net (AGMS-U-Net) is considered to segment local and global structural information. The proposed framework makes three major contributions: (i) a new attention-based feature extractor, TriAttnNet, that incorporates spatial, channel, and contextual attention to represent diseases on a fine-grained level (ii) a new optimization strategy, Hybrid Mongoose Ray Chaotic Optimization (HMRCO), which includes chaotic strategies to better tune the parameters and explore the feature space and (iii) classification layer with focal loss for final decision. Experimental analyses prove that the suggested method is much more effective than the current state-of-the-art models, providing a powerful and understandable solution to precision agriculture and sustainable cotton crop health monitoring. Experimental results show that TriAttnNet achieves 98.66% accuracy, 98.71% recall, and 98.81% F1-score, which is better than the state-of-the-art algorithms, such as EfficientNetB1-CBAM (96.38%) and BERT-ResNet-PSO (95.69%). The proposed system is computationally feasible and interpretable, and it is interpretable to provide a practical solution to precision agriculture and sustainable monitoring of the health of cotton crops.",
+    "topics": [
+      "Segmentation",
+      "Geospatial AI",
+      "Agriculture",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7166069042",
+    "source": "OpenAlex",
+    "title": "Resolving Debris Flow Dynamics Through Local Seismic Monitoring: Insights into Early Detection, Volume Estimation, and Triggering Mechanisms",
+    "authors": [
+      "Dario Delle Donne",
+      "Domenico Doronzo",
+      "Federico Di Traglia",
+      "Vincenzo Convertito",
+      "Lucia Nardone",
+      "Eliana Bellucci Sessa",
+      "Antonio Carandente",
+      "Mattia de’ Michieli Vitturi",
+      "Sandro de Vita",
+      "Rosa Nappi",
+      "Rosella Nave",
+      "Massimo Orazi",
+      "Fabio Sansivero",
+      "Gaia Zanella",
+      "Mauro Antonio Di Vito"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "",
+    "url": "https://doi.org/10.22541/essoar.15005270/v1",
+    "pdf_url": "https://essopenarchive.org/doi/pdf/10.22541/essoar.15005270/v1",
+    "doi": "10.22541/essoar.15005270/v1",
+    "abstract": "Debris flows are rapid natural phenomena capable of severely impacting both the environment and urban infrastructure.Here we show how seismic data from a local seismic network can be used to automatically identify debris flow signals from raw records in order to investigate flow dynamics.The deadly 26 November 2022 event in the Casamicciola area of Ischia (Italy) provides a rare case study in which seismic recordings are complemented by detailed debris flow volume constraints derived from field observations and remote sensing data.We present seismic evidence of three distinct, temporally separated flow surges, all originating within the same catchment and collectively contributing to the emplacement of a total deposit volume of approximately 40,000-50,000 m³.We track the propagation of these debris flow surges over distances of 1.2-1.7 km within 47-107 s, yielding high average front velocities of 15-21 m s⁻¹ and peak velocities of up to ~30 m s⁻¹ during the initial stages of propagation.From these observations, we estimated effective flow thicknesses of ~3.9 m, average discharge rates of ~200 m³/s, and peak discharge rates of ~370 m³/s.Calculated Froude numbers of ~2.6 indicate a supercritical flow conditions, consistent with rapid debris flow dynamics.Assuming that seismic waves are generated according to a bed-load impact model, the recorded seismic power spectral densities are consistent with boulder dimensions between 0.8 and 1.5 m, in agreement with the size of the largest blocks mapped along the flow path.By comparing seismic observations and field-based volume estimates from the two most recent and destructive debris flows that occurred within the same catchment in the last 20 years, we demonstrate that the proportionality coefficient between seismic energy and debris flow volume is remarkably stable across both events, with an estimated value of approximately 3.1 J m⁻³.This relationship may provide a basis for rapid estimates of mobilized volumes directly from seismic data, which could be particularly valuable for near-real-time applications aimed at hazard assessment and civil protection purposes.We also show that the debris flow was preceded by approximately five hours of persistent and progressively intensifying seismic tremor, likely 1 associated with enhanced sediment transport processes.This observation provides new insights into the initiation mechanisms of debris flows and suggests that seismic tremor may represent a valuable precursor signal for future debris flow early-warning systems.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"contrastive learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166019055",
+    "source": "OpenAlex",
+    "title": "RESOURCE-EFFICIENT, ROBUST, AND ADAPTIVE OBJECT DETECTION IN UAV IMAGERY",
+    "authors": [
+      "В. В. Москаленко",
+      "А. С. Москаленко",
+      "Y. V. Moskalenko",
+      "A. V. Vatsenko"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Radio Electronics Computer Science Control",
+    "url": "https://doi.org/10.15588/1607-3274-2026-2-8",
+    "pdf_url": "https://ric.zp.edu.ua/article/download/364005/349575",
+    "doi": "10.15588/1607-3274-2026-2-8",
+    "abstract": "Context. Ensuring robust, adaptable, and compute-efficient object detection in UAV aerial imagery under distribution shifts, structured and unstructured noise, and strict onboard latency/energy budgets is an urgent scientific task. A compute-aware detector and a complementary training/adaptation method that integrate a dynamic transformer backbone with gate units, parameter-efficient adapters, and resource-bounded test-time adaptation to sustain accuracy under realistic perturbations and domain shift.Objective. Development of a model and method for object detection in aerial imagery that jointly provide robustness and adaptability while meeting embedded compute and real-time constraints typical of onboard UAV systems.Methods. The approach combines dynamic neural networks with Gumbel-Softmax gate units over a ViT-T/16 backbone, a Simple FPN and a RetinaNet-like one-stage head, budget-aware losses that target a desired dynamic compression rate, structured procedural noise (Perlin, Gabor, Worley) for robustness training, LeakyReLU6 with a straight-through estimator for stable gradients, and test-time adaptation via objectness-weighted marginal-entropy minimization on lightweight adapters.Results. On VEDAI, a gated ViT-T/16 detector reaches mAP@0.5 of 0.77 at ~5.0 GFLOPs and 17.8 FPS, rising to 0.79 with adapters and TTA, whereas a static counterpart attains 0.74 at 9.6 GFLOPs and 10.6 FPS; pretraining with procedural noise lifts accuracy further to 0.80 (gated) and 0.82 (gated+TTA) with minimal compute overhead. Under domain shift (trained on VisDrone, evaluated on VEDAI), dynamic gating and TTA improve mAP from 0.54 to 0.60 without noise pretraining and up to 0.66 with it, sustaining ~5.4–5.6 GFLOPs and ~16–17 FPS within an 8–10 GFLOPs budget on 4×A76 CPUs.Conclusions. The proposed object detection model and method – combining dynamic gating, perturbation-aware training, andbudgeted test-time adaptation – reduce average compute while increasing robustness and adaptability, yielding a superior accuracythroughput trade-off for UAV onboard deployment under real-world disturbances and distribution shifts.",
+    "topics": [
+      "Foundation Models",
+      "Detection",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166104368",
+    "source": "OpenAlex",
+    "title": "Quantifying and pricing crop yield risk under climate change: a hierarchical model forecasting perspective",
+    "authors": [
+      "Ning Zhang",
+      "Jie Yang",
+      "Zhuoqun Xie",
+      "Daning Bi"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Annals of Actuarial Science",
+    "url": "https://doi.org/10.1017/s1748499526100372",
+    "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/0BCDF9BE23DD3240C6FBECADFAC6AD72/S1748499526100372a.pdf/div-class-title-quantifying-and-pricing-crop-yield-risk-under-climate-change-a-hierarchical-model-forecasting-perspective-div.pdf",
+    "doi": "10.1017/s1748499526100372",
+    "abstract": "Abstract Accurate and internally coherent crop-yield forecasts are important for agricultural risk management, crop-insurance ratemaking, and regional risk assessment under climate variability. However, crop yields are influenced by high-dimensional and strongly correlated weather conditions, while forecasts produced at different spatial levels often violate aggregation constraints. Existing studies focus on yield prediction within individual regions and pay limited attention to weather-informed forecasting, hierarchical coherence, and insurance-oriented risk measurement. This paper develops an integrated framework for hierarchical crop-yield forecasting and risk assessment by combining dimensionality reduction for high-dimensional weather variables, probabilistic forecasting, and forecast reconciliation. Using county- and state-level spring and winter wheat yields in Montana from 1982 to 2022, we compare alternative base forecasting models and reconciliation methods under scenarios with and without weather information. Forecast performance is evaluated using point and probabilistic scoring rules, and the reconciled predictive distributions are used to construct scenario-based measures of downside yield risk. The results show that incorporating weather information and hierarchical reconciliation improves the quality and coherence of hierarchical yield forecasts. The resulting probabilistic forecasts provide a basis for loss-rate estimation, cross-county risk comparison, and spatial risk mapping and also support crop-insurance ratemaking under a retain–cede game between private insurers and the government.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Agriculture"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166156167",
+    "source": "OpenAlex",
+    "title": "Petrifying (tufa forming) springs in Cyprus: first record and ecological characterization",
+    "authors": [
+      "Athina Papatheodoulou",
+      "Daniel Spitale",
+      "Constantinos Kounnamas",
+      "Maria Sarika"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Vegetation Ecology and Diversity",
+    "url": "https://doi.org/10.3897/ved.195340",
+    "pdf_url": "https://ved.arphahub.com/article/195340/download/pdf/",
+    "doi": "10.3897/ved.195340",
+    "abstract": "This study provides the first documentation of petrifying (tufa-forming) springs in Cyprus and describes their floristic composition and habitat classification in detail. Field surveys conducted in 2024–2025 identified six active tufa-forming sites across five catchments in the southwestern part of Cyprus. Each locality exhibited alkaline, calcium-rich waters and ongoing precipitation of calcium carbonate. Vegetation analysis revealed consistent assignment of the recorded plant assemblages to the association Eucladio–Adiantetum (alliance Adiantion , class Adiantetea ), dominated by the diagnostic species Eucladium verticillatum and Adiantum capillus-veneris . Based on indicator species and structural attributes, this vegetation type corresponds to EUNIS habitat H3.41 (U3D) “Mediterranean wet inland cliffs” and meets the criteria for the description of the EU priority habitat type 7220* “Petrifying springs with tufa formation ( Cratoneurion )”. This represents the first evidence of this rare groundwater-dependent habitat on the island and provides baseline data for its biogeographic characterization and conservation assessment.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "https://openalex.org/W7166145895",
+    "source": "OpenAlex",
+    "title": "Passive Acoustic Monitoring of Leaks in Underwater Wells and Pipelines",
+    "authors": [
+      "Wegner Chukwuemeka Dulo"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Engineering and Technology Journal",
+    "url": "https://doi.org/10.47191/etj/v11i06.37",
+    "pdf_url": "https://everant.org/index.php/etj/article/download/2930/2101",
+    "doi": "10.47191/etj/v11i06.37",
+    "abstract": "Subsea wells and pipelines are critical components of offshore energy systems, water management networks, and industrial fluid transport infrastructure. Undetected leaks carry severe consequences, including environmental contamination, significant financial loss, and safety hazards for personnel and communities. Traditional inspection approaches, including diver-based surveys and active sonar scanning, are expensive, intermittent, and often impractical in deepwater environments. Passive Acoustic Monitoring (PAM) offers a compelling non-intrusive alternative: rather than emitting signals and analysing echoes, PAM simply listens, capturing the acoustic fingerprints naturally produced by escaping fluid, bubble formation, turbulence, and structural vibration (Zimmer, 2011; Van Parijs et al., 2009). Modern PAM systems deploy hydrophones and distributed acoustic sensing (DAS) networks to capture signals across wide frequency ranges (Ferguson et al., 2010; He and Liu, 2021). These raw signals are processed through signal processing pipelines, pattern recognition algorithms, and machine learning tools to separate meaningful leak signatures from background noise whether from ship traffic, marine life, or ocean currents (Siddique et al., 2023; Gemeinhardt and Sharma, 2023). Time-frequency analysis, spectral density estimation, and automated feature extraction have all improved how reliably these systems identify and classify leak events (Ghazali et al., 2012; Ahadi and Bakhtiar, 2010). When PAM is integrated with autonomous underwater vehicles or fixed seabed sensor arrays, it becomes capable of covering large, complex pipeline networks in real time (Premus et al., 2022; Eleftherakis and Vicen-Bueno, 2020). Challenges remain: false positives are still a persistent problem, sensor placement requires careful planning, and consistent performance in noisy or variable environments is not always straightforward (Van Walree, 2013; Stojanovic and Preisig, 2009). Active research continues on multi-modal sensing, adaptive signal processing, and AI-driven localization to push detection sensitivity and spatial accuracy further. Taken together, PAM holds genuine promise for transforming subsea asset monitoring, enabling early leak identification, reducing environmental damage, and improving operational efficiency across both mature offshore markets and rapidly expanding developing economies.",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "https://openalex.org/W7166018466",
+    "source": "OpenAlex",
+    "title": "PEDS: Privately Encoded Deep Synthesis to Mitigate Membership Inference Attacks",
+    "authors": [
+      "Han Wang",
+      "Seonghyun Kim",
+      "Alfonso Iacovazzi",
+      "Shahid Raza"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "International Journal of Information Security",
+    "url": "https://doi.org/10.1007/s10207-026-01289-z",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10207-026-01289-z.pdf",
+    "doi": "10.1007/s10207-026-01289-z",
+    "abstract": "Abstract IoT devices are widely deployed in critical infrastructure, often generating sensitive data that is processed by Machine Learning (ML) techniques. Among other applications, ML is leveraged in intrusion detection systems (IDSs) to detect cyberattacks. However, ML-based IDSs are vulnerable to adversarial attacks such as the Membership Inference Attack (MIA), in which an attacker attempts to infer whether a specific data point was present in the training dataset. This can be exploited by attackers to gain insights into the normal behavior of IoT devices and launch stealth attacks. While MIA has been widely demonstrated in image recognition, its effectiveness against ML-based IDS for IoT is poorly understood. In this work, we investigate the effectiveness of MIA against ML-based IDS. We propose a novel differential-private approach called PEDS, which leverages a sparse autoencoder and restricted Boltzmann machine to protect IDS training data against MIAs by synthesizing data points. We empirically evaluate the effectiveness of PEDS on real-world IoT datasets and show that it can substantially hinder the accuracy of MIAs while maintaining high IDS detection performance and enhancing privacy. We compare PEDS with six state-of-the-art synthesizers, including autoencoder-, kernel-, diffusion-model-, and GAN-based methods. The empirical results show that PEDS outperforms these state-of-the-art methods on five popular IoT/IDS datasets, indicating its potential to enhance security and privacy in ML-based IDSs.",
+    "topics": [
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" flood"
+  },
+  {
+    "id": "https://openalex.org/W7166221919",
+    "source": "OpenAlex",
+    "title": "Opto-chromogenesis: Projection mapping for controlling growth, photosynthesis, and chromatic behavior of photosynthetically living organisms",
+    "authors": [
+      "Shahriar Akbari",
+      "Martin Tamke",
+      "Michael Kühl",
+      "Sing Teng Chua",
+      "Mette Ramsgaard Thomsen"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Research Directions Biotechnology Design",
+    "url": "https://doi.org/10.1017/s2977905726100274",
+    "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/728BD052DBCC1437A333B92029F9F779/S2977905726100274a.pdf/div-class-title-opto-chromogenesis-projection-mapping-for-controlling-growth-photosynthesis-and-chromatic-behavior-of-photosynthetically-living-organisms-div.pdf",
+    "doi": "10.1017/s2977905726100274",
+    "abstract": "Abstract We present Opto-chromogenesis, a projection-mapping framework for spatiotemporal design of growth, photosynthesis, and pigmentation in bioprinted photosynthetic living materials. Extrusion-printed hydrogels containing the cyanobacterium Fremyella diplosiphon are illuminated with calibrated patterns of light that allow us to design and regulate macroscale biomass distribution and the Complementary Chromatic Acclimation of the bacteria. The platform combines projector-based, spectrally tunable light delivery with 3Dscan guided geometric registration to impose defined photon irradiance on complex constructs. Experiments show that self-shading drives pigment shifts, lateral light intensity gradients produce differentiated growth, and targeted UV laser exposure can suppress growth, and projection mapping provides a novel method for modulating growth and color change. By outlining projector selection criteria, analysis of lab-scale growth studies and non-invasive monitoring techniques that demonstrate parallel screening of illumination conditions, the paper establishes a basis for creating a photosynthetic architectural material that can adapt its color to changing lighting condition and capture CO 2 .",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" urban"
+  },
+  {
+    "id": "https://openalex.org/W7166137742",
+    "source": "OpenAlex",
+    "title": "Optimizing YOLOv12-L for Imbalanced Satellite Vehicle Detection via Physics-Informed Data Synthesis and Adaptive Class-Aware Loss Weighting",
+    "authors": [
+      "Ola Farid",
+      "Mohammed Melhi",
+      "A.A. Somaie"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Journal of Smart Algorithms and Applications (JSAA)",
+    "url": "https://doi.org/10.66279/mn2yev65",
+    "pdf_url": "https://pub.scientificirg.com/index.php/JSAA/article/download/443/66",
+    "doi": "10.66279/mn2yev65",
+    "abstract": "Vehicle detection in satellite imagery underpins applications in traffic monitoring, urban planning, and disaster response, yet two obstacles routinely degrade detector performance: the small pixel footprint of individual vehicles and severe imbalance between common and rare vehicle categories. This study presents a vehicle detection framework built on the YOLOv12-L architecture and evaluated on the Vehicles in the Middle East (VME) dataset, in which cars outnumber buses and trucks by a wide margin. The framework combines a physics-informed synthetic data generator, which places procedurally rendered bus and truck silhouettes onto realistic backgrounds and enhances them with adaptive contrast and sensor-noise simulation, with a class-aware loss configuration that increases the classification loss weight and applies label smoothing for minority categories. Training on 4,666 images (2,828 original tiles plus 1,838 synthetic tiles contributing 2,476 bus and 2,076 truck instances) for 100 epochs produced a validation mean Average Precision at an IoU threshold of 0.5 (mAP50) of 0.687 and mAP50:95 of 0.391, with per-class mAP50:95 values of 0.476 for cars, 0.374 for buses, and 0.323 for trucks. On a held-out test split, mAP50 reached 0.634 and mAP50:95 reached 0.361. Increasing the inference resolution from 640 to 736 pixels raised validation mAP50:95 to 0.398 without retraining. Test-Time Augmentation at the 1.17× scale further improves overall mAP50 to 0.693. These results confirm that targeted data synthesis combined with class-aware loss weighting yields consistent gains for underrepresented vehicle categories in geospatial imagery.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Disaster",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7166061008",
+    "source": "OpenAlex",
+    "title": "Multi-graph spatial–temporal graph convolutional networks for predicting the spread of Dendroctonus valens in China",
+    "authors": [
+      "Hongwei Zhou",
+      "Yongzheng Li",
+      "Jun Yang",
+      "He Hu",
+      "Ce Wang",
+      "H Liu",
+      "Yun Lin"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Journal of Forestry Research",
+    "url": "https://doi.org/10.1007/s11676-026-02097-w",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11676-026-02097-w.pdf",
+    "doi": "10.1007/s11676-026-02097-w",
+    "abstract": "The red turpentine beetle (Dendroctonus valens) is the most widespread pine pest in North America. Since its invasion into China in 1998, it has killed over 10 million pine trees, causing severe ecological and economic losses, and has been designated as a high-priority managed invasive species. Nevertheless, characterizing its spatiotemporal spread remains challenging, as fundamental processes of growth, dispersal, and establishment are governed by nonlinear responses to environmental conditions. To enable precise prevention and control, this study first analyzes the historical spatiotemporal patterns of D. valens in China and identifies the key factors influencing its spread. Furthermore, we propose a spatiotemporal graph convolutional network-based risk prediction framework (MG-STGCN) for D. valens, integrating multi-dimensional graph structures with a spatial attention structure (SAS) and a gated recurrent unit (GRU) to generate county-level risk predictions across China. The predicted risk distribution exhibits a clear spatial pattern concentrated east of the Hu Huanyong Line, forming a continuous belt across Northeast and North China. High-risk areas are primarily clustered in southern Northeast China and adjacent regions of North China, while only limited and scattered risk signals appear in western transitional zones. Compared with the current distribution, the overall high-risk clusters remain relatively stable, but a slight northeastward shift can be observed, accompanied by emerging signals of westward penetration. The proposed MG-STGCN achieves the best performance among all compared models, with a recall of 89.57%, precision of 90.68%, and an F1-score of 90.12%. The improvements are mainly attributed to the complementary effects of the temporal modeling module and the spatial attention mechanism, which enhance the detection of outbreak signals while improving the discrimination of non-outbreak regions under highly imbalanced conditions. Attention-based analysis reveals that pest spread is dominated by local spatial continuity, with limited long-distance interactions. Different graph structures capture complementary transmission mechanisms, where spatial and wind-driven graphs enhance sensitivity to spread, while host-related connectivity improves specificity by constraining ecologically feasible pathways, resulting in a balanced predictive performance. This framework provides a reliable tool for large-scale pest risk assessment, and supporting more targeted surveillance and management strategies.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" \"representation learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166091513",
+    "source": "OpenAlex",
+    "title": "Model Construction and Retrospective Validation of Large Earthquake Prediction",
+    "authors": [
+      "Zhiyong Zhu"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "",
+    "url": "https://doi.org/10.31223/x5dj3s",
+    "pdf_url": "https://eartharxiv.org/repository/object/13687/download/24036/",
+    "doi": "10.31223/x5dj3s",
+    "abstract": "Based on the hypothesis that gravity-driven crustal displacement generates earthquakes and facilitates crustal material migration, and following the general law that the velocity of generalized flow in a steady-state system is proportional to the driving force and inversely proportional to the system’s internal resistance, a relationship between the frequency of large earthquakes and crustal structure is constructed. And according to Noether’s theorems, the connection between large earthquake frequency and crustal energy state is elucidated. The occurrence frequency of large earthquake is therefore proposed to serve as a quantitative measure of the variation of crustal structure and energy state. By analyzing deviations of cumulative number of large earthquake from linearity dependence on time, a method for calculation of occurrence probability for large earthquakes is established, and a \"τ\" rule method that accounts for both seismic quiescent and active periods for predicting the timing of large earthquakes is also proposed. Retrospective studies show that the time prediction accuracy of both methods is significantly improved compared to predictions based solely on apparent periods. By performing earthquake probability calculations regionally and comprehensively analyzing the results by considering the spatial dependencies between regions, an attempt is made to assess the timing and location of future large earthquakes in certain areas of central mainland China.",
+    "topics": [
+      "Prediction",
+      "Geospatial AI",
+      "Urban",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"Earth observation foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W95587589",
+    "source": "OpenAlex",
+    "title": "Interactive visualisation tools for supporting taxonomists working practice.",
+    "authors": [
+      "Alan Cannon"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Research Output (Edinburgh Napier University)",
+    "url": "https://doi.org/10.17869/enu.246579",
+    "pdf_url": "https://napier-surface.worktribe.com/246579/1/Cannon.pdf",
+    "doi": "10.17869/enu.246579",
+    "abstract": "The necessity for scientists and others to use consistent terminology has recently been regarded as fundamental to advancing scientific research, particularly where data from disparate sources must be shared, compared, or integrated. One area where there are significant difficulties with the quality of collected data is the field of taxonomic description. Taxonomic description lies at the heart of the classification of organisms and the communication of ideas about biodiversity. As part of their working practice, taxonomists need to gather descriptive data about a number of specimens on a consistent basis for individual projects. Collecting semantically well-defined structured data could improve the clarity and comparability of such data. However, no tools currently exist to allow taxonomists to do so within their working practice. Ontologies are increasingly used to describe and define complex domain data. As part of related research, an ontology of descriptive terminology for controlling the storage and use of flowering plant description data was developed. This work has applied and extended model-based user interface development environments to utilise such an ontology for the automatic generation of appropriate data entry interfaces that support semantically well-defined and structured descriptive data. The approach taken maps the ontology to a system domain model, which a taxonomist can then specialise using their domain expertise for their data entry needs, as required for individual projects. Based on this specialised domain knowledge, the system automatically generates appropriate data entry interfaces that capture data consistent with the original ontology. Compared with traditional model-based automatic user interface development environments, this approach also has the potential to reduce labour requirements for expert developers. The approach has also been successfully tested to generate data entry interfaces based on an XML schema for the exchange of biodiversity datasets.",
+    "topics": [
+      "Geospatial AI",
+      "Ecology",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" visual question answering"
+  },
+  {
+    "id": "https://openalex.org/W7166078180",
+    "source": "OpenAlex",
+    "title": "Generalized GNSS spoofing detection in unseen scenarios using physics-constrained neural networks with code-carrier consistency",
+    "authors": [
+      "Yili Song",
+      "Wei Xiao",
+      "Xiaozhou Ye",
+      "Xin Yang",
+      "W Liu",
+      "Guangfu Sun"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Satellite Navigation",
+    "url": "https://doi.org/10.1186/s43020-026-00199-8",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1186/s43020-026-00199-8.pdf",
+    "doi": "10.1186/s43020-026-00199-8",
+    "abstract": "Abstract Global Navigation Satellite System (GNSS) spoofing attacks pose significant threats to economic and public security, necessitating rapid and accurate detection methods. While machine learning-based approaches have surpassed traditional rule-based statistical methods by leveraging multi-domain information fusion, they primarily learn data distributions rather than intrinsic signal invariants, resulting in degraded performance under out-of-distribution scenarios.To address this limitation this paper proposes a Code-Carrier Consistency Physics-Constrained Neural Networks (CCC-PCNNs) for spoofing detection. The proposed method exploits the inherent code-carrier consistency of GNSS signals by modeling their first-order differential relationship as a physical constraint. This constraint is incorporated into the loss function of a one-dimensional convolutional neural network (1D-CNN), enabling the model to adhere to underlying physical laws while optimizing detection performance. Unlike conventional approaches that rely solely on feature engineering, the proposed framework embeds domain knowledge directly into the learning process, thereby enhancing generalization and robustness. Experimental results on three widely used open-source datasets, Texas Spoofing Test Battery (TEXBAT), Oak Ridge Spoofing and Interference Test Battery (OAKBAT), and Finnish Geospatial Research Institute Spoofing Repository (FGI-SpoofRepo), demonstrate the proposed algorithm achieves an average detection accuracy exceeding 98.00% under within-scenario supervised evaluation. With the incorporation of only a single additional feature beyond the baseline code-carrier phases, the proposed algorithm achieves an average improvement of 10.42% over the baseline 1D-CNN across all three datasets. More significantly, systematic evaluation using the Accuracy Retention Rate (ARR) metric shows strong cross-scenario and cross-dataset generazation.Across 10 unseen scenarios from the TEXBAT and OAKBAT datasets, the CCC-PCNNs model maintains ARR values consistently above 92.70%, achieving improvements of 23.49%, 18.40%, 9.39%, 28.82%, 24.19%, 26.99% and 46.16% over the 1D-CNN, Long Short-Term Memory (LSTM), Transformer, Support Vector Machine (SVM), Residual Network (Resnet), Graph Attention Networks (GAT) and CCC-Detector models, substantially outperforming traditional machine learning approaches. This research innovatively integrates physical mechanisms with data-driven methods to overcome generalization challenges arising from the variability and unpredictability of spoofing attacks in adversarial environments, strengthening the security of critical infrastructure and core systems.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166171891",
+    "source": "OpenAlex",
+    "title": "Gamma-Ray Surveys",
+    "authors": [
+      "rew Norton"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "",
+    "url": "https://doi.org/10.1201/9781003768715-20",
+    "pdf_url": "",
+    "doi": "10.1201/9781003768715-20",
+    "abstract": "This chapter considers the highest energy region of the electromagnetic spectrum, namely the gamma-ray regime. For much of the gamma-ray photon energy range, observations must be carried out above the Earth’s atmosphere, and early satellite missions including the SAS-2 and COS-B satellites are described along with their limited all-sky catalogues. The successful Soviet-French GRANAT mission discovered a few hundred gamma-ray bursts (GRBs) using the PHEBUS instrument, while its SIGMA telescope mapped 25% of the sky. The NASA Compton Gamma-Ray Observatory (CGRO) mission included four gamma-ray detectors: OSSE, COMPTEL, EGRET, and BATSE, each of which produced source catalogues, including around 2,700 GRBs detected isotopically across the sky. The long-running Konus-Wind experiment and the Swift satellite continue to detect hundreds of GRBs every year, with catalogues now numbering in the thousands of detections. Finally, in terms of satellite observatories, the INTEGRAL and Fermi missions have produced extensive all-sky maps of gamma-ray sources. At the highest gamma-ray energies of order hundreds of GeV, ground-based imaging atmospheric Čerenkov telescopes may be used to detect the brief flashes of Čerenkov radiation produced when high-energy gamma rays interact with the Earth’s upper atmosphere. Telescopes including Whipple, CAT, CANGAROO, HEGRA, H.E.S.S., MAGIC, VERITAS, and the forthcoming CTA are each described. Boxes about gamma-ray bursts and soft gamma-ray repeaters explain some of the underlying astrophysics.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "https://openalex.org/W7166164150",
+    "source": "OpenAlex",
+    "title": "FDCNet: Frequency-Aware and Dynamic Curve Network for Adversarially Robust Infrared and Visible Image Fusion",
+    "authors": [
+      "Pengcheng Gao",
+      "Shengyue Huang"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Research Square",
+    "url": "https://doi.org/10.21203/rs.3.rs-10044577/v1",
+    "pdf_url": "https://www.researchsquare.com/article/rs-10044577/latest.pdf",
+    "doi": "10.21203/rs.3.rs-10044577/v1",
+    "abstract": "",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"large multimodal model\" \"remote sensing\""
+  },
+  {
+    "id": "https://openalex.org/W7166157074",
+    "source": "OpenAlex",
+    "title": "Energy Espionage 5.0: Corporate Intelligence, Critical Metals, and Artificial Intelligence",
+    "authors": [
+      "TUĞBA ÇAKIROĞLU"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Journal of Defence and Security Industries Strategy and Technology",
+    "url": "https://doi.org/10.65834/jdsi.12.49",
+    "pdf_url": "https://jdsi.org/defence-security-ind/article/download/49/19",
+    "doi": "10.65834/jdsi.12.49",
+    "abstract": "The strategic significance of critical minerals in the global energy transition has intensified, transforming competition among states and corporations into a geopolitical security challenge. This study examines intelligence practices and industrial espionage strategies targeting critical mineral resources. It analyses how lithium, cobalt, nickel, and rare earth elements influence national security agendas and supply-chain protection policies, focusing on cyber-espionage, insider information leakage, and covert data acquisition methods. The paper evaluates the use of satellites, high-resolution drones, AI-driven mineral exploration systems, and remote-sensing technologies for resource detection and production monitoring. It further explores the capacity of multinational mining firms to shape energy diplomacy and public policy, positioning them as strategic non-state actors. Additionally, the research investigates open-source intelligence systems, AI-based commercial data platforms, and competitive intelligence tools as mechanisms for gaining informational advantage in the energy sector. Findings indicate that the convergence of digital surveillance technologies and geoeconomic rivalry has created a new security architecture, where artificial intelligence emerges as a decisive force in mineral geopolitics.",
+    "topics": [
+      "Remote Sensing",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166196118",
+    "source": "OpenAlex",
+    "title": "Climate change and oil palm: impacts and adaptation strategies for resilient production",
+    "authors": [
+      "K. Ramachandrudu",
+      "K.Harsha Vardhan",
+      "R. P. Premalatha",
+      "A. R. N. S. Subbanna"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Frontiers in Climate",
+    "url": "https://doi.org/10.3389/fclim.2026.1862586",
+    "pdf_url": "https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2026.1862586/pdf",
+    "doi": "10.3389/fclim.2026.1862586",
+    "abstract": "Oil palm is the world’s most productive oil-bearing crop, yet its sustainability is increasingly threatened by climate change. Rising temperatures, irregular rainfall, higher atmospheric CO₂ and extreme weather events affect oil palm growth, productivity and ecosystem stability. Temperatures above the optimal range of 24 °C–32 °C reduce photosynthesis. They also disturb reproductive development and lower fresh fruit bunch yield. Drought and variable rainfall further reduce productivity by limiting carbon assimilation and inflorescence differentiation. Climate change also increases pest and disease pressure. This intensifies both biotic and abiotic stresses. Several adaptation strategies are being explored in genetic, agronomic and technological fields. Genomic tools such as marker-assisted selection and genomic selection help develop stress-tolerant genotypes more quickly. Improved agronomic practices, including better soil management, efficient irrigation, cropping system approaches and integrated pest management, improve system resilience. Digital agricultural technologies also support adaptation. These include remote sensing, UAVs, IoT-based systems, and artificial intelligence. They enable real-time monitoring, early stress detection and efficient resource management. A multidisciplinary and climate-smart approach will help maintain productivity, resilience and sustainability in oil palm systems under future climate conditions.",
+    "topics": [
+      "Remote Sensing",
+      "Agriculture",
+      "Ecology"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166163174",
+    "source": "OpenAlex",
+    "title": "Automated landslide detection in SAR wrapped interferograms using a geomorphology-constrained YOLO CNN",
+    "authors": [
+      "Alessandro Mondini",
+      "Alessandro Simoni",
+      "Fabio Bovenga",
+      "Alessandro Mercurio",
+      "Cristina Reyes‐Carmona",
+      "Boyun Yu",
+      "Federico Agliardi"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "",
+    "url": "https://doi.org/10.31223/x51b7t",
+    "pdf_url": "https://eartharxiv.org/repository/object/13695/download/24050/",
+    "doi": "10.31223/x51b7t",
+    "abstract": "Slow-moving landslides pose significant hazards in mountain environments, requiring improved detection and monitoring capabilities. Traditional mapping is accurate but time-consuming, while multitemporal InSAR approaches are limited by data complexity and velocity constraints. Wrapped dual-pass DInSAR interferograms offer an alternative by preserving deformation signals without phase unwrapping, enabling detection across a wide range of movement rates. We present a deep learning framework for the automated detection and classification of active slow landslides in Sentinel-1 wrapped SAR interferograms. The model uses a YOLO convolutional neural network ingesting wrapped phase, an InSAR reliability index, and a terrain morphometric attribute layer. We trained, validated, and tested the network on 2243 labelled DInSAR wrapped phase signals from expert geomorphological interpretation over a 1200 km² sector of the Northern Apennines (Italy), using interferograms from ascending and descending orbits generated with multiple temporal baselines between 6 and 30 days. The network outputs bounding boxes with movement classification, achieving a mean Average Precision of 0.88 and an F1 score of 0.75. It successfully identifies deformation signals across multiple spatial scales, also in interferograms with low signal-to-noise ratio. Our results demonstrate the potential of wrapped DInSAR data combined with deep learning for efficient regional-scale landslide detection and inventory updating.",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166068869",
+    "source": "OpenAlex",
+    "title": "AdriaVeg: an integrated vegetation database for ecological monitoring and conservation along the central Adriatic coast (Italy)",
+    "authors": [
+      "Maria Carla de Francesco",
+      "María Laura Carranza",
+      "Micaela del Valle Rasino",
+      "Marco Varricchione",
+      "Angela Stanisci"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Vegetation Ecology and Diversity",
+    "url": "https://doi.org/10.3897/ved.190831",
+    "pdf_url": "https://ved.arphahub.com/article/190831/download/pdf/",
+    "doi": "10.3897/ved.190831",
+    "abstract": "Long-term vegetation plot datasets, including historical data and repeated surveys, are essential tools for detecting and understanding spatial and temporal changes in community diversity, structure, and functioning. Here, we present the central ADRIAtic coastal VEGetation database (AdriaVeg), a georeferenced database comprising 1,000 vegetation plots, both published and unpublished, including re-surveyed and single-survey records, collected between 1985 and 2025 along the sandy coasts of Abruzzo, Molise, and northern Apulia (Italy). The database encompasses the main coastal dune habitats, with shifting dunes representing 42.3% of plots, followed by fixed dunes (29.2%), transitional dunes (20.9%), and salt marshes (7.6%). In total, AdriaVeg includes 301 vascular plant taxa (species and subspecies), of which 286 are native or archaeophytes and 15 are neophytes (86.7% invasive and 13.3% naturalized). In AdriaVeg, each taxon is linked with 21 standardized attributes, including taxonomic classification, vernacular names (Italian and English), alien status and residence time in Italy, chorology for native species and area of origin for alien species, growth habit, life form, growth form, lifespan, European ecological indicator values, and disturbance indicator values. The dataset structure enhances data interoperability and can support comparative ecological research. AdriaVeg provides an open and scalable framework for monitoring coastal dune habitats across protected, unprotected, and restored areas. It offers sound support for the analysis of long-term vegetation dynamics, restoration effectiveness, and changes in species composition and community structure under anthropogenic and climatic pressures.",
+    "topics": [
+      "Geospatial AI",
+      "Urban",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166138988",
+    "source": "OpenAlex",
+    "title": "A NEURAL NETWORK METHOD TO TRANSPORT INFRASTRUCTURE DAMAGE RECOGNITION DURING ARMED AGGRESSION USING SATELLITE IMAGES",
+    "authors": [
+      "V. Yu. Kashtan",
+      "V. V. Hnatushenko"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Radio Electronics Computer Science Control",
+    "url": "https://doi.org/10.15588/1607-3274-2026-2-7",
+    "pdf_url": "https://ric.zp.edu.ua/article/download/363776/349335",
+    "doi": "10.15588/1607-3274-2026-2-7",
+    "abstract": "Context. Recognizing and analyzing changes in transport infrastructure using satellite imagery is important for urban planning, emergency management, military monitoring, and post-war reconstruction. Traditional methods of assessing the condition of roads and bridges, based on ground surveys and expert interpretation of aerial photographs, are labor-intensive, time-consuming, and potentially dangerous for personnel, especially during natural disasters or armed conflicts. In this regard, it is important to develop automated methods for detecting bridge damage using machine learning from publicly available satellite imagery.Objective. This work aims to develop a neural network method for recognizing and pixel-localizing damage to transport infrastructure using Sentinel-2 multispectral images and OSM vector data, based on a modified Attention U-Net architecture with adaptive spatial-feature weighting and the Dice Loss function to produce a probabilistic damage mask.Method. A method for recognizing damage to transport infrastructure in Sentinel-2 multispectral images and OSM vector data using a convolutional neural network is proposed. The method is based on the improved Attention U-Net neural network architecture, in which vector data of the transport network (linear road and railway axes, bridge contours) serve as a priori structural information about the geometry and spatial location of infrastructure objects. This information is used by the decoder’s attention mechanism to limit the formation of output features to spatial areas corresponding to infrastructure objects. As a result, the loss function is calculated only within the spatial area specified by the binary mask of infrastructure objects. It reduces misclassifications in adjacent areas and increases the accuracy of boundary delineation for damaged bridge sections.Results. Experimental studies have confirmed the effectiveness of the proposed method for automated detection of bridge damage on multispectral satellite images. The comprehensive use of spectral-temporal information, combined with binary masks of transport infrastructure, has reduced false classifications in adjacent areas and increased the accuracy of localizing damaged sections. According to the quantitative assessment results, the mIoU was 78.6%, the F1-score was 0.81, and the overall classification accuracy exceeded 93%.Conclusions. The experiments confirmed the effectiveness of the proposed method for automated recognition of damage to road and railway bridges in satellite images. The improved Attention U-Net architecture, which combines spatial attention mechanisms with prior structural information about the transport network, has increased the accuracy of pixel-level damage area recognition compared to U-Net models. The proposed method enables the creation of analytical geospatial maps of damaged bridge sections, which can be directly integrated into geographic information systems for infrastructure monitoring, assessing the consequences of natural or military disasters, and supporting decision-making on response and recovery",
+    "topics": [
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "https://openalex.org/W7166128756",
+    "source": "OpenAlex",
+    "title": "A Mixed Adversarial Awareness Technique for Improving Neural Network Defense",
+    "authors": [
+      "Moses Apambila Agebure",
+      "Sampson Konja",
+      "Stephen Akobre",
+      "Mohammed Daabo"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-28",
+    "venue": "Journal of Information Systems and Informatics",
+    "url": "https://doi.org/10.63158/journalisi.v8i3.1552",
+    "pdf_url": "https://journal-isi.org/index.php/isi/article/download/1552/909",
+    "doi": "10.63158/journalisi.v8i3.1552",
+    "abstract": "Neural Network (NN) models, particularly Convolutional Neural Networks (CNNs), have achieved remarkable performance in computer vision tasks but remain highly vulnerable to adversarial attacks. Existing defense techniques mainly focus on detecting adversarial examples and often show limited effectiveness when adversarial perturbations coexist with significant noisy inputs. To address this limitation, this study proposes a Mixed Adversarial Awareness Technique (MAAT) based on kernel density estimation and a Bayesian uncertainty estimator. Kernel density estimation is used to model data manifolds in the input subspace, while the Bayesian uncertainty estimator, inspired by the Dirichlet process, quantifies predictive uncertainty in the input space. The proposed technique was evaluated on three benchmark datasets, CIFAR-10, CIFAR-100, and SVHN, using four adversarial attack schemes, namely FGSM, BIM, JSMA, and C&amp;W, as well as Gaussian noise injection. The LeNet ConvNet model was employed as the test classifier. Experimental results show that MAAT effectively flags adversarial and noisy instances, improving detection performance with AUC values ranging from 0.84 to 0.96, compared with 0.61 to 0.94 achieved by selected state-of-the-art techniques. These findings demonstrate that combining density-based manifold modeling with uncertainty estimation provides a robust defense against mixed adversarial and noisy inputs.",
+    "topics": [
+      "Remote Sensing",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"large multimodal model\" \"remote sensing\""
   },
   {
     "id": "https://openalex.org/W7166141779",
@@ -2419,32 +3445,6 @@
     "query": "\"remote sensing\" pretraining"
   },
   {
-    "id": "10.66279/mn2yev65",
-    "source": "Crossref",
-    "title": "Optimizing YOLOv12-L for Imbalanced Satellite Vehicle Detection via Physics-Informed Data Synthesis and Adaptive Class-Aware Loss Weighting",
-    "authors": [
-      "Ola Farid",
-      "Mohammed Melhi",
-      "A. A. Somaie"
-    ],
-    "published": "2026-06-26",
-    "updated": "2026-06-26",
-    "venue": "Journal of Smart Algorithms and Applications (JSAA)",
-    "url": "https://doi.org/10.66279/mn2yev65",
-    "pdf_url": "",
-    "doi": "10.66279/mn2yev65",
-    "abstract": "Vehicle detection in satellite imagery underpins applications in traffic monitoring, urban planning, and disaster response, yet two obstacles routinely degrade detector performance: the small pixel footprint of individual vehicles and severe imbalance between common and rare vehicle categories. This study presents a vehicle detection framework built on the YOLOv12-L architecture and evaluated on the Vehicles in the Middle East (VME) dataset, in which cars outnumber buses and trucks by a wide margin. The framework combines a physics-informed synthetic data generator, which places procedurally rendered bus and truck silhouettes onto realistic backgrounds and enhances them with adaptive contrast and sensor-noise simulation, with a class-aware loss configuration that increases the classification loss weight and applies label smoothing for minority categories. Training on 4,666 images (2,828 original tiles plus 1,838 synthetic tiles contributing 2,476 bus and 2,076 truck instances) for 100 epochs produced a validation mean Average Precision at an IoU threshold of 0.5 (mAP50) of 0.687 and mAP50:95 of 0.391, with per-class mAP50:95 values of 0.476 for cars, 0.374 for buses, and 0.323 for trucks. On a held-out test split, mAP50 reached 0.634 and mAP50:95 reached 0.361. Increasing the inference resolution from 640 to 736 pixels raised validation mAP50:95 to 0.398 without retraining. Test-Time Augmentation at the 1.17× scale further improves overall mAP50 to 0.693. These results confirm that targeted data synthesis combined with class-aware loss weighting yields consistent gains for underrepresented vehicle categories in geospatial imagery.",
-    "topics": [
-      "Remote Sensing",
-      "Geospatial AI",
-      "Urban",
-      "Disaster",
-      "Data"
-    ],
-    "category": "Downstream Task",
-    "query": "\"geo-localization\" satellite"
-  },
-  {
     "id": "10.1002/epi.70359",
     "source": "Crossref",
     "title": "Magnetoencephalographic source imaging improves localization of the epileptogenic zone in multimodal imaging evaluation",
@@ -2549,28 +3549,6 @@
     ],
     "category": "Benchmark",
     "query": "\"remote sensing\" pretraining"
-  },
-  {
-    "id": "10.21203/rs.3.rs-10044577/v1",
-    "source": "Crossref",
-    "title": "FDCNet: Frequency-Aware and Dynamic Curve Network for Adversarially Robust Infrared and Visible Image Fusion",
-    "authors": [
-      "Pengcheng Gao",
-      "Shengyue Huang"
-    ],
-    "published": "2026-06-26",
-    "updated": "2026-06-26",
-    "venue": "",
-    "url": "https://doi.org/10.21203/rs.3.rs-10044577/v1",
-    "pdf_url": "",
-    "doi": "10.21203/rs.3.rs-10044577/v1",
-    "abstract": "Abstract Infrared and visible image fusion (IVIF) integrates complementary multi-modal information, yet existing methods typically overlook deliberate adversarial attacks. To enhance model robustness in adversarial environments, we propose a novel adversarial attack resilient network, called Frequency-Aware and Dynamic Curve Network for Adversarially Robust Infrared and Visible Image Fusion (FDCNet). Regarding the optimization strategy, a Spatio-Frequency Dynamic Adversarial Loss (L SFDA ) is developed to guide robust training by adaptively balancing structural fidelity and high-frequency feature constraints. In terms of network architecture, utilizing a U-Net backbone, we embed a Frequency Awareness Defense Module (FADM) into multi-scale skip connections to intercept cross-layer noise penetration, filtering high-frequency adversarial perturbations while transferring low-level spatial details. These components synergize to achieve effective suppression of adversarial perturbations. However, while successfully suppressing adversarial noise, the two components often exert unavoidable mutual constraints due to their differing priorities. In view of this, we further design an Extrema-guided Dynamic Tone Curve Module (EDTC) at the back-end as a post-compensation mechanism. By combining baseline robust features and multi-source extreme value distributions as spatial priors, this module effectively alleviates the mutual constraints between L SFDA and FADM, implementing effective restoration on the pixel distribution of the fused images to achieve a synergistic balance between defense effectiveness and visual quality. Experimental results demonstrate that our FDCNet effectively mitigates the adverse effects of adversarial perturbations, consistently maintaining high-fidelity fusion results and significantly stabilizing the performance of downstream tasks under adversarial attacks.",
-    "topics": [
-      "Remote Sensing",
-      "Geospatial AI"
-    ],
-    "category": "Downstream Task",
-    "query": "\"ground to satellite\" image"
   },
   {
     "id": "10.22541/essoar.15005272/v1",
@@ -2822,30 +3800,6 @@
     "query": "\"remote sensing\" \"self-supervised learning\""
   },
   {
-    "id": "10.15588/1607-3274-2026-2-7",
-    "source": "Crossref",
-    "title": "A NEURAL NETWORK METHOD TO TRANSPORT INFRASTRUCTURE DAMAGE RECOGNITION DURING ARMED AGGRESSION USING SATELLITE IMAGES",
-    "authors": [
-      "V. Yu. Kashtan",
-      "V. V. Hnatushenko"
-    ],
-    "published": "2026-06-26",
-    "updated": "2026-06-26",
-    "venue": "Radio Electronics, Computer Science, Control",
-    "url": "https://doi.org/10.15588/1607-3274-2026-2-7",
-    "pdf_url": "",
-    "doi": "10.15588/1607-3274-2026-2-7",
-    "abstract": "Context. Recognizing and analyzing changes in transport infrastructure using satellite imagery is important for urban planning, emergency management, military monitoring, and post-war reconstruction. Traditional methods of assessing the condition of roads and bridges, based on ground surveys and expert interpretation of aerial photographs, are labor-intensive, time-consuming, and potentially dangerous for personnel, especially during natural disasters or armed conflicts. In this regard, it is important to develop automated methods for detecting bridge damage using machine learning from publicly available satellite imagery.Objective. This work aims to develop a neural network method for recognizing and pixel-localizing damage to transport infrastructure using Sentinel-2 multispectral images and OSM vector data, based on a modified Attention U-Net architecture with adaptive spatial-feature weighting and the Dice Loss function to produce a probabilistic damage mask.Method. A method for recognizing damage to transport infrastructure in Sentinel-2 multispectral images and OSM vector data using a convolutional neural network is proposed. The method is based on the improved Attention U-Net neural network architecture, in which vector data of the transport network (linear road and railway axes, bridge contours) serve as a priori structural information about the geometry and spatial location of infrastructure objects. This information is used by the decoder’s attention mechanism to limit the formation of output features to spatial areas corresponding to infrastructure objects. As a result, the loss function is calculated only within the spatial area specified by the binary mask of infrastructure objects. It reduces misclassifications in adjacent areas and increases the accuracy of boundary delineation for damaged bridge sections.Results. Experimental studies have confirmed the effectiveness of the proposed method for automated detection of bridge damage on multispectral satellite images. The comprehensive use of spectral-temporal information, combined with binary masks of transport infrastructure, has reduced false classifications in adjacent areas and increased the accuracy of localizing damaged sections. According to the quantitative assessment results, the mIoU was 78.6%, the F1-score was 0.81, and the overall classification accuracy exceeded 93%.Conclusions. The experiments confirmed the effectiveness of the proposed method for automated recognition of damage to road and railway bridges in satellite images. The improved Attention U-Net architecture, which combines spatial attention mechanisms with prior structural information about the transport network, has increased the accuracy of pixel-level damage area recognition compared to U-Net models. The proposed method enables the creation of analytical geospatial maps of damaged bridge sections, which can be directly integrated into geographic information systems for infrastructure monitoring, assessing the consequences of natural or military disasters, and supporting decision-making on response and recovery",
-    "topics": [
-      "Remote Sensing",
-      "Geospatial AI",
-      "Urban",
-      "Disaster"
-    ],
-    "category": "Downstream Task",
-    "query": "\"geo-localization\" satellite"
-  },
-  {
     "id": "10.21203/rs.3.rs-9749892/v2",
     "source": "Crossref",
     "title": "A Lightweight Retrieval-Grounded Framework for Hallucination Detection and Correction in Large Language Models",
@@ -2979,6 +3933,35 @@
     ],
     "category": "Downstream Task",
     "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "https://openalex.org/W7166300929",
+    "source": "OpenAlex",
+    "title": "A cross-modal alignment-based time-series large model for water supply networks flow forecasting",
+    "authors": [
+      "Tao Yang",
+      "Hanqi Gui",
+      "J Q Xu",
+      "X. Li",
+      "Xu Ding",
+      "Ying Liu"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-28",
+    "venue": "Mechatronics Technology",
+    "url": "https://doi.org/10.55092/mt20260002",
+    "pdf_url": "https://pdf.elspublishing.com/paper/journal/open/MT/2026/mt20260002.pdf",
+    "doi": "10.55092/mt20260002",
+    "abstract": "Water supply networks, as critical urban infrastructure, play an essential role in ensuring stable city operations. Accurate flow forecasting is therefore of great significance for optimizing operational scheduling, reducing energy consumption, and maintaining system stability. With the strong capability of large language models (LLM) in sequence modeling and representation learning, their application to time-series forecasting has become an emerging research direction. However, a key challenge lies in the modality gap between numerical time-series data and the semantic embedding space of language models. To address this issue, this paper proposes a cross-modal alignment-based time-series foundation model for forecasting. The proposed method constructs a mapping between time-series features and the semantic embedding space, enabling effective projection of numerical sequences into a semantic domain. Furthermore, a cross-modal alignment mechanism is designed to enhance feature fusion, thereby improving the model’s ability to capture multi-scale periodic patterns, long-term temporal trends, and stochastic demand fluctuations commonly observed in water distribution systems. Experimental results demonstrate that the proposed method consistently outperforms baseline approaches across different prediction horizons in terms of mean absolute error (MAE) and mean squared erro (MSE), verifying the effectiveness and strong generalization capability of the cross-modal alignment strategy in water distribution network flow forecasting.",
+    "topics": [
+      "Foundation Models",
+      "Vision-Language",
+      "Prediction",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Foundation Model",
+    "query": "\"large multimodal model\" \"remote sensing\""
   },
   {
     "id": "https://openalex.org/W7165929336",
@@ -4764,6 +5747,172 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166252267",
+    "source": "OpenAlex",
+    "title": "Shoot the Honey, Cloak the Player: Towards Zero-Runtime-Overhead Proactive Defense and Detection for Visual Game Cheating",
+    "authors": [
+      "Jianing Wang",
+      "Chuqi Zhang",
+      "Yuancheng Jiang",
+      "Adil Ahmad",
+      "Shanqing Guo"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7166252267",
+    "pdf_url": "https://arxiv.org/pdf/2606.25734",
+    "doi": "",
+    "abstract": "Visual aimbots have emerged as a serious cheating threat in first-person shooter (FPS) games, as they evade existing anti-cheat defenses by operating only on rendered frames rather than game memory. However, existing defenses fail to provide an end-to-end solution: post-hoc behavior detectors cannot protect match integrity in real time and are increasingly fragile against human-mimicking aimbots, while proactive runtime defenses often lack accountability, incur substantial overhead, or require intrusive system integration. We present AimTrap, the first end-to-end defense against visual aimbots that combines real-time protection with post-game detection using two adversarial texture mechanisms. Adversarial Camouflage Textures (ACT) hide real players from aimbots, while Adversarial Honeypot Textures (AHT) lure aimbots into locking onto fake targets, yielding strong evidence of cheating. To make this practical, AimTrap integrates differentiable rendering with Expectation over Renderings for robust 3D texture synthesis, secure texture management, and a novel honeypot-interaction trajectory analysis pipeline for accurate cheating attribution. In real-game evaluation against a state-of-the-art visual aimbot, ACT achieves 85.1% defense success, AHT achieves 96.9%. Compared with prior baselines, AimTrap attains extremely low false-positive rates, while incurring negligible runtime overhead. These results show that AimTrap provides a practical and effective end-to-end defense against visual aimbots.",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"visual geo-localization\""
+  },
+  {
+    "id": "https://openalex.org/W7166252690",
+    "source": "OpenAlex",
+    "title": "Reliability-Asymmetric Spacecraft Autonomy: Co-Designing a Capable Learned GNC Stack with a Verified, Adaptation-Aware Runtime Shield",
+    "authors": [
+      "Alireza Shojaei"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "arXiv (Cornell University)",
+    "url": "https://openalex.org/W7166252690",
+    "pdf_url": "https://arxiv.org/pdf/2606.25366",
+    "doi": "",
+    "abstract": "Deep-space missions need onboard autonomy that is both capable and certifiable. Rule-based autonomy is certifiable but brittle, while learned autonomy is capable but hard to verify. We present AMPLE-GNC, a three-tier guidance, navigation, and control stack. Its capability path combines a small foundation-model commander that maps natural language to PDDL+, a constraint-screening verifier, and a fault-adaptive controller. All three are bounded by a runtime shield with nine linear-temporal-logic invariants whose predictor soundness is machine-checked by the Kind 2 model checker. On a 6-DOF Basilisk testbed, we make three contributions. First, we deploy an edge commander. Fine-tuning a pretrained 360M model with grammar-constrained decoding gives a hard output-validity guarantee and 84% planner-executable actions. On a de-leaked test, novel-phrasing generalization is 38% exact and 51% action, rising to 48% exact after phrasing-diversity re-finetuning; we separate syntactic validity from semantic accuracy. Second, we introduce a fault-adaptive controller. Rapid Motor Adaptation infers latent actuator faults online and recovers 97.8% of actuator-sign faults and 94.4% of continuous-gain faults within the training randomization envelope. Fault-unaware PD and from-scratch end-to-end RL both score 0%, while the strongest classical-adaptive baseline reaches 55% on continuous gain. Beyond the envelope, a split-conformant retrain scores 57-67%, and adding 4x more in-regime data worsens performance, showing that randomization breadth, not data volume, drives generalization. Robustness is flat under star-tracker noise to 0.005. Third, we show that a latching safe-hold shield can suppress even a capable controller. A split-conformal recovery-deadline certificate with adaptation-aware engagement reconciles safety and recovery, keeping the controller 94.5% autonomous while still catching non-recovery.",
+    "topics": [
+      "Foundation Models",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"earth observation\" \"self-supervised learning\""
+  },
+  {
+    "id": "https://openalex.org/W7166253270",
+    "source": "OpenAlex",
+    "title": "Leaking Circuit Secrets: Gradient Leakage Attacks on Graph Neural Networks",
+    "authors": [
+      "Rupesh Raj Karn",
+      "Johann Knechtel",
+      "Ozgur Sinanoglu"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "arXiv (Cornell University)",
+    "url": "https://openalex.org/W7166253270",
+    "pdf_url": "https://arxiv.org/pdf/2606.25589",
+    "doi": "",
+    "abstract": "As graph neural networks (GNNs) become standard tools for critical tasks in circuit design and analysis, their security and privacy risks require careful attention. Here, we present the first comprehensive evaluation of gradient leakage attacks (GLAs) on GNNs in circuit-design and hardware-security tasks, a practical threat that has been largely overlooked. We assess state-of-the-art (SOTA) GNNs, including GraphSAGE, GCN, GIN, and GAT, trained on standard netlist benchmarks (ISCAS'85, EPFL, and TrustHub), for their fundamental vulnerability to GLAs. We find that GLAs can expose sensitive information, such as gate types and distinctive properties of hardware Trojans, which may assist adversaries in analyzing logic locking schemes or evading Trojan detection mechanisms. Our analysis shows that these risks are influenced by architectural features, with attention mechanisms (GAT) exacerbating leakage, while injective aggregation (GIN) provides comparatively stronger resilience. We further evaluate several SOTA defense techniques, including differential privacy, gradient clipping, secure aggregation, model compression with quantization, and adversarial training. We find that these techniques improve resilience only in specific settings and can also compromise model performance. Overall, our work provides key insights toward privacy-preserving GNNs and highlights the need for more robust and efficient defenses. We release our full methodology and artifacts.",
+    "topics": [
+      "Remote Sensing",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7166252403",
+    "source": "OpenAlex",
+    "title": "How Robust is OCR-Reasoning? Evaluating OCR-Reasoning Robustness of Vision-Language Models under Visual Perturbations",
+    "authors": [
+      "Yuxing Cheng",
+      "Y N Wu",
+      "Yi Chang"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7166252403",
+    "pdf_url": "https://arxiv.org/pdf/2606.26041",
+    "doi": "",
+    "abstract": "Vision-language models (VLMs) have achieved strong performance on OCR-based benchmarks and increasingly focused on text-rich understanding, but their robustness under controlled visual degradation remains insufficiently understood. This gap is critical for OCR reasoning, where visual corruption can induce OCR errors and structural distortions, thereby introducing uncertainty into the reasoning task. To systematically study this problem, we introduce OCR-Robust, a benchmark designed for evaluating OCR reasoning robustness under visual perturbations. It contains 812 samples across two complementary subsets: OCR1.0, covering documents, scene text, receipts, handwriting, and mathematical content, and OCR2.0, focusing on charts, geometry diagrams, and tables. To enable efficient yet informative evaluation, we conduct a pilot study over 18 candidate perturbations and select 5 representative types at 3 severity levels each based on their impact and cross-model discriminability. We evaluate robustness using clean accuracy, Relative Corruption Retention (RCR), Worst-Case Retention (WCR), and a composite Corruption Robustness Index (CRI), and benchmark 18 models spanning proprietary systems, open-source VLMs, and OCR+LLM pipelines. Our results show that higher clean accuracy does not necessarily imply stronger robustness, and that models can suffer pronounced degradation in the worst case on OCR tasks that are sensitive to structure, and charts and tables are substantially more fragile than document-like inputs under perturbation.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"visual geo-localization\""
+  },
+  {
+    "id": "https://openalex.org/W7166252797",
+    "source": "OpenAlex",
+    "title": "Efficient Real-World Dehazing via Physics-Inspired Global-Local Decoupling",
+    "authors": [
+      "Yifei Qu",
+      "R K Li",
+      "Junjie Chen",
+      "Jinyuan Wu"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "arXiv (Cornell University)",
+    "url": "https://openalex.org/W7166252797",
+    "pdf_url": "https://arxiv.org/pdf/2606.25732",
+    "doi": "",
+    "abstract": "Real-world single image dehazing is highly ill-posed due to spatially and spectrally varying scattering, while practical deployment demands lightweight and low-latency models. Existing approaches either rely on fragile physical inversion under simplified assumptions or adopt heavy blind architectures unsuitable for edge deployment. To overcome these limitations, we propose PGL-Net (Physics-Inspired Global-Local Decoupling Network), a lightweight framework that incorporates physical inductive biases via operator-level emulation, avoiding explicit parameter estimation. It decouples dehazing into global distribution rectification and local structural refinement. A Physics-Inspired Affine Fusion (PAF) module performs globally conditioned alignment across hierarchical skip connections to compensate for haze-induced bias, while a compact Degradation-Aware Modulation (DAM) block adaptively restores spatially and spectrally variant details through dynamic feature modulation. Extensive experiments on multiple real-world benchmarks demonstrate that PGL-Net achieves state-of-the-art restoration quality with significantly reduced complexity. Compared with the recent SOTA SGDN, the Tiny variant (PGL-Net-T) improves PSNR by up to 2.6dB and consistently enhances downstream object detection accuracy, while achieving over a 10x reduction in inference latency. Code is publicly available at: https://github.com/sc-30-bit/PGL-Net.",
+    "topics": [
+      "Detection",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7166253036",
+    "source": "OpenAlex",
+    "title": "Detect, Unlearn, Restore: Defending Text Summarization Models Against Data Poisoning",
+    "authors": [
+      "Poojitha Thota",
+      "Shirin Nilizadeh"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7166253036",
+    "pdf_url": "https://arxiv.org/pdf/2606.26036",
+    "doi": "",
+    "abstract": "Training-time data poisoning during fine-tuning poses a significant threat to large language models (LLMs) deployed for abstractive text summarization, where small task-specific datasets exert disproportionate influence on model behavior. In this setting, adversaries manipulate fine-tuning data to induce persistent summarization failures, such as biased or harmful summaries, while preserving standard evaluation metrics. We present a unified post-hoc defense framework for detecting and remediating fine-tuning-stage poisoning in summarization models across the machine learning supply chain. Our experiments show that in white-box settings, poisoned document-summary pairs exhibit abnormally high training influence, enabling detection via influence-function analysis with semantic consistency checks. In black-box settings, poisoned models display two to three times greater sensitivity to semantics-preserving perturbations, enabling behavioral auditing without training data access. Beyond existing poisoning formulations, we introduce novel attacks targeting factual distortion and representational bias, showing that poisoning alters summarization behavior without triggering conventional alarms. Across nine architectures and six benchmark datasets under adaptive attacks, our defenses achieve 85-92% detection precision, while gradient-ascent unlearning restores up to 96% of original behavior with minimal utility loss (less than 0.6% ROUGE degradation). These results indicate that fine-tuning-time poisoning leaves persistent structural artifacts, enabling practical detection and post-deployment recovery without full retraining.",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"satellite\" \"vision-language\""
+  },
+  {
+    "id": "https://openalex.org/W7166252489",
+    "source": "OpenAlex",
+    "title": "Deep Learning-Assisted Multicast Subgrouping in Massive MIMO",
+    "authors": [
+      "Alejandro de la Fuente",
+      "Leopoldo Carro-Calvo",
+      "Giovanni Interdonato"
+    ],
+    "published": "2026-06-24",
+    "updated": "2026-06-28",
+    "venue": "arXiv (Cornell University)",
+    "url": "https://openalex.org/W7166252489",
+    "pdf_url": "https://arxiv.org/pdf/2606.25725",
+    "doi": "",
+    "abstract": "Efficient content delivery in massive multiple-input multiple-output (mMIMO) multicasting is fundamentally limited by pilot overhead and the need to serve heterogeneous users with a common transmission rate. Conventional approaches either suffer from pilot contamination or are constrained by the worst-user effect, motivating the need for adaptive subgrouping strategies. In this paper, we propose a deep learning-assisted multicast subgrouping framework that infers the number of multicast subgroups directly from users' spatial channel statistics. A snapshot-specific principal component analysis (PCA) is applied to user covariance matrices to obtain a compact representation, which is processed by a sequential long short-term memory (LSTM) encoder capable of handling variable-size user sets. The model predicts the number of subgroups and groups of users based on their statistical similarity. To further improve system performance, we introduce a transfer learning (TL) extension where a pretrained LSTM encoder is reused, and a lightweight dense head is fine-tuned to estimate the sum spectral efficiency (SE) as a function of the subgroup configuration. This enables selecting near-optimal subgrouping solutions without exhaustive search. Simulation results demonstrate that the proposed approach consistently outperforms benchmark methods, including unicast transmission, conventional multicast, random subgrouping, and density-based clustering. The TL-enhanced model achieves up to 85% of the maximum achievable spectral efficiency while maintaining robust performance across diverse spatial user distributions and under imperfect covariance information.",
+    "topics": [
+      "Foundation Models",
+      "Geospatial AI",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" pretraining"
   },
   {
     "id": "https://openalex.org/W7165838624",
@@ -6718,6 +7867,54 @@
     ],
     "category": "Benchmark",
     "query": "\"foundation model\" agriculture"
+  },
+  {
+    "id": "https://openalex.org/W7166252503",
+    "source": "OpenAlex",
+    "title": "LLM-Based Scientific Peer Review: Methods, Benchmarks, and Reliability Challenges",
+    "authors": [
+      "Thi Huyen Nguyen",
+      "Zahra Ahmadi"
+    ],
+    "published": "2026-06-23",
+    "updated": "2026-06-28",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7166252503",
+    "pdf_url": "https://arxiv.org/pdf/2606.25057",
+    "doi": "",
+    "abstract": "The rapid growth of scientific submissions has pushed traditional peer review toward its scalability limits, motivating the exploration of large language models (LLMs) as intelligent automated evaluation assistants. Although recent studies show that LLMs can generate fluent critiques and approximate reviewer scores, their reliability, robustness, and security as decision-support systems remain insufficiently understood. This survey offers a systems-level analysis of LLM-based scientific peer review, focusing on two core evaluative functions: critique generation and score prediction. We present a structured taxonomy of modeling approaches (including prompt-based, supervised, retrieval-augmented, and alignment-optimized approaches), and synthesize empirical findings across existing benchmarks. We analyze dataset constraints, evaluation shortcomings, and domain concentration biases that limit current assessment practices. Beyond performance metrics, we identify emerging robustness risks, including prompt injection, data poisoning, retrieval vulnerabilities, and reward hacking, which expose automated review pipelines to strategic manipulation. From a data mining perspective, we outline key open challenges in modeling subjective disagreement and cross-domain generalization. By reframing automated peer review as a high-stakes, multi-objective decision problem, this survey provides a roadmap for developing robust, transparent, and trustworthy AI-assisted scientific evaluation systems.",
+    "topics": [
+      "Vision-Language",
+      "Retrieval",
+      "Prediction",
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Benchmark",
+    "query": "\"earth observation\" pretraining"
+  },
+  {
+    "id": "https://openalex.org/W7166253117",
+    "source": "OpenAlex",
+    "title": "Geo-Strat-RL: Learning Geological Event Reasoning from Verifiable Tasks",
+    "authors": [
+      "Lukas Mosser"
+    ],
+    "published": "2026-06-23",
+    "updated": "2026-06-28",
+    "venue": "ArXiv.org",
+    "url": "https://openalex.org/W7166253117",
+    "pdf_url": "https://arxiv.org/pdf/2606.25000",
+    "doi": "",
+    "abstract": "To evaluate whether vision-language models can reason about geological histories, it is necessary to construct observations for which the underlying process history is known. Furthermore, reasoning over geological histories is not just a question of recognizing visual patterns, but also of understanding temporal and structural relationships that may be only indirectly visible or highly ambiguous. When ground-truth event histories are not uniquely identifiable or are unavailable, it remains an open challenge to teach models capable of visual reasoning to produce valid geological reconstructions that are consistent with both observed evidence and geological principles. We therefore investigate whether defining a verifiable geological reasoning task can improve geological event reconstruction across observation domains through reinforcement learning with verifiable rewards (RLVR). To this end, we present Geo-Strat-RL, a synthetic environment that generates stratigraphic observations and compact visible-evidence event histories. The environment combines a geological generator with an executable verifier that scores chronology, event identity, deposition, and structural relationships. We show that RLVR improves geological reconstruction in vision-language models (VLMs), increasing geological content scores on held out stratigraphic diagrams. We further evaluate the same held-out geological histories in a synthetic seismic observation domain by converting the generated scenes into acoustic-impedance-derived amplitude sections. In this controlled paired-renderer setting, we present evidence that geological reasoning learned from stratigraphic diagram-domain RLVR training transfers to synthetic seismic representations without seismic-specific training examples, supporting the hypothesis that RLVR can teach reusable geological reasoning concepts across related observation formats.",
+    "topics": [
+      "Vision-Language",
+      "Segmentation",
+      "Remote Sensing"
+    ],
+    "category": "Foundation Model",
+    "query": "\"earth observation\" pretraining"
   },
   {
     "id": "https://openalex.org/W7165978506",
