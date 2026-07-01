@@ -1,5 +1,26 @@
 [
   {
+    "id": "10.1007/978-3-032-30488-9_25",
+    "source": "Crossref",
+    "title": "Bayesian Analysis for Wildfire Classification in the United States and Australia Through Spatial Hierarchical Models",
+    "authors": [
+      "Steven Leone"
+    ],
+    "published": "2027-01-01",
+    "updated": "2026-06-30",
+    "venue": "Lecture Notes in Computer Science Computational Science and Its Applications – ICCSA 2026",
+    "url": "https://doi.org/10.1007/978-3-032-30488-9_25",
+    "pdf_url": "",
+    "doi": "10.1007/978-3-032-30488-9_25",
+    "abstract": "",
+    "topics": [
+      "Geospatial AI",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
     "id": "10.1080/27669645.2026.2663213",
     "source": "Crossref",
     "title": "A multi-level feature fusion semantic segmentation model for remote sensing image",
@@ -500,6 +521,31 @@
     "query": "\"cross-view matching\" satellite"
   },
   {
+    "id": "10.1029/2025jh001169",
+    "source": "Crossref",
+    "title": "Joint Satellite SST and Dynamic SSS as Key Constraints on the Thermodynamics of Tropical Instability Wave Variability in the Eastern Equatorial Pacific",
+    "authors": [
+      "Yinfei Zhou",
+      "Haoyu Wang",
+      "Xiaofeng Li"
+    ],
+    "published": "2026-08-01",
+    "updated": "2026-07-01",
+    "venue": "Journal of Geophysical Research: Machine Learning and Computation",
+    "url": "https://doi.org/10.1029/2025jh001169",
+    "pdf_url": "",
+    "doi": "10.1029/2025jh001169",
+    "abstract": "Abstract Tropical instability waves (TIWs) generate mesoscale sea surface temperature (SST) fluctuations in the eastern equatorial Pacific and influence the evolution of the El Niño‐Southern Oscillation (ENSO). Yet satellite‐based prediction of TIW‐related SST anomalies remains largely SST‐centric and makes limited use of sea surface salinity (SSS) observations. Here we show that satellite SSS provides a practically useful constraint on TIW‐related SST forecasts. We develop a dual‐branch deep learning framework trained on Copernicus Marine Service SST and SSS products, in which a ConvLSTM‐UNet3D trend branch represents slowly varying evolution and a frame‐difference branch highlights transient TIW disturbances. A Mean Deviation Loss strengthens learning in regions of strong anomalies, including the TIW triangular zone and the cold tongue. SST is the sole prognostic output, while SSS is prescribed at each rollout step under three protocols with distinct operational meanings: a deployable, leakage‐free SST‐recursive forecast using training‐derived monthly SSS climatology; a diagnostic upper bound using observed SSS at the corresponding forecast dates; and a constant‐field Zero‐map stress test. Compared with the SST‐only configuration, incorporating time‐varying SSS reduces the one‐step 5‐day SST RMSE from 0.30 to 0.27°C, while the deployable climatological‐SSS setting attains 0.28°C, within 0.01°C of the observed‐SSS upper bound at the single‐step horizon and closely tracking it under multi‐step rollouts. Cross‐spectral and time‐lagged regression analyses further reveal that coherent leading SSSA modes can lead SSTA by 5–12 days on TIW timescales, indicating that seasonal‐background and event‐scale SSS carry physically meaningful, complementary predictive information for TIW‐related SST evolution.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
     "id": "10.1111/bdi.70119",
     "source": "Crossref",
     "title": "Speech and Language Markers of Bipolar Disorder: Challenges and Opportunities",
@@ -874,6 +920,156 @@
     "query": "\"remote sensing foundation model\""
   },
   {
+    "id": "10.1016/j.knosys.2026.116554",
+    "source": "Crossref",
+    "title": "Topology geometry constrained open-set remote sensing object detection under class imbalance",
+    "authors": [
+      "Qiying Ling",
+      "Yuanyuan Li",
+      "Yiyao An",
+      "Zhiqin Zhu",
+      "Penglong Li",
+      "Xuan Chen",
+      "Jiaji Cheng"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "venue": "Knowledge-Based Systems",
+    "url": "https://doi.org/10.1016/j.knosys.2026.116554",
+    "pdf_url": "",
+    "doi": "10.1016/j.knosys.2026.116554",
+    "abstract": "",
+    "topics": [
+      "Detection",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" \"remote sensing\""
+  },
+  {
+    "id": "10.1007/s44163-026-01641-1",
+    "source": "Crossref",
+    "title": "Secant deep hyperbolic cosine bio inspired whale optimization for building detection from satellite images",
+    "authors": [
+      "S. Kokila",
+      "K. A. Yashaswini",
+      "Arunkumar Balakrishnan",
+      "Sangeeta Sangani",
+      "S. Anbukkarasi"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "venue": "Discover Artificial Intelligence",
+    "url": "https://doi.org/10.1007/s44163-026-01641-1",
+    "pdf_url": "",
+    "doi": "10.1007/s44163-026-01641-1",
+    "abstract": "Abstract Building detection from satellite images is a demanding task and also considered as a hot research topic over the past few years. Deep Learning-based models are applied for object detection. One of the biggest challenges in the Deep Learning-based models learning is the selection of parameter and optimization process. Also numerous models have been proposed using bio-inspired optimization solutions to solve this problem. In this work, to avoid local optima and ensuring a smooth balance of exploration and exploitation involved in building detection, a method called, Secant Deep Belief Network-based Hyperbolic Cosine Whale Optimization (SDBN-HCWO) is proposed. The bio-inspired Hyperbolic Cosine Whale Optimization processes works under the Secant Deep Belief Network. The Secant Deep Belief Network consists of visible and hidden layer. Three hidden layers are employed to detect best edges. In the first hidden layer, Hyperbolic Cosine Prey Encircling is employed to find best edges. The detected edges are linked in second hidden layer with the aid of Shrinking Encircle and Spiral Update-based optimal edge linking model. Lastly, Secant Object Detection model is applied in third hidden layer to perform the robust building detection in an accurate way. The performance of the SDBN-HCWO method is evaluated quantitatively and qualitatively based on the best fitness values. The experimental outcomes of proposed SDBN-HCWO method yields better performance results in terms of higher peak signal-to-noise ratio by 18%, classification accuracy by 20% and reduced classification time by 26% and false positive rate by 68% than the other state-of-the-art methods.",
+    "topics": [
+      "Detection",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.1016/j.rsase.2026.102141",
+    "source": "Crossref",
+    "title": "Near-real-time detection of manure applications on snow-covered croplands in Google Earth Engine using Sentinel-2 and Landsat-8/9",
+    "authors": [
+      "Aaron Suiter",
+      "Pouyan Hatami",
+      "Song Gao"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "venue": "Remote Sensing Applications: Society and Environment",
+    "url": "https://doi.org/10.1016/j.rsase.2026.102141",
+    "pdf_url": "",
+    "doi": "10.1016/j.rsase.2026.102141",
+    "abstract": "",
+    "topics": [
+      "Agriculture"
+    ],
+    "category": "Downstream Task",
+    "query": "\"earth observation\" pretraining"
+  },
+  {
+    "id": "10.3390/ijgi15070298",
+    "source": "Crossref",
+    "title": "Delineating and Typologizing Urban Innovation Districts Beyond Administrative Boundaries Using Multi-Source Geospatial Data: Evidence from Shanghai",
+    "authors": [
+      "Menglin Ding",
+      "Ruiqi Chen",
+      "Haifeng Diao",
+      "Weiyi Jia"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "venue": "ISPRS International Journal of Geo-Information",
+    "url": "https://doi.org/10.3390/ijgi15070298",
+    "pdf_url": "",
+    "doi": "10.3390/ijgi15070298",
+    "abstract": "Urban innovation districts (UIDs) provide an important space for innovation-led development. However, their scale and the heterogeneity within the districts are not easy to capture with administrative units, especially in urban centers of great denseness. Therefore, we develop a parcel-based geospatial framework to locate and typify the UIDs in Shanghai using multi-source geospatial data. Morphology parcels are used to measure an innovation asset index, and a hierarchical density-based spatial clustering algorithm (HDBSCAN) is applied to identify functionally coherent innovation agglomerations beyond administrative boundaries. The procedure identifies 18 UIDs; an exploratory stability check further indicates that high-value core parcels are largely retained under moderate density-connectivity perturbations, whereas peripheral boundary parcels are more sensitive. Patent-density and policy-alignment evidence are used as supporting external evidence for the delineated innovation geography and as one part of a convergent evidence check. To describe spatial heterogeneity, we collate 31 conceptual indicators, operationalized as 38 PCA variables after dummy coding, to represent locational features, urban form, function and environmental quality. Principal component analysis reduces these variables to six components explaining 81.59% of the total variance, and hierarchical clustering classifies the districts into five types. A k = 2–8 cluster-quality assessment supports the five-type solution as a balanced and interpretable classification rather than a uniquely optimal statistical partition. The results reveal mismatches between administrative boundaries and functional innovation spaces, as well as systematic built-environment differences across district types.",
+    "topics": [
+      "Geospatial AI",
+      "Urban"
+    ],
+    "category": "Downstream Task",
+    "query": "\"vision-language\" geospatial"
+  },
+  {
+    "id": "10.3390/electronics15132887",
+    "source": "Crossref",
+    "title": "Adversarial Distillation Defense: A Robust and Lightweight Training Framework for Deep Learning-Based Radar Jamming Recognition",
+    "authors": [
+      "Yifan Peng",
+      "Xiaowei Hu",
+      "Yiduo Guo",
+      "Weike Feng",
+      "Jian Gong",
+      "Hongbing Li",
+      "Cunqian Feng"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "venue": "Electronics",
+    "url": "https://doi.org/10.3390/electronics15132887",
+    "pdf_url": "",
+    "doi": "10.3390/electronics15132887",
+    "abstract": "Deep learning models have achieved remarkable performance in radar jamming recognition, yet they remain highly vulnerable to adversarial attacks—small, carefully crafted perturbations that cause misclassification—posing a critical threat to intelligent electronic countermeasure systems. Existing adversarial defenses suffer from an inherent accuracy–robustness tradeoff, limited defensive knowledge sources, and poor generalization to unseen attacks, while the additional challenge of model lightweighting for resource-constrained radar platforms remains largely unaddressed. This paper proposes Adversarial Distillation Defense (ADD), a training framework that synergistically integrates adversarial training with knowledge distillation to produce lightweight yet robust jamming recognition models. In ADD, an adversarially pre-trained teacher model simultaneously transfers its classification knowledge on clean samples and defensive knowledge on adversarial samples to a compact student model through four complementary loss terms. Extensive experiments on a simulated dataset comprising seven radar jamming types demonstrate that ADD achieves the strongest defensive performance among the compared defenses under both white-box and black-box attacks across varying perturbation strengths and jamming-to-noise ratios. Feature-space visualization further confirms that ADD enables the student model to maintain well-separated class clusters even under strong adversarial perturbations. These results indicate that ADD offers an effective strategy for building secure and lightweight deep learning models for radar jamming recognition.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Foundation Model",
+    "query": "\"place recognition\" satellite"
+  },
+  {
+    "id": "10.33024/mnj.v8i7.22574",
+    "source": "Crossref",
+    "title": "Hubungan Pengetahuan dengan Keikutsertaan Melakukan Inspeksi Visual Asam Asetat Wanita Usia Subur di Puskesmas Selemadeg Barat",
+    "authors": [
+      "Ayu Somandariani",
+      "Asep Arifin Senjaya",
+      "Gusti Ayu Tirtawati"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-06-30",
+    "venue": "Malahayati Nursing Journal",
+    "url": "https://doi.org/10.33024/mnj.v8i7.22574",
+    "pdf_url": "",
+    "doi": "10.33024/mnj.v8i7.22574",
+    "abstract": "ABSTRACT Cervical cancer is the most common cancer in Indonesia due to late detection of the disease. The last IVA socialization was conducted before the COVID-19 Pandemic. The number of WUS was 5,123 people, while only 248 people performed VIA examinations. This study was conducted in March - April 2025. The purpose of the study was to determine the relationship between knowledge and participation in conducting acetic acid visual inspection in women of childbearing age. This research design is analytic observational using cross sectional research design. Data collection in this study by distributing questionnaires. The population was 5,123 women of childbearing age. Respondents were 38 women of childbearing age using the correlative analysis formula. Purposive sampling method. The research instrument used a questionnaire. Data analysis using univariate and bivariate. The results showed that most of the knowledge of women of childbearing age in conducting visual inspection of acetic acid was sufficient as many as 22 people (57.9%). Most of the knowledge of women of childbearing age following visual inspection of acetic acid as many as 20 people (52.6%). Chi-square test results obtained p value: 0.003 (0.05). The study concluded that there was a relationship between knowledge and participation in conducting visual inspection of acetic acid of women of childbearing age. Health services and health workers, especially midwives, should always strive to optimize IVA early detection services. Keywords: Participation, Visual Acetic Acid, Women of Child-Bearing Age. ABSTRAK Kanker serviks merupakan kanker terbanyak di Indonesia disebabkan terlambatnya deteksi dini penyakit. Sosialisasi mengenai IVA terakhir dilakukan sebelum Pandemi COVID-19. Jumlah WUS sebanyak 5.123 orang, sedangkan yang melakukan pemeriksaan IVA hanya 248 orang. Penelitian ini dilakukan pada bulan Maret - April 2025. Tujuan penelitian untuk mengetahui hubungan pengetahuan dengan keikutsertaan melakukan inspeksi visual asam asetat pada wanita usia subur. Desain penelitian ini adalah observasional analitik menggunakan desain penelitian cross sectional. Pengumpulan data pada penelitian ini dengan membagikan kuesioner. Populasi sebanyak 5.123 wanita usia subur. Responden sebanyak 38 wanita usia subur dengan menggunakan rumus analisis korelatif. Metode pengambilan sampel dengan Purposive sampling. Instrumen penelitian menggunakan kuisioner. Analisis data menggunakan univariat dan bivariat. Hasil penelitian menunjukkan sebagian besar pengetahuan Wanita usia subur dalam melakukan pemeriksaan inspeksi visual asam asetat adalah cukup sebanyak 22 orang (57,9%). Sebagian besar pengetahuan Wanita usia subur mengikuti pemeriksaan inspeksi visual asam asetat sebanyak 20 orang (52,6%). Hasil uji Chi-square diperoleh nilai p: 0,003 ( 0,05). Simpulan penelitian ada hubungan antara Pengetahuan Dengan Keikutsertaan Melakukan Inspeksi Visual Asam Asetat Wanita Usia Subur. Layanan kesehatan dan tenaga kesehatan khususnya bidan agar senantiasa berupaya mengoptimalkan layanan deteksi dini IVA kepada Wanita usia subur melalaui upaya promosi dan preventif di masyarakat. Kata Kunci: Keikutsertaan, Visual Asam Asetat, Wanita Usia Subur.",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing",
+      "Data"
+    ],
+    "category": "Downstream Task",
+    "query": "\"visual geo-localization\""
+  },
+  {
     "id": "10.1111/echo.70527",
     "source": "Crossref",
     "title": "Multi‐Center Adversarial Bi‐Phase Cross‐Attention Network for Right Ventricular Segmentation and Functional Classification in Echocardiography",
@@ -1057,6 +1253,33 @@
     ],
     "category": "Downstream Task",
     "query": "\"remote sensing\" \"self-supervised learning\""
+  },
+  {
+    "id": "10.1175/aies-d-25-0059.1",
+    "source": "Crossref",
+    "title": "Knowledge-Guided Machine Learning: Illustrating the Use of Explainable Boosting Machines to Identify Overshooting Tops in Satellite Imagery",
+    "authors": [
+      "Nathan Mitchell",
+      "Lander Ver Hoef",
+      "Imme Ebert-Uphoff",
+      "Kristina Moen",
+      "Kyle Hilburn",
+      "Yoonjin Lee",
+      "Emily J. King"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-06-19",
+    "venue": "Artificial Intelligence for the Earth Systems",
+    "url": "https://doi.org/10.1175/aies-d-25-0059.1",
+    "pdf_url": "",
+    "doi": "10.1175/aies-d-25-0059.1",
+    "abstract": "Abstract Machine learning (ML) algorithms have emerged in many meteorological applications. However, these algorithms struggle to extrapolate beyond the data they were trained on, i.e., they may adopt faulty strategies that lead to catastrophic failures. These failures are difficult to predict due to the opaque nature of ML algorithms. In high-stakes applications, such as severe weather forecasting, it is crucial to avoid such failures. One approach to address this issue is to develop more interpretable ML algorithms. The primary goal of this work is to illustrate the use of a specific interpretable ML algorithm that has not yet found much use in meteorology, explainable boosting machines (EBMs). We demonstrate that EBMs are particularly suitable to implement human-guided strategies in an ML algorithm. As a guiding example, we show how to develop an EBM to detect overshooting tops (OTs) in satellite imagery. EBMs require input features to be scalar. We use techniques from knowledge-guided machine learning to first extract scalar features from meteorological imagery. For the application of identifying OTs, this includes extracting cloud texture from satellite imagery using gray-level co-occurrence matrices. Once trained, the EBM was examined and minimally altered to more closely match strategies used by domain scientists to identify OTs. The result of our efforts is a fully interpretable ML algorithm developed in a human–machine collaboration that uses human-guided strategies. While the final model does not reach the accuracy of more complex approaches, it performs reasonably well, and we hope it paves the way for building more interpretable ML algorithms for this and other meteorological applications. Significance Statement The purpose of this work is to introduce the interpretable machine learning method of explainable boosting machines (EBMs) to an atmospheric science audience by closely examining how they can be used to detect the location of overshooting cloud tops, which have been associated with the occurrence of severe weather, in satellite imagery. Interpretable machine learning methods are important in high-risk situations such as overshooting top detection as they allow forecasters to have a better understanding of how exactly an identification is made. We walk through how to build, interpret, and modify the machine learning algorithm for use on this task and discuss other applications that could benefit from this approach.",
+    "topics": [
+      "Prediction",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geo-localization\" satellite"
   },
   {
     "id": "10.1007/s00604-026-08198-x",
@@ -1311,6 +1534,285 @@
     ],
     "category": "Downstream Task",
     "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.1016/j.array.2026.100931",
+    "source": "Crossref",
+    "title": "A comprehensive review of multimodal artificial intelligence techniques in maritime surveillance using AIS, SAR, and optical data fusion",
+    "authors": [
+      "Sejal Hanmante",
+      "Shrikrishna Kolhar",
+      "Shruti Patil"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-05-20",
+    "venue": "Array",
+    "url": "https://doi.org/10.1016/j.array.2026.100931",
+    "pdf_url": "",
+    "doi": "10.1016/j.array.2026.100931",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.1016/j.asr.2026.04.080",
+    "source": "Crossref",
+    "title": "MDCT: multi-depth convolutional transformer for polarimetric SAR image classification",
+    "authors": [
+      "Liang Huang",
+      "Xin Ding",
+      "You Yang"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-04-27",
+    "venue": "Advances in Space Research",
+    "url": "https://doi.org/10.1016/j.asr.2026.04.080",
+    "pdf_url": "",
+    "doi": "10.1016/j.asr.2026.04.080",
+    "abstract": "",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.1016/j.array.2026.100826",
+    "source": "Crossref",
+    "title": "SpAw: A spatially-aware self-supervised framework for 3D medical image segmentation",
+    "authors": [
+      "Bin Zhang",
+      "Zhichao Ma"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-04-14",
+    "venue": "Array",
+    "url": "https://doi.org/10.1016/j.array.2026.100826",
+    "pdf_url": "",
+    "doi": "10.1016/j.array.2026.100826",
+    "abstract": "",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.1016/j.engappai.2026.114744",
+    "source": "Crossref",
+    "title": "Joint reconstruction and localization network via pre-trained feature mapping for industrial anomaly detection",
+    "authors": [
+      "Yunhan Kim"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-04-08",
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "url": "https://doi.org/10.1016/j.engappai.2026.114744",
+    "pdf_url": "",
+    "doi": "10.1016/j.engappai.2026.114744",
+    "abstract": "",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"geo-localization\" satellite"
+  },
+  {
+    "id": "10.1016/j.eswa.2026.132306",
+    "source": "Crossref",
+    "title": "MoRAL: Multimodal region-aware localizer for precise damage detection and reporting in ultrasonic wavefield maps",
+    "authors": [
+      "Bin Ma",
+      "Keyan Ji",
+      "Mingxiao Huang",
+      "Qingzhao Kong"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-04-03",
+    "venue": "Expert Systems with Applications",
+    "url": "https://doi.org/10.1016/j.eswa.2026.132306",
+    "pdf_url": "",
+    "doi": "10.1016/j.eswa.2026.132306",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.1016/j.bspc.2026.110226",
+    "source": "Crossref",
+    "title": "Efficient multi-class motor imagery EEG classification with cosine convolution and channel-group spatial feature extraction",
+    "authors": [
+      "Rui Zhang",
+      "Yong Wang",
+      "Weidong Zhou",
+      "Guoyang Liu"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-04-01",
+    "venue": "Biomedical Signal Processing and Control",
+    "url": "https://doi.org/10.1016/j.bspc.2026.110226",
+    "pdf_url": "",
+    "doi": "10.1016/j.bspc.2026.110226",
+    "abstract": "",
+    "topics": [
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "10.1016/j.eswa.2026.132168",
+    "source": "Crossref",
+    "title": "EG-SFENet: edge-guided spatio-temporal feature fusion enhancement network for remote sensing change detection",
+    "authors": [
+      "Zhimin Guo",
+      "Dangguo Shao",
+      "Lei Ma",
+      "Pin Luo",
+      "Sanli Yi"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-03-26",
+    "venue": "Expert Systems with Applications",
+    "url": "https://doi.org/10.1016/j.eswa.2026.132168",
+    "pdf_url": "",
+    "doi": "10.1016/j.eswa.2026.132168",
+    "abstract": "",
+    "topics": [
+      "Segmentation",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
+    "id": "10.1016/j.eswa.2026.132148",
+    "source": "Crossref",
+    "title": "HyperKANODE: Kolmogorov-Arnold network with neural ordinary differential equations for hyperspectral image classification",
+    "authors": [
+      "Zitong Zhang",
+      "Hanlin Feng",
+      "Guanyun Zhou",
+      "Qiaoyu Ma"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-03-22",
+    "venue": "Expert Systems with Applications",
+    "url": "https://doi.org/10.1016/j.eswa.2026.132148",
+    "pdf_url": "",
+    "doi": "10.1016/j.eswa.2026.132148",
+    "abstract": "",
+    "topics": [
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"ground to satellite\" image"
+  },
+  {
+    "id": "10.1016/j.seppur.2026.137526",
+    "source": "Crossref",
+    "title": "A generic model for mixture adsorption property prediction (MAPP): Toward efficient discovery of metal-organic frameworks for CO2 capture",
+    "authors": [
+      "Shengde Zhang",
+      "Teng Zhou"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-03-09",
+    "venue": "Separation and Purification Technology",
+    "url": "https://doi.org/10.1016/j.seppur.2026.137526",
+    "pdf_url": "",
+    "doi": "10.1016/j.seppur.2026.137526",
+    "abstract": "",
+    "topics": [
+      "Prediction",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"geospatial foundation model\""
+  },
+  {
+    "id": "10.1016/j.compchemeng.2026.109616",
+    "source": "Crossref",
+    "title": "Quality-aware adversarial disentanglement for soft sensor modeling in multimodal processes",
+    "authors": [
+      "Jingyun Xu",
+      "Chenghui Mo",
+      "Kexin Fang",
+      "Xinzhu Lin"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-03-03",
+    "venue": "Computers &amp; Chemical Engineering",
+    "url": "https://doi.org/10.1016/j.compchemeng.2026.109616",
+    "pdf_url": "",
+    "doi": "10.1016/j.compchemeng.2026.109616",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.1016/j.jad.2026.121532",
+    "source": "Crossref",
+    "title": "Neurobiological architecture of first-episode, drug-naive late-life depression: Insights from multimodal MRI, transcriptomics, and neurotransmitter mapping",
+    "authors": [
+      "Heng Shao",
+      "Xiaohui Yu",
+      "Yan Zhang",
+      "Yingjie Yang",
+      "Jiaojian Wang",
+      "Chengsi Luo",
+      "Jie Zhang"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-03-03",
+    "venue": "Journal of Affective Disorders",
+    "url": "https://doi.org/10.1016/j.jad.2026.121532",
+    "pdf_url": "",
+    "doi": "10.1016/j.jad.2026.121532",
+    "abstract": "",
+    "topics": [
+      "Vision-Language",
+      "Geospatial AI"
+    ],
+    "category": "Downstream Task",
+    "query": "\"multimodal\" satellite"
+  },
+  {
+    "id": "10.1016/j.geomat.2026.100095",
+    "source": "Crossref",
+    "title": "Optimization of region segmentation techniques in remote sensing image road extraction based on dual stage feature fusion",
+    "authors": [
+      "Sheng Xu",
+      "Yun Zhang"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-02-08",
+    "venue": "Geomatica",
+    "url": "https://doi.org/10.1016/j.geomat.2026.100095",
+    "pdf_url": "",
+    "doi": "10.1016/j.geomat.2026.100095",
+    "abstract": "",
+    "topics": [
+      "Segmentation",
+      "Detection",
+      "Remote Sensing"
+    ],
+    "category": "Downstream Task",
+    "query": "\"remote sensing\" pretraining"
   },
   {
     "id": "10.58168/mist2026_932-938",
@@ -153493,6 +153995,34 @@
     "query": "\"place recognition\" satellite"
   },
   {
+    "id": "8548d256270e77cfa1b30421d11f5f50d8f28ff4",
+    "source": "Semantic Scholar",
+    "title": "Multimodal information fusion for intelligent disaster response systems",
+    "authors": [
+      "Sakshi Singh",
+      "Hayder Hasan Shatawi",
+      "Hussein Basim Furaijl",
+      "Dalal Kadim Sakr",
+      "A. Alanssari",
+      "Khutam Mohamed"
+    ],
+    "published": "2026-01-01",
+    "updated": "",
+    "venue": "2026 Innovations in Machine, Engineering, and Digital Conference (IMED)",
+    "url": "https://www.semanticscholar.org/paper/8548d256270e77cfa1b30421d11f5f50d8f28ff4",
+    "pdf_url": "",
+    "doi": "10.1109/IMED68921.2026.11484324",
+    "abstract": "Rapid, smart, and data-driven decision-making during disaster response is needed to reduce human casualty and infrastructure loss. This paper introduces a multimodal information fusion platform that incorporates heterogeneous data from sensors, satellite images, social media, emergency communication networks, and IoT devices to aid intelligent disaster response. The system uses AI-based fusion methods such as deep learning, fuzzy logic, and rule-based systems to provide timely detection, situational awareness, and decision support optimization. Simulation experiments show enhanced precision in the prediction of hazards, resource distribution, and emergency notification. The multimodal capability and flexibility of the model lay the foundation for scalable, resilient disaster response systems of the future.",
+    "topics": [
+      "Vision-Language",
+      "Prediction",
+      "Remote Sensing",
+      "Disaster"
+    ],
+    "category": "Downstream Task",
+    "query": "\"foundation model\" disaster"
+  },
+  {
     "id": "3c18adcefea1f0ae6e091348ac3df424fd96cf40",
     "source": "Semantic Scholar",
     "title": "Mapping with Words: Integrating Large Language Models into Geospatial Practice",
@@ -163067,34 +163597,6 @@
     "query": "\"remote sensing foundation model\""
   },
   {
-    "id": "2508.01731v1",
-    "source": "arXiv",
-    "title": "SpectralX: Parameter-efficient Domain Generalization for Spectral Remote Sensing Foundation Models",
-    "authors": [
-      "Yuxiang Zhang",
-      "Wei Li",
-      "Mengmeng Zhang",
-      "Jiawei Han",
-      "Ran Tao",
-      "Shunlin Liang"
-    ],
-    "published": "2025-08-03",
-    "updated": "2025-08-03",
-    "venue": "arXiv",
-    "url": "http://arxiv.org/abs/2508.01731v1",
-    "pdf_url": "https://arxiv.org/pdf/2508.01731v1",
-    "doi": "",
-    "abstract": "Recent advances in Remote Sensing Foundation Models (RSFMs) have led to significant breakthroughs in the field. While many RSFMs have been pretrained with massive optical imagery, more multispectral/hyperspectral data remain lack of the corresponding foundation models. To leverage the advantages of spectral imagery in earth observation, we explore whether existing RSFMs can be effectively adapted to process diverse spectral modalities without requiring extensive spectral pretraining. In response to this challenge, we proposed SpectralX, an innovative parameter-efficient fine-tuning framework that adapt existing RSFMs as backbone while introducing a two-stage training approach to handle various spectral inputs, thereby significantly improving domain generalization performance. In the first stage, we employ a masked-reconstruction task and design a specialized Hyper Tokenizer (HyperT) to extract attribute tokens from both spatial and spectral dimensions. Simultaneously, we develop an Attribute-oriented Mixture of Adapter (AoMoA) that dynamically aggregates multi-attribute expert knowledge while performing layer-wise fine-tuning. With semantic segmentation as downstream task in the second stage, we insert an Attribute-refined Adapter (Are-adapter) into the first stage framework. By iteratively querying low-level semantic features with high-level representations, the model learns to focus on task-beneficial attributes, enabling customized adjustment of RSFMs. Following this two-phase adaptation process, SpectralX is capable of interpreting spectral imagery from new regions or seasons. The codes will be available from the website: https://github.com/YuxiangZhang-BIT.",
-    "topics": [
-      "Foundation Models",
-      "Segmentation",
-      "Remote Sensing",
-      "Geospatial AI"
-    ],
-    "category": "Foundation Model",
-    "query": "\"remote sensing foundation model\""
-  },
-  {
     "id": "2508.01555v1",
     "source": "arXiv",
     "title": "MGCR-Net:Multimodal Graph-Conditioned Vision-Language Reconstruction Network for Remote Sensing Change Detection",
@@ -171431,6 +171933,34 @@
     "query": "\"spatial intelligence\" remote sensing"
   },
   {
+    "id": "4251553db9d12f346db2f8cf5246d2797dcfe26e",
+    "source": "Semantic Scholar",
+    "title": "SpectralX: Parameter-efficient Domain Generalization for Spectral Remote Sensing Foundation Models",
+    "authors": [
+      "Yuxiang Zhang",
+      "Wei Li",
+      "Mengmeng Zhang",
+      "Jiawei Han",
+      "Ran Tao",
+      "Shunlin Liang"
+    ],
+    "published": "2025-01-01",
+    "updated": "",
+    "venue": "Isprs Journal of Photogrammetry and Remote Sensing",
+    "url": "https://www.semanticscholar.org/paper/4251553db9d12f346db2f8cf5246d2797dcfe26e",
+    "pdf_url": "https://arxiv.org/pdf/2508.01731",
+    "doi": "10.1016/j.isprsjprs.2026.06.008",
+    "abstract": "Recent advances in Remote Sensing Foundation Models (RSFMs) have led to significant breakthroughs in the field. While many RSFMs have been pretrained with massive optical imagery, more multispectral/hyperspectral data remain lack of the corresponding foundation models. To leverage the advantages of spectral imagery in earth observation, we explore whether existing RSFMs can be effectively adapted to process diverse spectral modalities without requiring extensive spectral pretraining. In response to this challenge, we proposed SpectralX, an innovative parameter-efficient fine-tuning framework that adapt existing RSFMs as backbone while introducing a two-stage training approach to handle various spectral inputs, thereby significantly improving domain generalization performance. In the first stage, we employ a masked-reconstruction task and design a specialized Hyper Tokenizer (HyperT) to extract attribute tokens from both spatial and spectral dimensions. Simultaneously, we develop an Attribute-oriented Mixture of Adapter (AoMoA) that dynamically aggregates multi-attribute expert knowledge while performing layer-wise fine-tuning. With semantic segmentation as downstream task in the second stage, we insert an Attribute-refined Adapter (Are-adapter) into the first stage framework. By iteratively querying low-level semantic features with high-level representations, the model learns to focus on task-beneficial attributes, enabling customized adjustment of RSFMs. Following this two-phase adaptation process, SpectralX is capable of interpreting spectral imagery from new regions or seasons. The codes will be available from the website: https://github.com/YuxiangZhang-BIT.",
+    "topics": [
+      "Foundation Models",
+      "Segmentation",
+      "Remote Sensing",
+      "Geospatial AI"
+    ],
+    "category": "Foundation Model",
+    "query": "\"remote sensing\" pretraining"
+  },
+  {
     "id": "df39e8482f9c03996c742c2b90759652b07a8db7",
     "source": "Semantic Scholar",
     "title": "Spatiotemporal Contrastive Learning for Cross-View Video Localization in Unstructured Off-road Terrains",
@@ -176349,6 +176879,34 @@
     ],
     "category": "Downstream Task",
     "query": "\"spatial intelligence\" remote sensing"
+  },
+  {
+    "id": "8bc82df82463c87d2b5d3a085f3557dd6ca2f2a4",
+    "source": "Semantic Scholar",
+    "title": "GAIR: Location-aware self-supervised contrastive pre-training with geo-aligned implicit representations",
+    "authors": [
+      "Zeping Liu",
+      "Ni Lao",
+      "Zhangyu Wang",
+      "Junfeng Jiao",
+      "Gengchen Mai"
+    ],
+    "published": "2025-01-01",
+    "updated": "",
+    "venue": "Isprs Journal of Photogrammetry and Remote Sensing",
+    "url": "https://www.semanticscholar.org/paper/8bc82df82463c87d2b5d3a085f3557dd6ca2f2a4",
+    "pdf_url": "",
+    "doi": "10.1016/j.isprsjprs.2026.04.035",
+    "abstract": "Vision Transformer (ViT) has been widely used in computer vision tasks with excellent results by providing representations for a whole image or image patches. However, ViT lacks detailed localized image representations at arbitrary positions when applied to geospatial tasks that involve multiple geospatial data modalities, such as overhead remote sensing (RS) data, ground-level imagery, and geospatial vector data. Here high-resolution localized representations are vital for modeling geospatial relationships and alignments across modalities. We proposed to solve this representation problem with an implicit neural representation (INR) module extending ViT with Neural Implicit Local Interpolation, which produces a continuous RS image representation covering arbitrary location in the RS image. Based on the INR module, we introduce GAIR, a novel location-aware self-supervised learning (SSL) objective integrating overhead RS data, street view (SV) imagery, and their geolocation metadata. GAIR utilizes three factorized neural encoders to project different modalities into the embedding space, and the INR module is used to further align these representations geographically, which are trained with contrastive learning objectives from unlabeled data. We evaluate GAIR across 9 geospatial tasks and 22 datasets spanning RS image-based, SV image-based, and location embedding-based benchmarks. Experimental results demonstrate that GAIR outperforms state-of-the-art geo-foundation models (GeoFM) and alternative SSL training objectives (e.g., MoCo V3 and MAE) that do not use fine-grained geo-aligned spatial representations. Our results highlight the effectiveness of GAIR in learning generalizable geospatial representations across tasks, spatial scales, and temporal contexts. The project code is available at https://github.com/zpl99/GAIR.",
+    "topics": [
+      "Foundation Models",
+      "Remote Sensing",
+      "Geospatial AI",
+      "Data",
+      "Benchmark"
+    ],
+    "category": "Foundation Model",
+    "query": "\"GeoFM\""
   },
   {
     "id": "b0655579623ca0b385b6b8eaf9950943c85fe1d1",
