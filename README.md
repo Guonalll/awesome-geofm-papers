@@ -2,7 +2,7 @@
 
 Daily updated papers for geospatial, geographic, remote sensing, and Earth observation foundation models.
 
-Last updated: 2026-07-05 23:01 UTC
+Last updated: 2026-07-06 23:07 UTC
 
 This repository is updated automatically by GitHub Actions. It tracks GeoFM-related papers from public scholarly APIs.
 
@@ -7648,7 +7648,6 @@ arxiv, openalex, crossref, semanticscholar
 | 2024-01-15 | Exploring Masked Autoencoders for Sensor-Agnostic Image Retrieval in Remote Sensing | Jakob Hackstein, Gencer Sumbul, Kai Norman Clasen, Begüm Demir | arXiv | [Page](http://arxiv.org/abs/2401.07782v3) / [PDF](https://arxiv.org/pdf/2401.07782v3) / [DOI](https://doi.org/10.1109/TGRS.2024.3517150) |
 | 2024-01-15 | PolMERLIN: Self-Supervised Polarimetric Complex SAR Image Despeckling with Masked Networks | Shunya Kato, Masaki Saito, Katsuhiko Ishiguro, Sol Cummings | arXiv | [Page](http://arxiv.org/abs/2401.07503v1) / [PDF](https://arxiv.org/pdf/2401.07503v1) |
 | 2024-01-05 | Fus-MAE: A cross-attention-based data fusion approach for Masked Autoencoders in remote sensing | Hugo Chan-To-Hing, Bharadwaj Veeravalli | arXiv | [Page](http://arxiv.org/abs/2401.02764v2) / [PDF](https://arxiv.org/pdf/2401.02764v2) / [DOI](https://doi.org/10.1109/IGARSS53475.2024.10642424) |
-| 2024-01-01 | Where am I? Cross-View Geo-localization with Natural Language Descriptions | Junyan Ye, Honglin Lin, Leyan Ou, Dairong Chen et al. | IEEE International Conference on Computer Vision | [Page](https://www.semanticscholar.org/paper/2a5a06c69421da0c446a3e3c8d9e26301c01e87d) / [PDF](https://arxiv.org/pdf/2412.17007) / [DOI](https://doi.org/10.1109/ICCV51701.2025.00557) |
 | 2024-01-01 | Weakly-supervised Camera Localization by Ground-to-satellite Image Registration | Yujiao Shi, Hongdong Li, Akhil Perincherry, Ankit Vora | European Conference on Computer Vision | [Page](https://www.semanticscholar.org/paper/ac56fdc7236db09715e020ce5872fcce2d8e2d47) / [DOI](https://doi.org/10.48550/arXiv.2409.06471) |
 | 2024-01-01 | Weakly Supervised Remote Sensing Image Semantic Segmentation With Pseudo-Label Noise Suppression | Xiaoyan Lu, Zhiguo Jiang, Haopeng Zhang | IEEE Transactions on Geoscience and Remote Sensing | [Page](https://www.semanticscholar.org/paper/678d46d26037c5f5aa29dae49801572490a85a1c) / [DOI](https://doi.org/10.1109/TGRS.2024.3421890) |
 | 2024-01-01 | Using image segmentation models to analyse high-resolution earth observation data: new tools to monitor disease risks in changing environments | F. Trujillano, Gabriel Jimenez, E. Manrique, Najat F Kahamba et al. | International Journal of Health Geographics | [Page](https://www.semanticscholar.org/paper/533d1f9c296a1ab8f1a7ec6bce8589c69a4f61b6) / [PDF](https://ij-healthgeographics.biomedcentral.com/counter/pdf/10.1186/s12942-024-00371-w) / [DOI](https://doi.org/10.1186/s12942-024-00371-w) |

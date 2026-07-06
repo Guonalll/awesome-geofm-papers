@@ -196478,37 +196478,6 @@
     "query": "\"visual geo-localization\""
   },
   {
-    "id": "2a5a06c69421da0c446a3e3c8d9e26301c01e87d",
-    "source": "Semantic Scholar",
-    "title": "Where am I? Cross-View Geo-localization with Natural Language Descriptions",
-    "authors": [
-      "Junyan Ye",
-      "Honglin Lin",
-      "Leyan Ou",
-      "Dairong Chen",
-      "Zihao Wang",
-      "Conghui He",
-      "Weijia Li"
-    ],
-    "published": "2024-01-01",
-    "updated": "",
-    "venue": "IEEE International Conference on Computer Vision",
-    "url": "https://www.semanticscholar.org/paper/2a5a06c69421da0c446a3e3c8d9e26301c01e87d",
-    "pdf_url": "https://arxiv.org/pdf/2412.17007",
-    "doi": "10.1109/ICCV51701.2025.00557",
-    "abstract": "Cross-view geo-localization identifies the locations of streetview images by matching them with geo-tagged satellite images or OSM. However, most existing studies focus on image-to-image retrieval, with fewer addressing text-guided retrieval, a task vital for applications like pedestrian navigation and emergency response. In this work, we introduce a novel task for cross-view geo-localization with natural language descriptions, which aims to retrieve corresponding satellite images or OSM database based on scene text descriptions. To support this task, we construct the CVGText dataset by collecting cross-view data from multiple cities and employing a scene text generation approach that leverages the annotation capabilities of Large Multimodal Models to produce high-quality scene text descriptions with localization details. Additionally, we propose a novel textbased retrieval localization method, CrossText2Loc, which demonstrates excellent long-text retrieval capabilities. In terms of explainability, it not only provides similarity scores but also offers retrieval reasons. More can be found at https://github.com/yejy53/CVG-Text.",
-    "topics": [
-      "Vision-Language",
-      "Geo-localization",
-      "Retrieval",
-      "Remote Sensing",
-      "Disaster",
-      "Data"
-    ],
-    "category": "Foundation Model",
-    "query": "\"cross-view matching\" satellite"
-  },
-  {
     "id": "ac56fdc7236db09715e020ce5872fcce2d8e2d47",
     "source": "Semantic Scholar",
     "title": "Weakly-supervised Camera Localization by Ground-to-satellite Image Registration",
